@@ -1,12 +1,25 @@
-# AbsEvolve
+# AbsEvolve: Evolving Abstract Transformers for Gradient-Guided, Adaptable Abstract Interpretation
+
+![Overview of the Approach](overview_figure.png)
 
 This is the artifact for our paper: "Evolving Abstract Transformers for Gradient-Guided, Adaptable Abstract Interpretation".
 
-## Getting Started
+## Index
+- [Installation Instructions](#installation-instructions)
+    - [Docker Installation](#docker-installation)
+    - [Building from source](#building-from-source)
+    - [Smoke Testing](#smoke-testing)
+- [Repository Structure and Understanding the Code](#repository-structure-and-understanding-the-code)
+    - [Folder Organization](#folder-organization)
+    - [Understanding the Code and Modifications](#understanding-the-code-and-modifications)
+- [Recreating Paper Experiments](#recreating-paper-experiments)
+- [Analyzing New Benchmarks](#analyzing-new-benchmarks)
 
-### Installation Instructions
+## Installation Instructions
 
-1. The quickest way is to use the provided Docker image (absevolve_image.tar.gz) which contains all the dependencies and the tool already built. To load the image, run:
+### Docker Installation
+
+1. The quickest way is to use the Docker image `absevolve_image.tar.gz` (hosted on [Zenodo](https://zenodo.org/records/19586617)) which contains all the dependencies and the tool already built. To load the image, run:
     ```
     gzip -dc absevolve_image.tar.gz | docker load
     ```
@@ -33,30 +46,44 @@ This is the artifact for our paper: "Evolving Abstract Transformers for Gradient
 
     This helps you see and inspect logs and plots immediately from the host filesystem.
 
-### Artifact Description
+### Building from source
 
-1. The `data` folder contains benchmark inputs. Our primary evaluation suite is `data/sv-benchmarks/nla-digbench`, and `data/custom` provides small examples (`example1.c`, `example2.c`) to quickly test runs and demonstrate how to add new benchmarks. Every benchmark folder should contain an `all_benchmarks.csv` file listing the `.c` files to run. This CSV is what experiment scripts use to enumerate programs (and users can use to control the programs to analyze).
-2. The core implementation is in `src/`. The following are the three repositories included in this artifact:
-    - `src/clam`: LLVM front-end and driver layer for the analysis pipeline; this contains code modified from https://github.com/seahorn/clam.
-    - `src/crab`: Static analysis framework and abstract interpretation engine; this contains code modified from https://github.com/seahorn/crab.
-    - `src/elina`: Numerical abstract domain implementations used by the analyzer; this contains code modified from https://github.com/eth-sri/ELINA.
+1. The first step is to install the dependencies. Use the following command to install the 
+python dependencies listed in [requirements.txt](requirements.txt):
 
-    The diffs for these modifications are provided in `src/patches` for clear readability and easier contribution.
-3. Build and setup automation is under `scripts/` (notably `scripts/install_deps.sh` and `scripts/build.sh`) to install dependencies, configure paths, and build the analysis stack. This is already done in the provided Docker image and runs as part of the image build, but can be used separately if building from source.
-4. Experiment orchestration is in `experiments/`. In particular, `experiments/run_experiments.py` runs the paper experiments, while `results_checker.py`, `results_parser.py`, and `plot.py` are used for result validation and plotting.
-5. Generated outputs are organized in `logs/` and `plots/`; `paper_experiments_logs/` and `paper_experiments_plots/` store reference outputs generated while running the paper experiments.
+    ```
+    pip install -r requirements.txt
+    ```
 
+    The next step is to install the dependencies for clam, crab, and elina. You can use the provided script [scripts/install_deps.sh](scripts/install_deps.sh) to install all the dependencies in the `deps` directory and then copy the [.env.example](.env.example) file to `.env`. Use the following command:
+    ```
+    bash scripts/install_deps.sh && cp .env.example .env
+    ```
 
-### Basic Testing
+    If you already have those dependencies installed, you can skip this step and just copy the `.env.example` file to `.env` and change the paths in `.env` to point to your existing installations of the dependencies.
 
-1. To quickly test that the tool is working, you can run the following command inside the Docker container:
+2. Build the project using the provided script [scripts/build.sh](scripts/build.sh) using the command:
+    ```
+    bash scripts/build.sh scratch
+    ```
+
+3. Set the following environment variables in your shell to point to the correct paths for the gurobi license file, symba binary, and runtime library path.
+    ```
+    export GRB_LICENSE_FILE=${PWD}/experiments/licenses/gurobi.lic
+    export SYMBA_BINARY=${PWD}/src/binaries/symba
+    export LD_LIBRARY_PATH=${PWD}/src/clam/build/install/lib:${PWD}/deps/install/boost_1_80_0/lib:$LD_LIBRARY_PATH
+    ```
+
+### Smoke Testing
+
+1. To quickly test that the tool is working, you can run the following command (inside the Docker container if you are using Docker):
 
     ```
     python experiments/benchmark_runner.py
     ```
 
-    This will run the analysis on the small examples in `data/custom` and generate logs in `logs/custom/`.
-    The `all_checks.json` file generated in the `logs/custom/baseline/` folder should look like this:
+    This will run the analysis on the small examples in [data/custom](data/custom) and generate 
+    logs in `logs/custom/`. The `all_checks.json` file generated in the `logs/custom/baseline/` folder should look like this:
     ```json
     {
         "all_checks": {
@@ -85,11 +112,31 @@ This is the artifact for our paper: "Evolving Abstract Transformers for Gradient
     python experiments/run_experiments.py --exp_name 7.1-Linear-Subset
     ```
 
-    This will run the linear tradeoff experiments for a small subset of benchmarks (as specified in `data/sv-benchmarks/nla-digbench/all_benchmarks_subset.csv`) and generate logs in `logs/7.1_linear_subset/` and plots in `plots/7.1_linear_subset/`. This command runs in around 7-12 minutes. The expected outputs for this run are available in `paper_experiments_logs/7.1_linear_subset/` and `paper_experiments_plots/7.1_linear_subset/` respectively. The generated plots should look roughly like the ones in `paper_experiments_plots/7.1_linear_subset/`. This serves as a quick validation that the experiment runs and generates expected outputs before we run the full set of experiments.
+    This will run the linear tradeoff experiments for a small subset of benchmarks (as specified in [data/sv-benchmarks/nla-digbench/all_benchmarks_subset.csv](data/sv-benchmarks/nla-digbench/all_benchmarks_subset.csv)) and generate logs in `logs/7.1_linear_subset/` and plots in `plots/7.1_linear_subset/`. This command runs in around 7-12 minutes. The expected outputs for this run are available in [paper_experiments_logs/7.1_linear_subset/](paper_experiments_logs/7.1_linear_subset/) and [paper_experiments_plots/7.1_linear_subset/](paper_experiments_plots/7.1_linear_subset/) respectively. The generated plots should look roughly like the ones in [paper_experiments_plots/7.1_linear_subset/](paper_experiments_plots/7.1_linear_subset/). This serves as a quick validation that the experiment runs and generates expected outputs before we run the full set of experiments.
 
-## Step-by-Step Guide
 
-### Recreating Paper Experiments
+## Repository Structure and Understanding the Code
+
+### Folder Organization
+
+1. The [data](data/) folder contains benchmark inputs. Our primary evaluation suite is [data/sv-benchmarks/nla-digbench](data/sv-benchmarks/nla-digbench), and [data/custom](data/custom) provides small examples (`example1.c`, `example2.c`) to quickly test runs and demonstrate how to add new benchmarks. Every benchmark folder should contain an `all_benchmarks.csv` file listing the `.c` files to run. This CSV is what experiment scripts use to enumerate programs (and users can use to control the programs to analyze).
+2. The core implementation is in [src/](src/). The following are the three repositories included in this artifact:
+    - [src/clam](src/clam): LLVM front-end and driver layer for the analysis pipeline; this contains code modified from https://github.com/seahorn/clam.
+    - [src/crab](src/crab): Static analysis framework and abstract interpretation engine; this contains code modified from https://github.com/seahorn/crab.
+    - [src/elina](src/elina): Numerical abstract domain implementations used by the analyzer; this contains code modified from https://github.com/eth-sri/ELINA.
+
+    The diffs for these modifications are provided in [src/patches](src/patches) for clear readability and easier contribution.
+3. Build and setup automation is under [scripts/](scripts/) (notably [scripts/install_deps.sh](scripts/install_deps.sh) and [scripts/build.sh](scripts/build.sh)) to install dependencies, configure paths, and build the analysis stack. This is already done in the provided Docker image and runs as part of the image build, but can be used separately if building from source.
+4. Experiment orchestration is in [experiments/](experiments/). In particular, [experiments/run_experiments.py](experiments/run_experiments.py) runs the paper experiments, while [results_checker.py](results_checker.py), [results_parser.py](results_parser.py), and [plot.py](plot.py) are used for result validation and plotting.
+5. Generated outputs are organized in [logs/](logs/) and [plots/](plots/); [paper_experiments_logs/](paper_experiments_logs/) and [paper_experiments_plots/](paper_experiments_plots/) store reference outputs generated while running the paper experiments.
+
+### Understanding the Code and Modifications
+
+As the tool is implemented by modifying three existing and well-established repositories (clam, crab, elina), we have provided detailed diffs for all the modifications made to these repositories in [src/patches](src/patches). This is to ensure that the changes are clear and easily understandable. If you want to inspect the code changes, you can look at these diffs. If you want to understand how a particular part of the tool works, you can look at the corresponding diff in [src/patches](src/patches) to see the changes made to the original code. A high-level summary of every patch is documented in [src/patches/PATCHES.md](src/patches/PATCHES.md). Morevover, we have also provided:
+1. The [scripts/generate_patches.py](scripts/generate_patches.py) script to generate these diffs from the modified codebases of clam, crab, and elina. You can use this script to generate the diffs yourself if you want to see how they are generated.
+2. The [scripts/apply_patches.py](scripts/apply_patches.py) script to apply these diffs to the original codebases of clam, crab, and elina. You can use this script to apply the diffs to the original codebases and recreate the modified codebases of clam, crab, and elina that are used in the tool. This can be useful if you want to understand the changes in the context of the original codebases, or if you want to make further modifications to the codebases and see how they affect the tool.
+
+## Recreating Paper Experiments
 
 The following instructions assume you are running the provided Docker image or have set up the environment as described in the installation instructions and have tested the basic functionality as described in the basic testing section above. Also, the `run_experiments.py` script takes parameter `--logs_folder` to specify the folder where the logs for the experiments will be stored, and `--plots_folder` to specify the folder where the plots for the experiments will be stored. By default, these are set to `logs` and `plots` respectively, but can be changed. We assume that you are using the default values for these parameters, and the logs and plots will be generated in `logs/` and `plots/` folders respectively.
 
@@ -154,21 +201,13 @@ The following instructions assume you are running the provided Docker image or h
 
 These experiments together support all the claims made in the paper!
 
-### Validating and Inspecting Results
-
-As described above, the logs and plots generated while running the experiments are available in `paper_experiments_logs/` and `paper_experiments_plots/` respectively. You can use these reference logs and plots to validate your runs and ensure that you are getting consistent results. You can also inspect these logs to understand the detailed outputs of the experiments. The logs can be recreated using commands above. You can also recreate the plots using the paper logs by running:
+Validating and Inspecting Results: As described above, the logs and plots generated while running the experiments are available in `paper_experiments_logs/` and `paper_experiments_plots/` respectively. You can use these reference logs and plots to validate your runs and ensure that you are getting consistent results. You can also inspect these logs to understand the detailed outputs of the experiments. The logs can be recreated using commands above. You can also recreate the plots using the paper logs by running:
 
 ```
 python experiments/plot.py --logs_folder paper_experiments_logs --plots_folder paper_plots
 ```
 
-### Understanding the Code and Modifications
-
-As the tool is implemented by modifying three existing and well-established repositories (clam, crab, elina), we have provided detailed diffs for all the modifications made to these repositories in `src/patches`. This is to ensure that the changes are clear and easily understandable. If you want to inspect the code changes, you can look at these diffs. If you want to understand how a particular part of the tool works, you can look at the corresponding diff in `src/patches` to see the changes made to the original code. A high-level summary of every patch is documented in `src/patches/PATCHES.md`. Morevover, we have also provided:
-1. The `scripts/generate_patches.py` script to generate these diffs from the modified codebases of clam, crab, and elina. You can use this script to generate the diffs yourself if you want to see how they are generated.
-2. The `scripts/apply_patches.py` script to apply these diffs to the original codebases of clam, crab, and elina. You can use this script to apply the diffs to the original codebases and recreate the modified codebases of clam, crab, and elina that are used in the tool. This can be useful if you want to understand the changes in the context of the original codebases, or if you want to make further modifications to the codebases and see how they affect the tool.
-
-### Adding New Benchmarks and Running Analysis on Them
+## Analyzing New Benchmarks
 
 To add new benchmarks, you can create a new folder under `data/` (e.g., `data/new_benchmarks/`) and add your benchmark `.c` files there. You also need to create an `all_benchmarks.csv` file in that folder which lists the names of the `.c` files to run. The format of the `all_benchmarks.csv` file should be as follows:
 
