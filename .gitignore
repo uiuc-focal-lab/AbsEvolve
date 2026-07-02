@@ -1,0 +1,15 @@
+# ENV file
+.env
+
+# venv folder
+venv/*
+
+# Tool output and plots
+output/*
+plots/*
+
+# Directory for installing custom dependencies
+deps/*
+
+# Pycache
+__pycache__/
