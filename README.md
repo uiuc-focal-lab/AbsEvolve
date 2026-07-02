@@ -14,6 +14,7 @@ This is the artifact for our paper: "Evolving Abstract Transformers for Gradient
     - [Understanding the Code and Modifications](#understanding-the-code-and-modifications)
 - [Recreating Paper Experiments](#recreating-paper-experiments)
 - [Analyzing New Benchmarks](#analyzing-new-benchmarks)
+- [Cite this work](#cite-this-work)
 
 ## Installation Instructions
 
@@ -250,4 +251,29 @@ runner.run_using_config(
 )
 ```
 
-More details on the fields of `BenchmarkRunConfig` and how to use `BenchmarkRunner` can be found in `benchmark_runner.py`.
+More details on the fields of `BenchmarkRunConfig` and how to use `BenchmarkRunner` can be found 
+in `benchmark_runner.py`.
+
+## Cite this work
+
+If you use our code or the results from our work, please cite our paper:
+
+```bibtex
+@article{10.1145/3808346,
+        author = {Gomber, Shaurya and Banerjee, Debangshu and Singh, Gagandeep},
+        title = {Evolving Abstract Transformers for Gradient-Guided, Adaptable Abstract Interpretation},
+        year = {2026},
+        issue_date = {June 2026},
+        publisher = {Association for Computing Machinery},
+        address = {New York, NY, USA},
+        volume = {10},
+        number = {PLDI},
+        url = {https://doi.org/10.1145/3808346},
+        doi = {10.1145/3808346},
+        journal = {Proc. ACM Program. Lang.},
+        month = jun,
+        articleno = {268},
+        numpages = {25},
+        keywords = {Adaptable Analysis, Efficient and Precise Abstract Interpretation, Gradient-Guided Optimization, Parametric Abstract Outputs}
+}
+```
