@@ -6,6 +6,7 @@ venv/*
 
 # Tool output and plots
 output/*
+logs/*
 plots/*
 
 # Directory for installing custom dependencies
