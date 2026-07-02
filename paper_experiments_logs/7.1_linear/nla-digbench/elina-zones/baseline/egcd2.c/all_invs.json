@@ -1,0 +1,84 @@
+{
+    "all_invs": [
+        {
+            "str": "-a.0+add <= 0;-a.0+add12 <= 0;-call <= -1;-call1+b.0 <= 0;-call1+c.0 <= -1;-call1+add17 <= 0;-call1 <= -1;-b.0+c.0 <= -1;-b.0+add17 <= 0;-k.0 <= 0;a.0-add <= 0;-add+add12 <= 0;a.0-add12 <= 0;add-add12 <= 0;b.0-add17 <= 0;c.0-add17 <= -1;-sub29+add30 <= 0;sub29-add30 <= 0",
+            "smt": "(assert (<= (+ (* (- 1.0) a.0) add) 0.0))\n(assert (<= (+ (* (- 1.0) a.0) add12) 0.0))\n(assert (>= call 1.0))\n(assert (<= (+ (* (- 1.0) call1) b.0) 0.0))\n(assert (<= (+ (* (- 1.0) call1) c.0) (- 1.0)))\n(assert (<= (+ (* (- 1.0) call1) add17) 0.0))\n(assert (>= call1 1.0))\n(assert (<= (+ (* (- 1.0) b.0) c.0) (- 1.0)))\n(assert (<= (+ (* (- 1.0) b.0) add17) 0.0))\n(assert (>= k.0 0.0))\n(assert (<= (+ a.0 (* (- 1.0) add)) 0.0))\n(assert (<= (+ (* (- 1.0) add) add12) 0.0))\n(assert (<= (+ a.0 (* (- 1.0) add12)) 0.0))\n(assert (<= (+ add (* (- 1.0) add12)) 0.0))\n(assert (<= (+ b.0 (* (- 1.0) add17)) 0.0))\n(assert (<= (+ c.0 (* (- 1.0) add17)) (- 1.0)))\n(assert (<= (+ (* (- 1.0) sub29) add30) 0.0))\n(assert (<= (+ sub29 (* (- 1.0) add30)) 0.0))",
+            "dom": "elina-zones",
+            "vars": [
+                "a.0",
+                "add",
+                "add12",
+                "sub29",
+                "call",
+                "k.0",
+                "call1",
+                "add30",
+                "add17",
+                "b.0",
+                "c.0"
+            ],
+            "len": 18
+        },
+        {
+            "str": "-a.0+add <= 0;-a.0+add12 <= 0;-call <= -1;-call1+b.0 <= 0;-call1+add17 <= 0;-call1 <= -1;-b.0+add17 <= 0;b.0-c.0 <= 0;-c.0+add17 <= 0;-k.0 <= 0;a.0-add <= 0;-add+add12 <= 0;a.0-add12 <= 0;add-add12 <= 0;b.0-add17 <= 0;-sub29+add30 <= 0;sub29-add30 <= 0",
+            "smt": "(assert (<= (+ (* (- 1.0) a.0) add) 0.0))\n(assert (<= (+ (* (- 1.0) a.0) add12) 0.0))\n(assert (>= call 1.0))\n(assert (<= (+ (* (- 1.0) call1) b.0) 0.0))\n(assert (<= (+ (* (- 1.0) call1) add17) 0.0))\n(assert (>= call1 1.0))\n(assert (<= (+ (* (- 1.0) b.0) add17) 0.0))\n(assert (<= (+ b.0 (* (- 1.0) c.0)) 0.0))\n(assert (<= (+ (* (- 1.0) c.0) add17) 0.0))\n(assert (>= k.0 0.0))\n(assert (<= (+ a.0 (* (- 1.0) add)) 0.0))\n(assert (<= (+ (* (- 1.0) add) add12) 0.0))\n(assert (<= (+ a.0 (* (- 1.0) add12)) 0.0))\n(assert (<= (+ add (* (- 1.0) add12)) 0.0))\n(assert (<= (+ b.0 (* (- 1.0) add17)) 0.0))\n(assert (<= (+ (* (- 1.0) sub29) add30) 0.0))\n(assert (<= (+ sub29 (* (- 1.0) add30)) 0.0))",
+            "dom": "elina-zones",
+            "vars": [
+                "a.0",
+                "add",
+                "add12",
+                "sub29",
+                "call",
+                "k.0",
+                "call1",
+                "add30",
+                "add17",
+                "b.0",
+                "c.0"
+            ],
+            "len": 17
+        },
+        {
+            "str": "-call <= -1;-call1+b.0 <= 0;-call1 <= -1;-k.0 <= 0",
+            "smt": "(assert (>= call 1.0))\n(assert (<= (+ (* (- 1.0) call1) b.0) 0.0))\n(assert (>= call1 1.0))\n(assert (>= k.0 0.0))",
+            "dom": "elina-zones",
+            "vars": [
+                "k.0",
+                "b.0",
+                "call1",
+                "call"
+            ],
+            "len": 4
+        },
+        {
+            "str": "-call <= -1;-call1+b.0 <= 0;-call1 <= -1",
+            "smt": "(assert (>= call 1.0))\n(assert (<= (+ (* (- 1.0) call1) b.0) 0.0))\n(assert (>= call1 1.0))",
+            "dom": "elina-zones",
+            "vars": [
+                "b.0",
+                "call1",
+                "call"
+            ],
+            "len": 3
+        },
+        {
+            "str": "-call+b.0 <= -1;-call <= -1;-call1+b.0 <= -1;-call1 <= -1;-b.0 <= 0;b.0 <= 0",
+            "smt": "(assert (<= (+ (* (- 1.0) call) b.0) (- 1.0)))\n(assert (>= call 1.0))\n(assert (<= (+ (* (- 1.0) call1) b.0) (- 1.0)))\n(assert (>= call1 1.0))\n(assert (>= b.0 0.0))\n(assert (<= b.0 0.0))",
+            "dom": "elina-zones",
+            "vars": [
+                "b.0",
+                "call1",
+                "call"
+            ],
+            "len": 6
+        },
+        {
+            "str": "T",
+            "smt": "(assert true)",
+            "dom": "elina-zones",
+            "vars": {},
+            "len": 0
+        }
+    ],
+    "timed_out": false
+}

@@ -1,0 +1,15 @@
+digraph "CFG for 'main' function" {
+	label="CFG for 'main' function";
+	Node0x5ddbf7499520 [shape=record,label="{entry:\l havoc(call) /* __VERIFIER_nondet_int(...)*/\l havoc(call1) /* __VERIFIER_nondet_int(...)*/\l x.0 = 1\l y.0 = 1\l c.0 = 1\l}"];
+	Node0x5ddbf7499520 -> Node0x5ddbf74c73e0;
+	Node0x5ddbf74c73e0 [shape=record,label="{while.body:\l sext call:32 to conv:64\l [[mul = x.0*conv; add = mul+1; mul3 = y.0*conv; tmp = x.0+mul3; ]]\l cmp = (add-tmp = 0)\l assert(cmp)   /* loc(file=data/sv-benchmarks-processed/nla-digbench/geo2-ll.c line=23 col=9) id=1 */\l sext call1:32 to conv6:64\l}"];
+	Node0x5ddbf74c73e0 -> Node0x5ddbf74cb150;
+	Node0x5ddbf74c73e0 -> Node0x5ddbf74cdcb0;
+	Node0x5ddbf74cdcb0 [shape=record,label="{__@bb_6:\l @V_25 = (-c.0 &le; 0)\l @V_28 = (-conv6 &le; 0)\l @V_29 = (-c.0+conv6 &le; 0)\l @V_30 = true\l @V_26 = ite(@V_28,@V_29,@V_30)\l @V_31 = (-c.0+conv6 &le; 0)\l @V_32 = false\l @V_27 = ite(@V_28,@V_32,@V_31)\l @V_24 = ite(@V_25,@V_26,@V_27)\l assume(@V_24)\l}"];
+	Node0x5ddbf74cdcb0 -> Node0x5ddbf74c7020;
+	Node0x5ddbf74c7020 [shape=record,label="{while.end:\l assert(cmp)   /* loc(file=data/sv-benchmarks-processed/nla-digbench/geo2-ll.c line=32 col=5) id=2 */\l @V_1 = 0\l}"];
+	Node0x5ddbf74cb150 [shape=record,label="{__@bb_5:\l @V_16 = (-c.0 &le; 0)\l @V_19 = (-conv6 &le; 0)\l @V_20 = (c.0-conv6 &le; -1)\l @V_21 = false\l @V_17 = ite(@V_19,@V_20,@V_21)\l @V_22 = (c.0-conv6 &le; -1)\l @V_23 = true\l @V_18 = ite(@V_19,@V_23,@V_22)\l @V_15 = ite(@V_16,@V_17,@V_18)\l assume(@V_15)\l}"];
+	Node0x5ddbf74cb150 -> Node0x5ddbf74c74a0;
+	Node0x5ddbf74c74a0 [shape=record,label="{if.end:\l [[add9 = c.0+1; ]]\l x.0 = add\l y.0 = mul3\l c.0 = add9\l}"];
+	Node0x5ddbf74c74a0 -> Node0x5ddbf74c73e0;
+}

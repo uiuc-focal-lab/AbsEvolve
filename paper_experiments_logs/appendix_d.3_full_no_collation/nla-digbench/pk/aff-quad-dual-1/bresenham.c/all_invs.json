@@ -1,0 +1,68 @@
+{
+    "all_invs": [
+        {
+            "str": "2*call+mul4.neg = 0;2*call1+sub6-tmp1 = 0;-mul-sub6+tmp1 = 0;2*sub-mul4.neg+2*sub6-2*tmp1 = 0;2*v.0-mul4.neg-2*tmp1 = 0;mul3+mul5.neg-sub6 = 0;tmp-tmp1 = 0;-x.0+y.0 <= 0;-y.0 <= 0;2*x.0+mul4.neg <= 0",
+            "smt": "(assert (= (+ (* 2.0 call) mul4.neg) 0.0))\n(assert (= (+ (* 2.0 call1) sub6 (* (- 1.0) tmp1)) 0.0))\n(assert (= (+ (* (- 1.0) mul) (* (- 1.0) sub6) tmp1) 0.0))\n(assert (= (+ (* 2.0 sub) (* (- 1.0) mul4.neg) (* 2.0 sub6) (* (- 2.0) tmp1)) 0.0))\n(assert (= (+ (* 2.0 v.0) (* (- 1.0) mul4.neg) (* (- 2.0) tmp1)) 0.0))\n(assert (= (+ mul3 mul5.neg (* (- 1.0) sub6)) 0.0))\n(assert (= (+ tmp (* (- 1.0) tmp1)) 0.0))\n(assert (<= (+ (* (- 1.0) x.0) y.0) 0.0))\n(assert (>= y.0 0.0))\n(assert (<= (+ (* 2.0 x.0) mul4.neg) 0.0))",
+            "dom": "pk",
+            "vars": [
+                "mul3",
+                "tmp",
+                "call1",
+                "mul4.neg",
+                "mul",
+                "x.0",
+                "tmp1",
+                "v.0",
+                "call",
+                "sub6",
+                "mul5.neg",
+                "y.0",
+                "sub"
+            ],
+            "len": 10
+        },
+        {
+            "str": "call-mul+sub = 0;2*call1-mul = 0;-y.0 <= 0;-x.0+y.0 <= 0",
+            "smt": "(assert (= (+ call (* (- 1.0) mul) sub) 0.0))\n(assert (= (+ (* 2.0 call1) (* (- 1.0) mul)) 0.0))\n(assert (>= y.0 0.0))\n(assert (<= (+ (* (- 1.0) x.0) y.0) 0.0))",
+            "dom": "pk",
+            "vars": [
+                "call1",
+                "mul",
+                "x.0",
+                "call",
+                "y.0",
+                "sub"
+            ],
+            "len": 4
+        },
+        {
+            "str": "2*call+mul4.neg = 0;2*call1+sub6-tmp1 = 0;-mul-sub6+tmp1 = 0;2*sub-mul4.neg+2*sub6-2*tmp1 = 0;2*v.0-mul4.neg-2*tmp1 = 0;mul3+mul5.neg-sub6 = 0;tmp-tmp1 = 0;-x.0+y.0 <= 0;-y.0 <= 0;-2*x.0-mul4.neg <= -2",
+            "smt": "(assert (= (+ (* 2.0 call) mul4.neg) 0.0))\n(assert (= (+ (* 2.0 call1) sub6 (* (- 1.0) tmp1)) 0.0))\n(assert (= (+ (* (- 1.0) mul) (* (- 1.0) sub6) tmp1) 0.0))\n(assert (= (+ (* 2.0 sub) (* (- 1.0) mul4.neg) (* 2.0 sub6) (* (- 2.0) tmp1)) 0.0))\n(assert (= (+ (* 2.0 v.0) (* (- 1.0) mul4.neg) (* (- 2.0) tmp1)) 0.0))\n(assert (= (+ mul3 mul5.neg (* (- 1.0) sub6)) 0.0))\n(assert (= (+ tmp (* (- 1.0) tmp1)) 0.0))\n(assert (<= (+ (* (- 1.0) x.0) y.0) 0.0))\n(assert (>= y.0 0.0))\n(assert (<= (+ (* (- 2.0) x.0) (* (- 1.0) mul4.neg)) (- 2.0)))",
+            "dom": "pk",
+            "vars": [
+                "mul3",
+                "tmp",
+                "call1",
+                "mul4.neg",
+                "mul",
+                "x.0",
+                "tmp1",
+                "v.0",
+                "call",
+                "sub6",
+                "mul5.neg",
+                "y.0",
+                "sub"
+            ],
+            "len": 10
+        },
+        {
+            "str": "T",
+            "smt": "(assert true)",
+            "dom": "pk",
+            "vars": {},
+            "len": 0
+        }
+    ],
+    "timed_out": false
+}

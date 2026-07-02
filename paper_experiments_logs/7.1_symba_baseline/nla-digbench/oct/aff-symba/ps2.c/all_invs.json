@@ -1,0 +1,55 @@
+{
+    "all_invs": [
+        {
+            "str": "-call <= -1;-call-y.0 <= -1;-y.0 <= 0;-call+y.0 <= -1;-call-x.0 <= -1;y.0-x.0 <= 0;-y.0-x.0 <= 0;-x.0 <= 0;-call-c.0 <= -1;y.0-c.0 <= 0;-y.0-c.0 <= 0;-x.0-c.0 <= 0;-c.0 <= 0;-call+c.0 <= -1;-y.0+c.0 <= 0;-x.0+c.0 <= 0;-call-mul <= -1;-y.0-mul <= 0;-x.0-mul <= 0;-c.0-mul <= 0;-mul <= 0;-call+mul1.neg <= -1;y.0+mul1.neg <= 0;-y.0+mul1.neg <= 0;x.0+mul1.neg <= 0;-x.0+mul1.neg <= 0;c.0+mul1.neg <= 0;-c.0+mul1.neg <= 0;-mul+mul1.neg <= 0;mul1.neg <= 0;-call-sub <= -1;-y.0-sub <= 0;-x.0-sub <= 0;-c.0-sub <= 0;mul1.neg-sub <= 0;-call+sub <= -1;y.0+sub <= 0;-y.0+sub <= 0;-x.0+sub <= 0;c.0+sub <= 0;-c.0+sub <= 0;-mul+sub <= 0;mul1.neg+sub <= 0;sub <= 0;-call-add <= -1;-y.0-add <= 0;-x.0-add <= 0;-c.0-add <= 0;mul1.neg-add <= 0;sub-add <= 0;-call+add <= -1;y.0+add <= 0;-y.0+add <= 0;-x.0+add <= 0;c.0+add <= 0;-c.0+add <= 0;-mul+add <= 0;mul1.neg+add <= 0;sub+add <= 0;-sub+add <= 0;add <= 0",
+            "smt": "(assert (>= call 1.0))\n(assert (<= (+ (* (- 1.0) call) (* (- 1.0) y.0)) (- 1.0)))\n(assert (>= y.0 0.0))\n(assert (<= (+ (* (- 1.0) call) y.0) (- 1.0)))\n(assert (<= (+ (* (- 1.0) call) (* (- 1.0) x.0)) (- 1.0)))\n(assert (<= (+ y.0 (* (- 1.0) x.0)) 0.0))\n(assert (<= (+ (* (- 1.0) y.0) (* (- 1.0) x.0)) 0.0))\n(assert (>= x.0 0.0))\n(assert (<= (+ (* (- 1.0) call) (* (- 1.0) c.0)) (- 1.0)))\n(assert (<= (+ y.0 (* (- 1.0) c.0)) 0.0))\n(assert (<= (+ (* (- 1.0) y.0) (* (- 1.0) c.0)) 0.0))\n(assert (<= (+ (* (- 1.0) x.0) (* (- 1.0) c.0)) 0.0))\n(assert (>= c.0 0.0))\n(assert (<= (+ (* (- 1.0) call) c.0) (- 1.0)))\n(assert (<= (+ (* (- 1.0) y.0) c.0) 0.0))\n(assert (<= (+ (* (- 1.0) x.0) c.0) 0.0))\n(assert (<= (+ (* (- 1.0) call) (* (- 1.0) mul)) (- 1.0)))\n(assert (<= (+ (* (- 1.0) y.0) (* (- 1.0) mul)) 0.0))\n(assert (<= (+ (* (- 1.0) x.0) (* (- 1.0) mul)) 0.0))\n(assert (<= (+ (* (- 1.0) c.0) (* (- 1.0) mul)) 0.0))\n(assert (>= mul 0.0))\n(assert (<= (+ (* (- 1.0) call) mul1.neg) (- 1.0)))\n(assert (<= (+ y.0 mul1.neg) 0.0))\n(assert (<= (+ (* (- 1.0) y.0) mul1.neg) 0.0))\n(assert (<= (+ x.0 mul1.neg) 0.0))\n(assert (<= (+ (* (- 1.0) x.0) mul1.neg) 0.0))\n(assert (<= (+ c.0 mul1.neg) 0.0))\n(assert (<= (+ (* (- 1.0) c.0) mul1.neg) 0.0))\n(assert (<= (+ (* (- 1.0) mul) mul1.neg) 0.0))\n(assert (<= mul1.neg 0.0))\n(assert (<= (+ (* (- 1.0) call) (* (- 1.0) sub)) (- 1.0)))\n(assert (<= (+ (* (- 1.0) y.0) (* (- 1.0) sub)) 0.0))\n(assert (<= (+ (* (- 1.0) x.0) (* (- 1.0) sub)) 0.0))\n(assert (<= (+ (* (- 1.0) c.0) (* (- 1.0) sub)) 0.0))\n(assert (<= (+ mul1.neg (* (- 1.0) sub)) 0.0))\n(assert (<= (+ (* (- 1.0) call) sub) (- 1.0)))\n(assert (<= (+ y.0 sub) 0.0))\n(assert (<= (+ (* (- 1.0) y.0) sub) 0.0))\n(assert (<= (+ (* (- 1.0) x.0) sub) 0.0))\n(assert (<= (+ c.0 sub) 0.0))\n(assert (<= (+ (* (- 1.0) c.0) sub) 0.0))\n(assert (<= (+ (* (- 1.0) mul) sub) 0.0))\n(assert (<= (+ mul1.neg sub) 0.0))\n(assert (<= sub 0.0))\n(assert (<= (+ (* (- 1.0) call) (* (- 1.0) add)) (- 1.0)))\n(assert (<= (+ (* (- 1.0) y.0) (* (- 1.0) add)) 0.0))\n(assert (<= (+ (* (- 1.0) x.0) (* (- 1.0) add)) 0.0))\n(assert (<= (+ (* (- 1.0) c.0) (* (- 1.0) add)) 0.0))\n(assert (<= (+ mul1.neg (* (- 1.0) add)) 0.0))\n(assert (<= (+ sub (* (- 1.0) add)) 0.0))\n(assert (<= (+ (* (- 1.0) call) add) (- 1.0)))\n(assert (<= (+ y.0 add) 0.0))\n(assert (<= (+ (* (- 1.0) y.0) add) 0.0))\n(assert (<= (+ (* (- 1.0) x.0) add) 0.0))\n(assert (<= (+ c.0 add) 0.0))\n(assert (<= (+ (* (- 1.0) c.0) add) 0.0))\n(assert (<= (+ (* (- 1.0) mul) add) 0.0))\n(assert (<= (+ mul1.neg add) 0.0))\n(assert (<= (+ sub add) 0.0))\n(assert (<= (+ (* (- 1.0) sub) add) 0.0))\n(assert (<= add 0.0))",
+            "dom": "oct",
+            "vars": [
+                "c.0",
+                "mul",
+                "x.0",
+                "add",
+                "mul1.neg",
+                "y.0",
+                "call",
+                "sub"
+            ],
+            "len": 61
+        },
+        {
+            "str": "-y.0 <= 0;y.0-x.0 <= 0;-y.0-x.0 <= 0;-x.0 <= 0;y.0-c.0 <= 0;-y.0-c.0 <= 0;-x.0-c.0 <= 0;-c.0 <= 0;-y.0+c.0 <= 0;-x.0+c.0 <= 0",
+            "smt": "(assert (>= y.0 0.0))\n(assert (<= (+ y.0 (* (- 1.0) x.0)) 0.0))\n(assert (<= (+ (* (- 1.0) y.0) (* (- 1.0) x.0)) 0.0))\n(assert (>= x.0 0.0))\n(assert (<= (+ y.0 (* (- 1.0) c.0)) 0.0))\n(assert (<= (+ (* (- 1.0) y.0) (* (- 1.0) c.0)) 0.0))\n(assert (<= (+ (* (- 1.0) x.0) (* (- 1.0) c.0)) 0.0))\n(assert (>= c.0 0.0))\n(assert (<= (+ (* (- 1.0) y.0) c.0) 0.0))\n(assert (<= (+ (* (- 1.0) x.0) c.0) 0.0))",
+            "dom": "oct",
+            "vars": [
+                "c.0",
+                "y.0",
+                "x.0"
+            ],
+            "len": 10
+        },
+        {
+            "str": "call-y.0 <= 0;-y.0 <= 0;call-x.0 <= 0;y.0-x.0 <= 0;-y.0-x.0 <= 0;-x.0 <= 0;call-c.0 <= 0;y.0-c.0 <= 0;-y.0-c.0 <= 0;-x.0-c.0 <= 0;-c.0 <= 0;-y.0+c.0 <= 0;-x.0+c.0 <= 0;-y.0-mul <= 0;-x.0-mul <= 0;-c.0-mul <= 0;-mul <= 0;call+mul1.neg <= 0;y.0+mul1.neg <= 0;-y.0+mul1.neg <= 0;x.0+mul1.neg <= 0;-x.0+mul1.neg <= 0;c.0+mul1.neg <= 0;-c.0+mul1.neg <= 0;-mul+mul1.neg <= 0;mul1.neg <= 0;-y.0-sub <= 0;-x.0-sub <= 0;-c.0-sub <= 0;mul1.neg-sub <= 0;call+sub <= 0;y.0+sub <= 0;-y.0+sub <= 0;-x.0+sub <= 0;c.0+sub <= 0;-c.0+sub <= 0;-mul+sub <= 0;mul1.neg+sub <= 0;sub <= 0;-y.0-add <= 0;-x.0-add <= 0;-c.0-add <= 0;mul1.neg-add <= 0;sub-add <= 0;call+add <= 0;y.0+add <= 0;-y.0+add <= 0;-x.0+add <= 0;c.0+add <= 0;-c.0+add <= 0;-mul+add <= 0;mul1.neg+add <= 0;sub+add <= 0;-sub+add <= 0;add <= 0",
+            "smt": "(assert (<= (+ call (* (- 1.0) y.0)) 0.0))\n(assert (>= y.0 0.0))\n(assert (<= (+ call (* (- 1.0) x.0)) 0.0))\n(assert (<= (+ y.0 (* (- 1.0) x.0)) 0.0))\n(assert (<= (+ (* (- 1.0) y.0) (* (- 1.0) x.0)) 0.0))\n(assert (>= x.0 0.0))\n(assert (<= (+ call (* (- 1.0) c.0)) 0.0))\n(assert (<= (+ y.0 (* (- 1.0) c.0)) 0.0))\n(assert (<= (+ (* (- 1.0) y.0) (* (- 1.0) c.0)) 0.0))\n(assert (<= (+ (* (- 1.0) x.0) (* (- 1.0) c.0)) 0.0))\n(assert (>= c.0 0.0))\n(assert (<= (+ (* (- 1.0) y.0) c.0) 0.0))\n(assert (<= (+ (* (- 1.0) x.0) c.0) 0.0))\n(assert (<= (+ (* (- 1.0) y.0) (* (- 1.0) mul)) 0.0))\n(assert (<= (+ (* (- 1.0) x.0) (* (- 1.0) mul)) 0.0))\n(assert (<= (+ (* (- 1.0) c.0) (* (- 1.0) mul)) 0.0))\n(assert (>= mul 0.0))\n(assert (<= (+ call mul1.neg) 0.0))\n(assert (<= (+ y.0 mul1.neg) 0.0))\n(assert (<= (+ (* (- 1.0) y.0) mul1.neg) 0.0))\n(assert (<= (+ x.0 mul1.neg) 0.0))\n(assert (<= (+ (* (- 1.0) x.0) mul1.neg) 0.0))\n(assert (<= (+ c.0 mul1.neg) 0.0))\n(assert (<= (+ (* (- 1.0) c.0) mul1.neg) 0.0))\n(assert (<= (+ (* (- 1.0) mul) mul1.neg) 0.0))\n(assert (<= mul1.neg 0.0))\n(assert (<= (+ (* (- 1.0) y.0) (* (- 1.0) sub)) 0.0))\n(assert (<= (+ (* (- 1.0) x.0) (* (- 1.0) sub)) 0.0))\n(assert (<= (+ (* (- 1.0) c.0) (* (- 1.0) sub)) 0.0))\n(assert (<= (+ mul1.neg (* (- 1.0) sub)) 0.0))\n(assert (<= (+ call sub) 0.0))\n(assert (<= (+ y.0 sub) 0.0))\n(assert (<= (+ (* (- 1.0) y.0) sub) 0.0))\n(assert (<= (+ (* (- 1.0) x.0) sub) 0.0))\n(assert (<= (+ c.0 sub) 0.0))\n(assert (<= (+ (* (- 1.0) c.0) sub) 0.0))\n(assert (<= (+ (* (- 1.0) mul) sub) 0.0))\n(assert (<= (+ mul1.neg sub) 0.0))\n(assert (<= sub 0.0))\n(assert (<= (+ (* (- 1.0) y.0) (* (- 1.0) add)) 0.0))\n(assert (<= (+ (* (- 1.0) x.0) (* (- 1.0) add)) 0.0))\n(assert (<= (+ (* (- 1.0) c.0) (* (- 1.0) add)) 0.0))\n(assert (<= (+ mul1.neg (* (- 1.0) add)) 0.0))\n(assert (<= (+ sub (* (- 1.0) add)) 0.0))\n(assert (<= (+ call add) 0.0))\n(assert (<= (+ y.0 add) 0.0))\n(assert (<= (+ (* (- 1.0) y.0) add) 0.0))\n(assert (<= (+ (* (- 1.0) x.0) add) 0.0))\n(assert (<= (+ c.0 add) 0.0))\n(assert (<= (+ (* (- 1.0) c.0) add) 0.0))\n(assert (<= (+ (* (- 1.0) mul) add) 0.0))\n(assert (<= (+ mul1.neg add) 0.0))\n(assert (<= (+ sub add) 0.0))\n(assert (<= (+ (* (- 1.0) sub) add) 0.0))\n(assert (<= add 0.0))",
+            "dom": "oct",
+            "vars": [
+                "c.0",
+                "mul",
+                "x.0",
+                "add",
+                "mul1.neg",
+                "y.0",
+                "call",
+                "sub"
+            ],
+            "len": 55
+        },
+        {
+            "str": "T",
+            "smt": "(assert true)",
+            "dom": "oct",
+            "vars": {},
+            "len": 0
+        }
+    ],
+    "timed_out": false
+}

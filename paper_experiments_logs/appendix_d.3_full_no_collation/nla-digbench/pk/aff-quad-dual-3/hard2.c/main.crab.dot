@@ -1,0 +1,24 @@
+digraph "CFG for 'main' function" {
+	label="CFG for 'main' function";
+	Node0x5e438a638970 [shape=record,label="{entry:\l havoc(call) /* __VERIFIER_nondet_int(...)*/\l d.0 = 1\l p.0 = 1\l}"];
+	Node0x5e438a638970 -> Node0x5e438a668830;
+	Node0x5e438a668830 [shape=record,label="{while.body:\l cmp3 = (d.0-p.0 = 0)\l assert(cmp3)   /* loc(file=data/sv-benchmarks-processed/nla-digbench/hard2.c line=25 col=9) id=1 */\l}"];
+	Node0x5e438a668830 -> Node0x5e438a66a700;
+	Node0x5e438a668830 -> Node0x5e438a66ad50;
+	Node0x5e438a66ad50 [shape=record,label="{__@bb_8:\l assume(-call+d.0 &le; 0)\l}"];
+	Node0x5e438a66ad50 -> Node0x5e438a6688f0;
+	Node0x5e438a6688f0 [shape=record,label="{if.end:\l mul7 = d.0*2\l mul8 = p.0*2\l d.0 = mul7\l p.0 = mul8\l}"];
+	Node0x5e438a6688f0 -> Node0x5e438a668830;
+	Node0x5e438a66a700 [shape=record,label="{__@bb_7:\l assume(call-d.0 &le; -1)\l r.0 = call\l d.1 = d.0\l p.1 = p.0\l q.0 = 0\l}"];
+	Node0x5e438a66a700 -> Node0x5e438a6689b0;
+	Node0x5e438a6689b0 [shape=record,label="{while.body9:\l add = q.0+r.0\l cmp11 = (call-add = 0)\l assert(cmp11)   /* loc(file=data/sv-benchmarks-processed/nla-digbench/hard2.c line=33 col=9) id=2 */\l cmp14 = (d.1-p.1 = 0)\l assert(cmp14)   /* loc(file=data/sv-benchmarks-processed/nla-digbench/hard2.c line=34 col=9) id=3 */\l}"];
+	Node0x5e438a6689b0 -> Node0x5e438a66edc0;
+	Node0x5e438a6689b0 -> Node0x5e438a66f1f0;
+	Node0x5e438a66f1f0 [shape=record,label="{__@bb_10:\l assume(p.1 &ne; 1)\l}"];
+	Node0x5e438a66f1f0 -> Node0x5e438a668c60;
+	Node0x5e438a668c60 [shape=record,label="{if.end19:\l div = d.1/2\l div20 = p.1/2\l sub = ite(r.0-div &le; -1,0,div)\l r.1 = r.0-sub\l add24 = ite(r.0-div &le; -1,0,div20)\l q.1 = q.0+add24\l r.0 = r.1\l d.1 = div\l p.1 = div20\l q.0 = q.1\l}"];
+	Node0x5e438a668c60 -> Node0x5e438a6689b0;
+	Node0x5e438a66edc0 [shape=record,label="{__@bb_9:\l assume(p.1 = 1)\l}"];
+	Node0x5e438a66edc0 -> Node0x5e438a668470;
+	Node0x5e438a668470 [shape=record,label="{while.end26:\l [[mul27 = d.1*q.0; ]]\l add28 = mul27+r.0\l cmp29 = (call-add28 = 0)\l assert(cmp29)   /* loc(file=data/sv-benchmarks-processed/nla-digbench/hard2.c line=46 col=5) id=4 */\l cmp31 = (d.1 = 1)\l assert(cmp31)   /* loc(file=data/sv-benchmarks-processed/nla-digbench/hard2.c line=47 col=5) id=5 */\l @V_1 = 0\l}"];
+}

@@ -1,0 +1,15 @@
+digraph "CFG for 'main' function" {
+	label="CFG for 'main' function";
+	Node0x6362d30b7730 [shape=record,label="{entry:\l r.0 = 1\l}"];
+	Node0x6362d30b7730 -> Node0x6362d30e8560;
+	Node0x6362d30e8560 [shape=record,label="{while.body:\l havoc(conv) /*   %conv = fptosi double %mul to i32, !dbg !26*/\l [[mul1.neg = r.0*-12; ]]\l mul2.neg = mul1.neg*r.0\l [[sub = mul2.neg+conv; ]]\l cmp = (sub = 1)\l assert(cmp)   /* loc(file=data/sv-benchmarks-processed/nla-digbench/freire2.c line=22 col=2) id=1 */\l [[mul4 = r.0*4; mul53 = mul4+-6; ]]\l mul8.neg1 = r.0*mul53\l [[sub94 = mul8.neg1+3; ]]\l add = sub94*r.0\l havoc(conv13) /*   %conv13 = fptosi double %tmp to i32, !dbg !36*/\l [[add14 = add+conv13; ]]\l cmp15 = (add14 = 1)\l assert(cmp15)   /* loc(file=data/sv-benchmarks-processed/nla-digbench/freire2.c line=23 col=9) id=2 */\l [[mul17 = r.0*8; mul22 = r.0*16; ]]\l havoc(cmp28) /*   %cmp28 = fcmp oeq double %sub27, 0.000000e+00, !dbg !49*/\l assert(cmp28)   /* loc(file=data/sv-benchmarks-processed/nla-digbench/freire2.c line=24 col=2) id=3 */\l havoc(cmp31) /*   %cmp31 = fcmp ogt double %sub30, 0.000000e+00, !dbg !53*/\l}"];
+	Node0x6362d30e8560 -> Node0x6362d30e86e0;
+	Node0x6362d30e8560 -> Node0x6362d30ef1b0;
+	Node0x6362d30ef1b0 [shape=record,label="{__@bb_6:\l}"];
+	Node0x6362d30ef1b0 -> Node0x6362d30e81a0;
+	Node0x6362d30e81a0 [shape=record,label="{while.end:\l assert(cmp)   /* loc(file=data/sv-benchmarks-processed/nla-digbench/freire2.c line=33 col=5) id=4 */\l assert(cmp15)   /* loc(file=data/sv-benchmarks-processed/nla-digbench/freire2.c line=34 col=5) id=5 */\l assert(cmp28)   /* loc(file=data/sv-benchmarks-processed/nla-digbench/freire2.c line=35 col=5) id=6 */\l @V_1 = 0\l}"];
+	Node0x6362d30e86e0 [shape=record,label="{__@bb_5:\l}"];
+	Node0x6362d30e86e0 -> Node0x6362d30e8620;
+	Node0x6362d30e8620 [shape=record,label="{if.end:\l [[mul34 = r.0*6; add38 = r.0+1; ]]\l r.0 = add38\l}"];
+	Node0x6362d30e8620 -> Node0x6362d30e8560;
+}

@@ -1,0 +1,63 @@
+{
+    "all_invs": [
+        {
+            "str": "call-add = 0;r.0+mul7-add = 0;-q.0 <= 0",
+            "smt": "(assert (= (+ call (* (- 1.0) add)) 0.0))\n(assert (= (+ r.0 mul7 (* (- 1.0) add)) 0.0))\n(assert (>= q.0 0.0))",
+            "dom": "pk",
+            "vars": [
+                "mul7",
+                "q.0",
+                "add",
+                "call",
+                "r.0"
+            ],
+            "len": 3
+        },
+        {
+            "str": "T",
+            "smt": "(assert true)",
+            "dom": "pk",
+            "vars": {},
+            "len": 0
+        },
+        {
+            "str": "-q.0 <= 0",
+            "smt": "(assert (>= q.0 0.0))",
+            "dom": "pk",
+            "vars": [
+                "q.0"
+            ],
+            "len": 1
+        },
+        {
+            "str": "T",
+            "smt": "(assert true)",
+            "dom": "pk",
+            "vars": {},
+            "len": 0
+        },
+        {
+            "str": "call-add = 0;r.0+mul7-add = 0;-q.0 <= 0;-call1+b.1 = 0",
+            "smt": "(assert (= (+ call (* (- 1.0) add)) 0.0))\n(assert (= (+ r.0 mul7 (* (- 1.0) add)) 0.0))\n(assert (>= q.0 0.0))\n(assert (= (+ (* (- 1.0) call1) b.1) 0.0))",
+            "dom": "pk",
+            "vars": [
+                "mul7",
+                "q.0",
+                "add",
+                "call",
+                "call1",
+                "b.1",
+                "r.0"
+            ],
+            "len": 4
+        },
+        {
+            "str": "T",
+            "smt": "(assert true)",
+            "dom": "pk",
+            "vars": {},
+            "len": 0
+        }
+    ],
+    "timed_out": false
+}

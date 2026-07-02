@@ -1,0 +1,15 @@
+digraph "CFG for 'main' function" {
+	label="CFG for 'main' function";
+	Node0x63156589e2d0 [shape=record,label="{entry:\l havoc(call) /* __VERIFIER_nondet_int(...)*/\l a.0 = 0\l s.0 = 1\l t.0 = 1\l}"];
+	Node0x63156589e2d0 -> Node0x6315658cc830;
+	Node0x6315658cc830 [shape=record,label="{while.body:\l mul = a.0*2\l add = mul+1\l cmp = (t.0-add = 0)\l assert(cmp)   /* loc(file=data/sv-benchmarks/nla-digbench/sqrt1.c line=18 col=9) id=1 */\l add1 = a.0+1\l mul3 = add1*add1\l cmp4 = (s.0-mul3 = 0)\l assert(cmp4)   /* loc(file=data/sv-benchmarks/nla-digbench/sqrt1.c line=19 col=9) id=2 */\l mul6 = t.0*t.0\l mul7.neg = s.0*-4\l sub = mul7.neg+mul6\l mul8 = t.0*2\l add9 = sub+mul8\l cmp11 = (add9 = -1)\l assert(cmp11)   /* loc(file=data/sv-benchmarks/nla-digbench/sqrt1.c line=20 col=2) id=3 */\l}"];
+	Node0x6315658cc830 -> Node0x6315658d22f0;
+	Node0x6315658cc830 -> Node0x6315658d2990;
+	Node0x6315658d2990 [shape=record,label="{__@bb_6:\l assume(-call+s.0 &le; 0)\l}"];
+	Node0x6315658d2990 -> Node0x6315658cc8f0;
+	Node0x6315658cc8f0 [shape=record,label="{if.end:\l add16 = t.0+2\l add17 = s.0+add16\l a.0 = add1\l s.0 = add17\l t.0 = add16\l}"];
+	Node0x6315658cc8f0 -> Node0x6315658cc830;
+	Node0x6315658d22f0 [shape=record,label="{__@bb_5:\l assume(call-s.0 &le; -1)\l}"];
+	Node0x6315658d22f0 -> Node0x6315658cc470;
+	Node0x6315658cc470 [shape=record,label="{while.end:\l assert(cmp)   /* loc(file=data/sv-benchmarks/nla-digbench/sqrt1.c line=31 col=5) id=4 */\l assert(cmp4)   /* loc(file=data/sv-benchmarks/nla-digbench/sqrt1.c line=32 col=5) id=5 */\l assert(cmp11)   /* loc(file=data/sv-benchmarks/nla-digbench/sqrt1.c line=33 col=5) id=6 */\l @V_1 = 0\l}"];
+}

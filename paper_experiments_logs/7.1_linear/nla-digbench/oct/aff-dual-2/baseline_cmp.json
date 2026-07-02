@@ -1,0 +1,11 @@
+{
+  "containment_checks": {
+    "3": 57,
+    "0": 180
+  },
+  "assert_checks": {
+    "warning": -1,
+    "safe": 1,
+    "error": 0
+  }
+}

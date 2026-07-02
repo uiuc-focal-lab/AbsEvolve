@@ -1,0 +1,15 @@
+digraph "CFG for 'main' function" {
+	label="CFG for 'main' function";
+	Node0x638b52cf3fd0 [shape=record,label="{entry:\l havoc(call) /* __VERIFIER_nondet_int(...)*/\l havoc(call1) /* __VERIFIER_nondet_int(...)*/\l mul = call1*2\l sub = mul-call\l v.0 = sub\l x.0 = 0\l y.0 = 0\l}"];
+	Node0x638b52cf3fd0 -> Node0x638b52d24d00;
+	Node0x638b52d24d00 [shape=record,label="{while.body:\l [[mul3 = mul*x.0; ]]\l mul4.neg = call*-2\l [[mul5.neg = mul4.neg*y.0; ]]\l sub6 = mul5.neg+mul3\l tmp = sub6+mul\l tmp1 = call+v.0\l cmp = (tmp-tmp1 = 0)\l assert(cmp)   /* loc(file=data/sv-benchmarks-processed/nla-digbench/bresenham.c line=20 col=2) id=1 */\l}"];
+	Node0x638b52d24d00 -> Node0x638b52d29dc0;
+	Node0x638b52d24d00 -> Node0x638b52d2a410;
+	Node0x638b52d2a410 [shape=record,label="{__@bb_6:\l assume(-call+x.0 &le; 0)\l}"];
+	Node0x638b52d2a410 -> Node0x638b52d24dc0;
+	Node0x638b52d24dc0 [shape=record,label="{if.end:\l cmp12 = (v.0 &le; -1)\l sub17 = ite(v.0 &le; -1,0,call)\l mul15.pn.in = call1-sub17\l not.cmp12 = not(cmp12)\l zext not.cmp12:1 to inc:32\l y.1 = y.0+inc\l mul15.pn = mul15.pn.in*2\l v.1 = v.0+mul15.pn\l inc21 = x.0+1\l v.0 = v.1\l x.0 = inc21\l y.0 = y.1\l}"];
+	Node0x638b52d24dc0 -> Node0x638b52d24d00;
+	Node0x638b52d29dc0 [shape=record,label="{__@bb_5:\l assume(call-x.0 &le; -1)\l}"];
+	Node0x638b52d29dc0 -> Node0x638b52cf5840;
+	Node0x638b52cf5840 [shape=record,label="{while.end:\l mul24.neg = x.0*-2\l [[mul25.neg = mul24.neg*y.0; ]]\l sub26 = mul25.neg+mul3\l tmp2 = sub26+mul\l sub30 = tmp2-tmp1\l mul31.neg = y.0*-2\l cmp33 = (sub30-mul31.neg = 0)\l assert(cmp33)   /* loc(file=data/sv-benchmarks-processed/nla-digbench/bresenham.c line=33 col=5) id=2 */\l @V_1 = 0\l}"];
+}

@@ -1,0 +1,60 @@
+{
+    "all_invs": [
+        {
+            "str": "y.0-sub6 = 0;6*x.0+mul3.neg+mul5.neg-sub6 = 0;-c.0+sub6 = 0;mul+mul3.neg+mul5.neg-sub6 = 0;mul1.neg+2*sub6 = 0;sub+mul5.neg-sub6 = 0;mul4.neg+3*sub6 = 0;-call+sub6 <= -1",
+            "smt": "(assert (= (+ y.0 (* (- 1.0) sub6)) 0.0))\n(assert (= (+ (* 6.0 x.0) mul3.neg mul5.neg (* (- 1.0) sub6)) 0.0))\n(assert (= (+ (* (- 1.0) c.0) sub6) 0.0))\n(assert (= (+ mul mul3.neg mul5.neg (* (- 1.0) sub6)) 0.0))\n(assert (= (+ mul1.neg (* 2.0 sub6)) 0.0))\n(assert (= (+ sub mul5.neg (* (- 1.0) sub6)) 0.0))\n(assert (= (+ mul4.neg (* 3.0 sub6)) 0.0))\n(assert (<= (+ (* (- 1.0) call) sub6) (- 1.0)))",
+            "dom": "pk",
+            "vars": [
+                "mul3.neg",
+                "c.0",
+                "mul4.neg",
+                "call",
+                "mul5.neg",
+                "sub",
+                "y.0",
+                "mul1.neg",
+                "x.0",
+                "sub6",
+                "mul"
+            ],
+            "len": 8
+        },
+        {
+            "str": "y.0-c.0 = 0",
+            "smt": "(assert (= (+ y.0 (* (- 1.0) c.0)) 0.0))",
+            "dom": "pk",
+            "vars": [
+                "y.0",
+                "c.0"
+            ],
+            "len": 1
+        },
+        {
+            "str": "y.0-sub6 = 0;6*x.0+mul3.neg+mul5.neg-sub6 = 0;-c.0+sub6 = 0;mul+mul3.neg+mul5.neg-sub6 = 0;mul1.neg+2*sub6 = 0;sub+mul5.neg-sub6 = 0;mul4.neg+3*sub6 = 0;call-sub6 <= 0",
+            "smt": "(assert (= (+ y.0 (* (- 1.0) sub6)) 0.0))\n(assert (= (+ (* 6.0 x.0) mul3.neg mul5.neg (* (- 1.0) sub6)) 0.0))\n(assert (= (+ (* (- 1.0) c.0) sub6) 0.0))\n(assert (= (+ mul mul3.neg mul5.neg (* (- 1.0) sub6)) 0.0))\n(assert (= (+ mul1.neg (* 2.0 sub6)) 0.0))\n(assert (= (+ sub mul5.neg (* (- 1.0) sub6)) 0.0))\n(assert (= (+ mul4.neg (* 3.0 sub6)) 0.0))\n(assert (<= (+ call (* (- 1.0) sub6)) 0.0))",
+            "dom": "pk",
+            "vars": [
+                "mul3.neg",
+                "c.0",
+                "mul4.neg",
+                "call",
+                "mul5.neg",
+                "sub",
+                "y.0",
+                "mul1.neg",
+                "x.0",
+                "sub6",
+                "mul"
+            ],
+            "len": 8
+        },
+        {
+            "str": "T",
+            "smt": "(assert true)",
+            "dom": "pk",
+            "vars": {},
+            "len": 0
+        }
+    ],
+    "timed_out": false
+}

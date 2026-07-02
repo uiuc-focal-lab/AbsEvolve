@@ -1,0 +1,172 @@
+{
+    "all_invs": [
+        {
+            "str": "T",
+            "smt": "(assert true)",
+            "dom": "pk",
+            "vars": {},
+            "len": 0
+        },
+        {
+            "str": "-rem23 = -1;-call+conv2 = 0;call1-conv3 = 0;q.0+mul4-mul7 = 0;add-mul7 = 0;-p.0 <= -1;-conv3 <= -1;-tmp1 = 0",
+            "smt": "(assert (= rem23 1.0))\n(assert (= (+ (* (- 1.0) call) conv2) 0.0))\n(assert (= (+ call1 (* (- 1.0) conv3)) 0.0))\n(assert (= (+ q.0 mul4 (* (- 1.0) mul7)) 0.0))\n(assert (= (+ add (* (- 1.0) mul7)) 0.0))\n(assert (>= p.0 1.0))\n(assert (>= conv3 1.0))\n(assert (= tmp1 0.0))",
+            "dom": "pk",
+            "vars": [
+                "mul7",
+                "call1",
+                "p.0",
+                "tmp1",
+                "rem23",
+                "call",
+                "conv3",
+                "q.0",
+                "conv2",
+                "add",
+                "mul4"
+            ],
+            "len": 8
+        },
+        {
+            "str": "-call+conv2 = 0;call1-conv3 = 0;q.0+mul4-mul7 = 0;add-mul7 = 0;-p.0 <= -1;-conv3 <= -1",
+            "smt": "(assert (= (+ (* (- 1.0) call) conv2) 0.0))\n(assert (= (+ call1 (* (- 1.0) conv3)) 0.0))\n(assert (= (+ q.0 mul4 (* (- 1.0) mul7)) 0.0))\n(assert (= (+ add (* (- 1.0) mul7)) 0.0))\n(assert (>= p.0 1.0))\n(assert (>= conv3 1.0))",
+            "dom": "pk",
+            "vars": [
+                "mul7",
+                "call1",
+                "p.0",
+                "call",
+                "conv3",
+                "q.0",
+                "conv2",
+                "add",
+                "mul4"
+            ],
+            "len": 6
+        },
+        {
+            "str": "call1-conv3 = 0;-call+conv2 = 0;-p.0 <= -1;-conv3 <= -1",
+            "smt": "(assert (= (+ call1 (* (- 1.0) conv3)) 0.0))\n(assert (= (+ (* (- 1.0) call) conv2) 0.0))\n(assert (>= p.0 1.0))\n(assert (>= conv3 1.0))",
+            "dom": "pk",
+            "vars": [
+                "call1",
+                "p.0",
+                "call",
+                "conv3",
+                "conv2"
+            ],
+            "len": 4
+        },
+        {
+            "str": "-call+conv2 = 0;call1-conv3 = 0;q.0+mul4-mul7 = 0;add-mul7 = 0;-p.0 <= -1;-conv3 <= -1",
+            "smt": "(assert (= (+ (* (- 1.0) call) conv2) 0.0))\n(assert (= (+ call1 (* (- 1.0) conv3)) 0.0))\n(assert (= (+ q.0 mul4 (* (- 1.0) mul7)) 0.0))\n(assert (= (+ add (* (- 1.0) mul7)) 0.0))\n(assert (>= p.0 1.0))\n(assert (>= conv3 1.0))",
+            "dom": "pk",
+            "vars": [
+                "mul7",
+                "call1",
+                "p.0",
+                "call",
+                "conv3",
+                "q.0",
+                "conv2",
+                "add",
+                "mul4"
+            ],
+            "len": 6
+        },
+        {
+            "str": "-tmp = 0;-call+conv2 = 0;call1-conv3 = 0;q.0+mul4-mul7 = 0;add-mul7 = 0;-p.0 <= -1;-conv3 <= -1;-tmp1 = 0",
+            "smt": "(assert (= tmp 0.0))\n(assert (= (+ (* (- 1.0) call) conv2) 0.0))\n(assert (= (+ call1 (* (- 1.0) conv3)) 0.0))\n(assert (= (+ q.0 mul4 (* (- 1.0) mul7)) 0.0))\n(assert (= (+ add (* (- 1.0) mul7)) 0.0))\n(assert (>= p.0 1.0))\n(assert (>= conv3 1.0))\n(assert (= tmp1 0.0))",
+            "dom": "pk",
+            "vars": [
+                "mul7",
+                "tmp",
+                "call1",
+                "p.0",
+                "tmp1",
+                "call",
+                "conv3",
+                "q.0",
+                "conv2",
+                "add",
+                "mul4"
+            ],
+            "len": 8
+        },
+        {
+            "str": "-call+conv2 = 0;-call1+conv3 = 0;-q.0-mul4+add = 0;-q.0-mul4+mul7 = 0;-call1 <= -1;-4*p.0+p.1 <= 0;-p.0 <= -1;p.0-p.1 <= 0",
+            "smt": "(assert (= (+ (* (- 1.0) call) conv2) 0.0))\n(assert (= (+ (* (- 1.0) call1) conv3) 0.0))\n(assert (= (+ (* (- 1.0) q.0) (* (- 1.0) mul4) add) 0.0))\n(assert (= (+ (* (- 1.0) q.0) (* (- 1.0) mul4) mul7) 0.0))\n(assert (>= call1 1.0))\n(assert (<= (+ (* (- 4.0) p.0) p.1) 0.0))\n(assert (>= p.0 1.0))\n(assert (<= (+ p.0 (* (- 1.0) p.1)) 0.0))",
+            "dom": "pk",
+            "vars": [
+                "mul7",
+                "call1",
+                "p.0",
+                "call",
+                "conv3",
+                "q.0",
+                "conv2",
+                "add",
+                "p.1",
+                "mul4"
+            ],
+            "len": 8
+        },
+        {
+            "str": "-call+conv2 = 0;call1-conv3 = 0;q.0+mul4-mul7 = 0;add-mul7 = 0;-p.0 <= -1;-conv3 <= -1",
+            "smt": "(assert (= (+ (* (- 1.0) call) conv2) 0.0))\n(assert (= (+ call1 (* (- 1.0) conv3)) 0.0))\n(assert (= (+ q.0 mul4 (* (- 1.0) mul7)) 0.0))\n(assert (= (+ add (* (- 1.0) mul7)) 0.0))\n(assert (>= p.0 1.0))\n(assert (>= conv3 1.0))",
+            "dom": "pk",
+            "vars": [
+                "mul7",
+                "call1",
+                "p.0",
+                "call",
+                "conv3",
+                "q.0",
+                "conv2",
+                "add",
+                "mul4"
+            ],
+            "len": 6
+        },
+        {
+            "str": "-rem23 <= 1;rem23 <= 1;-call+conv2 = 0;call1-conv3 = 0;q.0+mul4-mul7 = 0;add-mul7 = 0;-p.0 <= -1;-conv3 <= -1",
+            "smt": "(assert (>= rem23 (- 1.0)))\n(assert (<= rem23 1.0))\n(assert (= (+ (* (- 1.0) call) conv2) 0.0))\n(assert (= (+ call1 (* (- 1.0) conv3)) 0.0))\n(assert (= (+ q.0 mul4 (* (- 1.0) mul7)) 0.0))\n(assert (= (+ add (* (- 1.0) mul7)) 0.0))\n(assert (>= p.0 1.0))\n(assert (>= conv3 1.0))",
+            "dom": "pk",
+            "vars": [
+                "mul7",
+                "call1",
+                "p.0",
+                "rem23",
+                "call",
+                "conv3",
+                "q.0",
+                "conv2",
+                "add",
+                "mul4"
+            ],
+            "len": 8
+        },
+        {
+            "str": "-call+conv2 = 0;-call1+conv3 = 0;-q.0-mul4+add = 0;-q.0-mul4+mul7 = 0;b.0-b.2 <= 1;a.0-a.2 <= 1;rem23 <= 1;-2*b.0-rem23+2*b.2 <= -1;-a.0-b.0+a.2+b.2 <= -1;-p.0 <= -1;-call1 <= -1",
+            "smt": "(assert (= (+ (* (- 1.0) call) conv2) 0.0))\n(assert (= (+ (* (- 1.0) call1) conv3) 0.0))\n(assert (= (+ (* (- 1.0) q.0) (* (- 1.0) mul4) add) 0.0))\n(assert (= (+ (* (- 1.0) q.0) (* (- 1.0) mul4) mul7) 0.0))\n(assert (<= (+ b.0 (* (- 1.0) b.2)) 1.0))\n(assert (<= (+ a.0 (* (- 1.0) a.2)) 1.0))\n(assert (<= rem23 1.0))\n(assert (<= (+ (* (- 2.0) b.0) (* (- 1.0) rem23) (* 2.0 b.2)) (- 1.0)))\n(assert (<= (+ (* (- 1.0) a.0) (* (- 1.0) b.0) a.2 b.2) (- 1.0)))\n(assert (>= p.0 1.0))\n(assert (>= call1 1.0))",
+            "dom": "pk",
+            "vars": [
+                "mul7",
+                "call1",
+                "p.0",
+                "a.0",
+                "a.2",
+                "call",
+                "conv3",
+                "q.0",
+                "b.2",
+                "conv2",
+                "rem23",
+                "b.0",
+                "add",
+                "mul4"
+            ],
+            "len": 11
+        }
+    ],
+    "timed_out": false
+}

@@ -1,0 +1,67 @@
+{
+    "all_invs": [
+        {
+            "str": "-call+y.0 <= -1;-call+c.0 <= -1;-call+mul <= -1;-call+mul15 <= -7;-call+mul7.neg4 <= -1;-call+mul8.neg39 <= -6;-call+mul12.neg8 <= -1;-call+mul13.neg7 <= -1;-call+mul14.neg6 <= -1;-call+sub1510 <= -1;-call+add <= -1;-call+mul17.neg <= -1;-call <= -1;-y.0+c.0 <= 0;-y.0+mul <= 0;-y.0+mul15 <= -6;-y.0+mul7.neg4 <= 0;-y.0+mul8.neg39 <= -5;-y.0+mul12.neg8 <= 0;-y.0+mul13.neg7 <= 0;-y.0+mul14.neg6 <= 0;-y.0+sub1510 <= 0;-y.0+add <= 0;-y.0+mul17.neg <= 0;-y.0 <= 0;y.0-x.0 <= 0;-x.0+c.0 <= 0;-x.0+mul <= 0;-x.0+mul15 <= -6;-x.0+mul7.neg4 <= 0;-x.0+mul8.neg39 <= -5;-x.0+mul12.neg8 <= 0;-x.0+mul13.neg7 <= 0;-x.0+mul14.neg6 <= 0;-x.0+sub1510 <= 0;-x.0+add <= 0;-x.0+mul17.neg <= 0;-x.0 <= 0;y.0-c.0 <= 0;-c.0+mul <= 0;-c.0+mul15 <= -6;-c.0+mul7.neg4 <= 0;-c.0+mul8.neg39 <= -5;-c.0+mul12.neg8 <= 0;-c.0+mul13.neg7 <= 0;-c.0+mul14.neg6 <= 0;-c.0+sub1510 <= 0;-c.0+add <= 0;-c.0+mul17.neg <= 0;-c.0 <= 0;-mul+mul15 <= -6;mul <= 0;mul-mul15 <= 6;mul15 <= -6;-mul7.neg4+mul8.neg39 <= -5;mul7.neg4 <= 0;mul7.neg4-mul8.neg39 <= 5;mul8.neg39 <= -5;mul12.neg8 <= 0;mul13.neg7 <= 0;mul14.neg6 <= 0;mul14.neg6-sub1510 <= 0;-add+mul17.neg <= 0;add <= 0;add-mul17.neg <= 0;mul17.neg <= 0",
+            "smt": "(assert (<= (+ (* (- 1.0) call) y.0) (- 1.0)))\n(assert (<= (+ (* (- 1.0) call) c.0) (- 1.0)))\n(assert (<= (+ (* (- 1.0) call) mul) (- 1.0)))\n(assert (<= (+ (* (- 1.0) call) mul15) (- 7.0)))\n(assert (<= (+ (* (- 1.0) call) mul7.neg4) (- 1.0)))\n(assert (<= (+ (* (- 1.0) call) mul8.neg39) (- 6.0)))\n(assert (<= (+ (* (- 1.0) call) mul12.neg8) (- 1.0)))\n(assert (<= (+ (* (- 1.0) call) mul13.neg7) (- 1.0)))\n(assert (<= (+ (* (- 1.0) call) mul14.neg6) (- 1.0)))\n(assert (<= (+ (* (- 1.0) call) sub1510) (- 1.0)))\n(assert (<= (+ (* (- 1.0) call) add) (- 1.0)))\n(assert (<= (+ (* (- 1.0) call) mul17.neg) (- 1.0)))\n(assert (>= call 1.0))\n(assert (<= (+ (* (- 1.0) y.0) c.0) 0.0))\n(assert (<= (+ (* (- 1.0) y.0) mul) 0.0))\n(assert (<= (+ (* (- 1.0) y.0) mul15) (- 6.0)))\n(assert (<= (+ (* (- 1.0) y.0) mul7.neg4) 0.0))\n(assert (<= (+ (* (- 1.0) y.0) mul8.neg39) (- 5.0)))\n(assert (<= (+ (* (- 1.0) y.0) mul12.neg8) 0.0))\n(assert (<= (+ (* (- 1.0) y.0) mul13.neg7) 0.0))\n(assert (<= (+ (* (- 1.0) y.0) mul14.neg6) 0.0))\n(assert (<= (+ (* (- 1.0) y.0) sub1510) 0.0))\n(assert (<= (+ (* (- 1.0) y.0) add) 0.0))\n(assert (<= (+ (* (- 1.0) y.0) mul17.neg) 0.0))\n(assert (>= y.0 0.0))\n(assert (<= (+ y.0 (* (- 1.0) x.0)) 0.0))\n(assert (<= (+ (* (- 1.0) x.0) c.0) 0.0))\n(assert (<= (+ (* (- 1.0) x.0) mul) 0.0))\n(assert (<= (+ (* (- 1.0) x.0) mul15) (- 6.0)))\n(assert (<= (+ (* (- 1.0) x.0) mul7.neg4) 0.0))\n(assert (<= (+ (* (- 1.0) x.0) mul8.neg39) (- 5.0)))\n(assert (<= (+ (* (- 1.0) x.0) mul12.neg8) 0.0))\n(assert (<= (+ (* (- 1.0) x.0) mul13.neg7) 0.0))\n(assert (<= (+ (* (- 1.0) x.0) mul14.neg6) 0.0))\n(assert (<= (+ (* (- 1.0) x.0) sub1510) 0.0))\n(assert (<= (+ (* (- 1.0) x.0) add) 0.0))\n(assert (<= (+ (* (- 1.0) x.0) mul17.neg) 0.0))\n(assert (>= x.0 0.0))\n(assert (<= (+ y.0 (* (- 1.0) c.0)) 0.0))\n(assert (<= (+ (* (- 1.0) c.0) mul) 0.0))\n(assert (<= (+ (* (- 1.0) c.0) mul15) (- 6.0)))\n(assert (<= (+ (* (- 1.0) c.0) mul7.neg4) 0.0))\n(assert (<= (+ (* (- 1.0) c.0) mul8.neg39) (- 5.0)))\n(assert (<= (+ (* (- 1.0) c.0) mul12.neg8) 0.0))\n(assert (<= (+ (* (- 1.0) c.0) mul13.neg7) 0.0))\n(assert (<= (+ (* (- 1.0) c.0) mul14.neg6) 0.0))\n(assert (<= (+ (* (- 1.0) c.0) sub1510) 0.0))\n(assert (<= (+ (* (- 1.0) c.0) add) 0.0))\n(assert (<= (+ (* (- 1.0) c.0) mul17.neg) 0.0))\n(assert (>= c.0 0.0))\n(assert (<= (+ (* (- 1.0) mul) mul15) (- 6.0)))\n(assert (<= mul 0.0))\n(assert (<= (+ mul (* (- 1.0) mul15)) 6.0))\n(assert (<= mul15 (- 6.0)))\n(assert (<= (+ (* (- 1.0) mul7.neg4) mul8.neg39) (- 5.0)))\n(assert (<= mul7.neg4 0.0))\n(assert (<= (+ mul7.neg4 (* (- 1.0) mul8.neg39)) 5.0))\n(assert (<= mul8.neg39 (- 5.0)))\n(assert (<= mul12.neg8 0.0))\n(assert (<= mul13.neg7 0.0))\n(assert (<= mul14.neg6 0.0))\n(assert (<= (+ mul14.neg6 (* (- 1.0) sub1510)) 0.0))\n(assert (<= (+ (* (- 1.0) add) mul17.neg) 0.0))\n(assert (<= add 0.0))\n(assert (<= (+ add (* (- 1.0) mul17.neg)) 0.0))\n(assert (<= mul17.neg 0.0))",
+            "dom": "elina-zones",
+            "vars": [
+                "mul12.neg8",
+                "mul13.neg7",
+                "mul",
+                "x.0",
+                "c.0",
+                "sub1510",
+                "mul14.neg6",
+                "mul7.neg4",
+                "mul8.neg39",
+                "call",
+                "mul15",
+                "y.0",
+                "mul17.neg",
+                "add"
+            ],
+            "len": 66
+        },
+        {
+            "str": "-y.0+c.0 <= 0;-y.0 <= 0;y.0-x.0 <= 0;-x.0+c.0 <= 0;-x.0 <= 0;y.0-c.0 <= 0;-c.0 <= 0",
+            "smt": "(assert (<= (+ (* (- 1.0) y.0) c.0) 0.0))\n(assert (>= y.0 0.0))\n(assert (<= (+ y.0 (* (- 1.0) x.0)) 0.0))\n(assert (<= (+ (* (- 1.0) x.0) c.0) 0.0))\n(assert (>= x.0 0.0))\n(assert (<= (+ y.0 (* (- 1.0) c.0)) 0.0))\n(assert (>= c.0 0.0))",
+            "dom": "elina-zones",
+            "vars": [
+                "y.0",
+                "x.0",
+                "c.0"
+            ],
+            "len": 7
+        },
+        {
+            "str": "call-y.0 <= 0;-y.0+c.0 <= 0;-y.0+mul <= 0;-y.0+mul15 <= -6;-y.0+mul7.neg4 <= 0;-y.0+mul8.neg39 <= -5;-y.0+mul12.neg8 <= 0;-y.0+mul13.neg7 <= 0;-y.0+mul14.neg6 <= 0;-y.0+sub1510 <= 0;-y.0+add <= 0;-y.0+mul17.neg <= 0;-y.0 <= 0;call-x.0 <= 0;y.0-x.0 <= 0;-x.0+c.0 <= 0;-x.0+mul <= 0;-x.0+mul15 <= -6;-x.0+mul7.neg4 <= 0;-x.0+mul8.neg39 <= -5;-x.0+mul12.neg8 <= 0;-x.0+mul13.neg7 <= 0;-x.0+mul14.neg6 <= 0;-x.0+sub1510 <= 0;-x.0+add <= 0;-x.0+mul17.neg <= 0;-x.0 <= 0;call-c.0 <= 0;y.0-c.0 <= 0;-c.0+mul <= 0;-c.0+mul15 <= -6;-c.0+mul7.neg4 <= 0;-c.0+mul8.neg39 <= -5;-c.0+mul12.neg8 <= 0;-c.0+mul13.neg7 <= 0;-c.0+mul14.neg6 <= 0;-c.0+sub1510 <= 0;-c.0+add <= 0;-c.0+mul17.neg <= 0;-c.0 <= 0;-mul+mul15 <= -6;mul <= 0;mul-mul15 <= 6;mul15 <= -6;-mul7.neg4+mul8.neg39 <= -5;mul7.neg4 <= 0;mul7.neg4-mul8.neg39 <= 5;mul8.neg39 <= -5;mul12.neg8 <= 0;mul13.neg7 <= 0;mul14.neg6 <= 0;mul14.neg6-sub1510 <= 0;-add+mul17.neg <= 0;add <= 0;add-mul17.neg <= 0;mul17.neg <= 0",
+            "smt": "(assert (<= (+ call (* (- 1.0) y.0)) 0.0))\n(assert (<= (+ (* (- 1.0) y.0) c.0) 0.0))\n(assert (<= (+ (* (- 1.0) y.0) mul) 0.0))\n(assert (<= (+ (* (- 1.0) y.0) mul15) (- 6.0)))\n(assert (<= (+ (* (- 1.0) y.0) mul7.neg4) 0.0))\n(assert (<= (+ (* (- 1.0) y.0) mul8.neg39) (- 5.0)))\n(assert (<= (+ (* (- 1.0) y.0) mul12.neg8) 0.0))\n(assert (<= (+ (* (- 1.0) y.0) mul13.neg7) 0.0))\n(assert (<= (+ (* (- 1.0) y.0) mul14.neg6) 0.0))\n(assert (<= (+ (* (- 1.0) y.0) sub1510) 0.0))\n(assert (<= (+ (* (- 1.0) y.0) add) 0.0))\n(assert (<= (+ (* (- 1.0) y.0) mul17.neg) 0.0))\n(assert (>= y.0 0.0))\n(assert (<= (+ call (* (- 1.0) x.0)) 0.0))\n(assert (<= (+ y.0 (* (- 1.0) x.0)) 0.0))\n(assert (<= (+ (* (- 1.0) x.0) c.0) 0.0))\n(assert (<= (+ (* (- 1.0) x.0) mul) 0.0))\n(assert (<= (+ (* (- 1.0) x.0) mul15) (- 6.0)))\n(assert (<= (+ (* (- 1.0) x.0) mul7.neg4) 0.0))\n(assert (<= (+ (* (- 1.0) x.0) mul8.neg39) (- 5.0)))\n(assert (<= (+ (* (- 1.0) x.0) mul12.neg8) 0.0))\n(assert (<= (+ (* (- 1.0) x.0) mul13.neg7) 0.0))\n(assert (<= (+ (* (- 1.0) x.0) mul14.neg6) 0.0))\n(assert (<= (+ (* (- 1.0) x.0) sub1510) 0.0))\n(assert (<= (+ (* (- 1.0) x.0) add) 0.0))\n(assert (<= (+ (* (- 1.0) x.0) mul17.neg) 0.0))\n(assert (>= x.0 0.0))\n(assert (<= (+ call (* (- 1.0) c.0)) 0.0))\n(assert (<= (+ y.0 (* (- 1.0) c.0)) 0.0))\n(assert (<= (+ (* (- 1.0) c.0) mul) 0.0))\n(assert (<= (+ (* (- 1.0) c.0) mul15) (- 6.0)))\n(assert (<= (+ (* (- 1.0) c.0) mul7.neg4) 0.0))\n(assert (<= (+ (* (- 1.0) c.0) mul8.neg39) (- 5.0)))\n(assert (<= (+ (* (- 1.0) c.0) mul12.neg8) 0.0))\n(assert (<= (+ (* (- 1.0) c.0) mul13.neg7) 0.0))\n(assert (<= (+ (* (- 1.0) c.0) mul14.neg6) 0.0))\n(assert (<= (+ (* (- 1.0) c.0) sub1510) 0.0))\n(assert (<= (+ (* (- 1.0) c.0) add) 0.0))\n(assert (<= (+ (* (- 1.0) c.0) mul17.neg) 0.0))\n(assert (>= c.0 0.0))\n(assert (<= (+ (* (- 1.0) mul) mul15) (- 6.0)))\n(assert (<= mul 0.0))\n(assert (<= (+ mul (* (- 1.0) mul15)) 6.0))\n(assert (<= mul15 (- 6.0)))\n(assert (<= (+ (* (- 1.0) mul7.neg4) mul8.neg39) (- 5.0)))\n(assert (<= mul7.neg4 0.0))\n(assert (<= (+ mul7.neg4 (* (- 1.0) mul8.neg39)) 5.0))\n(assert (<= mul8.neg39 (- 5.0)))\n(assert (<= mul12.neg8 0.0))\n(assert (<= mul13.neg7 0.0))\n(assert (<= mul14.neg6 0.0))\n(assert (<= (+ mul14.neg6 (* (- 1.0) sub1510)) 0.0))\n(assert (<= (+ (* (- 1.0) add) mul17.neg) 0.0))\n(assert (<= add 0.0))\n(assert (<= (+ add (* (- 1.0) mul17.neg)) 0.0))\n(assert (<= mul17.neg 0.0))",
+            "dom": "elina-zones",
+            "vars": [
+                "mul12.neg8",
+                "mul13.neg7",
+                "mul",
+                "x.0",
+                "c.0",
+                "sub1510",
+                "mul14.neg6",
+                "mul7.neg4",
+                "mul8.neg39",
+                "call",
+                "mul15",
+                "y.0",
+                "mul17.neg",
+                "add"
+            ],
+            "len": 56
+        },
+        {
+            "str": "T",
+            "smt": "(assert true)",
+            "dom": "elina-zones",
+            "vars": {},
+            "len": 0
+        }
+    ],
+    "timed_out": false
+}

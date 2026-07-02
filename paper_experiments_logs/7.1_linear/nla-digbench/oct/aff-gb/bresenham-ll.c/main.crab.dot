@@ -1,0 +1,15 @@
+digraph "CFG for 'main' function" {
+	label="CFG for 'main' function";
+	Node0x5e8928f19470 [shape=record,label="{entry:\l havoc(call) /* __VERIFIER_nondet_int(...)*/\l havoc(call1) /* __VERIFIER_nondet_int(...)*/\l sext call1:32 to conv:64\l [[mul = conv*2; ]]\l sext call:32 to conv2:64\l [[sub = mul-conv2; ]]\l y.0 = 0\l x.0 = 0\l v.0 = sub\l}"];
+	Node0x5e8928f19470 -> Node0x5e8928f49a70;
+	Node0x5e8928f49a70 [shape=record,label="{while.body:\l mul4 = x.0*conv\l mul6 = y.0*conv2\l [[mul7 = mul4*2; mul8.neg = mul6*-2; sub9 = mul8.neg+mul7; tmp = sub9+mul; tmp1 = v.0+conv2; ]]\l cmp = (tmp-tmp1 = 0)\l assert(cmp)   /* loc(file=data/sv-benchmarks-processed/nla-digbench/bresenham-ll.c line=22 col=2) id=1 */\l}"];
+	Node0x5e8928f49a70 -> Node0x5e8928f4f2c0;
+	Node0x5e8928f49a70 -> Node0x5e8928f4f870;
+	Node0x5e8928f4f870 [shape=record,label="{__@bb_6:\l assume(-conv2+x.0 &le; 0)\l}"];
+	Node0x5e8928f4f870 -> Node0x5e8928f49b30;
+	Node0x5e8928f49b30 [shape=record,label="{if.end:\l cmp19 = (v.0 &le; -1)\l [[sub27 = conv-conv2; .pre = sub27*2; ]]\l mul23.pn.pre-phi = ite(v.0 &le; -1,mul,.pre)\l not.cmp19 = not(cmp19)\l zext not.cmp19:1 to inc:64\l [[y.1 = y.0+inc; v.1 = v.0+mul23.pn.pre-phi; inc31 = x.0+1; ]]\l y.0 = y.1\l x.0 = inc31\l v.0 = v.1\l}"];
+	Node0x5e8928f49b30 -> Node0x5e8928f49a70;
+	Node0x5e8928f4f2c0 [shape=record,label="{__@bb_5:\l assume(conv2-x.0 &le; -1)\l}"];
+	Node0x5e8928f4f2c0 -> Node0x5e8928f496b0;
+	Node0x5e8928f496b0 [shape=record,label="{while.end:\l mul32 = x.0*y.0\l [[mul36.neg = mul32*-2; sub37 = mul36.neg+mul7; tmp2 = sub37+mul; sub43 = tmp2-tmp1; mul44.neg = y.0*-2; ]]\l cmp46 = (sub43-mul44.neg = 0)\l assert(cmp46)   /* loc(file=data/sv-benchmarks-processed/nla-digbench/bresenham-ll.c line=37 col=5) id=2 */\l @V_1 = 0\l}"];
+}

@@ -1,0 +1,146 @@
+{
+    "all_invs": [
+        {
+            "str": "T",
+            "smt": "(assert true)",
+            "dom": "pk",
+            "vars": {},
+            "len": 0
+        },
+        {
+            "str": "-call+conv4 = 0;-call1+conv5 = 0;b.0-add25 = 0;a.0-add29 = 0;c.0+mul28-add29 = 0;2*v.0-mul35 = 0;mul+mul18-add29 = 0;add-add29 = 0;mul22+mul24-add25 = 0;2*mul32-mul35 = 0;-conv4-conv5+add25+add29 <= 0;add25+mul28-add29 <= 0;2*mul28-2*add29+mul35 <= 0;-k.0 <= 0;-d.0 <= -1;-conv4 <= -1;-mul28 <= 0;mul28-add29+mul35 <= 0",
+            "smt": "(assert (= (+ (* (- 1.0) call) conv4) 0.0))\n(assert (= (+ (* (- 1.0) call1) conv5) 0.0))\n(assert (= (+ b.0 (* (- 1.0) add25)) 0.0))\n(assert (= (+ a.0 (* (- 1.0) add29)) 0.0))\n(assert (= (+ c.0 mul28 (* (- 1.0) add29)) 0.0))\n(assert (= (+ (* 2.0 v.0) (* (- 1.0) mul35)) 0.0))\n(assert (= (+ mul mul18 (* (- 1.0) add29)) 0.0))\n(assert (= (+ add (* (- 1.0) add29)) 0.0))\n(assert (= (+ mul22 mul24 (* (- 1.0) add25)) 0.0))\n(assert (= (+ (* 2.0 mul32) (* (- 1.0) mul35)) 0.0))\n(assert (<= (+ (* (- 1.0) conv4) (* (- 1.0) conv5) add25 add29) 0.0))\n(assert (<= (+ add25 mul28 (* (- 1.0) add29)) 0.0))\n(assert (<= (+ (* 2.0 mul28) (* (- 2.0) add29) mul35) 0.0))\n(assert (>= k.0 0.0))\n(assert (>= d.0 1.0))\n(assert (>= conv4 1.0))\n(assert (>= mul28 0.0))\n(assert (<= (+ mul28 (* (- 1.0) add29) mul35) 0.0))",
+            "dom": "pk",
+            "vars": [
+                "mul22",
+                "call1",
+                "mul",
+                "mul24",
+                "conv5",
+                "conv4",
+                "mul32",
+                "add25",
+                "mul35",
+                "k.0",
+                "v.0",
+                "mul28",
+                "d.0",
+                "a.0",
+                "call",
+                "add",
+                "add29",
+                "c.0",
+                "mul18",
+                "b.0"
+            ],
+            "len": 18
+        },
+        {
+            "str": "-call+conv4 = 0;call1-conv5 = 0;-b.0 = 0;-conv4 <= -1;-conv4-conv5+a.0 <= 0",
+            "smt": "(assert (= (+ (* (- 1.0) call) conv4) 0.0))\n(assert (= (+ call1 (* (- 1.0) conv5)) 0.0))\n(assert (= b.0 0.0))\n(assert (>= conv4 1.0))\n(assert (<= (+ (* (- 1.0) conv4) (* (- 1.0) conv5) a.0) 0.0))",
+            "dom": "pk",
+            "vars": [
+                "call1",
+                "a.0",
+                "conv5",
+                "call",
+                "conv4",
+                "b.0"
+            ],
+            "len": 5
+        },
+        {
+            "str": "-call+conv4 = 0;-call1+conv5 = 0;-call <= -1;-call-call1+b.0+a.0 <= 0;-k.0 <= 0;-a.0+c.0 <= 0",
+            "smt": "(assert (= (+ (* (- 1.0) call) conv4) 0.0))\n(assert (= (+ (* (- 1.0) call1) conv5) 0.0))\n(assert (>= call 1.0))\n(assert (<= (+ (* (- 1.0) call) (* (- 1.0) call1) b.0 a.0) 0.0))\n(assert (>= k.0 0.0))\n(assert (<= (+ (* (- 1.0) a.0) c.0) 0.0))",
+            "dom": "pk",
+            "vars": [
+                "call1",
+                "a.0",
+                "k.0",
+                "conv5",
+                "call",
+                "conv4",
+                "b.0",
+                "c.0"
+            ],
+            "len": 6
+        },
+        {
+            "str": "-call+conv4 = 0;-call1+conv5 = 0;b.0-c.0 <= 0;-c.0+v.0 <= 0;-k.0 <= 0;-d.0 <= -1;-conv4 <= -1;-a.0+c.0 <= 0;-conv4-conv5+b.0+a.0 <= 0",
+            "smt": "(assert (= (+ (* (- 1.0) call) conv4) 0.0))\n(assert (= (+ (* (- 1.0) call1) conv5) 0.0))\n(assert (<= (+ b.0 (* (- 1.0) c.0)) 0.0))\n(assert (<= (+ (* (- 1.0) c.0) v.0) 0.0))\n(assert (>= k.0 0.0))\n(assert (>= d.0 1.0))\n(assert (>= conv4 1.0))\n(assert (<= (+ (* (- 1.0) a.0) c.0) 0.0))\n(assert (<= (+ (* (- 1.0) conv4) (* (- 1.0) conv5) b.0 a.0) 0.0))",
+            "dom": "pk",
+            "vars": [
+                "call1",
+                "d.0",
+                "a.0",
+                "k.0",
+                "conv5",
+                "v.0",
+                "call",
+                "conv4",
+                "b.0",
+                "c.0"
+            ],
+            "len": 9
+        },
+        {
+            "str": "-call+conv4 = 0;call1-conv5 = 0;-call-conv5+b.0+a.0 <= 0;-call <= -1",
+            "smt": "(assert (= (+ (* (- 1.0) call) conv4) 0.0))\n(assert (= (+ call1 (* (- 1.0) conv5)) 0.0))\n(assert (<= (+ (* (- 1.0) call) (* (- 1.0) conv5) b.0 a.0) 0.0))\n(assert (>= call 1.0))",
+            "dom": "pk",
+            "vars": [
+                "call1",
+                "a.0",
+                "conv5",
+                "call",
+                "conv4",
+                "b.0"
+            ],
+            "len": 4
+        },
+        {
+            "str": "-call+conv4 = 0;-call1+conv5 = 0;b.0-add25 = 0;a.0-add29 = 0;c.0+mul28-add29 = 0;2*v.0-mul35 = 0;mul+mul18-add29 = 0;add-add29 = 0;mul22+mul24-add25 = 0;2*mul32-mul35 = 0;-conv4-conv5+add25+add29 <= 0;add25+mul28-add29 <= 0;2*mul28-2*add29+mul35 <= 0;-k.0 <= 0;-d.0 <= -1;-conv4 <= -1;-mul28 <= 0;-mul28+add29-mul35 <= -1",
+            "smt": "(assert (= (+ (* (- 1.0) call) conv4) 0.0))\n(assert (= (+ (* (- 1.0) call1) conv5) 0.0))\n(assert (= (+ b.0 (* (- 1.0) add25)) 0.0))\n(assert (= (+ a.0 (* (- 1.0) add29)) 0.0))\n(assert (= (+ c.0 mul28 (* (- 1.0) add29)) 0.0))\n(assert (= (+ (* 2.0 v.0) (* (- 1.0) mul35)) 0.0))\n(assert (= (+ mul mul18 (* (- 1.0) add29)) 0.0))\n(assert (= (+ add (* (- 1.0) add29)) 0.0))\n(assert (= (+ mul22 mul24 (* (- 1.0) add25)) 0.0))\n(assert (= (+ (* 2.0 mul32) (* (- 1.0) mul35)) 0.0))\n(assert (<= (+ (* (- 1.0) conv4) (* (- 1.0) conv5) add25 add29) 0.0))\n(assert (<= (+ add25 mul28 (* (- 1.0) add29)) 0.0))\n(assert (<= (+ (* 2.0 mul28) (* (- 2.0) add29) mul35) 0.0))\n(assert (>= k.0 0.0))\n(assert (>= d.0 1.0))\n(assert (>= conv4 1.0))\n(assert (>= mul28 0.0))\n(assert (<= (+ (* (- 1.0) mul28) add29 (* (- 1.0) mul35)) (- 1.0)))",
+            "dom": "pk",
+            "vars": [
+                "mul22",
+                "call1",
+                "mul",
+                "mul24",
+                "conv5",
+                "conv4",
+                "mul32",
+                "add25",
+                "mul35",
+                "k.0",
+                "v.0",
+                "mul28",
+                "d.0",
+                "a.0",
+                "call",
+                "add",
+                "add29",
+                "c.0",
+                "mul18",
+                "b.0"
+            ],
+            "len": 18
+        },
+        {
+            "str": "-call+conv4 = 0;-call1+conv5 = 0;-conv4 <= -1;-conv4-conv5+b.0+a.0 <= 0;-k.0 <= 0;-a.0+c.0 <= 0;-b.0+c.0 <= -1",
+            "smt": "(assert (= (+ (* (- 1.0) call) conv4) 0.0))\n(assert (= (+ (* (- 1.0) call1) conv5) 0.0))\n(assert (>= conv4 1.0))\n(assert (<= (+ (* (- 1.0) conv4) (* (- 1.0) conv5) b.0 a.0) 0.0))\n(assert (>= k.0 0.0))\n(assert (<= (+ (* (- 1.0) a.0) c.0) 0.0))\n(assert (<= (+ (* (- 1.0) b.0) c.0) (- 1.0)))",
+            "dom": "pk",
+            "vars": [
+                "call1",
+                "a.0",
+                "k.0",
+                "conv5",
+                "call",
+                "conv4",
+                "b.0",
+                "c.0"
+            ],
+            "len": 7
+        }
+    ],
+    "timed_out": false
+}

@@ -1,0 +1,124 @@
+{
+    "all_invs": [
+        {
+            "str": "T",
+            "smt": "(assert true)",
+            "dom": "elina-zones",
+            "vars": {},
+            "len": 0
+        },
+        {
+            "str": "-call+b.0 <= -1;-call <= -1;-call1+b.0 <= -1;-call1 <= -1;-b.0 <= 0;b.0 <= 0;b.0-a.0 <= -1;-a.0 <= -1",
+            "smt": "(assert (<= (+ (* (- 1.0) call) b.0) (- 1.0)))\n(assert (>= call 1.0))\n(assert (<= (+ (* (- 1.0) call1) b.0) (- 1.0)))\n(assert (>= call1 1.0))\n(assert (>= b.0 0.0))\n(assert (<= b.0 0.0))\n(assert (<= (+ b.0 (* (- 1.0) a.0)) (- 1.0)))\n(assert (>= a.0 1.0))",
+            "dom": "elina-zones",
+            "vars": [
+                "a.0",
+                "b.0",
+                "call1",
+                "call"
+            ],
+            "len": 8
+        },
+        {
+            "str": "-call <= -1;-call1+b.0 <= 0;-call1 <= -1;-b.0 <= -1;-a.0+c.0 <= 0;-a.0 <= -1;-c.0 <= 0;-k.0 <= 0",
+            "smt": "(assert (>= call 1.0))\n(assert (<= (+ (* (- 1.0) call1) b.0) 0.0))\n(assert (>= call1 1.0))\n(assert (>= b.0 1.0))\n(assert (<= (+ (* (- 1.0) a.0) c.0) 0.0))\n(assert (>= a.0 1.0))\n(assert (>= c.0 0.0))\n(assert (>= k.0 0.0))",
+            "dom": "elina-zones",
+            "vars": [
+                "a.0",
+                "call",
+                "k.0",
+                "call1",
+                "b.0",
+                "c.0"
+            ],
+            "len": 8
+        },
+        {
+            "str": "-call <= -1;-call1+b.0 <= 0;-call1 <= -1;-b.0 <= -1;b.0-a.0 <= 0;-a.0+c.0 <= 0;-a.0+v.0 <= 0;-a.0 <= -1;b.0-c.0 <= 0;-c.0+v.0 <= 0;-c.0 <= -1;-k.0 <= 0;-d.0 <= -1;b.0-v.0 <= 0;-v.0 <= -1",
+            "smt": "(assert (>= call 1.0))\n(assert (<= (+ (* (- 1.0) call1) b.0) 0.0))\n(assert (>= call1 1.0))\n(assert (>= b.0 1.0))\n(assert (<= (+ b.0 (* (- 1.0) a.0)) 0.0))\n(assert (<= (+ (* (- 1.0) a.0) c.0) 0.0))\n(assert (<= (+ (* (- 1.0) a.0) v.0) 0.0))\n(assert (>= a.0 1.0))\n(assert (<= (+ b.0 (* (- 1.0) c.0)) 0.0))\n(assert (<= (+ (* (- 1.0) c.0) v.0) 0.0))\n(assert (>= c.0 1.0))\n(assert (>= k.0 0.0))\n(assert (>= d.0 1.0))\n(assert (<= (+ b.0 (* (- 1.0) v.0)) 0.0))\n(assert (>= v.0 1.0))",
+            "dom": "elina-zones",
+            "vars": [
+                "a.0",
+                "call",
+                "d.0",
+                "k.0",
+                "call1",
+                "b.0",
+                "c.0",
+                "v.0"
+            ],
+            "len": 15
+        },
+        {
+            "str": "-call1+b.0 <= 0;-call1+add19 <= 0;-call1 <= -1;-b.0+add19 <= 0;-b.0 <= -1;b.0-a.0 <= -1;-a.0+c.0 <= 0;-a.0+k.0 <= -1;-a.0+v.0 <= -1;-a.0+add <= 0;-a.0+add19 <= -1;-a.0+mul22 <= -1;-a.0+add23 <= 0;-a.0+mul26 <= -1;-a.0+mul29 <= 0;-a.0 <= -2;b.0-c.0 <= -1;-c.0+v.0 <= -1;-c.0+add19 <= -1;-c.0+mul26 <= -1;-c.0+mul29 <= 0;-c.0 <= -2;-k.0 <= 0;b.0-v.0 <= 0;-v.0+add19 <= 0;-v.0+mul26 <= 0;-v.0 <= -1;b.0-add <= -1;a.0-add <= 0;c.0-add <= 0;k.0-add <= -1;v.0-add <= -1;-add+add19 <= -1;-add+mul22 <= -1;-add+add23 <= 0;-add+mul26 <= -1;-add+mul29 <= 0;-add <= -2;b.0-add19 <= 0;-add19 <= -1;k.0-mul22 <= 0;-mul22 <= 0;b.0-add23 <= -1;a.0-add23 <= 0;c.0-add23 <= 0;k.0-add23 <= -1;v.0-add23 <= -1;add-add23 <= 0;add19-add23 <= -1;mul22-add23 <= -1;-add23+mul26 <= -1;-add23+mul29 <= 0;-add23 <= -2;b.0-mul26 <= 0;v.0-mul26 <= 0;add19-mul26 <= 0;-mul26 <= -1;b.0-mul29 <= -1;v.0-mul29 <= -1;add19-mul29 <= -1;mul26-mul29 <= -1;-mul29 <= -2;-d.0 <= -1;-call <= -1",
+            "smt": "(assert (<= (+ (* (- 1.0) call1) b.0) 0.0))\n(assert (<= (+ (* (- 1.0) call1) add19) 0.0))\n(assert (>= call1 1.0))\n(assert (<= (+ (* (- 1.0) b.0) add19) 0.0))\n(assert (>= b.0 1.0))\n(assert (<= (+ b.0 (* (- 1.0) a.0)) (- 1.0)))\n(assert (<= (+ (* (- 1.0) a.0) c.0) 0.0))\n(assert (<= (+ (* (- 1.0) a.0) k.0) (- 1.0)))\n(assert (<= (+ (* (- 1.0) a.0) v.0) (- 1.0)))\n(assert (<= (+ (* (- 1.0) a.0) add) 0.0))\n(assert (<= (+ (* (- 1.0) a.0) add19) (- 1.0)))\n(assert (<= (+ (* (- 1.0) a.0) mul22) (- 1.0)))\n(assert (<= (+ (* (- 1.0) a.0) add23) 0.0))\n(assert (<= (+ (* (- 1.0) a.0) mul26) (- 1.0)))\n(assert (<= (+ (* (- 1.0) a.0) mul29) 0.0))\n(assert (>= a.0 2.0))\n(assert (<= (+ b.0 (* (- 1.0) c.0)) (- 1.0)))\n(assert (<= (+ (* (- 1.0) c.0) v.0) (- 1.0)))\n(assert (<= (+ (* (- 1.0) c.0) add19) (- 1.0)))\n(assert (<= (+ (* (- 1.0) c.0) mul26) (- 1.0)))\n(assert (<= (+ (* (- 1.0) c.0) mul29) 0.0))\n(assert (>= c.0 2.0))\n(assert (>= k.0 0.0))\n(assert (<= (+ b.0 (* (- 1.0) v.0)) 0.0))\n(assert (<= (+ (* (- 1.0) v.0) add19) 0.0))\n(assert (<= (+ (* (- 1.0) v.0) mul26) 0.0))\n(assert (>= v.0 1.0))\n(assert (<= (+ b.0 (* (- 1.0) add)) (- 1.0)))\n(assert (<= (+ a.0 (* (- 1.0) add)) 0.0))\n(assert (<= (+ c.0 (* (- 1.0) add)) 0.0))\n(assert (<= (+ k.0 (* (- 1.0) add)) (- 1.0)))\n(assert (<= (+ v.0 (* (- 1.0) add)) (- 1.0)))\n(assert (<= (+ (* (- 1.0) add) add19) (- 1.0)))\n(assert (<= (+ (* (- 1.0) add) mul22) (- 1.0)))\n(assert (<= (+ (* (- 1.0) add) add23) 0.0))\n(assert (<= (+ (* (- 1.0) add) mul26) (- 1.0)))\n(assert (<= (+ (* (- 1.0) add) mul29) 0.0))\n(assert (>= add 2.0))\n(assert (<= (+ b.0 (* (- 1.0) add19)) 0.0))\n(assert (>= add19 1.0))\n(assert (<= (+ k.0 (* (- 1.0) mul22)) 0.0))\n(assert (>= mul22 0.0))\n(assert (<= (+ b.0 (* (- 1.0) add23)) (- 1.0)))\n(assert (<= (+ a.0 (* (- 1.0) add23)) 0.0))\n(assert (<= (+ c.0 (* (- 1.0) add23)) 0.0))\n(assert (<= (+ k.0 (* (- 1.0) add23)) (- 1.0)))\n(assert (<= (+ v.0 (* (- 1.0) add23)) (- 1.0)))\n(assert (<= (+ add (* (- 1.0) add23)) 0.0))\n(assert (<= (+ add19 (* (- 1.0) add23)) (- 1.0)))\n(assert (<= (+ mul22 (* (- 1.0) add23)) (- 1.0)))\n(assert (<= (+ (* (- 1.0) add23) mul26) (- 1.0)))\n(assert (<= (+ (* (- 1.0) add23) mul29) 0.0))\n(assert (>= add23 2.0))\n(assert (<= (+ b.0 (* (- 1.0) mul26)) 0.0))\n(assert (<= (+ v.0 (* (- 1.0) mul26)) 0.0))\n(assert (<= (+ add19 (* (- 1.0) mul26)) 0.0))\n(assert (>= mul26 1.0))\n(assert (<= (+ b.0 (* (- 1.0) mul29)) (- 1.0)))\n(assert (<= (+ v.0 (* (- 1.0) mul29)) (- 1.0)))\n(assert (<= (+ add19 (* (- 1.0) mul29)) (- 1.0)))\n(assert (<= (+ mul26 (* (- 1.0) mul29)) (- 1.0)))\n(assert (>= mul29 2.0))\n(assert (>= d.0 1.0))\n(assert (>= call 1.0))",
+            "dom": "elina-zones",
+            "vars": [
+                "a.0",
+                "add",
+                "add19",
+                "add23",
+                "k.0",
+                "mul22",
+                "mul26",
+                "d.0",
+                "call",
+                "call1",
+                "mul29",
+                "b.0",
+                "c.0",
+                "v.0"
+            ],
+            "len": 64
+        },
+        {
+            "str": "-call <= -1;-call1+b.0 <= 0;-call1 <= -1;-b.0 <= 0;-a.0 <= -1",
+            "smt": "(assert (>= call 1.0))\n(assert (<= (+ (* (- 1.0) call1) b.0) 0.0))\n(assert (>= call1 1.0))\n(assert (>= b.0 0.0))\n(assert (>= a.0 1.0))",
+            "dom": "elina-zones",
+            "vars": [
+                "a.0",
+                "b.0",
+                "call1",
+                "call"
+            ],
+            "len": 5
+        },
+        {
+            "str": "-call1+b.0 <= 0;-call1+add19 <= 0;-call1 <= -1;-b.0+add19 <= 0;-b.0 <= -1;b.0-a.0 <= 0;-a.0+c.0 <= 0;-a.0+k.0 <= -1;-a.0+v.0 <= 0;-a.0+add <= 0;-a.0+add19 <= 0;-a.0+mul22 <= -1;-a.0+add23 <= 0;-a.0+mul26 <= 0;-a.0 <= -1;b.0-c.0 <= 0;-c.0+v.0 <= 0;-c.0+add19 <= 0;-c.0+mul26 <= 0;-c.0 <= -1;-k.0 <= 0;b.0-v.0 <= 0;-v.0+add19 <= 0;-v.0+mul26 <= 0;-v.0 <= -1;b.0-add <= 0;a.0-add <= 0;c.0-add <= 0;k.0-add <= -1;v.0-add <= 0;-add+add19 <= 0;-add+mul22 <= -1;-add+add23 <= 0;-add+mul26 <= 0;-add <= -1;b.0-add19 <= 0;-add19 <= -1;k.0-mul22 <= 0;-mul22 <= 0;b.0-add23 <= 0;a.0-add23 <= 0;c.0-add23 <= 0;k.0-add23 <= -1;v.0-add23 <= 0;add-add23 <= 0;add19-add23 <= 0;mul22-add23 <= -1;-add23+mul26 <= 0;-add23 <= -1;b.0-mul26 <= 0;v.0-mul26 <= 0;add19-mul26 <= 0;-mul26 <= -1;b.0-mul29 <= -1;c.0-mul29 <= -1;v.0-mul29 <= -1;add19-mul29 <= -1;mul26-mul29 <= -1;-mul29 <= -2;-d.0 <= -1;-call <= -1",
+            "smt": "(assert (<= (+ (* (- 1.0) call1) b.0) 0.0))\n(assert (<= (+ (* (- 1.0) call1) add19) 0.0))\n(assert (>= call1 1.0))\n(assert (<= (+ (* (- 1.0) b.0) add19) 0.0))\n(assert (>= b.0 1.0))\n(assert (<= (+ b.0 (* (- 1.0) a.0)) 0.0))\n(assert (<= (+ (* (- 1.0) a.0) c.0) 0.0))\n(assert (<= (+ (* (- 1.0) a.0) k.0) (- 1.0)))\n(assert (<= (+ (* (- 1.0) a.0) v.0) 0.0))\n(assert (<= (+ (* (- 1.0) a.0) add) 0.0))\n(assert (<= (+ (* (- 1.0) a.0) add19) 0.0))\n(assert (<= (+ (* (- 1.0) a.0) mul22) (- 1.0)))\n(assert (<= (+ (* (- 1.0) a.0) add23) 0.0))\n(assert (<= (+ (* (- 1.0) a.0) mul26) 0.0))\n(assert (>= a.0 1.0))\n(assert (<= (+ b.0 (* (- 1.0) c.0)) 0.0))\n(assert (<= (+ (* (- 1.0) c.0) v.0) 0.0))\n(assert (<= (+ (* (- 1.0) c.0) add19) 0.0))\n(assert (<= (+ (* (- 1.0) c.0) mul26) 0.0))\n(assert (>= c.0 1.0))\n(assert (>= k.0 0.0))\n(assert (<= (+ b.0 (* (- 1.0) v.0)) 0.0))\n(assert (<= (+ (* (- 1.0) v.0) add19) 0.0))\n(assert (<= (+ (* (- 1.0) v.0) mul26) 0.0))\n(assert (>= v.0 1.0))\n(assert (<= (+ b.0 (* (- 1.0) add)) 0.0))\n(assert (<= (+ a.0 (* (- 1.0) add)) 0.0))\n(assert (<= (+ c.0 (* (- 1.0) add)) 0.0))\n(assert (<= (+ k.0 (* (- 1.0) add)) (- 1.0)))\n(assert (<= (+ v.0 (* (- 1.0) add)) 0.0))\n(assert (<= (+ (* (- 1.0) add) add19) 0.0))\n(assert (<= (+ (* (- 1.0) add) mul22) (- 1.0)))\n(assert (<= (+ (* (- 1.0) add) add23) 0.0))\n(assert (<= (+ (* (- 1.0) add) mul26) 0.0))\n(assert (>= add 1.0))\n(assert (<= (+ b.0 (* (- 1.0) add19)) 0.0))\n(assert (>= add19 1.0))\n(assert (<= (+ k.0 (* (- 1.0) mul22)) 0.0))\n(assert (>= mul22 0.0))\n(assert (<= (+ b.0 (* (- 1.0) add23)) 0.0))\n(assert (<= (+ a.0 (* (- 1.0) add23)) 0.0))\n(assert (<= (+ c.0 (* (- 1.0) add23)) 0.0))\n(assert (<= (+ k.0 (* (- 1.0) add23)) (- 1.0)))\n(assert (<= (+ v.0 (* (- 1.0) add23)) 0.0))\n(assert (<= (+ add (* (- 1.0) add23)) 0.0))\n(assert (<= (+ add19 (* (- 1.0) add23)) 0.0))\n(assert (<= (+ mul22 (* (- 1.0) add23)) (- 1.0)))\n(assert (<= (+ (* (- 1.0) add23) mul26) 0.0))\n(assert (>= add23 1.0))\n(assert (<= (+ b.0 (* (- 1.0) mul26)) 0.0))\n(assert (<= (+ v.0 (* (- 1.0) mul26)) 0.0))\n(assert (<= (+ add19 (* (- 1.0) mul26)) 0.0))\n(assert (>= mul26 1.0))\n(assert (<= (+ b.0 (* (- 1.0) mul29)) (- 1.0)))\n(assert (<= (+ c.0 (* (- 1.0) mul29)) (- 1.0)))\n(assert (<= (+ v.0 (* (- 1.0) mul29)) (- 1.0)))\n(assert (<= (+ add19 (* (- 1.0) mul29)) (- 1.0)))\n(assert (<= (+ mul26 (* (- 1.0) mul29)) (- 1.0)))\n(assert (>= mul29 2.0))\n(assert (>= d.0 1.0))\n(assert (>= call 1.0))",
+            "dom": "elina-zones",
+            "vars": [
+                "a.0",
+                "add",
+                "add19",
+                "add23",
+                "k.0",
+                "mul22",
+                "mul26",
+                "d.0",
+                "call",
+                "call1",
+                "mul29",
+                "b.0",
+                "c.0",
+                "v.0"
+            ],
+            "len": 61
+        },
+        {
+            "str": "-call <= -1;-call1+b.0 <= 0;-call1+c.0 <= -1;-call1 <= -1;-b.0+c.0 <= -1;-b.0 <= -1;-a.0+c.0 <= 0;-a.0 <= -1;-c.0 <= 0;-k.0 <= 0",
+            "smt": "(assert (>= call 1.0))\n(assert (<= (+ (* (- 1.0) call1) b.0) 0.0))\n(assert (<= (+ (* (- 1.0) call1) c.0) (- 1.0)))\n(assert (>= call1 1.0))\n(assert (<= (+ (* (- 1.0) b.0) c.0) (- 1.0)))\n(assert (>= b.0 1.0))\n(assert (<= (+ (* (- 1.0) a.0) c.0) 0.0))\n(assert (>= a.0 1.0))\n(assert (>= c.0 0.0))\n(assert (>= k.0 0.0))",
+            "dom": "elina-zones",
+            "vars": [
+                "a.0",
+                "call",
+                "k.0",
+                "call1",
+                "b.0",
+                "c.0"
+            ],
+            "len": 10
+        }
+    ],
+    "timed_out": false
+}

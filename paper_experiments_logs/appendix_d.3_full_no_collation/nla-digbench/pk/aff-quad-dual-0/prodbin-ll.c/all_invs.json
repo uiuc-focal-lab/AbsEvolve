@@ -1,0 +1,57 @@
+{
+    "all_invs": [
+        {
+            "str": "-call+conv2 = 0;call1-conv3 = 0;z.0+mul-mul6 = 0;add-mul6 = 0;-conv3 <= -1",
+            "smt": "(assert (= (+ (* (- 1.0) call) conv2) 0.0))\n(assert (= (+ call1 (* (- 1.0) conv3)) 0.0))\n(assert (= (+ z.0 mul (* (- 1.0) mul6)) 0.0))\n(assert (= (+ add (* (- 1.0) mul6)) 0.0))\n(assert (>= conv3 1.0))",
+            "dom": "pk",
+            "vars": [
+                "call1",
+                "mul",
+                "mul6",
+                "call",
+                "conv3",
+                "conv2",
+                "add",
+                "z.0"
+            ],
+            "len": 5
+        },
+        {
+            "str": "-call+conv2 = 0;call1-conv3 = 0;-conv3 <= -1",
+            "smt": "(assert (= (+ (* (- 1.0) call) conv2) 0.0))\n(assert (= (+ call1 (* (- 1.0) conv3)) 0.0))\n(assert (>= conv3 1.0))",
+            "dom": "pk",
+            "vars": [
+                "call",
+                "conv3",
+                "conv2",
+                "call1"
+            ],
+            "len": 3
+        },
+        {
+            "str": "-call+conv2 = 0;call1-conv3 = 0;-y.0 = 0;z.0+mul-mul6 = 0;add-mul6 = 0;-conv3 <= -1",
+            "smt": "(assert (= (+ (* (- 1.0) call) conv2) 0.0))\n(assert (= (+ call1 (* (- 1.0) conv3)) 0.0))\n(assert (= y.0 0.0))\n(assert (= (+ z.0 mul (* (- 1.0) mul6)) 0.0))\n(assert (= (+ add (* (- 1.0) mul6)) 0.0))\n(assert (>= conv3 1.0))",
+            "dom": "pk",
+            "vars": [
+                "call1",
+                "mul",
+                "mul6",
+                "call",
+                "conv3",
+                "conv2",
+                "y.0",
+                "add",
+                "z.0"
+            ],
+            "len": 6
+        },
+        {
+            "str": "T",
+            "smt": "(assert true)",
+            "dom": "pk",
+            "vars": {},
+            "len": 0
+        }
+    ],
+    "timed_out": false
+}

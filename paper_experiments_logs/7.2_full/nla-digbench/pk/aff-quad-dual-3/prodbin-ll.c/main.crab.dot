@@ -1,0 +1,15 @@
+digraph "CFG for 'main' function" {
+	label="CFG for 'main' function";
+	Node0x5fc52c61c840 [shape=record,label="{entry:\l havoc(call) /* __VERIFIER_nondet_int(...)*/\l havoc(call1) /* __VERIFIER_nondet_int(...)*/\l cmp = (-call1 &le; -1)\l assume(cmp)\l sext call:32 to conv2:64\l sext call1:32 to conv3:64\l x.0 = conv2\l y.0 = conv3\l z.0 = 0\l}"];
+	Node0x5fc52c61c840 -> Node0x5fc52c64b6c0;
+	Node0x5fc52c64b6c0 [shape=record,label="{while.body:\l [[mul = x.0*y.0; add = z.0+mul; mul6 = conv2*conv3; ]]\l cmp7 = (add-mul6 = 0)\l assert(cmp7)   /* loc(file=data/sv-benchmarks-processed/nla-digbench/prodbin-ll.c line=22 col=9) id=1 */\l}"];
+	Node0x5fc52c64b6c0 -> Node0x5fc52c64f9e0;
+	Node0x5fc52c64b6c0 -> Node0x5fc52c64fd40;
+	Node0x5fc52c64fd40 [shape=record,label="{__@bb_6:\l assume(y.0 &ne; 0)\l}"];
+	Node0x5fc52c64fd40 -> Node0x5fc52c64b780;
+	Node0x5fc52c64b780 [shape=record,label="{if.end:\l rem = y.0%2\l cmp11 = (rem = 1)\l sext cmp11:1 to sub:64\l y.1 = y.0+sub\l add14 = ite(rem = 1,x.0,0)\l z.1 = z.0+add14\l mul16 = x.0*2\l div = y.1/2\l x.0 = mul16\l y.0 = div\l z.0 = z.1\l}"];
+	Node0x5fc52c64b780 -> Node0x5fc52c64b6c0;
+	Node0x5fc52c64f9e0 [shape=record,label="{__@bb_5:\l assume(y.0 = 0)\l}"];
+	Node0x5fc52c64f9e0 -> Node0x5fc52c64b300;
+	Node0x5fc52c64b300 [shape=record,label="{while.end:\l cmp20 = (z.0-mul6 = 0)\l assert(cmp20)   /* loc(file=data/sv-benchmarks-processed/nla-digbench/prodbin-ll.c line=33 col=5) id=2 */\l @V_1 = 0\l}"];
+}

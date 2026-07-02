@@ -1,0 +1,26 @@
+Running with  --crab-dom elina-zones --ojson inv.json --cpu 200 --crab-affine-precision-level affine-full --crab-dom-params 'elina.linear_solver_config=name->dual,num_epochs->2,'
+Running on 10 benchmarks from all_benchmarks_subset.csv in /home/sgomber2/Desktop/Projects/PLDI26_Artifact/artifact_jmd/data/sv-benchmarks//nla-digbench
+freire2.c Time taken: 0.4668744209744036  
+divbin.c Time taken: 0.43712975501967594  
+sqrt1-ll.c Time taken: 0.5553784600105136  
+egcd2-ll.c Time taken: 6.853907725005876  
+cohendiv-ll.c Time taken: 0.9426893999939785  
+sqrt1.c Time taken: 0.5672254210077226  
+prodbin-ll.c Time taken: 0.39082144798198715  
+divbin2.c Time taken: 0.4338580179833807  
+geo1-u.c Time taken: 0.48924956703931094  
+bresenham.c Time taken: 0.5196241440162994  
+Total time taken: 11.656758359033148
+Running with  --crab-dom elina-zones --ojson inv.json --cpu 200 --crab-affine-precision-level affine-full --crab-dom-params 'elina.linear_solver_config=name->dual,num_epochs->2,'
+Running on 10 benchmarks from all_benchmarks_subset.csv in /home/sgomber2/Desktop/Projects/PLDI26_Artifact/artifact_jmd/data/sv-benchmarks//nla-digbench
+freire2.c Time taken: 0.6048990200040862  
+divbin.c Time taken: 0.4704256309955381  
+sqrt1-ll.c Time taken: 0.4360267450460233  
+egcd2-ll.c Time taken: 6.646380235963966  
+cohendiv-ll.c Time taken: 0.9285889700199477  
+sqrt1.c Time taken: 0.5488812379934824  
+prodbin-ll.c Time taken: 0.31309043999202546  
+divbin2.c Time taken: 0.37564978494960816  
+geo1-u.c Time taken: 0.34057482397463174  
+bresenham.c Time taken: 0.3521915029613301  
+Total time taken: 11.016708391900641

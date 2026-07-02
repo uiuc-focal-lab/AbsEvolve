@@ -1,0 +1,31 @@
+digraph "CFG for 'main' function" {
+	label="CFG for 'main' function";
+	Node0x63ad1fe63960 [shape=record,label="{entry:\l havoc(conv) /*   %conv = fptosi double %call to i32, !dbg !16*/\l havoc(conv2) /*   %conv2 = fptosi double %call1 to i32, !dbg !19*/\l [[sub = conv2+-1; ]]\l mul = sub*sub\l cmp = (-conv+mul &le; -1)\l assume(cmp)\l rem = conv%2\l cmp5 = (rem = 1)\l assume(cmp5)\l [[mul7 = conv2*2; add = mul7+1; ]]\l mul8 = conv2*conv2\l [[sub9 = mul8-conv; ]]\l u.0 = add\l v.0 = 1\l r.0 = sub9\l}"];
+	Node0x63ad1fe63960 -> Node0x63ad1fe96360;
+	Node0x63ad1fe96360 [shape=record,label="{while.body:\l [[add10 = r.0+conv; mul11 = add10*4; ]]\l mul12 = u.0*u.0\l mul13 = v.0*v.0\l [[sub14 = mul12-mul13; mul15.neg = u.0*-2; sub16 = mul15.neg+sub14; mul17 = v.0*2; add18 = sub16+mul17; ]]\l cmp19 = (mul11-add18 = 0)\l assert(cmp19)   /* loc(file=data/sv-benchmarks-processed/nla-digbench/fermat1.c line=23 col=9) id=1 */\l}"];
+	Node0x63ad1fe96360 -> Node0x63ad1fe9f390;
+	Node0x63ad1fe96360 -> Node0x63ad1fe9f720;
+	Node0x63ad1fe9f720 [shape=record,label="{__@bb_9:\l assume(r.0 &ne; 0)\l v.1 = v.0\l r.1 = r.0\l}"];
+	Node0x63ad1fe9f720 -> Node0x63ad1fe96420;
+	Node0x63ad1fe96420 [shape=record,label="{while.body24:\l [[add25 = r.1+conv; mul26 = add25*4; ]]\l mul28 = v.1*v.1\l [[sub29 = mul12-mul28; sub31 = mul15.neg+sub29; mul32 = v.1*2; add33 = sub31+mul32; ]]\l cmp34 = (mul26-add33 = 0)\l assert(cmp34)   /* loc(file=data/sv-benchmarks-processed/nla-digbench/fermat1.c line=28 col=6) id=2 */\l}"];
+	Node0x63ad1fe96420 -> Node0x63ad1fea3b10;
+	Node0x63ad1fe96420 -> Node0x63ad1fea4000;
+	Node0x63ad1fea4000 [shape=record,label="{__@bb_11:\l assume(r.1 &le; 0)\l u.1 = u.0\l r.2 = r.1\l}"];
+	Node0x63ad1fea4000 -> Node0x63ad1fe96790;
+	Node0x63ad1fe96790 [shape=record,label="{while.body43:\l [[add44 = r.2+conv; mul45 = add44*4; ]]\l mul46 = u.1*u.1\l [[sub48 = mul46-mul28; mul49.neg = u.1*-2; sub50 = mul49.neg+sub48; add52 = sub50+mul32; ]]\l cmp53 = (mul45-add52 = 0)\l assert(cmp53)   /* loc(file=data/sv-benchmarks-processed/nla-digbench/fermat1.c line=36 col=6) id=3 */\l}"];
+	Node0x63ad1fe96790 -> Node0x63ad1fea8100;
+	Node0x63ad1fe96790 -> Node0x63ad1fea85f0;
+	Node0x63ad1fea85f0 [shape=record,label="{__@bb_13:\l assume(-r.2 &le; 0)\l u.0 = u.1\l v.0 = v.1\l r.0 = r.2\l}"];
+	Node0x63ad1fea85f0 -> Node0x63ad1fe96360;
+	Node0x63ad1fea8100 [shape=record,label="{__@bb_12:\l assume(r.2 &le; -1)\l}"];
+	Node0x63ad1fea8100 -> Node0x63ad1fe968c0;
+	Node0x63ad1fe968c0 [shape=record,label="{if.end58:\l [[add59 = r.2+u.1; add60 = u.1+2; ]]\l u.1 = add60\l r.2 = add59\l}"];
+	Node0x63ad1fe968c0 -> Node0x63ad1fe96790;
+	Node0x63ad1fea3b10 [shape=record,label="{__@bb_10:\l assume(-r.1 &le; -1)\l}"];
+	Node0x63ad1fea3b10 -> Node0x63ad1fe964e0;
+	Node0x63ad1fe964e0 [shape=record,label="{if.end39:\l [[sub40 = r.1-v.1; add41 = v.1+2; ]]\l v.1 = add41\l r.1 = sub40\l}"];
+	Node0x63ad1fe964e0 -> Node0x63ad1fe96420;
+	Node0x63ad1fe9f390 [shape=record,label="{__@bb_8:\l assume(r.0 = 0)\l}"];
+	Node0x63ad1fe9f390 -> Node0x63ad1fe95fa0;
+	Node0x63ad1fe95fa0 [shape=record,label="{while.end62:\l [[mul63 = conv*4; ]]\l cmp71 = (-add18+mul63 = 0)\l assert(cmp71)   /* loc(file=data/sv-benchmarks-processed/nla-digbench/fermat1.c line=44 col=5) id=4 */\l @V_1 = 0\l}"];
+}

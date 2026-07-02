@@ -1,0 +1,77 @@
+{
+    "all_invs": [
+        {
+            "str": "d.0-p.0 = 0;d.1-p.1 <= 2;-d.1+p.1 <= 2",
+            "smt": "(assert (= (+ d.0 (* (- 1.0) p.0)) 0.0))\n(assert (<= (+ d.1 (* (- 1.0) p.1)) 2.0))\n(assert (<= (+ (* (- 1.0) d.1) p.1) 2.0))",
+            "dom": "pk",
+            "vars": [
+                "d.1",
+                "p.1",
+                "d.0",
+                "p.0"
+            ],
+            "len": 3
+        },
+        {
+            "str": "call-add = 0;d.0-p.0 = 0;r.0+q.0-add = 0;d.1-p.1 = 0",
+            "smt": "(assert (= (+ call (* (- 1.0) add)) 0.0))\n(assert (= (+ d.0 (* (- 1.0) p.0)) 0.0))\n(assert (= (+ r.0 q.0 (* (- 1.0) add)) 0.0))\n(assert (= (+ d.1 (* (- 1.0) p.1)) 0.0))",
+            "dom": "pk",
+            "vars": [
+                "q.0",
+                "d.0",
+                "add",
+                "call",
+                "d.1",
+                "p.0",
+                "r.0",
+                "p.1"
+            ],
+            "len": 4
+        },
+        {
+            "str": "d.0-p.0 = 0;-p.0 <= -1;-call+p.0 <= 0",
+            "smt": "(assert (= (+ d.0 (* (- 1.0) p.0)) 0.0))\n(assert (>= p.0 1.0))\n(assert (<= (+ (* (- 1.0) call) p.0) 0.0))",
+            "dom": "pk",
+            "vars": [
+                "call",
+                "d.0",
+                "p.0"
+            ],
+            "len": 3
+        },
+        {
+            "str": "d.0-p.0 = 0;-d.0 <= -1",
+            "smt": "(assert (= (+ d.0 (* (- 1.0) p.0)) 0.0))\n(assert (>= d.0 1.0))",
+            "dom": "pk",
+            "vars": [
+                "d.0",
+                "p.0"
+            ],
+            "len": 2
+        },
+        {
+            "str": "call-add = 0;d.0-p.0 = 0;r.0+q.0-add = 0;d.1 = 1;-p.1 = -1",
+            "smt": "(assert (= (+ call (* (- 1.0) add)) 0.0))\n(assert (= (+ d.0 (* (- 1.0) p.0)) 0.0))\n(assert (= (+ r.0 q.0 (* (- 1.0) add)) 0.0))\n(assert (= d.1 1.0))\n(assert (= p.1 1.0))",
+            "dom": "pk",
+            "vars": [
+                "q.0",
+                "d.0",
+                "add",
+                "call",
+                "d.1",
+                "p.0",
+                "r.0",
+                "p.1"
+            ],
+            "len": 5
+        },
+        {
+            "str": "T",
+            "smt": "(assert true)",
+            "dom": "pk",
+            "vars": {},
+            "len": 0
+        }
+    ],
+    "timed_out": false
+}

@@ -1,0 +1,43 @@
+{
+    "all_invs": [
+        {
+            "str": "-conv4 <= 0;conv4 <= 0;-r.0 <= 0;r.0-mul <= 1;-mul <= 0",
+            "smt": "(assert (>= conv4 0.0))\n(assert (<= conv4 0.0))\n(assert (>= r.0 0.0))\n(assert (<= (+ r.0 (* (- 1.0) mul)) 1.0))\n(assert (>= mul 0.0))",
+            "dom": "elina-zones",
+            "vars": [
+                "r.0",
+                "conv4",
+                "mul"
+            ],
+            "len": 5
+        },
+        {
+            "str": "-r.0 <= 0",
+            "smt": "(assert (>= r.0 0.0))",
+            "dom": "elina-zones",
+            "vars": [
+                "r.0"
+            ],
+            "len": 1
+        },
+        {
+            "str": "-conv4 <= 0;conv4 <= 0;-r.0 <= 0;r.0-mul <= 1;-mul <= 0",
+            "smt": "(assert (>= conv4 0.0))\n(assert (<= conv4 0.0))\n(assert (>= r.0 0.0))\n(assert (<= (+ r.0 (* (- 1.0) mul)) 1.0))\n(assert (>= mul 0.0))",
+            "dom": "elina-zones",
+            "vars": [
+                "r.0",
+                "conv4",
+                "mul"
+            ],
+            "len": 5
+        },
+        {
+            "str": "T",
+            "smt": "(assert true)",
+            "dom": "elina-zones",
+            "vars": {},
+            "len": 0
+        }
+    ],
+    "timed_out": false
+}

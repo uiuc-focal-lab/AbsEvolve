@@ -1,0 +1,59 @@
+{
+    "all_invs": [
+        {
+            "str": "-mul36+mul4213 = 10;call-conv18 = 0;y.0-sub = 0;-30*x.0-mul14.neg = 0;mul-6*sub = 0;-mul210+6*sub = -15;add13+mul14.neg-sub = 0;c.0-conv18 <= -1",
+            "smt": "(assert (= (+ (* (- 1.0) mul36) mul4213) 10.0))\n(assert (= (+ call (* (- 1.0) conv18)) 0.0))\n(assert (= (+ y.0 (* (- 1.0) sub)) 0.0))\n(assert (= (+ (* (- 30.0) x.0) (* (- 1.0) mul14.neg)) 0.0))\n(assert (= (+ mul (* (- 6.0) sub)) 0.0))\n(assert (= (+ (* (- 1.0) mul210) (* 6.0 sub)) (- 15.0)))\n(assert (= (+ add13 mul14.neg (* (- 1.0) sub)) 0.0))\n(assert (<= (+ c.0 (* (- 1.0) conv18)) (- 1.0)))",
+            "dom": "pk",
+            "vars": [
+                "mul210",
+                "add13",
+                "c.0",
+                "mul4213",
+                "call",
+                "sub",
+                "mul",
+                "mul14.neg",
+                "y.0",
+                "x.0",
+                "conv18",
+                "mul36"
+            ],
+            "len": 8
+        },
+        {
+            "str": "T",
+            "smt": "(assert true)",
+            "dom": "pk",
+            "vars": {},
+            "len": 0
+        },
+        {
+            "str": "-mul36+mul4213 = 10;call-conv18 = 0;y.0-sub = 0;-30*x.0-mul14.neg = 0;mul-6*sub = 0;-mul210+6*sub = -15;add13+mul14.neg-sub = 0;-c.0+conv18 <= 0",
+            "smt": "(assert (= (+ (* (- 1.0) mul36) mul4213) 10.0))\n(assert (= (+ call (* (- 1.0) conv18)) 0.0))\n(assert (= (+ y.0 (* (- 1.0) sub)) 0.0))\n(assert (= (+ (* (- 30.0) x.0) (* (- 1.0) mul14.neg)) 0.0))\n(assert (= (+ mul (* (- 6.0) sub)) 0.0))\n(assert (= (+ (* (- 1.0) mul210) (* 6.0 sub)) (- 15.0)))\n(assert (= (+ add13 mul14.neg (* (- 1.0) sub)) 0.0))\n(assert (<= (+ (* (- 1.0) c.0) conv18) 0.0))",
+            "dom": "pk",
+            "vars": [
+                "mul210",
+                "add13",
+                "c.0",
+                "mul4213",
+                "call",
+                "sub",
+                "mul",
+                "mul14.neg",
+                "y.0",
+                "x.0",
+                "conv18",
+                "mul36"
+            ],
+            "len": 8
+        },
+        {
+            "str": "T",
+            "smt": "(assert true)",
+            "dom": "pk",
+            "vars": {},
+            "len": 0
+        }
+    ],
+    "timed_out": false
+}

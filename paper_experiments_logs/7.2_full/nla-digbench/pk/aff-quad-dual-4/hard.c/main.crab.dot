@@ -1,0 +1,24 @@
+digraph "CFG for 'main' function" {
+	label="CFG for 'main' function";
+	Node0x60f6e2ee5a20 [shape=record,label="{entry:\l havoc(call) /* __VERIFIER_nondet_int(...)*/\l havoc(call1) /* __VERIFIER_nondet_int(...)*/\l cmp = (-call1 &le; -1)\l assume(cmp)\l d.0 = call1\l p.0 = 1\l}"];
+	Node0x60f6e2ee5a20 -> Node0x60f6e2f16da0;
+	Node0x60f6e2f16da0 [shape=record,label="{while.body:\l [[mul = call1*p.0; ]]\l cmp6 = (d.0-mul = 0)\l assert(cmp6)   /* loc(file=data/sv-benchmarks-processed/nla-digbench/hard.c line=26 col=9) id=1 */\l}"];
+	Node0x60f6e2f16da0 -> Node0x60f6e2f19bb0;
+	Node0x60f6e2f16da0 -> Node0x60f6e2f1a250;
+	Node0x60f6e2f1a250 [shape=record,label="{__@bb_8:\l assume(-call+d.0 &le; 0)\l}"];
+	Node0x60f6e2f1a250 -> Node0x60f6e2f16e60;
+	Node0x60f6e2f16e60 [shape=record,label="{if.end:\l mul10 = d.0*2\l mul11 = p.0*2\l d.0 = mul10\l p.0 = mul11\l}"];
+	Node0x60f6e2f16e60 -> Node0x60f6e2f16da0;
+	Node0x60f6e2f19bb0 [shape=record,label="{__@bb_7:\l assume(call-d.0 &le; -1)\l r.0 = call\l d.1 = d.0\l p.1 = p.0\l q.0 = 0\l}"];
+	Node0x60f6e2f19bb0 -> Node0x60f6e2f16f20;
+	Node0x60f6e2f16f20 [shape=record,label="{while.body12:\l [[mul13 = q.0*call1; add = mul13+r.0; ]]\l cmp14 = (call-add = 0)\l assert(cmp14)   /* loc(file=data/sv-benchmarks-processed/nla-digbench/hard.c line=34 col=9) id=2 */\l [[mul16 = call1*p.1; ]]\l cmp17 = (d.1-mul16 = 0)\l assert(cmp17)   /* loc(file=data/sv-benchmarks-processed/nla-digbench/hard.c line=35 col=9) id=3 */\l}"];
+	Node0x60f6e2f16f20 -> Node0x60f6e2f1f0d0;
+	Node0x60f6e2f16f20 -> Node0x60f6e2f1f530;
+	Node0x60f6e2f1f530 [shape=record,label="{__@bb_10:\l assume(p.1 &ne; 1)\l}"];
+	Node0x60f6e2f1f530 -> Node0x60f6e2f171d0;
+	Node0x60f6e2f171d0 [shape=record,label="{if.end22:\l div = d.1/2\l div23 = p.1/2\l sub = ite(r.0-div &le; -1,0,div)\l r.1 = r.0-sub\l add27 = ite(r.0-div &le; -1,0,div23)\l q.1 = q.0+add27\l r.0 = r.1\l d.1 = div\l p.1 = div23\l q.0 = q.1\l}"];
+	Node0x60f6e2f171d0 -> Node0x60f6e2f16f20;
+	Node0x60f6e2f1f0d0 [shape=record,label="{__@bb_9:\l assume(p.1 = 1)\l}"];
+	Node0x60f6e2f1f0d0 -> Node0x60f6e2f169e0;
+	Node0x60f6e2f169e0 [shape=record,label="{while.end29:\l [[mul30 = d.1*q.0; add31 = mul30+r.0; ]]\l cmp32 = (call-add31 = 0)\l assert(cmp32)   /* loc(file=data/sv-benchmarks-processed/nla-digbench/hard.c line=47 col=5) id=4 */\l cmp34 = (call1-d.1 = 0)\l assert(cmp34)   /* loc(file=data/sv-benchmarks-processed/nla-digbench/hard.c line=48 col=5) id=5 */\l @V_1 = 0\l}"];
+}

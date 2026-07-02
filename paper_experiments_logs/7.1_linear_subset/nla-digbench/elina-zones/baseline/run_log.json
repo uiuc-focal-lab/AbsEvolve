@@ -1,0 +1,45 @@
+{
+    "benchmarks": {
+        "freire2.c": {
+            "time": 0.3248932569986209,
+            "timed_out": false
+        },
+        "divbin.c": {
+            "time": 0.22264217701740563,
+            "timed_out": false
+        },
+        "sqrt1-ll.c": {
+            "time": 0.2563600330031477,
+            "timed_out": false
+        },
+        "egcd2-ll.c": {
+            "time": 0.34110228705685586,
+            "timed_out": false
+        },
+        "cohendiv-ll.c": {
+            "time": 0.23502833803649992,
+            "timed_out": false
+        },
+        "sqrt1.c": {
+            "time": 0.1995580509537831,
+            "timed_out": false
+        },
+        "prodbin-ll.c": {
+            "time": 0.15995584696065634,
+            "timed_out": false
+        },
+        "divbin2.c": {
+            "time": 0.24689627799671143,
+            "timed_out": false
+        },
+        "geo1-u.c": {
+            "time": 0.2485000710003078,
+            "timed_out": false
+        },
+        "bresenham.c": {
+            "time": 0.2415440269978717,
+            "timed_out": false
+        }
+    },
+    "total_time": 2.4764803660218604
+}

@@ -1,0 +1,37 @@
+digraph "CFG for 'main' function" {
+	label="CFG for 'main' function";
+	Node0x5e9990350b90 [shape=record,label="{entry:\l havoc(call) /* __VERIFIER_nondet_int(...)*/\l havoc(call1) /* __VERIFIER_nondet_int(...)*/\l cmp = (-call1 &le; -1)\l assume(cmp)\l a.0 = call\l b.0 = call1\l p.0 = 1\l q.0 = 0\l}"];
+	Node0x5e9990350b90 -> Node0x5e99903851b0;
+	Node0x5e99903851b0 [shape=record,label="{while.body:\l [[mul = a.0*b.0; ]]\l [[mul2 = mul*p.0; add = q.0+mul2; mul3 = call*call1; ]]\l cmp4 = (add-mul3 = 0)\l assert(cmp4)   /* loc(file=data/sv-benchmarks-processed/nla-digbench/prod4br.c line=22 col=9) id=1 */\l cmp6.not = (a.0 = 0)\l cmp8.not = (b.0 = 0)\l @V_17 = true\l or.cond = ite(cmp6.not,@V_17,cmp8.not)\l}"];
+	Node0x5e99903851b0 -> Node0x5e999038ad40;
+	Node0x5e99903851b0 -> Node0x5e999038b0f0;
+	Node0x5e999038b0f0 [shape=record,label="{__@bb_12:\l assume(not(or.cond))\l}"];
+	Node0x5e999038b0f0 -> Node0x5e9990385270;
+	Node0x5e9990385270 [shape=record,label="{if.end:\l tmp = a.0&1\l cmp10 = (tmp = 0)\l tmp1 = b.0&1\l cmp14 = (tmp1 = 0)\l @V_23 = false\l or.cond1 = ite(cmp10,cmp14,@V_23)\l}"];
+	Node0x5e9990385270 -> Node0x5e999038b4c0;
+	Node0x5e9990385270 -> Node0x5e999038d7a0;
+	Node0x5e999038d7a0 [shape=record,label="{__@bb_14:\l assume(not(or.cond1))\l}"];
+	Node0x5e999038d7a0 -> Node0x5e99903855e0;
+	Node0x5e99903855e0 [shape=record,label="{if.else:\l rem19 = a.0%2\l cmp20 = (rem19 = 1)\l @V_27 = false\l or.cond2 = ite(cmp20,cmp14,@V_27)\l}"];
+	Node0x5e99903855e0 -> Node0x5e999038dbf0;
+	Node0x5e99903855e0 -> Node0x5e999038f2d0;
+	Node0x5e999038f2d0 [shape=record,label="{__@bb_16:\l assume(not(or.cond2))\l}"];
+	Node0x5e999038f2d0 -> Node0x5e99903858a0;
+	Node0x5e99903858a0 [shape=record,label="{if.else29:\l rem34 = b.0%2\l cmp35 = (rem34 = 1)\l @V_31 = false\l or.cond3 = ite(cmp10,cmp35,@V_31)\l sub42 = a.0+-1\l add45 = sub42+b.0\l zext or.cond3:1 to @V_35:8\l a.1 = ite(-@V_35 &le; -1,a.0,sub42)\l zext or.cond3:1 to @V_37:8\l a.0.pn = ite(-@V_37 &le; -1,a.0,add45)\l b.1 = b.0+-1\l a.2 = a.1\l b.2 = b.1\l b.0.pn = a.0.pn\l}"];
+	Node0x5e99903858a0 -> Node0x5e9990385a30;
+	Node0x5e9990385a30 [shape=record,label="{if.end49:\l [[mul27.pn = b.0.pn*p.0; q.2 = q.0+mul27.pn; ]]\l a.3 = a.2\l b.3 = b.2\l p.1 = p.0\l q.3 = q.2\l}"];
+	Node0x5e9990385a30 -> Node0x5e9990385bc0;
+	Node0x5e9990385bc0 [shape=record,label="{if.end50:\l a.0 = a.3\l b.0 = b.3\l p.0 = p.1\l q.0 = q.3\l}"];
+	Node0x5e9990385bc0 -> Node0x5e99903851b0;
+	Node0x5e999038dbf0 [shape=record,label="{__@bb_15:\l assume(or.cond2)\l}"];
+	Node0x5e999038dbf0 -> Node0x5e9990385710;
+	Node0x5e9990385710 [shape=record,label="{if.then26:\l sub = a.0+-1\l a.2 = sub\l b.2 = b.0\l b.0.pn = b.0\l}"];
+	Node0x5e9990385710 -> Node0x5e9990385a30;
+	Node0x5e999038b4c0 [shape=record,label="{__@bb_13:\l assume(or.cond1)\l}"];
+	Node0x5e999038b4c0 -> Node0x5e9990385330;
+	Node0x5e9990385330 [shape=record,label="{if.then16:\l div = a.0/2\l div17 = b.0/2\l mul18 = p.0*4\l a.3 = div\l b.3 = div17\l p.1 = mul18\l q.3 = q.0\l}"];
+	Node0x5e9990385330 -> Node0x5e9990385bc0;
+	Node0x5e999038ad40 [shape=record,label="{__@bb_11:\l assume(or.cond)\l}"];
+	Node0x5e999038ad40 -> Node0x5e9990384df0;
+	Node0x5e9990384df0 [shape=record,label="{while.end:\l cmp52 = (q.0-mul3 = 0)\l assert(cmp52)   /* loc(file=data/sv-benchmarks-processed/nla-digbench/prod4br.c line=44 col=5) id=2 */\l cmp55 = (mul = 0)\l assert(cmp55)   /* loc(file=data/sv-benchmarks-processed/nla-digbench/prod4br.c line=45 col=5) id=3 */\l @V_1 = 0\l}"];
+}

@@ -1,0 +1,43 @@
+{
+    "all_invs": [
+        {
+            "str": "-r.0 <= 0;r.0-mul <= 1;-r.0-mul <= 0;-mul <= 0;-r.0-conv4 <= 0;-mul-conv4 <= 0;-conv4 <= 0;-r.0+conv4 <= 0;-mul+conv4 <= 0;conv4 <= 0",
+            "smt": "(assert (>= r.0 0.0))\n(assert (<= (+ r.0 (* (- 1.0) mul)) 1.0))\n(assert (<= (+ (* (- 1.0) r.0) (* (- 1.0) mul)) 0.0))\n(assert (>= mul 0.0))\n(assert (<= (+ (* (- 1.0) r.0) (* (- 1.0) conv4)) 0.0))\n(assert (<= (+ (* (- 1.0) mul) (* (- 1.0) conv4)) 0.0))\n(assert (>= conv4 0.0))\n(assert (<= (+ (* (- 1.0) r.0) conv4) 0.0))\n(assert (<= (+ (* (- 1.0) mul) conv4) 0.0))\n(assert (<= conv4 0.0))",
+            "dom": "oct",
+            "vars": [
+                "mul",
+                "r.0",
+                "conv4"
+            ],
+            "len": 10
+        },
+        {
+            "str": "-r.0 <= 0",
+            "smt": "(assert (>= r.0 0.0))",
+            "dom": "oct",
+            "vars": [
+                "r.0"
+            ],
+            "len": 1
+        },
+        {
+            "str": "-r.0 <= 0;r.0-mul <= 1;-r.0-mul <= 0;-mul <= 0;-r.0-conv4 <= 0;-mul-conv4 <= 0;-conv4 <= 0;-r.0+conv4 <= 0;-mul+conv4 <= 0;conv4 <= 0",
+            "smt": "(assert (>= r.0 0.0))\n(assert (<= (+ r.0 (* (- 1.0) mul)) 1.0))\n(assert (<= (+ (* (- 1.0) r.0) (* (- 1.0) mul)) 0.0))\n(assert (>= mul 0.0))\n(assert (<= (+ (* (- 1.0) r.0) (* (- 1.0) conv4)) 0.0))\n(assert (<= (+ (* (- 1.0) mul) (* (- 1.0) conv4)) 0.0))\n(assert (>= conv4 0.0))\n(assert (<= (+ (* (- 1.0) r.0) conv4) 0.0))\n(assert (<= (+ (* (- 1.0) mul) conv4) 0.0))\n(assert (<= conv4 0.0))",
+            "dom": "oct",
+            "vars": [
+                "mul",
+                "r.0",
+                "conv4"
+            ],
+            "len": 10
+        },
+        {
+            "str": "T",
+            "smt": "(assert true)",
+            "dom": "oct",
+            "vars": {},
+            "len": 0
+        }
+    ],
+    "timed_out": false
+}

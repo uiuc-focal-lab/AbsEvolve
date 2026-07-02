@@ -1,0 +1,62 @@
+{
+    "all_invs": [
+        {
+            "str": "-call+conv4 <= 0;-call+sub6 <= -2;-call <= -1;-call1+c.0 <= -1;-call1+sub6 <= -3;-call1+conv9 <= 0;-call1 <= -2;call-conv4 <= 0;-conv4+sub6 <= -2;-conv4 <= -1;-x.0+c.0 <= 0;-x.0+sub6 <= -2;-x.0 <= -1;call-y.0 <= 0;conv4-y.0 <= 0;-y.0+sub6 <= -2;-y.0 <= -1;-c.0+sub6 <= -2;-c.0 <= -1;x.0-mul <= 0;c.0-mul <= 0;-mul+sub6 <= -2;-mul <= -1;call-tmp <= -1;conv4-tmp <= -1;x.0-tmp <= -1;y.0-tmp <= -1;c.0-tmp <= -1;-tmp+sub6 <= -3;-tmp <= -2;-sub6 <= 1;sub6 <= -1;call1-conv9 <= 0;c.0-conv9 <= -1;sub6-conv9 <= -3;-conv9 <= -2",
+            "smt": "(assert (<= (+ (* (- 1.0) call) conv4) 0.0))\n(assert (<= (+ (* (- 1.0) call) sub6) (- 2.0)))\n(assert (>= call 1.0))\n(assert (<= (+ (* (- 1.0) call1) c.0) (- 1.0)))\n(assert (<= (+ (* (- 1.0) call1) sub6) (- 3.0)))\n(assert (<= (+ (* (- 1.0) call1) conv9) 0.0))\n(assert (>= call1 2.0))\n(assert (<= (+ call (* (- 1.0) conv4)) 0.0))\n(assert (<= (+ (* (- 1.0) conv4) sub6) (- 2.0)))\n(assert (>= conv4 1.0))\n(assert (<= (+ (* (- 1.0) x.0) c.0) 0.0))\n(assert (<= (+ (* (- 1.0) x.0) sub6) (- 2.0)))\n(assert (>= x.0 1.0))\n(assert (<= (+ call (* (- 1.0) y.0)) 0.0))\n(assert (<= (+ conv4 (* (- 1.0) y.0)) 0.0))\n(assert (<= (+ (* (- 1.0) y.0) sub6) (- 2.0)))\n(assert (>= y.0 1.0))\n(assert (<= (+ (* (- 1.0) c.0) sub6) (- 2.0)))\n(assert (>= c.0 1.0))\n(assert (<= (+ x.0 (* (- 1.0) mul)) 0.0))\n(assert (<= (+ c.0 (* (- 1.0) mul)) 0.0))\n(assert (<= (+ (* (- 1.0) mul) sub6) (- 2.0)))\n(assert (>= mul 1.0))\n(assert (<= (+ call (* (- 1.0) tmp)) (- 1.0)))\n(assert (<= (+ conv4 (* (- 1.0) tmp)) (- 1.0)))\n(assert (<= (+ x.0 (* (- 1.0) tmp)) (- 1.0)))\n(assert (<= (+ y.0 (* (- 1.0) tmp)) (- 1.0)))\n(assert (<= (+ c.0 (* (- 1.0) tmp)) (- 1.0)))\n(assert (<= (+ (* (- 1.0) tmp) sub6) (- 3.0)))\n(assert (>= tmp 2.0))\n(assert (>= sub6 (- 1.0)))\n(assert (<= sub6 (- 1.0)))\n(assert (<= (+ call1 (* (- 1.0) conv9)) 0.0))\n(assert (<= (+ c.0 (* (- 1.0) conv9)) (- 1.0)))\n(assert (<= (+ sub6 (* (- 1.0) conv9)) (- 3.0)))\n(assert (>= conv9 2.0))",
+            "dom": "elina-zones",
+            "vars": [
+                "conv9",
+                "tmp",
+                "x.0",
+                "mul",
+                "c.0",
+                "y.0",
+                "call",
+                "sub6",
+                "call1",
+                "conv4"
+            ],
+            "len": 36
+        },
+        {
+            "str": "-call+conv4 <= 0;-call <= -1;-call1+c.0 <= 0;-call1 <= -1;call-conv4 <= 0;-conv4 <= -1;-x.0+c.0 <= 0;-x.0 <= -1;call-y.0 <= 0;conv4-y.0 <= 0;-y.0 <= -1;-c.0 <= -1",
+            "smt": "(assert (<= (+ (* (- 1.0) call) conv4) 0.0))\n(assert (>= call 1.0))\n(assert (<= (+ (* (- 1.0) call1) c.0) 0.0))\n(assert (>= call1 1.0))\n(assert (<= (+ call (* (- 1.0) conv4)) 0.0))\n(assert (>= conv4 1.0))\n(assert (<= (+ (* (- 1.0) x.0) c.0) 0.0))\n(assert (>= x.0 1.0))\n(assert (<= (+ call (* (- 1.0) y.0)) 0.0))\n(assert (<= (+ conv4 (* (- 1.0) y.0)) 0.0))\n(assert (>= y.0 1.0))\n(assert (>= c.0 1.0))",
+            "dom": "elina-zones",
+            "vars": [
+                "x.0",
+                "c.0",
+                "y.0",
+                "call",
+                "call1",
+                "conv4"
+            ],
+            "len": 12
+        },
+        {
+            "str": "-call+conv4 <= 0;-call+sub6 <= -2;-call <= -1;-call1+c.0 <= 0;-call1+sub6 <= -2;-call1+conv9 <= 0;-call1 <= -1;call-conv4 <= 0;-conv4+sub6 <= -2;-conv4 <= -1;call1-x.0 <= 0;-x.0+c.0 <= 0;-x.0+sub6 <= -2;-x.0+conv9 <= 0;-x.0 <= -1;call-y.0 <= 0;conv4-y.0 <= 0;-y.0+sub6 <= -2;-y.0 <= -1;call1-c.0 <= 0;-c.0+sub6 <= -2;-c.0+conv9 <= 0;-c.0 <= -1;call1-mul <= 0;x.0-mul <= 0;c.0-mul <= 0;-mul+sub6 <= -2;-mul+conv9 <= 0;-mul <= -1;call-tmp <= -1;call1-tmp <= -1;conv4-tmp <= -1;x.0-tmp <= -1;y.0-tmp <= -1;c.0-tmp <= -1;-tmp+sub6 <= -3;-tmp+conv9 <= -1;-tmp <= -2;-sub6 <= 1;sub6 <= -1;call1-conv9 <= 0;c.0-conv9 <= 0;sub6-conv9 <= -2;-conv9 <= -1",
+            "smt": "(assert (<= (+ (* (- 1.0) call) conv4) 0.0))\n(assert (<= (+ (* (- 1.0) call) sub6) (- 2.0)))\n(assert (>= call 1.0))\n(assert (<= (+ (* (- 1.0) call1) c.0) 0.0))\n(assert (<= (+ (* (- 1.0) call1) sub6) (- 2.0)))\n(assert (<= (+ (* (- 1.0) call1) conv9) 0.0))\n(assert (>= call1 1.0))\n(assert (<= (+ call (* (- 1.0) conv4)) 0.0))\n(assert (<= (+ (* (- 1.0) conv4) sub6) (- 2.0)))\n(assert (>= conv4 1.0))\n(assert (<= (+ call1 (* (- 1.0) x.0)) 0.0))\n(assert (<= (+ (* (- 1.0) x.0) c.0) 0.0))\n(assert (<= (+ (* (- 1.0) x.0) sub6) (- 2.0)))\n(assert (<= (+ (* (- 1.0) x.0) conv9) 0.0))\n(assert (>= x.0 1.0))\n(assert (<= (+ call (* (- 1.0) y.0)) 0.0))\n(assert (<= (+ conv4 (* (- 1.0) y.0)) 0.0))\n(assert (<= (+ (* (- 1.0) y.0) sub6) (- 2.0)))\n(assert (>= y.0 1.0))\n(assert (<= (+ call1 (* (- 1.0) c.0)) 0.0))\n(assert (<= (+ (* (- 1.0) c.0) sub6) (- 2.0)))\n(assert (<= (+ (* (- 1.0) c.0) conv9) 0.0))\n(assert (>= c.0 1.0))\n(assert (<= (+ call1 (* (- 1.0) mul)) 0.0))\n(assert (<= (+ x.0 (* (- 1.0) mul)) 0.0))\n(assert (<= (+ c.0 (* (- 1.0) mul)) 0.0))\n(assert (<= (+ (* (- 1.0) mul) sub6) (- 2.0)))\n(assert (<= (+ (* (- 1.0) mul) conv9) 0.0))\n(assert (>= mul 1.0))\n(assert (<= (+ call (* (- 1.0) tmp)) (- 1.0)))\n(assert (<= (+ call1 (* (- 1.0) tmp)) (- 1.0)))\n(assert (<= (+ conv4 (* (- 1.0) tmp)) (- 1.0)))\n(assert (<= (+ x.0 (* (- 1.0) tmp)) (- 1.0)))\n(assert (<= (+ y.0 (* (- 1.0) tmp)) (- 1.0)))\n(assert (<= (+ c.0 (* (- 1.0) tmp)) (- 1.0)))\n(assert (<= (+ (* (- 1.0) tmp) sub6) (- 3.0)))\n(assert (<= (+ (* (- 1.0) tmp) conv9) (- 1.0)))\n(assert (>= tmp 2.0))\n(assert (>= sub6 (- 1.0)))\n(assert (<= sub6 (- 1.0)))\n(assert (<= (+ call1 (* (- 1.0) conv9)) 0.0))\n(assert (<= (+ c.0 (* (- 1.0) conv9)) 0.0))\n(assert (<= (+ sub6 (* (- 1.0) conv9)) (- 2.0)))\n(assert (>= conv9 1.0))",
+            "dom": "elina-zones",
+            "vars": [
+                "conv9",
+                "tmp",
+                "x.0",
+                "mul",
+                "c.0",
+                "y.0",
+                "call",
+                "sub6",
+                "call1",
+                "conv4"
+            ],
+            "len": 44
+        },
+        {
+            "str": "T",
+            "smt": "(assert true)",
+            "dom": "elina-zones",
+            "vars": {},
+            "len": 0
+        }
+    ],
+    "timed_out": false
+}

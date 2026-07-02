@@ -1,0 +1,65 @@
+{
+    "all_invs": [
+        {
+            "str": "4*a.0-mul8 = -2;4*s.0+mul7.neg = 0;2*t.0-mul8 = 0;2*mul-mul8 = -2;2*add-mul8 = 0;4*add1-mul8 = 2;-4*mul3-mul7.neg = 0;mul6+mul7.neg+mul8 = -1;sub+mul8 = -1;-add9 = 1;mul7.neg+9*mul8 <= 63;mul7.neg <= 0;mul7.neg+7*mul8 <= 35;mul7.neg+mul8 <= -1;mul7.neg+5*mul8 <= 15;mul7.neg+6*mul8 <= 24;mul7.neg+4*mul8 <= 8;mul7.neg+8*mul8 <= 48;mul7.neg+2*mul8 <= 0;mul7.neg+3*mul8 <= 3;-4*call-mul7.neg <= 0",
+            "smt": "(assert (= (+ (* 4.0 a.0) (* (- 1.0) mul8)) (- 2.0)))\n(assert (= (+ (* 4.0 s.0) mul7.neg) 0.0))\n(assert (= (+ (* 2.0 t.0) (* (- 1.0) mul8)) 0.0))\n(assert (= (+ (* 2.0 mul) (* (- 1.0) mul8)) (- 2.0)))\n(assert (= (+ (* 2.0 add) (* (- 1.0) mul8)) 0.0))\n(assert (= (+ (* 4.0 add1) (* (- 1.0) mul8)) 2.0))\n(assert (= (+ (* (- 4.0) mul3) (* (- 1.0) mul7.neg)) 0.0))\n(assert (= (+ mul6 mul7.neg mul8) (- 1.0)))\n(assert (= (+ sub mul8) (- 1.0)))\n(assert (= add9 (- 1.0)))\n(assert (<= (+ mul7.neg (* 9.0 mul8)) 63.0))\n(assert (<= mul7.neg 0.0))\n(assert (<= (+ mul7.neg (* 7.0 mul8)) 35.0))\n(assert (<= (+ mul7.neg mul8) (- 1.0)))\n(assert (<= (+ mul7.neg (* 5.0 mul8)) 15.0))\n(assert (<= (+ mul7.neg (* 6.0 mul8)) 24.0))\n(assert (<= (+ mul7.neg (* 4.0 mul8)) 8.0))\n(assert (<= (+ mul7.neg (* 8.0 mul8)) 48.0))\n(assert (<= (+ mul7.neg (* 2.0 mul8)) 0.0))\n(assert (<= (+ mul7.neg (* 3.0 mul8)) 3.0))\n(assert (<= (+ (* (- 4.0) call) (* (- 1.0) mul7.neg)) 0.0))",
+            "dom": "pk",
+            "vars": [
+                "mul3",
+                "s.0",
+                "mul",
+                "mul7.neg",
+                "a.0",
+                "add",
+                "mul6",
+                "call",
+                "add9",
+                "t.0",
+                "mul8",
+                "sub",
+                "add1"
+            ],
+            "len": 21
+        },
+        {
+            "str": "2*a.0-t.0 = -1;-4*s.0+18*t.0 <= 63;-4*s.0+14*t.0 <= 35;-4*s.0+10*t.0 <= 15;-4*s.0+6*t.0 <= 3;-s.0+4*t.0 <= 12;-s.0+3*t.0 <= 6;-s.0+2*t.0 <= 2;-s.0+t.0 <= 0",
+            "smt": "(assert (= (+ (* 2.0 a.0) (* (- 1.0) t.0)) (- 1.0)))\n(assert (<= (+ (* (- 4.0) s.0) (* 18.0 t.0)) 63.0))\n(assert (<= (+ (* (- 4.0) s.0) (* 14.0 t.0)) 35.0))\n(assert (<= (+ (* (- 4.0) s.0) (* 10.0 t.0)) 15.0))\n(assert (<= (+ (* (- 4.0) s.0) (* 6.0 t.0)) 3.0))\n(assert (<= (+ (* (- 1.0) s.0) (* 4.0 t.0)) 12.0))\n(assert (<= (+ (* (- 1.0) s.0) (* 3.0 t.0)) 6.0))\n(assert (<= (+ (* (- 1.0) s.0) (* 2.0 t.0)) 2.0))\n(assert (<= (+ (* (- 1.0) s.0) t.0) 0.0))",
+            "dom": "pk",
+            "vars": [
+                "t.0",
+                "a.0",
+                "s.0"
+            ],
+            "len": 9
+        },
+        {
+            "str": "4*a.0-mul8 = -2;4*s.0+mul7.neg = 0;2*t.0-mul8 = 0;2*mul-mul8 = -2;2*add-mul8 = 0;4*add1-mul8 = 2;-4*mul3-mul7.neg = 0;mul6+mul7.neg+mul8 = -1;sub+mul8 = -1;-add9 = 1;mul7.neg+9*mul8 <= 63;mul7.neg <= 0;mul7.neg+7*mul8 <= 35;mul7.neg+mul8 <= -1;mul7.neg+5*mul8 <= 15;mul7.neg+6*mul8 <= 24;mul7.neg+4*mul8 <= 8;mul7.neg+8*mul8 <= 48;mul7.neg+2*mul8 <= 0;mul7.neg+3*mul8 <= 3;4*call+mul7.neg <= -4",
+            "smt": "(assert (= (+ (* 4.0 a.0) (* (- 1.0) mul8)) (- 2.0)))\n(assert (= (+ (* 4.0 s.0) mul7.neg) 0.0))\n(assert (= (+ (* 2.0 t.0) (* (- 1.0) mul8)) 0.0))\n(assert (= (+ (* 2.0 mul) (* (- 1.0) mul8)) (- 2.0)))\n(assert (= (+ (* 2.0 add) (* (- 1.0) mul8)) 0.0))\n(assert (= (+ (* 4.0 add1) (* (- 1.0) mul8)) 2.0))\n(assert (= (+ (* (- 4.0) mul3) (* (- 1.0) mul7.neg)) 0.0))\n(assert (= (+ mul6 mul7.neg mul8) (- 1.0)))\n(assert (= (+ sub mul8) (- 1.0)))\n(assert (= add9 (- 1.0)))\n(assert (<= (+ mul7.neg (* 9.0 mul8)) 63.0))\n(assert (<= mul7.neg 0.0))\n(assert (<= (+ mul7.neg (* 7.0 mul8)) 35.0))\n(assert (<= (+ mul7.neg mul8) (- 1.0)))\n(assert (<= (+ mul7.neg (* 5.0 mul8)) 15.0))\n(assert (<= (+ mul7.neg (* 6.0 mul8)) 24.0))\n(assert (<= (+ mul7.neg (* 4.0 mul8)) 8.0))\n(assert (<= (+ mul7.neg (* 8.0 mul8)) 48.0))\n(assert (<= (+ mul7.neg (* 2.0 mul8)) 0.0))\n(assert (<= (+ mul7.neg (* 3.0 mul8)) 3.0))\n(assert (<= (+ (* 4.0 call) mul7.neg) (- 4.0)))",
+            "dom": "pk",
+            "vars": [
+                "mul3",
+                "s.0",
+                "mul",
+                "mul7.neg",
+                "a.0",
+                "add",
+                "mul6",
+                "call",
+                "add9",
+                "t.0",
+                "mul8",
+                "sub",
+                "add1"
+            ],
+            "len": 21
+        },
+        {
+            "str": "T",
+            "smt": "(assert true)",
+            "dom": "pk",
+            "vars": {},
+            "len": 0
+        }
+    ],
+    "timed_out": false
+}

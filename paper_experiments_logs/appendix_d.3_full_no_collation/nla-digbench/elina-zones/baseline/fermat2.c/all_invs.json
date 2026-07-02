@@ -1,0 +1,72 @@
+{
+    "all_invs": [
+        {
+            "str": "-conv+mul <= -1;-conv2+sub <= -1;conv2-sub <= 1;-mul7+add <= 1;mul7-add <= -1;mul7-u.0 <= -1;add-u.0 <= 0;-v.0 <= -1;-mul11+add18 <= 0;v.0-mul13 <= 0;-mul13 <= -1;v.0-mul17 <= -1;-mul17 <= -2;mul11-add18 <= 0;-rem <= -1;rem <= 1",
+            "smt": "(assert (<= (+ (* (- 1.0) conv) mul) (- 1.0)))\n(assert (<= (+ (* (- 1.0) conv2) sub) (- 1.0)))\n(assert (<= (+ conv2 (* (- 1.0) sub)) 1.0))\n(assert (<= (+ (* (- 1.0) mul7) add) 1.0))\n(assert (<= (+ mul7 (* (- 1.0) add)) (- 1.0)))\n(assert (<= (+ mul7 (* (- 1.0) u.0)) (- 1.0)))\n(assert (<= (+ add (* (- 1.0) u.0)) 0.0))\n(assert (>= v.0 1.0))\n(assert (<= (+ (* (- 1.0) mul11) add18) 0.0))\n(assert (<= (+ v.0 (* (- 1.0) mul13)) 0.0))\n(assert (>= mul13 1.0))\n(assert (<= (+ v.0 (* (- 1.0) mul17)) (- 1.0)))\n(assert (>= mul17 2.0))\n(assert (<= (+ mul11 (* (- 1.0) add18)) 0.0))\n(assert (>= rem 1.0))\n(assert (<= rem 1.0))",
+            "dom": "elina-zones",
+            "vars": [
+                "mul17",
+                "mul7",
+                "mul",
+                "add18",
+                "mul13",
+                "v.0",
+                "conv2",
+                "mul11",
+                "add",
+                "conv",
+                "rem",
+                "sub",
+                "u.0"
+            ],
+            "len": 16
+        },
+        {
+            "str": "-conv+mul <= -1;-conv2+sub <= -1;conv2-sub <= 1;-mul7+add <= 1;mul7-add <= -1;mul7-u.0 <= -1;add-u.0 <= 0;-v.0 <= -1;-rem <= -1;rem <= 1",
+            "smt": "(assert (<= (+ (* (- 1.0) conv) mul) (- 1.0)))\n(assert (<= (+ (* (- 1.0) conv2) sub) (- 1.0)))\n(assert (<= (+ conv2 (* (- 1.0) sub)) 1.0))\n(assert (<= (+ (* (- 1.0) mul7) add) 1.0))\n(assert (<= (+ mul7 (* (- 1.0) add)) (- 1.0)))\n(assert (<= (+ mul7 (* (- 1.0) u.0)) (- 1.0)))\n(assert (<= (+ add (* (- 1.0) u.0)) 0.0))\n(assert (>= v.0 1.0))\n(assert (>= rem 1.0))\n(assert (<= rem 1.0))",
+            "dom": "elina-zones",
+            "vars": [
+                "mul7",
+                "mul",
+                "v.0",
+                "conv2",
+                "add",
+                "conv",
+                "rem",
+                "sub",
+                "u.0"
+            ],
+            "len": 10
+        },
+        {
+            "str": "-rem <= -1;rem <= 1;-conv+mul <= -1;-conv2+sub <= -1;conv2-sub <= 1;-mul7+add <= 1;mul7-add <= -1;mul7-u.0 <= -1;add-u.0 <= 0;-v.0+r.0 <= -1;-v.0 <= -1;-r.0 <= 0;r.0 <= 0;-mul11+add18 <= 0;v.0-mul13 <= 0;r.0-mul13 <= -1;-mul13 <= -1;v.0-mul17 <= -1;r.0-mul17 <= -2;-mul17 <= -2;mul11-add18 <= 0",
+            "smt": "(assert (>= rem 1.0))\n(assert (<= rem 1.0))\n(assert (<= (+ (* (- 1.0) conv) mul) (- 1.0)))\n(assert (<= (+ (* (- 1.0) conv2) sub) (- 1.0)))\n(assert (<= (+ conv2 (* (- 1.0) sub)) 1.0))\n(assert (<= (+ (* (- 1.0) mul7) add) 1.0))\n(assert (<= (+ mul7 (* (- 1.0) add)) (- 1.0)))\n(assert (<= (+ mul7 (* (- 1.0) u.0)) (- 1.0)))\n(assert (<= (+ add (* (- 1.0) u.0)) 0.0))\n(assert (<= (+ (* (- 1.0) v.0) r.0) (- 1.0)))\n(assert (>= v.0 1.0))\n(assert (>= r.0 0.0))\n(assert (<= r.0 0.0))\n(assert (<= (+ (* (- 1.0) mul11) add18) 0.0))\n(assert (<= (+ v.0 (* (- 1.0) mul13)) 0.0))\n(assert (<= (+ r.0 (* (- 1.0) mul13)) (- 1.0)))\n(assert (>= mul13 1.0))\n(assert (<= (+ v.0 (* (- 1.0) mul17)) (- 1.0)))\n(assert (<= (+ r.0 (* (- 1.0) mul17)) (- 2.0)))\n(assert (>= mul17 2.0))\n(assert (<= (+ mul11 (* (- 1.0) add18)) 0.0))",
+            "dom": "elina-zones",
+            "vars": [
+                "mul17",
+                "mul7",
+                "mul",
+                "r.0",
+                "add18",
+                "mul13",
+                "v.0",
+                "conv2",
+                "mul11",
+                "add",
+                "conv",
+                "rem",
+                "sub",
+                "u.0"
+            ],
+            "len": 21
+        },
+        {
+            "str": "T",
+            "smt": "(assert true)",
+            "dom": "elina-zones",
+            "vars": {},
+            "len": 0
+        }
+    ],
+    "timed_out": false
+}

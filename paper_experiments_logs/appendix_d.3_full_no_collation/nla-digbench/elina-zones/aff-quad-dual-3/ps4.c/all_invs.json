@@ -1,0 +1,65 @@
+{
+    "all_invs": [
+        {
+            "str": "-call+y.0 <= -1;-call+c.0 <= -1;-call+mul4.neg <= -1;-call+mul5.neg <= -1;-call+mul6.neg <= -1;-call <= -1;-y.0+c.0 <= 0;-y.0+mul4.neg <= 0;-y.0+mul5.neg <= 0;-y.0+mul6.neg <= 0;-y.0 <= 0;y.0-x.0 <= 0;-x.0+c.0 <= 0;-x.0+mul4.neg <= 0;-x.0+mul5.neg <= 0;-x.0+mul6.neg <= 0;-x.0 <= 0;y.0-c.0 <= 0;-c.0+mul4.neg <= 0;-c.0+mul5.neg <= 0;-c.0+mul6.neg <= 0;-c.0 <= 0;y.0-mul <= 0;x.0-mul <= 0;c.0-mul <= 0;-mul+mul4.neg <= 0;-mul+mul5.neg <= 0;-mul+mul6.neg <= 0;-mul+tmp <= 0;-mul+tmp1 <= 0;-mul <= 0;y.0-mul1 <= 1;c.0-mul1 <= 1;-mul1+mul4.neg <= 0;-mul1+mul5.neg <= 0;-mul1+mul6.neg <= 0;-mul1 <= 0;-mul2+mul4.neg <= 0;-mul2+mul5.neg <= 0;-mul2+mul6.neg <= 0;-mul2 <= 0;mul4.neg <= 0;mul5.neg <= 0;mul6.neg <= 0;mul4.neg-tmp <= 0;mul5.neg-tmp <= 0;mul6.neg-tmp <= 0;-tmp+tmp1 <= 0;-tmp <= 0;y.0-mul31 <= 0;c.0-mul31 <= 0;mul2-mul31 <= 0;mul4.neg-mul31 <= 0;mul5.neg-mul31 <= 0;mul6.neg-mul31 <= 0;-mul31 <= 0;mul4.neg-tmp1 <= 0;mul5.neg-tmp1 <= 0;mul6.neg-tmp1 <= 0;tmp-tmp1 <= 0;-tmp1 <= 0",
+            "smt": "(assert (<= (+ (* (- 1.0) call) y.0) (- 1.0)))\n(assert (<= (+ (* (- 1.0) call) c.0) (- 1.0)))\n(assert (<= (+ (* (- 1.0) call) mul4.neg) (- 1.0)))\n(assert (<= (+ (* (- 1.0) call) mul5.neg) (- 1.0)))\n(assert (<= (+ (* (- 1.0) call) mul6.neg) (- 1.0)))\n(assert (>= call 1.0))\n(assert (<= (+ (* (- 1.0) y.0) c.0) 0.0))\n(assert (<= (+ (* (- 1.0) y.0) mul4.neg) 0.0))\n(assert (<= (+ (* (- 1.0) y.0) mul5.neg) 0.0))\n(assert (<= (+ (* (- 1.0) y.0) mul6.neg) 0.0))\n(assert (>= y.0 0.0))\n(assert (<= (+ y.0 (* (- 1.0) x.0)) 0.0))\n(assert (<= (+ (* (- 1.0) x.0) c.0) 0.0))\n(assert (<= (+ (* (- 1.0) x.0) mul4.neg) 0.0))\n(assert (<= (+ (* (- 1.0) x.0) mul5.neg) 0.0))\n(assert (<= (+ (* (- 1.0) x.0) mul6.neg) 0.0))\n(assert (>= x.0 0.0))\n(assert (<= (+ y.0 (* (- 1.0) c.0)) 0.0))\n(assert (<= (+ (* (- 1.0) c.0) mul4.neg) 0.0))\n(assert (<= (+ (* (- 1.0) c.0) mul5.neg) 0.0))\n(assert (<= (+ (* (- 1.0) c.0) mul6.neg) 0.0))\n(assert (>= c.0 0.0))\n(assert (<= (+ y.0 (* (- 1.0) mul)) 0.0))\n(assert (<= (+ x.0 (* (- 1.0) mul)) 0.0))\n(assert (<= (+ c.0 (* (- 1.0) mul)) 0.0))\n(assert (<= (+ (* (- 1.0) mul) mul4.neg) 0.0))\n(assert (<= (+ (* (- 1.0) mul) mul5.neg) 0.0))\n(assert (<= (+ (* (- 1.0) mul) mul6.neg) 0.0))\n(assert (<= (+ (* (- 1.0) mul) tmp) 0.0))\n(assert (<= (+ (* (- 1.0) mul) tmp1) 0.0))\n(assert (>= mul 0.0))\n(assert (<= (+ y.0 (* (- 1.0) mul1)) 1.0))\n(assert (<= (+ c.0 (* (- 1.0) mul1)) 1.0))\n(assert (<= (+ (* (- 1.0) mul1) mul4.neg) 0.0))\n(assert (<= (+ (* (- 1.0) mul1) mul5.neg) 0.0))\n(assert (<= (+ (* (- 1.0) mul1) mul6.neg) 0.0))\n(assert (>= mul1 0.0))\n(assert (<= (+ (* (- 1.0) mul2) mul4.neg) 0.0))\n(assert (<= (+ (* (- 1.0) mul2) mul5.neg) 0.0))\n(assert (<= (+ (* (- 1.0) mul2) mul6.neg) 0.0))\n(assert (>= mul2 0.0))\n(assert (<= mul4.neg 0.0))\n(assert (<= mul5.neg 0.0))\n(assert (<= mul6.neg 0.0))\n(assert (<= (+ mul4.neg (* (- 1.0) tmp)) 0.0))\n(assert (<= (+ mul5.neg (* (- 1.0) tmp)) 0.0))\n(assert (<= (+ mul6.neg (* (- 1.0) tmp)) 0.0))\n(assert (<= (+ (* (- 1.0) tmp) tmp1) 0.0))\n(assert (>= tmp 0.0))\n(assert (<= (+ y.0 (* (- 1.0) mul31)) 0.0))\n(assert (<= (+ c.0 (* (- 1.0) mul31)) 0.0))\n(assert (<= (+ mul2 (* (- 1.0) mul31)) 0.0))\n(assert (<= (+ mul4.neg (* (- 1.0) mul31)) 0.0))\n(assert (<= (+ mul5.neg (* (- 1.0) mul31)) 0.0))\n(assert (<= (+ mul6.neg (* (- 1.0) mul31)) 0.0))\n(assert (>= mul31 0.0))\n(assert (<= (+ mul4.neg (* (- 1.0) tmp1)) 0.0))\n(assert (<= (+ mul5.neg (* (- 1.0) tmp1)) 0.0))\n(assert (<= (+ mul6.neg (* (- 1.0) tmp1)) 0.0))\n(assert (<= (+ tmp (* (- 1.0) tmp1)) 0.0))\n(assert (>= tmp1 0.0))",
+            "dom": "elina-zones",
+            "vars": [
+                "mul6.neg",
+                "tmp",
+                "mul1",
+                "mul4.neg",
+                "mul",
+                "x.0",
+                "tmp1",
+                "mul2",
+                "call",
+                "mul5.neg",
+                "y.0",
+                "c.0",
+                "mul31"
+            ],
+            "len": 61
+        },
+        {
+            "str": "-y.0+c.0 <= 0;-y.0 <= 0;y.0-x.0 <= 0;-x.0+c.0 <= 0;-x.0 <= 0;y.0-c.0 <= 0;-c.0 <= 0",
+            "smt": "(assert (<= (+ (* (- 1.0) y.0) c.0) 0.0))\n(assert (>= y.0 0.0))\n(assert (<= (+ y.0 (* (- 1.0) x.0)) 0.0))\n(assert (<= (+ (* (- 1.0) x.0) c.0) 0.0))\n(assert (>= x.0 0.0))\n(assert (<= (+ y.0 (* (- 1.0) c.0)) 0.0))\n(assert (>= c.0 0.0))",
+            "dom": "elina-zones",
+            "vars": [
+                "y.0",
+                "c.0",
+                "x.0"
+            ],
+            "len": 7
+        },
+        {
+            "str": "call-y.0 <= 0;-y.0+c.0 <= 0;-y.0+mul4.neg <= 0;-y.0+mul5.neg <= 0;-y.0+mul6.neg <= 0;-y.0 <= 0;call-x.0 <= 0;y.0-x.0 <= 0;-x.0+c.0 <= 0;-x.0+mul4.neg <= 0;-x.0+mul5.neg <= 0;-x.0+mul6.neg <= 0;-x.0 <= 0;call-c.0 <= 0;y.0-c.0 <= 0;-c.0+mul4.neg <= 0;-c.0+mul5.neg <= 0;-c.0+mul6.neg <= 0;-c.0 <= 0;call-mul <= 0;y.0-mul <= 0;x.0-mul <= 0;c.0-mul <= 0;-mul+mul4.neg <= 0;-mul+mul5.neg <= 0;-mul+mul6.neg <= 0;-mul+tmp <= 0;-mul+tmp1 <= 0;-mul <= 0;call-mul1 <= 1;y.0-mul1 <= 1;c.0-mul1 <= 1;-mul1+mul4.neg <= 0;-mul1+mul5.neg <= 0;-mul1+mul6.neg <= 0;-mul1 <= 0;-mul2+mul4.neg <= 0;-mul2+mul5.neg <= 0;-mul2+mul6.neg <= 0;-mul2 <= 0;mul4.neg <= 0;mul5.neg <= 0;mul6.neg <= 0;mul4.neg-tmp <= 0;mul5.neg-tmp <= 0;mul6.neg-tmp <= 0;-tmp+tmp1 <= 0;-tmp <= 0;call-mul31 <= 0;y.0-mul31 <= 0;c.0-mul31 <= 0;mul2-mul31 <= 0;mul4.neg-mul31 <= 0;mul5.neg-mul31 <= 0;mul6.neg-mul31 <= 0;-mul31 <= 0;mul4.neg-tmp1 <= 0;mul5.neg-tmp1 <= 0;mul6.neg-tmp1 <= 0;tmp-tmp1 <= 0;-tmp1 <= 0",
+            "smt": "(assert (<= (+ call (* (- 1.0) y.0)) 0.0))\n(assert (<= (+ (* (- 1.0) y.0) c.0) 0.0))\n(assert (<= (+ (* (- 1.0) y.0) mul4.neg) 0.0))\n(assert (<= (+ (* (- 1.0) y.0) mul5.neg) 0.0))\n(assert (<= (+ (* (- 1.0) y.0) mul6.neg) 0.0))\n(assert (>= y.0 0.0))\n(assert (<= (+ call (* (- 1.0) x.0)) 0.0))\n(assert (<= (+ y.0 (* (- 1.0) x.0)) 0.0))\n(assert (<= (+ (* (- 1.0) x.0) c.0) 0.0))\n(assert (<= (+ (* (- 1.0) x.0) mul4.neg) 0.0))\n(assert (<= (+ (* (- 1.0) x.0) mul5.neg) 0.0))\n(assert (<= (+ (* (- 1.0) x.0) mul6.neg) 0.0))\n(assert (>= x.0 0.0))\n(assert (<= (+ call (* (- 1.0) c.0)) 0.0))\n(assert (<= (+ y.0 (* (- 1.0) c.0)) 0.0))\n(assert (<= (+ (* (- 1.0) c.0) mul4.neg) 0.0))\n(assert (<= (+ (* (- 1.0) c.0) mul5.neg) 0.0))\n(assert (<= (+ (* (- 1.0) c.0) mul6.neg) 0.0))\n(assert (>= c.0 0.0))\n(assert (<= (+ call (* (- 1.0) mul)) 0.0))\n(assert (<= (+ y.0 (* (- 1.0) mul)) 0.0))\n(assert (<= (+ x.0 (* (- 1.0) mul)) 0.0))\n(assert (<= (+ c.0 (* (- 1.0) mul)) 0.0))\n(assert (<= (+ (* (- 1.0) mul) mul4.neg) 0.0))\n(assert (<= (+ (* (- 1.0) mul) mul5.neg) 0.0))\n(assert (<= (+ (* (- 1.0) mul) mul6.neg) 0.0))\n(assert (<= (+ (* (- 1.0) mul) tmp) 0.0))\n(assert (<= (+ (* (- 1.0) mul) tmp1) 0.0))\n(assert (>= mul 0.0))\n(assert (<= (+ call (* (- 1.0) mul1)) 1.0))\n(assert (<= (+ y.0 (* (- 1.0) mul1)) 1.0))\n(assert (<= (+ c.0 (* (- 1.0) mul1)) 1.0))\n(assert (<= (+ (* (- 1.0) mul1) mul4.neg) 0.0))\n(assert (<= (+ (* (- 1.0) mul1) mul5.neg) 0.0))\n(assert (<= (+ (* (- 1.0) mul1) mul6.neg) 0.0))\n(assert (>= mul1 0.0))\n(assert (<= (+ (* (- 1.0) mul2) mul4.neg) 0.0))\n(assert (<= (+ (* (- 1.0) mul2) mul5.neg) 0.0))\n(assert (<= (+ (* (- 1.0) mul2) mul6.neg) 0.0))\n(assert (>= mul2 0.0))\n(assert (<= mul4.neg 0.0))\n(assert (<= mul5.neg 0.0))\n(assert (<= mul6.neg 0.0))\n(assert (<= (+ mul4.neg (* (- 1.0) tmp)) 0.0))\n(assert (<= (+ mul5.neg (* (- 1.0) tmp)) 0.0))\n(assert (<= (+ mul6.neg (* (- 1.0) tmp)) 0.0))\n(assert (<= (+ (* (- 1.0) tmp) tmp1) 0.0))\n(assert (>= tmp 0.0))\n(assert (<= (+ call (* (- 1.0) mul31)) 0.0))\n(assert (<= (+ y.0 (* (- 1.0) mul31)) 0.0))\n(assert (<= (+ c.0 (* (- 1.0) mul31)) 0.0))\n(assert (<= (+ mul2 (* (- 1.0) mul31)) 0.0))\n(assert (<= (+ mul4.neg (* (- 1.0) mul31)) 0.0))\n(assert (<= (+ mul5.neg (* (- 1.0) mul31)) 0.0))\n(assert (<= (+ mul6.neg (* (- 1.0) mul31)) 0.0))\n(assert (>= mul31 0.0))\n(assert (<= (+ mul4.neg (* (- 1.0) tmp1)) 0.0))\n(assert (<= (+ mul5.neg (* (- 1.0) tmp1)) 0.0))\n(assert (<= (+ mul6.neg (* (- 1.0) tmp1)) 0.0))\n(assert (<= (+ tmp (* (- 1.0) tmp1)) 0.0))\n(assert (>= tmp1 0.0))",
+            "dom": "elina-zones",
+            "vars": [
+                "mul6.neg",
+                "tmp",
+                "mul1",
+                "mul4.neg",
+                "mul",
+                "x.0",
+                "tmp1",
+                "mul2",
+                "call",
+                "mul5.neg",
+                "y.0",
+                "c.0",
+                "mul31"
+            ],
+            "len": 61
+        },
+        {
+            "str": "T",
+            "smt": "(assert true)",
+            "dom": "elina-zones",
+            "vars": {},
+            "len": 0
+        }
+    ],
+    "timed_out": false
+}

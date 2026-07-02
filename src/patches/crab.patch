@@ -1,0 +1,1361 @@
+diff --git a/.github/workflows/nightly-crab-docker.yaml b/.github/workflows/nightly-crab-docker.yaml
+deleted file mode 100644
+index 09827bbef3c20ddef2a8a134dd1dd688abdb88e3..0000000000000000000000000000000000000000
+--- a/.github/workflows/nightly-crab-docker.yaml
++++ /dev/null
+@@ -1,51 +0,0 @@
+-# Workflow to build and test crab and push images to dockerhub
+-
+-name: Nightly
+-
+-# Controls when the action will run.
+-on:
+-  # Triggers the workflow on push or pull request events but only for the master branch
+-  schedule:
+-    - cron: 0 0 * * *  # run every day at UTC 00:00
+-  workflow_dispatch:
+-    branches: master
+-    inputs:
+-      Triggerer:
+-        description: 'Triggered by:'
+-        required: true
+-        default: ''
+-
+-
+-# A workflow run is made up of one or more jobs that can run sequentially or in parallel
+-jobs:
+-  # This workflow contains a single job called "test"
+-  test:
+-    # The type of runner that the job will run on
+-    runs-on: ubuntu-latest
+-
+-    # Steps represent a sequence of tasks that will be executed as part of the job
+-    steps:
+-      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+-      - name: Check out Repo 
+-        uses: actions/checkout@v2
+-        with:
+-          ref: master
+-      #- name: Build crab without external libraries for coverage
+-      #  run: docker build  --build-arg UBUNTU=bionic --build-arg BUILD_TYPE=Coverage -t seahorn/crab:nightly -f docker/crab.Dockerfile .
+-      #- name: Generate coverage report and upload to codecov
+-      #	run: docker run -v $(pwd):/host -it seahorn/crab:nightly /bin/sh -c "bash /crab/tests/run_coverage.sh /crab/build /crab && mv /crab/build/all.info /host" && bash <(curl -s https://codecov.io/bash) -Z -f all.info -t ${{ secrets.CODECOV_TOKEN }}
+-      - name: Build crab without external libraries + run tests 
+-        run: docker build  --build-arg UBUNTU=bionic --build-arg BUILD_TYPE=Release -t seahorn/crab:nightly -f docker/crab.Dockerfile .
+-      - name: Build crab+apron+ldd-boxes and run tests 
+-        run: docker build  --build-arg UBUNTU=bionic --build-arg BUILD_TYPE=Release -t seahorn/crab_apron_boxes:nightly -f docker/crab.apron.Dockerfile .
+-      - name: Build crab+elina and run tests 
+-        run: docker build  --build-arg UBUNTU=bionic --build-arg BUILD_TYPE=Release -t seahorn/crab_elina:nightly -f docker/crab.elina.Dockerfile .
+-      - name: Login to DockerHub Registry
+-        if: ${{ github.event_name == 'schedule' }}  # only push if nightly run
+-        run: echo ${{ secrets.DOCKER_HUB_ACCESS_TOKEN }} | docker login -u ${{ secrets.DOCKER_HUB_USERNAME }} --password-stdin
+-      - name: Tag and push crab (nightly) to DockerHub
+-        if: ${{ github.event_name == 'schedule' }}  # only push if nightly run
+-        run: |
+-          docker push seahorn/crab:nightly	
+-          docker push seahorn/crab_apron_boxes:nightly
+-          docker push seahorn/crab_elina:nightly
+diff --git a/.github/workflows/test-crab-dev-docker.yaml b/.github/workflows/test-crab-dev-docker.yaml
+deleted file mode 100644
+index fb4185cf05d55a33bbaf33efa0863c4a91e2782a..0000000000000000000000000000000000000000
+--- a/.github/workflows/test-crab-dev-docker.yaml
++++ /dev/null
+@@ -1,32 +0,0 @@
+-# Workflow to build and test crab dev branch 
+-
+-name: CI-dev
+-
+-# Controls when the action will run. 
+-on:
+-  # Triggers the workflow on push or pull request events but only for the dev branch
+-  push:
+-    branches: dev
+-  pull_request:
+-    branches: dev
+-
+-# A workflow run is made up of one or more jobs that can run sequentially or in parallel
+-jobs:
+-  # This workflow contains a single job called "test"
+-  test:
+-    # The type of runner that the job will run on
+-    runs-on: ubuntu-latest
+-
+-    # Steps represent a sequence of tasks that will be executed as part of the job
+-    steps:
+-      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+-      - name: Check out Repo 
+-        uses: actions/checkout@v2
+-        with:
+-          ref: dev 
+-      - name: Build crab without external libraries + run tests 
+-        run: docker build --build-arg BUILD_TYPE=Release -t seahorn/crab -f docker/crab.dev.Dockerfile .
+-      - name: Build crab+apron+ldd-boxes and run tests 
+-        run: docker build --build-arg BUILD_TYPE=Release -t seahorn/crab_apron_boxes -f docker/crab.dev.apron.Dockerfile .
+-      - name: Build crab+elina and run tests 
+-        run: docker build --build-arg BUILD_TYPE=Release -t seahorn/crab_elina -f docker/crab.dev.elina.Dockerfile .
+diff --git a/.github/workflows/test-crab-docker.yml b/.github/workflows/test-crab-docker.yml
+deleted file mode 100644
+index 8d77de903f3cb2442c8a86e30bf1a40e03cb89ac..0000000000000000000000000000000000000000
+--- a/.github/workflows/test-crab-docker.yml
++++ /dev/null
+@@ -1,32 +0,0 @@
+-# Workflow to build and test crab master branch 
+-
+-name: CI
+-
+-# Controls when the action will run. 
+-on:
+-  # Triggers the workflow on push or pull request events but only for the master branch
+-  push:
+-    branches: master
+-  pull_request:
+-    branches: master
+-
+-# A workflow run is made up of one or more jobs that can run sequentially or in parallel
+-jobs:
+-  # This workflow contains a single job called "test"
+-  test:
+-    # The type of runner that the job will run on
+-    runs-on: ubuntu-latest
+-
+-    # Steps represent a sequence of tasks that will be executed as part of the job
+-    steps:
+-      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+-      - name: Check out Repo 
+-        uses: actions/checkout@v2
+-        with:
+-          ref: master 
+-      - name: Build crab without external libraries + run tests 
+-        run: docker build --build-arg UBUNTU=bionic --build-arg BUILD_TYPE=Release -t seahorn/crab -f docker/crab.Dockerfile .
+-      - name: Build crab+apron+ldd-boxes and run tests 
+-        run: docker build --build-arg UBUNTU=bionic --build-arg BUILD_TYPE=Release -t seahorn/crab_apron_boxes -f docker/crab.apron.Dockerfile .
+-      - name: Build crab+elina and run tests 
+-        run: docker build --build-arg UBUNTU=bionic --build-arg BUILD_TYPE=Release -t seahorn/crab_elina -f docker/crab.elina.Dockerfile .
+diff --git a/cmake/FindElina.cmake b/cmake/FindElina.cmake
+index 79fec3437e114a8c3ec3d7df51db89b3d6106f10..a37ce9087d2edd569e709906d9601eda4960b706 100644
+--- a/cmake/FindElina.cmake
++++ b/cmake/FindElina.cmake
+@@ -26,10 +26,11 @@ if (NOT ELINA_FOUND)
+   find_library(Elina_Aux_Lib NAMES elinaux PATHS ${ELINA_ROOT}/lib NO_DEFAULT_PATH)
+   find_library(Elina_Opt_Zones_Lib NAMES optzones PATHS ${ELINA_ROOT}/lib NO_DEFAULT_PATH)
+   find_library(Elina_Partitions_Lib NAMES partitions PATHS ${ELINA_ROOT}/lib NO_DEFAULT_PATH)
++  find_library(Elina_Precise_Ops_Lib NAMES precise_ops PATHS ${ELINA_ROOT}/lib NO_DEFAULT_PATH)
+   
+   set(ELINA_LIBRARY ${Elina_Poly_Lib} 
+     ${Elina_Opt_Oct_Lib} ${Elina_Linearize_Lib} ${Elina_Aux_Lib}
+-    ${Elina_Opt_Zones_Lib} ${Elina_Partitions_Lib})
++    ${Elina_Opt_Zones_Lib} ${Elina_Partitions_Lib} ${Elina_Precise_Ops_Lib})
+   
+   include (FindPackageHandleStandardArgs)
+   find_package_handle_standard_args (Elina
+diff --git a/include/crab/analysis/abs_transformer.hpp b/include/crab/analysis/abs_transformer.hpp
+index e4e6738d449b2b6c7c564b08e38ca072179dcb6c..996ea3eaca2fa15260b0258df3b3076d1222a7ad 100644
+--- a/include/crab/analysis/abs_transformer.hpp
++++ b/include/crab/analysis/abs_transformer.hpp
+@@ -31,6 +31,7 @@
+ 
+  */
+ 
++#include <boost/variant.hpp>
+ #include <crab/cfg/cfg.hpp>
+ #include <crab/domains/abstract_domain_operators.hpp>
+ #include <crab/support/debug.hpp>
+@@ -63,6 +64,7 @@ public:
+       crab::cfg::unreachable_stmt<bb_label_t, number_t, varname_t>;
+ 
+   using bin_op_t = crab::cfg::binary_op<bb_label_t, number_t, varname_t>;
++  using quad_affine_block_t = crab::cfg::quad_affine_block<bb_label_t, number_t, varname_t>;
+   using assign_t = crab::cfg::assignment<bb_label_t, number_t, varname_t>;
+   using assume_t = crab::cfg::assume_stmt<bb_label_t, number_t, varname_t>;
+   using select_t = crab::cfg::select_stmt<bb_label_t, number_t, varname_t>;
+@@ -122,6 +124,7 @@ protected:
+   virtual void exec(havoc_t &) {}
+   virtual void exec(unreach_t &) {}
+   virtual void exec(bin_op_t &) {}
++  virtual void exec(quad_affine_block_t &) {}
+   virtual void exec(assign_t &) {}
+   virtual void exec(assume_t &) {}
+   virtual void exec(select_t &) {}
+@@ -157,6 +160,7 @@ public: /* visitor api */
+   virtual void visit(havoc_t &s) override { exec(s); }
+   virtual void visit(unreach_t &s) override { exec(s); }
+   virtual void visit(bin_op_t &s) override { exec(s); }
++  virtual void visit(quad_affine_block_t &s) override { exec(s); }
+   virtual void visit(assign_t &s) override { exec(s); }
+   virtual void visit(assume_t &s) override { exec(s); }
+   virtual void visit(select_t &s) override { exec(s); }
+@@ -290,6 +294,7 @@ public:
+   using variable_t = typename abs_dom_t::variable_t;
+   using variable_or_constant_t = variable_or_constant<number_t, varname_t>;
+   using basic_block_label_t = typename BasicBlock::basic_block_label_t;
++  using variable_vector_t = std::vector<variable_t>;
+ 
+   static_assert(std::is_same<typename AbsD::number_t,
+                              typename BasicBlock::number_t>::value,
+@@ -319,6 +324,7 @@ public:
+   using typename abs_transform_api_t::assume_ref_t;
+   using typename abs_transform_api_t::assume_t;
+   using typename abs_transform_api_t::bin_op_t;
++  using typename abs_transform_api_t::quad_affine_block_t;
+   using typename abs_transform_api_t::bool_assert_t;
+   using typename abs_transform_api_t::bool_assign_cst_t;
+   using typename abs_transform_api_t::bool_assign_var_t;
+@@ -401,6 +407,30 @@ public:
+     CRAB_VERBOSE_IF(5, crab::outs() << "EXECUTED " << stmt << " :" << m_inv <<"\n";);
+   }
+ 
++  virtual void exec(quad_affine_block_t &stmt) override {
++    bool pre_bot = false;
++    if (::crab::CrabSanityCheckFlag) {
++      pre_bot = m_inv.is_bottom();
++    }
++
++    std::vector<domains::arith_operation_t> arith_ops;
++
++    for (const auto& op : stmt.all_ops()) {
++        arith_ops.push_back(*conv_op<domains::arith_operation_t>(op));
++    }
++
++    m_inv.quad_affine_block(stmt.all_lhs(), arith_ops, stmt.all_left(), stmt.all_right());
++
++    if (::crab::CrabSanityCheckFlag) {
++      bool post_bot = m_inv.is_bottom();
++      if (!(pre_bot || !post_bot)) {
++	CRAB_ERROR("Invariant became bottom after ", stmt);
++      }
++    }
++
++    CRAB_VERBOSE_IF(5, crab::outs() << "EXECUTED " << stmt << " :" << m_inv <<"\n";);
++  }
++
+   virtual void exec(select_t &stmt) override {
+     bool pre_bot = false;
+     if (::crab::CrabSanityCheckFlag) {
+diff --git a/include/crab/cfg/cfg.hpp b/include/crab/cfg/cfg.hpp
+index e005e3e14f162c9d7fcf294636df42c15e960a79..3c3820d7158ddc94d46e3d6473f5c52145377dca 100644
+--- a/include/crab/cfg/cfg.hpp
++++ b/include/crab/cfg/cfg.hpp
+@@ -124,6 +124,7 @@ enum stmt_code {
+   UNREACH = 23,
+   SELECT = 24,
+   ASSERT = 25,
++  QUAD_AFFINE_BLOCK = 26,
+   // arrays
+   ARR_INIT = 30,
+   ARR_STORE = 31,
+@@ -159,6 +160,22 @@ enum stmt_code {
+   INT_CAST = 90
+ };
+ 
++enum CollateStatus {
++    THIS_BLOCK, // Add stmt to current block
++    NEXT_BLOCK, // Add stmt to the next block
++    NO_COLLATE // Do not add stmt to a block
++};
++
++enum class AffinePrecisionLevel {
++    DEFAULT,         // Default handling of affine instructions
++    AFFINE_FULL,     // Precise handling of all affine instructions by collating them in quad_affine_block
++};
++
++enum class QuadPrecisionLevel {
++    DEFAULT,    // Default handling of quadratic instructions
++    QUAD_FULL,  // Precise handling of all quadratic instructions by collating them in quad_affine_block
++};
++
+ template <typename Number, typename VariableName>
+ class live {
+ public:
+@@ -309,6 +326,7 @@ public:
+ 
+   bool is_bin_op() const { return (m_stmt_code == BIN_OP); }
+   bool is_assign() const { return (m_stmt_code == ASSIGN); }
++  bool is_quad_affine_block() const { return (m_stmt_code == QUAD_AFFINE_BLOCK); }
+   bool is_assume() const { return (m_stmt_code == ASSUME); }
+   bool is_select() const { return (m_stmt_code == SELECT); }
+   bool is_assert() const { return (m_stmt_code == ASSERT); }
+@@ -424,6 +442,98 @@ private:
+   linear_expression_t m_op2;
+ };
+ 
++ // Construct to process a block of affine and quadratic operations together.
++ // This can be used to make the handling precise while using solvers
++ // that provide special handling for such kinds of basic blocks.
++ template <class BasicBlockLabel, class Number, class VariableName>
++ class quad_affine_block : public statement<BasicBlockLabel, Number, VariableName> {
++     using this_type = quad_affine_block<BasicBlockLabel, Number, VariableName>;
++ 
++ public:
++     using statement_t = statement<BasicBlockLabel, Number, VariableName>;
++     using binary_op_t = binary_op<BasicBlockLabel, Number, VariableName>;
++     using basic_block_t = typename statement_t::basic_block_t;
++     using variable_t = variable<Number, VariableName>;
++     using linear_expression_t = ikos::linear_expression<Number, VariableName>;
++ 
++     quad_affine_block(std::vector<binary_op_t> binary_ops,
++                       basic_block_t *parent,
++                       debug_info dbg_info = debug_info())
++         : statement_t(QUAD_AFFINE_BLOCK, parent, dbg_info),
++           m_binary_ops_list(binary_ops)
++     {
++         std::unordered_set<variable_t> lhs_vars_set_in_block;
++         int siz = m_binary_ops_list.size();
++ 
++         for (int i = 0; i < siz; i++) {
++            // Update the members
++            m_all_lhs.push_back(m_binary_ops_list[i].lhs());
++            m_all_ops.push_back(m_binary_ops_list[i].op());
++            m_all_left.push_back(m_binary_ops_list[i].left());
++            m_all_right.push_back(m_binary_ops_list[i].right());
++            
++
++            //
++            // Add a variable occuring the rhs expression to the uses of this block
++            // only if it is not defined inside this block.
++            //
++            
++            // Expression to the left of op
++            for(auto var: m_binary_ops_list[i].left().variables()) {
++                if (lhs_vars_set_in_block.find(var) == lhs_vars_set_in_block.end()) {
++                    this->m_live.add_use(var);
++                }
++            }
++
++            // Expression to the right of op
++            for(auto var: m_binary_ops_list[i].right().variables()) {
++                if (lhs_vars_set_in_block.find(var) == lhs_vars_set_in_block.end()) {
++                    this->m_live.add_use(var);
++                }
++            }
++
++             this->m_live.add_def(m_binary_ops_list[i].lhs());
++             lhs_vars_set_in_block.insert(m_binary_ops_list[i].lhs());
++         }
++     }
++ 
++     const std::vector<variable_t> all_lhs() const { return m_all_lhs; }
++
++     std::vector<binary_operation_t> all_ops() const { return m_all_ops; }
++   
++     const std::vector<linear_expression_t> all_left() const { return m_all_left; }
++   
++     const std::vector<linear_expression_t> all_right() const { return m_all_right; }
++ 
++     virtual void
++     accept(statement_visitor<BasicBlockLabel, Number, VariableName> *v) override {
++         v->visit(*this);
++     }
++ 
++     virtual statement_t *clone(basic_block_t *parent) const override {
++         return new this_type(this->m_binary_ops_list, parent, this->m_dbg_info);
++     }
++ 
++     virtual void write(crab_os &o) const override {
++         o << "[[";
++ 
++         int sz = m_binary_ops_list.size();
++         for (int i = 0; i < sz; i++) {
++            m_binary_ops_list[i].write(o);
++            o << "; ";
++         }
++ 
++         o << "]]";
++     }
++ 
++ private:
++     std::vector<binary_op_t> m_binary_ops_list;
++     std::vector<variable_t> m_all_lhs;
++     std::vector<binary_operation_t> m_all_ops;
++     std::vector<linear_expression_t> m_all_left;
++     std::vector<linear_expression_t> m_all_right;
++ };
++
+ template <class BasicBlockLabel, class Number, class VariableName>
+ class assignment : public statement<BasicBlockLabel, Number, VariableName> {
+   using this_type = assignment<BasicBlockLabel, Number, VariableName>;
+@@ -2282,6 +2392,7 @@ public:
+   using unreach_t = unreachable_stmt<BasicBlockLabel, Number, VariableName>;
+   // Numerical
+   using bin_op_t = binary_op<BasicBlockLabel, Number, VariableName>;
++  using quad_affine_block_t = quad_affine_block<BasicBlockLabel, Number, VariableName>;
+   using assign_t = assignment<BasicBlockLabel, Number, VariableName>;
+   using assume_t = assume_stmt<BasicBlockLabel, Number, VariableName>;
+   using select_t = select_stmt<BasicBlockLabel, Number, VariableName>;
+@@ -2375,6 +2486,128 @@ private:
+     return stmt;
+   }
+ 
++void checkAndAddInQuadSet(variable_t currVar,
++                          lin_exp_t lhs,
++                          lin_exp_t rhs,
++                          std::unordered_set<variable_t>& quadVariablesSet)
++{
++    // Checks if any of the lhs or rhs vars set have some vars in the quadratic set
++    // and if yes, then currVar is also added in the set
++
++    for (auto var: lhs.variables()) {
++        if (quadVariablesSet.find(var) != quadVariablesSet.end()) {
++            quadVariablesSet.insert(currVar);
++            break;
++        }
++    }
++
++    for (auto var: rhs.variables()) {
++        if (quadVariablesSet.find(var) != quadVariablesSet.end()) {
++            quadVariablesSet.insert(currVar);
++        }
++    }
++}
++
++CollateStatus shouldCollateStmt(statement_t* stmt,
++                                AffinePrecisionLevel affinePrecLevel,
++                                QuadPrecisionLevel quadPrecLevel,
++                                std::unordered_set<variable_t>& quadVariablesSet,
++                                bool& isBlockQuadratic)
++{
++    if(auto binOpStmt = dynamic_cast<bin_op_t*>(stmt))
++    {
++        binary_operation_t binOp = binOpStmt->op();
++
++        if (binOp == BINOP_ADD || binOp == BINOP_SUB) {
++            lin_exp_t lhs = binOpStmt->left();
++            lin_exp_t rhs = binOpStmt->right();
++
++            if (!isBlockQuadratic && affinePrecLevel == AffinePrecisionLevel::DEFAULT) {
++                return NO_COLLATE;
++            }
++            else {
++                // Update the quadratic variables set: the present assigned variable is effectively
++                // quadratic if any of the current operands are quadratic.
++                checkAndAddInQuadSet(binOpStmt->lhs(), lhs, rhs, quadVariablesSet);
++                return THIS_BLOCK;
++            }
++        }
++        else if (binOp == BINOP_MUL) {
++            lin_exp_t lhs = binOpStmt->left();
++            lin_exp_t rhs = binOpStmt->right();
++
++            size_t lhs_vars_size = lhs.variables().size();
++            size_t rhs_vars_size = rhs.variables().size();
++
++            if (lhs_vars_size + rhs_vars_size <= 1) {
++                // Case when rhs is var*num
++                if (!isBlockQuadratic && affinePrecLevel == AffinePrecisionLevel::DEFAULT) {
++                    return NO_COLLATE;
++                }
++                else {
++                    // Update the quadratic variables set: the present assigned variable is effectively
++                    // quadratic if any of the current operands are quadratic.
++                    checkAndAddInQuadSet(binOpStmt->lhs(), lhs, rhs, quadVariablesSet);
++                    return THIS_BLOCK;
++                }
++            }
++            else {
++                // Case when rhs is var1 * var2
++
++                // Do not collate if the quad precision level is default.
++                if (quadPrecLevel == QuadPrecisionLevel::DEFAULT) {
++                    return NO_COLLATE;
++                }
++
++                //
++                // If mergeQuad is true, but if one of the multiplicants is already quadratic,
++                // then we should not collate this statement in the cuurent block as this
++                // will make the resultant non-quadratic.
++                //
++                // Eg:
++                // x = y * z
++                // a = x * v
++                //
++                // Resultant a is y * z * v
++                //
++                for (auto var: lhs.variables()) {
++                    if (quadVariablesSet.find(var) != quadVariablesSet.end()) {
++                        return NEXT_BLOCK;
++                    }
++                }
++
++                for (auto var: rhs.variables()) {
++                    if (quadVariablesSet.find(var) != quadVariablesSet.end()) {
++                        return NEXT_BLOCK;
++                    }
++                }
++
++                quadVariablesSet.insert(binOpStmt->lhs());
++                isBlockQuadratic = true;
++
++                return THIS_BLOCK;
++            }
++        }
++    }
++
++    return NO_COLLATE;
++}
++
++void collateStatementsIntoBlocks(std::vector<statement_t*> statements) {
++    std::vector<bin_op_t> binop_statements;
++    for (auto stmt: statements) {
++        auto binOpStmt = dynamic_cast<bin_op_t*>(stmt);
++        binop_statements.push_back(*binOpStmt);
++    }
++
++    // Replace the first statement with the block.
++    replace(statements[0], new quad_affine_block_t(binop_statements, this));
++
++    for(int i=1; i<statements.size(); i++) {
++        remove(statements[i], false);
++    }
++}
++    
+ public:
+   basic_block(const basic_block_t &o) = delete;
+ 
+@@ -2919,6 +3152,63 @@ public:
+   const statement_t *bool_xor(variable_t lhs, variable_t op1, variable_t op2) {
+     return insert(new bool_bin_op_t(lhs, BINOP_BXOR, op1, op2, this));
+   }
++
++  void collateStatementsIntoQuadAffineBlocks(AffinePrecisionLevel affinePrecisionLevel,
++                                             QuadPrecisionLevel quadPrecisionLevel,
++                                             int maxCollateCount)
++  {
++        std::vector<statement_t*> currentBlockToCollate;
++        std::vector<std::vector<statement_t*>> allBlocksToCollate;
++        std::unordered_set<variable_t> quadVariablesSet;
++        bool isBlockQuadratic = false;
++
++        for (unsigned i=0, e=m_stmts.size(); i<e; ++i) {
++            int status = shouldCollateStmt(m_stmts[i], affinePrecisionLevel, quadPrecisionLevel, quadVariablesSet, isBlockQuadratic);
++            
++            if (status == THIS_BLOCK && (maxCollateCount == -1 || currentBlockToCollate.size() < maxCollateCount)) {
++                // Add the statement in the current block if status is "THIS_BLOCK"
++                // and the maxCollateCount is not violated.
++                currentBlockToCollate.push_back(m_stmts[i]);
++                continue;
++            }
++            
++            // If currentBlock has some instructions, they have to be collated
++            // so add them to the allBlocksToCollate list and clear the current
++            // block.
++            if (currentBlockToCollate.size() > 0) {
++                allBlocksToCollate.push_back(currentBlockToCollate);
++                currentBlockToCollate.clear();
++            }
++            
++            // Clear the quadVariablesSet and isBlockQuadratic flag for next block analysis.
++            quadVariablesSet.clear();
++            isBlockQuadratic = false;
++
++            // If the status this time was not "NO_COLLATE", then
++            // either we hit the max count or encountered instruction
++            // that would turn the block non-quadratic. In any case,
++            // we need to consider this instruction again for a new
++            // next block. 
++            if (status != NO_COLLATE) {
++                i -= 1;
++            }
++        }
++
++        // Add the consecutive expressions gathered at the end of the block.
++        if (currentBlockToCollate.size() > 0) {
++            allBlocksToCollate.push_back(currentBlockToCollate);
++        }
++
++        for (auto blockToCollate: allBlocksToCollate) {
++            collateStatementsIntoBlocks(blockToCollate);
++        }
++
++        // After collating the statements into blocks, we recompute the
++        // def-use information.
++        this->m_live = live_domain_t::bottom();
++        update_uses_and_defs();
++    }
++
+   /**********************************************************************/
+   /*                  End BUILD CFG STATEMENTS                          */
+   /**********************************************************************/
+@@ -3019,6 +3309,7 @@ public:
+ template <class BasicBlockLabel, class Number, class VariableName>
+ struct statement_visitor {
+   using bin_op_t = binary_op<BasicBlockLabel, Number, VariableName>;
++  using quad_affine_block_t = quad_affine_block<BasicBlockLabel, Number, VariableName>;
+   using assign_t = assignment<BasicBlockLabel, Number, VariableName>;
+   using assume_t = assume_stmt<BasicBlockLabel, Number, VariableName>;
+   using select_t = select_stmt<BasicBlockLabel, Number, VariableName>;
+@@ -3057,6 +3348,7 @@ struct statement_visitor {
+   using bool_assert_t = bool_assert_stmt<BasicBlockLabel, Number, VariableName>;
+ 
+   virtual void visit(bin_op_t &){};
++  virtual void visit(quad_affine_block_t &){};
+   virtual void visit(assign_t &){};
+   virtual void visit(assume_t &){};
+   virtual void visit(select_t &){};
+@@ -3605,6 +3897,14 @@ public:
+     // merge_blocks();
+   }
+ 
++  void collateStatementsIntoQuadAffineBlocks(AffinePrecisionLevel affinePrecisionLevel,
++                                             QuadPrecisionLevel quadPrecisionLevel,
++                                             int maxCollateCount) {
++        for(auto& bb: boost::make_iterator_range(begin(), end())) {
++            bb.collateStatementsIntoQuadAffineBlocks(affinePrecisionLevel, quadPrecisionLevel, maxCollateCount);
++        }
++    }
++
+ private:
+   ////
+   // Trivial cfg simplifications
+diff --git a/include/crab/checkers/base_property.hpp b/include/crab/checkers/base_property.hpp
+index 02aa39f0ef41d40cdf19cb84a94e7bbcf67e4681..ad5f3c9b03af41e4588ac2d5f3394feab491f3b6 100644
+--- a/include/crab/checkers/base_property.hpp
++++ b/include/crab/checkers/base_property.hpp
+@@ -199,6 +199,8 @@ public:
+       crab::cfg::statement<basic_block_label_t, number_t, varname_t>;
+   using bin_op_t =
+       crab::cfg::binary_op<basic_block_label_t, number_t, varname_t>;
++  using quad_affine_block_t = 
++      crab::cfg::quad_affine_block<basic_block_label_t, number_t, varname_t>;
+   using assign_t =
+       crab::cfg::assignment<basic_block_label_t, number_t, varname_t>;
+   using assume_t =
+@@ -332,6 +334,12 @@ protected:
+     s.accept(&*this->m_abs_tr); // propagate m_inv to the next stmt
+   }
+ 
++  virtual void check(quad_affine_block_t &s) {
++    if (!this->m_abs_tr)
++      return;
++    s.accept(&*this->m_abs_tr); // propagate m_inv to the next stmt
++  }
++
+   virtual void check(assign_t &s) {
+     if (!this->m_abs_tr)
+       return;
+@@ -521,6 +529,7 @@ protected:
+ public:
+   /* Visitor API */
+   virtual void visit(bin_op_t &s) override { check(s); }
++  virtual void visit(quad_affine_block_t &s) override { check(s); }
+   virtual void visit(assign_t &s) override { check(s); }
+   virtual void visit(assume_t &s) override { check(s); }
+   virtual void visit(select_t &s) override { check(s); }
+diff --git a/include/crab/domains/abstract_domain.hpp b/include/crab/domains/abstract_domain.hpp
+index 82c10414c337cffc7dbd9b4df1da9978bd9f7b20..f11dd9f0cb64337a4bbbc99248ea82d1f06ed3cd 100644
+--- a/include/crab/domains/abstract_domain.hpp
++++ b/include/crab/domains/abstract_domain.hpp
+@@ -8,6 +8,7 @@
+ #include <crab/types/variable.hpp>
+ #include <crab/types/tag.hpp>
+ 
++#include <crab/support/debug.hpp>
+ #include <vector>
+ 
+ namespace crab {
+@@ -71,6 +72,8 @@ public:
+   using variable_t = variable<number_t, varname_t>;
+   using variable_or_constant_t = variable_or_constant<number_t, varname_t>;
+   using variable_vector_t = std::vector<variable_t>;
++  using arith_operation_vector_t = std::vector<arith_operation_t>;
++  using lin_expr_vector_t = std::vector<linear_expression_t>;
+   using variable_or_constant_vector_t = std::vector<variable_or_constant_t>;
+   using reference_constraint_t = reference_constraint<number_t, varname_t>;
+   using interval_t = ikos::interval<number_t>;
+@@ -119,6 +122,21 @@ public:
+   // x := y op k
+   virtual void apply(arith_operation_t op, const variable_t &x,
+                      const variable_t &y, number_t k) = 0;
++
++    // Process a block of affine/quadratic assignments jointly for improved precision.
++    // Domains that support precise ops (e.g., Elina zones/oct/pk) must override this.
++    // Collation should only be enabled when a supporting domain is selected
++    // (see CfgBuilderParams::shouldCollateIntoQuadAffineBlocks).
++    virtual void quad_affine_block(const variable_vector_t &all_lhs_vars,
++                                   const arith_operation_vector_t &all_ops,
++                                   const lin_expr_vector_t &all_left_exprs,
++                                   const lin_expr_vector_t &all_right_exprs)
++    {
++        // Should never be called: collation is only enabled for domains that
++        // override this method (see CfgBuilderParams::shouldCollateIntoQuadAffineBlocks).
++        CRAB_ERROR("quad_affine_block called on a domain that does not support it");
++    };
++
+   // x := e
+   virtual void assign(const variable_t &x, const linear_expression_t &e) = 0;
+   // join(*this, copy_of_this(x := e))
+diff --git a/include/crab/domains/abstract_domain_macros.def b/include/crab/domains/abstract_domain_macros.def
+index 36afe0c89e0d43619ec39662c9a695800f2b1111..ebe313dd88aceeb677d9ffc26cd56e98e5b1904d 100644
+--- a/include/crab/domains/abstract_domain_macros.def
++++ b/include/crab/domains/abstract_domain_macros.def
+@@ -29,6 +29,7 @@
+                      const variable_t &y, const variable_t &z) override {}     \
+   virtual void apply(crab::domains::arith_operation_t op, const variable_t &x, \
+                      const variable_t &y, number_t k) override {}              \
++  virtual void quad_affine_block(const variable_vector_t &all_lhs_vars, const std::vector<arith_operation_t> &all_ops, const lin_expr_vector_t &all_left_exprs, const lin_expr_vector_t &all_right_exprs) override {} \
+   virtual void assign(const variable_t &x, const linear_expression_t &e) override {} \
+   virtual void weak_assign(const variable_t &x, const linear_expression_t &e) override {} \
+   virtual void select(const variable_t &lhs, const linear_constraint_t &cond,  \
+diff --git a/include/crab/domains/abstract_domain_params.hpp b/include/crab/domains/abstract_domain_params.hpp
+index 704d0b2cf6639c5e68d3bc3374403a152f32b643..9db3fe782e8c134990e5733d82840acf7d04f3e2 100644
+--- a/include/crab/domains/abstract_domain_params.hpp
++++ b/include/crab/domains/abstract_domain_params.hpp
+@@ -3,6 +3,7 @@
+ #include <crab/support/os.hpp>
+ #include <crab/support/debug.hpp>
+ 
++#include <unordered_map>
+ #include <vector>
+ 
+ namespace crab {
+@@ -13,17 +14,48 @@ class crab_domain_params;
+ class elina_domain_params {
+   bool m_use_tree_expressions;
+ 
++  // Parameter to control if the generated optimization problem should be split in components.
++  bool m_split_prob_in_comps;
++
++  // Parameters to specify the setting of the linear and quadratic solvers to be
++  // used for affine and multiplication handling respectively.
++  std::unordered_map<std::string, std::string> m_linear_solver_config;
++  std::unordered_map<std::string, std::string> m_quad_solver_config;
++
+   friend class crab_domain_params;
+ public:
+   elina_domain_params()
+-    : m_use_tree_expressions(true) {}
+-  elina_domain_params(bool use_tree_expressions)
+-    : m_use_tree_expressions(use_tree_expressions) {}
++    : m_use_tree_expressions(true), 
++      m_split_prob_in_comps(true),
++      m_linear_solver_config {
++        {"name", "gb"},
++      },
++      m_quad_solver_config {
++        {"name", "gb"},
++      } {}
+ 
++  elina_domain_params(bool use_tree_expressions, bool split_prob_in_comps, std::unordered_map<std::string, std::string> linear_solver_config,  std::unordered_map<std::string, std::string> quad_solver_config)
++    : m_use_tree_expressions(use_tree_expressions), 
++      m_split_prob_in_comps(split_prob_in_comps),
++      m_linear_solver_config(linear_solver_config),
++      m_quad_solver_config(quad_solver_config) {}
+   
+   bool elina_use_tree_expressions() const {
+     return m_use_tree_expressions;
+   }
++
++  bool elina_split_prob_in_comps() const {
++    return m_split_prob_in_comps;
++  }
++
++  std::unordered_map<std::string, std::string> elina_linear_solver_config() const {
++    return m_linear_solver_config;
++  }
++  
++  std::unordered_map<std::string, std::string> elina_quad_solver_config() const {
++    return m_quad_solver_config;
++  }
++
+   void update_params(const elina_domain_params &params);
+   void write(crab::crab_os &o) const;  
+ };
+@@ -322,6 +354,9 @@ public:
+   /* Supported parameter strings:
+ 
+      - elina.use_tree_expressions: bool
++     - elina.split_prob_in_comps: bool
++     - elina.linear_solver_config: map<string, string>
++     - elina.quad_solver_config: map<string, string>
+      - array_adaptive.is_smashable: bool
+      - array_adaptive.smash_at_nonzer_offset: bool
+      - array_adaptive.max_smashable_cells: unsigned
+diff --git a/include/crab/domains/array_adaptive.hpp b/include/crab/domains/array_adaptive.hpp
+index ab8140a4405438ede3bb342e8899f13d2c6dc10d..e75b4639f0aeee2cc1ba844d8778e8e9156bd287 100644
+--- a/include/crab/domains/array_adaptive.hpp
++++ b/include/crab/domains/array_adaptive.hpp
+@@ -59,6 +59,7 @@
+ 
+ #include <algorithm>
+ #include <functional>
++#include <iostream>
+ #include <set>
+ #include <unordered_map>
+ #include <vector>
+@@ -867,6 +868,8 @@ public:
+   using typename abstract_domain_t::variable_or_constant_vector_t;
+   using typename abstract_domain_t::variable_t;
+   using typename abstract_domain_t::variable_vector_t;
++  using typename abstract_domain_t::arith_operation_vector_t;
++  using typename abstract_domain_t::lin_expr_vector_t;
+   using base_domain_t = array_smashing<NumDomain>;
+ 
+ private:
+@@ -2198,6 +2201,19 @@ public:
+                                    << " " << z << " " << *this << "\n";);
+   }
+ 
++    void quad_affine_block(const variable_vector_t &all_lhs_vars,
++                            const arith_operation_vector_t &all_ops,
++                            const lin_expr_vector_t &all_left_exprs,
++                            const lin_expr_vector_t &all_right_exprs) override
++    {
++        crab::CrabStats::count(domain_name() + ".count.quad_affine_block");
++        crab::ScopedCrabStats __st__(domain_name() + ".quad_affine_block");
++
++        m_base_dom.quad_affine_block(all_lhs_vars, all_ops, all_left_exprs, all_right_exprs);
++
++        // TODO: Crab logging like above.
++    }
++
+   void select(const variable_t &lhs, const linear_constraint_t &cond,
+               const linear_expression_t &e1,
+               const linear_expression_t &e2) override {
+diff --git a/include/crab/domains/array_smashing.hpp b/include/crab/domains/array_smashing.hpp
+index 37e137187dfe24af217a547cf3bb980bece490ff..d5c3e5385c512e90c1501c1a9b1b07627dce2716 100644
+--- a/include/crab/domains/array_smashing.hpp
++++ b/include/crab/domains/array_smashing.hpp
+@@ -32,6 +32,8 @@
+ #include <crab/support/debug.hpp>
+ #include <crab/support/stats.hpp>
+ 
++#include <iostream>
++
+ namespace crab {
+ 
+ namespace domains {
+@@ -59,6 +61,8 @@ public:
+   using typename abstract_domain_t::variable_or_constant_vector_t;
+   using typename abstract_domain_t::variable_t;
+   using typename abstract_domain_t::variable_vector_t;
++  using typename abstract_domain_t::arith_operation_vector_t;
++  using typename abstract_domain_t::lin_expr_vector_t;
+   using base_dom_t = BaseNumDomain;
+   using interval_t = ikos::interval<number_t>;
+ 
+@@ -404,6 +408,16 @@ public:
+                                       << op << " " << z << *this << "\n";);
+   }
+ 
++  void quad_affine_block(const variable_vector_t &all_lhs_vars,
++                         const arith_operation_vector_t &all_ops,
++                         const lin_expr_vector_t &all_left_exprs,
++                         const lin_expr_vector_t &all_right_exprs) override
++    {
++        m_base_dom.quad_affine_block(all_lhs_vars, all_ops, all_left_exprs, all_right_exprs);
++
++        // TODO: Crab logging like above.
++    }
++
+   void select(const variable_t &lhs, const linear_constraint_t &cond,
+               const linear_expression_t &e1,
+               const linear_expression_t &e2) override {
+diff --git a/include/crab/domains/combined_domains.hpp b/include/crab/domains/combined_domains.hpp
+index 39c582bd47d6998fb18ed540b1f625e39e1bc4d6..7411ce4d642ca2985a286e0aebb01072fefd85f6 100644
+--- a/include/crab/domains/combined_domains.hpp
++++ b/include/crab/domains/combined_domains.hpp
+@@ -258,6 +258,8 @@ public:
+   using typename abstract_domain_t::variable_or_constant_t;
+   using typename abstract_domain_t::variable_t;
+   using typename abstract_domain_t::variable_vector_t;
++  using typename abstract_domain_t::arith_operation_vector_t;
++  using typename abstract_domain_t::lin_expr_vector_t;
+   using typename abstract_domain_t::variable_or_constant_vector_t;  
+   using number_t = Number;
+   using varname_t = VariableName;
+@@ -402,6 +404,16 @@ public:
+     reduce();
+   }
+ 
++  void quad_affine_block(const variable_vector_t &all_lhs_vars,
++                         const arith_operation_vector_t &all_ops,
++                         const lin_expr_vector_t &all_left_exprs,
++                         const lin_expr_vector_t &all_right_exprs) override
++    {
++        m_product.first().quad_affine_block(all_lhs_vars, all_ops, all_left_exprs, all_right_exprs);
++        m_product.second().quad_affine_block(all_lhs_vars, all_ops, all_left_exprs, all_right_exprs);
++        reduce();
++    }
++
+   void select(const variable_t &lhs, const linear_constraint_t &cond,
+ 	      const linear_expression_t &e1,  const linear_expression_t &e2) override {
+     m_product.first().select(lhs, cond, e1, e2);
+diff --git a/include/crab/domains/elina/elina.hpp b/include/crab/domains/elina/elina.hpp
+index be4f7f6cf9c6b6a31007de7a40802251d3a38e59..972f284d9230d7a6e4c1b2c8b89153edd3e61307 100644
+--- a/include/crab/domains/elina/elina.hpp
++++ b/include/crab/domains/elina/elina.hpp
+@@ -13,8 +13,12 @@
+ #include "elina_tcons0.h"
+ #include "elina_texpr0.h"
+ #include "opt_oct.h"
++#include "opt_oct_precise_ops.hpp"
+ #include "opt_pk.h"
++#include "opt_pk_precise_ops.hpp"
+ #include "opt_zones.h"
++#include "opt_zones_precise_ops.hpp"
++#include "quad_affine_block.hpp" // Don't move up
+ #pragma GCC diagnostic pop
+ 
+ #include <boost/shared_ptr.hpp>
+diff --git a/include/crab/domains/elina_domains.hpp b/include/crab/domains/elina_domains.hpp
+index f69ea9ce92051ad845cde0662300b19e27f554b5..d41c05b71dbc3f20180464b4f28f105917a690aa 100644
+--- a/include/crab/domains/elina_domains.hpp
++++ b/include/crab/domains/elina_domains.hpp
+@@ -86,7 +86,9 @@ public:
+   using typename abstract_domain_t::variable_or_constant_t;
+   using typename abstract_domain_t::variable_t;
+   using typename abstract_domain_t::variable_vector_t;
+-  using typename abstract_domain_t::variable_or_constant_vector_t;  
++  using typename abstract_domain_t::lin_expr_vector_t;
++  using typename abstract_domain_t::arith_operation_vector_t;
++  using typename abstract_domain_t::variable_or_constant_vector_t; 
+   using number_t = Number;
+   using varname_t = VariableName;
+ 
+@@ -515,7 +517,7 @@ private:
+   // --- from elina to crab
+ 
+   inline void convert_elina_number(double n, ikos::z_number &res) const {
+-    res = ikos::z_number((long)n);
++    mpz_set_d(res.get_mpz_t(), n);
+   }
+ 
+   inline void convert_elina_number(double n, ikos::q_number &res) const {
+@@ -1564,6 +1566,154 @@ public:
+     }
+   }
+ 
++    void quad_affine_block(const variable_vector_t &all_lhs_vars,
++                            const arith_operation_vector_t &all_ops,
++                            const lin_expr_vector_t &all_left_exprs,
++                            const lin_expr_vector_t &all_right_exprs)
++    {
++        crab::CrabStats::count(domain_name() + ".count.quad_affine_block");
++        crab::ScopedCrabStats __st__(domain_name() + ".quad_affine_block");
++
++        if(is_bottom()) return;        
++
++        //
++        // Generate the block
++        //
++        QuadAffineBlock quad_affine_block;
++        int siz = all_lhs_vars.size();
++
++        for (int i = 0; i < siz; i++) {
++            const variable_t &x = all_lhs_vars[i];
++            int v1 = get_var_dim_insert(x);
++
++            if (all_ops[i] == OP_ADDITION) {
++                quad_affine_block.set_elina_linexpr(v1, crab_linexpr_to_elina(all_left_exprs[i] + all_right_exprs[i]));
++            }
++            else if (all_ops[i] == OP_SUBTRACTION) {
++                quad_affine_block.set_elina_linexpr(v1, crab_linexpr_to_elina(all_left_exprs[i] - all_right_exprs[i]));
++            }
++            else if (all_ops[i] == OP_MULTIPLICATION) {
++                quad_affine_block.set_elina_linexprs_prod(v1, crab_linexpr_to_elina(all_left_exprs[i]), crab_linexpr_to_elina(all_right_exprs[i]));
++            }
++            else {
++                assert(False);
++            }
++        }
++
++        // 1. In the case of polyhedra, the quad solver uses external templates like oct or zones
++        // to infer more constraints to make the final answer more precise. These are used
++        // to make the current answer more precise and thus we need to compute the
++        // current answer using the baseline here.
++        // 2. For the case of non-linear blocks, ELINA uses some heuristics that are not
++        // exactly interval and so quad_affine transformers may sometimes produce answers
++        // weaker or incomparable to them. In this case, we take meet with ELINA's answers
++        // to always do better than before.
++        bool shouldMeetWithBaselineAnswer = (ElinaDom == ELINA_PK || !quad_affine_block.is_block_linear());
++        elina_state_ptr baseline_ans_ptr = nullptr;
++
++        if (shouldMeetWithBaselineAnswer) {
++            baseline_ans_ptr = elinaPtr(get_man(), elina_abstract0_copy(get_man(), &*m_apstate));
++            bool use_texpr = crab_domain_params_man::get().elina_use_tree_expressions();
++            elina_linexpr0_t *linexpr;
++            elina_texpr0_t *texpr;
++
++            for (int i = 0; i < siz; i++) {
++                const variable_t &x = all_lhs_vars[i];
++                int v1 = get_var_dim_insert(x);
++
++                linexpr = nullptr;
++                texpr = nullptr;
++
++                if (all_ops[i] == OP_ADDITION) {
++                    if (use_texpr) {
++                        texpr = texpr_add(expr2texpr(all_left_exprs[i]), expr2texpr(all_right_exprs[i]));
++                    }
++                    else {
++                        linexpr = crab_linexpr_to_elina(all_left_exprs[i] + all_right_exprs[i]);
++                    }
++                }
++                else if (all_ops[i] == OP_SUBTRACTION) {
++                    if (use_texpr) {
++                        texpr = texpr_sub(expr2texpr(all_left_exprs[i]), expr2texpr(all_right_exprs[i]));
++                    }
++                    else {
++                        linexpr = crab_linexpr_to_elina(all_left_exprs[i] - all_right_exprs[i]);
++                    }
++                }
++                else if (all_ops[i] == OP_MULTIPLICATION) {
++                    if (use_texpr) {
++                        texpr = texpr_mul(expr2texpr(all_left_exprs[i]), expr2texpr(all_right_exprs[i]));
++                    }
++                    else {
++                        // Even in this setting, use texpr if it is the multiplication of two variables
++                        if (!all_left_exprs[i].is_constant() && !all_right_exprs[i].is_constant()) {
++                            texpr = texpr_mul(expr2texpr(all_left_exprs[i]), expr2texpr(all_right_exprs[i]));
++                        }
++                        else {
++                            if (all_left_exprs[i].is_constant()) {
++                                linexpr = crab_linexpr_to_elina(all_left_exprs[i].constant() * all_right_exprs[i]);
++                            }
++                            else {
++                                linexpr = crab_linexpr_to_elina(all_left_exprs[i] * all_right_exprs[i].constant());
++                            }
++                        }
++                    }
++                }
++                else {
++                    assert(False);
++                }
++
++                if (linexpr != nullptr) {
++                    baseline_ans_ptr = elinaPtr(get_man(),
++                                                elina_abstract0_assign_linexpr(get_man(), false, &*baseline_ans_ptr, v1, linexpr, NULL));
++                }
++                else {
++                    baseline_ans_ptr = elinaPtr(get_man(),
++                                                elina_abstract0_assign_texpr(get_man(), false, &*baseline_ans_ptr, v1, texpr, NULL));
++                }
++            }
++        }
++
++        //
++        // Pass it to the specific domain handlers
++        //
++        elina_state_ptr quad_affine_ans = nullptr;
++        if (ElinaDom == ELINA_OCT) {
++            m_apstate = elinaPtr(get_man(),
++                                 opt_oct_quad_affine(get_man(), 
++                                                     &*m_apstate,
++                                                     quad_affine_block,
++                                                     crab_domain_params_man::get().elina_split_prob_in_comps(),
++                                                     crab_domain_params_man::get().elina_linear_solver_config(),
++                                                     crab_domain_params_man::get().elina_quad_solver_config()));
++        }
++        else if (ElinaDom == ELINA_ZONES) {
++            m_apstate = elinaPtr(get_man(),
++                                 opt_zones_quad_affine(get_man(), 
++                                                       &*m_apstate,
++                                                       quad_affine_block,
++                                                       crab_domain_params_man::get().elina_split_prob_in_comps(),
++                                                       crab_domain_params_man::get().elina_linear_solver_config(),
++                                                       crab_domain_params_man::get().elina_quad_solver_config()));
++        }
++        else if (ElinaDom == ELINA_PK) {
++            m_apstate = elinaPtr(get_man(),
++                                 opt_pk_quad_affine(get_man(),
++                                                    &*m_apstate,
++                                                    quad_affine_block,
++                                                    crab_domain_params_man::get().elina_split_prob_in_comps(),
++                                                    crab_domain_params_man::get().elina_linear_solver_config(),
++                                                    crab_domain_params_man::get().elina_quad_solver_config()));
++        }
++
++        if (shouldMeetWithBaselineAnswer) {
++            //
++            // Meet with baseline answer if the flag is on
++            //
++            m_apstate = elinaPtr(get_man(), elina_abstract0_meet(get_man(), false, &*baseline_ans_ptr, &*m_apstate));
++        }
++    }
++
+   void apply(int_conv_operation_t op, const variable_t &dst,
+              const variable_t &src) override {
+     int_cast_domain_traits<elina_domain_t>::apply(*this, op, dst, src);
+diff --git a/include/crab/domains/flat_boolean_domain.hpp b/include/crab/domains/flat_boolean_domain.hpp
+index 6c9963be2957b2c253950d670ba3962c11595f12..b9258dd4abc6f65baa8770f146ae99dcdd190eec 100644
+--- a/include/crab/domains/flat_boolean_domain.hpp
++++ b/include/crab/domains/flat_boolean_domain.hpp
+@@ -15,6 +15,8 @@
+ #include <crab/support/debug.hpp>
+ #include <crab/support/stats.hpp>
+ 
++#include <iostream>
++
+ namespace crab {
+ namespace domains {
+ // A simple flat 3-valued boolean abstract domain
+@@ -36,6 +38,7 @@ public:
+   using typename abstract_domain_t::variable_or_constant_t;
+   using typename abstract_domain_t::variable_t;
+   using typename abstract_domain_t::variable_vector_t;
++  using typename abstract_domain_t::lin_expr_vector_t;
+   using typename abstract_domain_t::variable_or_constant_vector_t;  
+   using bool_t = boolean_value;
+   using separate_domain_t = ikos::separate_domain<variable_t, boolean_value>;
+@@ -557,6 +560,8 @@ public:
+   using typename abstract_domain_t::variable_or_constant_t;
+   using typename abstract_domain_t::variable_t;
+   using typename abstract_domain_t::variable_vector_t;
++  using typename abstract_domain_t::arith_operation_vector_t;
++  using typename abstract_domain_t::lin_expr_vector_t;
+   using typename abstract_domain_t::variable_or_constant_vector_t;  
+   using bound_t = ikos::bound<number_t>;
+ 
+@@ -1110,6 +1115,18 @@ public:
+     m_unchanged_vars -= x;
+   }
+ 
++  void quad_affine_block(const variable_vector_t &all_lhs_vars,
++                         const arith_operation_vector_t &all_ops,
++                         const lin_expr_vector_t &all_left_exprs,
++                         const lin_expr_vector_t &all_right_exprs) override
++    {
++        m_product.quad_affine_block(all_lhs_vars, all_ops, all_left_exprs, all_right_exprs);
++
++        for (variable_t x: all_lhs_vars) {
++            m_unchanged_vars -= x;
++        }
++    }
++
+   void assign(const variable_t &x, const linear_expression_t &e) override {
+     m_product.assign(x, e);
+     m_unchanged_vars -= x;
+diff --git a/include/crab/domains/generic_abstract_domain.hpp b/include/crab/domains/generic_abstract_domain.hpp
+index 98249da07b7ab8695934433e2552d5131db83b6f..12f441c3a5a06fcd23e88e61b1f63413ca20a527 100644
+--- a/include/crab/domains/generic_abstract_domain.hpp
++++ b/include/crab/domains/generic_abstract_domain.hpp
+@@ -39,9 +39,11 @@ public:
+   using variable_t = variable<number_t, varname_t>;
+   using variable_or_constant_t = variable_or_constant<number_t, varname_t>;
+   using variable_vector_t = std::vector<variable_t>;
++  using lin_expr_vector_t = std::vector<linear_expression_t>;
+   using variable_or_constant_vector_t = std::vector<variable_or_constant_t>;
+   using reference_constraint_t = reference_constraint<number_t, varname_t>;
+   using interval_t = ikos::interval<number_t>;
++  using arith_operation_vector_t = std::vector<arith_operation_t>;
+ 
+ private:
+   class abstract_domain_concept {
+@@ -78,6 +80,10 @@ private:
+                        const variable_t &y, const variable_t &z) = 0;
+     virtual void apply(arith_operation_t op, const variable_t &x,
+                        const variable_t &y, number_t k) = 0;
++    virtual void quad_affine_block(const variable_vector_t &all_lhs_vars,
++                                   const arith_operation_vector_t &all_ops,
++                                   const lin_expr_vector_t &all_left_exprs,
++                                   const lin_expr_vector_t &all_right_exprs) = 0;
+     virtual void assign(const variable_t &x, const linear_expression_t &e) = 0;
+     virtual void weak_assign(const variable_t &x, const linear_expression_t &e) = 0;    
+     virtual void operator+=(const linear_constraint_system_t &csts) = 0;
+@@ -331,6 +337,12 @@ private:
+                number_t k) override {
+       m_inv.apply(op, x, y, k);
+     }
++    void quad_affine_block(const variable_vector_t &all_lhs_vars,
++        const arith_operation_vector_t &all_ops,
++        const lin_expr_vector_t &all_left_exprs,
++        const lin_expr_vector_t &all_right_exprs) override {
++      m_inv.quad_affine_block(all_lhs_vars, all_ops, all_left_exprs, all_right_exprs);
++    }
+     void assign(const variable_t &x, const linear_expression_t &e) override {
+       m_inv.assign(x, e);
+     }
+@@ -718,6 +730,13 @@ public:
+              number_t k) override {
+     m_concept->apply(op, x, y, k);
+   }
++  void quad_affine_block(const variable_vector_t &all_lhs_vars,
++                         const arith_operation_vector_t &all_ops,
++                         const lin_expr_vector_t &all_left_exprs,
++                         const lin_expr_vector_t &all_right_exprs) override
++    {
++        m_concept->quad_affine_block(all_lhs_vars, all_ops, all_left_exprs, all_right_exprs);
++    }
+   void assign(const variable_t &x, const linear_expression_t &e) override {
+     m_concept->assign(x, e);
+   }
+@@ -1004,9 +1023,11 @@ public:
+   using variable_t = variable<number_t, varname_t>;
+   using variable_or_constant_t = variable_or_constant<number_t, varname_t>;
+   using variable_vector_t = std::vector<variable_t>;
++  using lin_expr_vector_t = std::vector<linear_expression_t>;
+   using variable_or_constant_vector_t = std::vector<variable_or_constant_t>;
+   using reference_constraint_t = reference_constraint<number_t, varname_t>;
+   using interval_t = ikos::interval<number_t>;
++  using arith_operation_vector_t = std::vector<arith_operation_t>;
+ 
+ private:
+   using this_type = abstract_domain_ref<Variable>;
+@@ -1136,6 +1157,14 @@ public:
+     norm().apply(op, x, y, k);
+   }
+ 
++  void quad_affine_block(const variable_vector_t &all_lhs_vars,
++                         const arith_operation_vector_t &all_ops,
++                         const lin_expr_vector_t &all_left_exprs,
++                         const lin_expr_vector_t &all_right_exprs) override
++    {
++        detach();
++        norm().quad_affine_block(all_lhs_vars, all_ops, all_left_exprs, all_right_exprs);
++    }
+   void assign(const variable_t &x, const linear_expression_t &e) override {
+     detach();
+     norm().assign(x, e);
+diff --git a/include/crab/domains/region_domain.hpp b/include/crab/domains/region_domain.hpp
+index 14616fc2b3f96791f415a5a8b42cc01dbb2c9326..5d2c0ffe0f35a928c77afda85823c2cd653970e3 100644
+--- a/include/crab/domains/region_domain.hpp
++++ b/include/crab/domains/region_domain.hpp
+@@ -21,6 +21,7 @@
+ 
+ #include <algorithm>
+ #include <functional>
++#include <iostream>
+ #include <unordered_map>
+ 
+ ////////////////////////////////////////////////////////////////////////
+@@ -111,6 +112,8 @@ public:
+   using typename abstract_domain_t::variable_or_constant_vector_t;
+   using typename abstract_domain_t::variable_t;
+   using typename abstract_domain_t::variable_vector_t;
++  using typename abstract_domain_t::arith_operation_vector_t;
++  using typename abstract_domain_t::lin_expr_vector_t;
+   using number_t = typename Params::number_t;
+   using varname_t = typename Params::varname_t;
+ 
+@@ -1828,6 +1831,37 @@ public:
+       }
+     }
+   }
++
++  void quad_affine_block(const variable_vector_t &all_lhs_vars,
++                         const arith_operation_vector_t &all_ops,
++                         const lin_expr_vector_t &all_left_exprs,
++                         const lin_expr_vector_t &all_right_exprs) override
++    {
++        crab::CrabStats::count(domain_name() + ".count.quad_affine_block");
++        crab::ScopedCrabStats __st__(domain_name() + ".quad_affine_block");
++
++        if (!is_bottom()) {
++            variable_vector_t lhs_vars;
++            lin_expr_vector_t renamed_lhs;
++            lin_expr_vector_t renamed_rhs;
++            
++            for (int i = 0; i < all_lhs_vars.size(); i++) {
++                lhs_vars.push_back(get_or_insert_gvars(all_lhs_vars[i]).get_var());
++                renamed_lhs.push_back(rename_linear_expr(all_left_exprs[i]));
++                renamed_rhs.push_back(rename_linear_expr(all_right_exprs[i]));
++            }
++
++            m_base_dom.quad_affine_block(lhs_vars, all_ops, renamed_lhs, renamed_rhs);
++
++            if (crab_domain_params_man::get().region_tag_analysis()) {
++                for (int i = 0; i < lhs_vars.size(); i++) {
++                    merge_tags(lhs_vars[i], renamed_lhs[i].variables());
++                    merge_tags(lhs_vars[i], renamed_rhs[i].variables());
++                }
++            }
++        }
++    }
++
+   void assign(const variable_t &x, const linear_expression_t &e) override {
+     crab::CrabStats::count(domain_name() + ".count.assign");
+     crab::ScopedCrabStats __st__(domain_name() + ".assign");
+diff --git a/lib/abstract_domain_params.cpp b/lib/abstract_domain_params.cpp
+index 3b7f6ca1d95a1c29b1953e93cba86841c281f8ae..3cf32ce2e3d7ec25c23b60c59ab973020ad8a972 100644
+--- a/lib/abstract_domain_params.cpp
++++ b/lib/abstract_domain_params.cpp
+@@ -8,12 +8,23 @@ namespace domains {
+ 
+ void elina_domain_params::update_params(const elina_domain_params &params) {
+   m_use_tree_expressions = params.elina_use_tree_expressions();
++  m_split_prob_in_comps = params.elina_split_prob_in_comps();
++  m_linear_solver_config = params.elina_linear_solver_config();
++  m_quad_solver_config = params.elina_quad_solver_config();
+ }
+ 
+ void elina_domain_params::write(crab::crab_os &o) const {
+   o << "Elina domains parameters:\n";
+   o << "\tuse_tree_expressions="<< m_use_tree_expressions<<"\n";  
+-  
++  o << "\tsplit_prob_in_comps="<< m_split_prob_in_comps<<"\n";  
++  o << "\tLinear Solver Parameters:\n";
++  for (const auto& [key, value] : m_linear_solver_config) {
++    o << "\t\t" << key << " = " << value << "\n";
++  }
++  o << "\tQuad Solver Parameters:\n";
++  for (const auto& [key, value] : m_quad_solver_config) {
++    o << "\t\t" << key << " = " << value << "\n";
++  }
+ }
+ 
+ void array_adaptive_domain_params::update_nonsmashable_params() {
+@@ -138,7 +149,10 @@ void fixed_tvpi_domain_params::write(crab::crab_os &o) const {
+ 
+   
+ void crab_domain_params::update_params(const crab_domain_params &p) {
+-  elina_domain_params e_p(p.elina_use_tree_expressions());
++  elina_domain_params e_p(p.elina_use_tree_expressions(),
++                          p.elina_split_prob_in_comps(),
++                          p.elina_linear_solver_config(),
++                          p.elina_quad_solver_config());
+   array_adaptive_domain_params aa_p(p.array_adaptive_is_smashable(),
+ 				    p.array_adaptive_smash_at_nonzero_offset(),
+ 				    p.array_adaptive_max_smashable_cells(),
+@@ -194,6 +208,17 @@ static int to_int(const std::string &val) {
+   } 
+ }
+ 
++static float to_float(const std::string &val) {
++  try {
++    float res = std::stof(val);
++    return res;
++  } catch (std::invalid_argument const& e) {
++    CRAB_ERROR("parameter value ", val, " cannot be converted to a float");
++  } catch (std::out_of_range const& e) {
++    CRAB_ERROR("parameter value ", val, " is out of range for a float");
++  }
++}
++
+ static unsigned to_uint(const std::string &val) {
+   try {
+     unsigned res =  std::stoul(val);
+@@ -215,10 +240,35 @@ static std::vector<unsigned> to_list_of_unsigned(const std::string &val) {
+   }
+   return res;
+ }
+-  
++
++static std::unordered_map<std::string, std::string> to_unordered_map(const std::string &val) {
++    std::unordered_map<std::string, std::string> res;
++    std::stringstream ss(val);
++    
++    while (ss.good()) {
++        std::string pair;
++        getline(ss, pair, ',');  // Extract key-value pairs
++        
++        size_t pos = pair.find('->');
++        if (pos != std::string::npos) {  // Ensure valid key:value format
++            std::string key = pair.substr(0, pos-1);
++            std::string value = pair.substr(pos + 1);
++            res[key] = value;
++        }
++    }
++
++    return res;
++}
++
+ void crab_domain_params::set_param(const std::string &param, const std::string &val) {
+   if (param == "elina.use_tree_expressions") {
+     elina_domain_params::m_use_tree_expressions = to_bool(val);
++  } else if (param == "elina.split_prob_in_comps") {
++    elina_domain_params::m_split_prob_in_comps = to_bool(val);
++  } else if (param == "elina.linear_solver_config") {
++    elina_domain_params::m_linear_solver_config = to_unordered_map(val);
++  } else if (param == "elina.quad_solver_config") {
++    elina_domain_params::m_quad_solver_config = to_unordered_map(val);
+   } else if (param == "array_adaptive.is_smashable") {
+     array_adaptive_domain_params::m_is_smashable = to_bool(val);
+   } else if (param == "array_adaptive.smash_at_nonzero_offset") {

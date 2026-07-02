@@ -1,0 +1,31 @@
+Yama executing command:
+/home/sgomber2/Desktop/Projects/PLDI26_Artifact/artifact_jmd/src/clam/build/install/bin/clam.py -g -m64 --turn-undef-nondet --crab-lower-unsigned-icmp --devirt-functions=types --inline --externalize-addr-taken-functions --crab-name-values=false --crab-track=mem --crab-singleton-aliases --crab-heap-analysis=cs-sea-dsa-types --crab-narrowing-iterations=2 --crab-widening-delay=3 --crab-widening-jump-set=0 --crab-check=assert --crab-print-invariants=true --crab-dot-cfg=1 --crab-dom elina-zones --ojson inv.json --cpu 200 --crab-affine-precision-level affine-full --crab-dom-params elina.linear_solver_config=name->dual,num_epochs->2, /home/sgomber2/Desktop/Projects/PLDI26_Artifact/artifact_jmd/data/sv-benchmarks//nla-digbench/divbin2.c
+Platform: Linux 6.17.0-14-generic
+LLVM version: 14.0
+Clang command: /usr/bin/clang -emit-llvm -o /tmp/clam-dghlvu87/divbin2.bc -c /home/sgomber2/Desktop/Projects/PLDI26_Artifact/artifact_jmd/data/sv-benchmarks//nla-digbench/divbin2.c -Xclang -disable-O0-optnone -fdeclspec -fno-discard-value-names -g -m64 -I/home/sgomber2/Desktop/Projects/PLDI26_Artifact/artifact_jmd/src/clam/build/install/include -fno-vectorize -fno-slp-vectorize
+/home/sgomber2/Desktop/Projects/PLDI26_Artifact/artifact_jmd/data/sv-benchmarks//nla-digbench/divbin2.c:15:9: warning: implicit declaration of function '__VERIFIER_nondet_uint' is invalid in C99 [-Wimplicit-function-declaration]
+    A = __VERIFIER_nondet_uint();
+        ^
+1 warning generated.
+clam-pp command: /home/sgomber2/Desktop/Projects/PLDI26_Artifact/artifact_jmd/src/clam/build/install/bin/clam-pp -o /tmp/clam-dghlvu87/divbin2.pp.bc /tmp/clam-dghlvu87/divbin2.bc --simplifycfg-sink-common=false --clam-promote-malloc=true --clam-inline-all --clam-turn-undef-nondet --scalarize-load-store=true --clam-devirt --devirt-resolver=types --clam-externalize-addr-taken-funcs
+=== Resolution of indirect calls ===
+BRUNCH_STAT INDIRECT CALLS 0
+BRUNCH_STAT RESOLVED CALLS 0
+BRUNCH_STAT UNRESOLVED CALLS 0
+BRUNCH_STAT IGNORED ASM CALLS 0
+clam command: /home/sgomber2/Desktop/Projects/PLDI26_Artifact/artifact_jmd/src/clam/build/install/bin/clam /tmp/clam-dghlvu87/divbin2.pp.bc -oll /tmp/clam-dghlvu87/divbin2.pp.ll -crab-dom-param elina.linear_solver_config=name->dual,num_epochs->2, --simplifycfg-sink-common=false --clam-turn-undef-nondet --crab-lower-unsigned-icmp --crab-affine-precision-level=affine-full --crab-quad-precision-level=default --crab-max-collate-count=-1 --crab-dom=elina-zones --crab-widening-delay=3 --crab-widening-jump-set=0 --crab-narrowing-iterations=2 --crab-relational-threshold=10000 --crab-track=mem --crab-heap-analysis=cs-sea-dsa --sea-dsa-type-aware=true --sea-dsa-devirt --crab-singleton-aliases --crab-check --crab-print-cfg=false --crab-print-invariants=blocks --crab-store-invariants=true --crab-dot-cfg=true --ojson=inv.json --use-crab-name-values=false --crab-enable-bignums=false
+CLAM WARNING: Call to external function __VERIFIER_nondet_uint. Havocing the return value and possibly its modified memory regions if the pointer analysis models the external function
+Writing 'main.crab.dot'...
+Time for loading lib dual_lin_constraints_solver.so: 177 ms
+Created file inv.main.json with analysis results
+
+************** ANALYSIS RESULTS ****************
+0  Number of total safe checks
+0  Number of total error checks
+2  Number of total warning checks
+************** ANALYSIS RESULTS END*************
+----------------------------------------------------------------------
+BRUNCH_STAT Clam 0.58
+BRUNCH_STAT ClamPP 0.00
+BRUNCH_STAT Clang 0.03
+----------------------------------------------------------------------

@@ -1,0 +1,36 @@
+{
+  "containment_checks": {
+    "0": 174,
+    "timed_out_benchs_2": [
+      "/home/sgomber2/Desktop/Projects/AbsEvolve/paper_experiments_output//exp1_linear_tradeoff/nla-digbench/elina-zones/aff-symba/egcd2-ll.c/all_invs.json",
+      "/home/sgomber2/Desktop/Projects/AbsEvolve/paper_experiments_output//exp1_linear_tradeoff/nla-digbench/elina-zones/aff-symba/knuth.c/all_invs.json",
+      "/home/sgomber2/Desktop/Projects/AbsEvolve/paper_experiments_output//exp1_linear_tradeoff/nla-digbench/elina-zones/aff-symba/fermat1.c/all_invs.json",
+      "/home/sgomber2/Desktop/Projects/AbsEvolve/paper_experiments_output//exp1_linear_tradeoff/nla-digbench/elina-zones/aff-symba/cohencu.c/all_invs.json",
+      "/home/sgomber2/Desktop/Projects/AbsEvolve/paper_experiments_output//exp1_linear_tradeoff/nla-digbench/elina-zones/aff-symba/dijkstra.c/all_invs.json",
+      "/home/sgomber2/Desktop/Projects/AbsEvolve/paper_experiments_output//exp1_linear_tradeoff/nla-digbench/elina-zones/aff-symba/fermat1-ll.c/all_invs.json",
+      "/home/sgomber2/Desktop/Projects/AbsEvolve/paper_experiments_output//exp1_linear_tradeoff/nla-digbench/elina-zones/aff-symba/egcd3.c/all_invs.json",
+      "/home/sgomber2/Desktop/Projects/AbsEvolve/paper_experiments_output//exp1_linear_tradeoff/nla-digbench/elina-zones/aff-symba/dijkstra-u.c/all_invs.json",
+      "/home/sgomber2/Desktop/Projects/AbsEvolve/paper_experiments_output//exp1_linear_tradeoff/nla-digbench/elina-zones/aff-symba/egcd3-ll.c/all_invs.json",
+      "/home/sgomber2/Desktop/Projects/AbsEvolve/paper_experiments_output//exp1_linear_tradeoff/nla-digbench/elina-zones/aff-symba/cohencu-ll.c/all_invs.json",
+      "/home/sgomber2/Desktop/Projects/AbsEvolve/paper_experiments_output//exp1_linear_tradeoff/nla-digbench/elina-zones/aff-symba/egcd2.c/all_invs.json"
+    ]
+  },
+  "assert_checks": {
+    "warning": 0,
+    "safe": 0,
+    "error": 0,
+    "timed_out_benchs_2": [
+      "/home/sgomber2/Desktop/Projects/AbsEvolve/paper_experiments_output//exp1_linear_tradeoff/nla-digbench/elina-zones/aff-symba/egcd2-ll.c/all_checks.json",
+      "/home/sgomber2/Desktop/Projects/AbsEvolve/paper_experiments_output//exp1_linear_tradeoff/nla-digbench/elina-zones/aff-symba/knuth.c/all_checks.json",
+      "/home/sgomber2/Desktop/Projects/AbsEvolve/paper_experiments_output//exp1_linear_tradeoff/nla-digbench/elina-zones/aff-symba/fermat1.c/all_checks.json",
+      "/home/sgomber2/Desktop/Projects/AbsEvolve/paper_experiments_output//exp1_linear_tradeoff/nla-digbench/elina-zones/aff-symba/cohencu.c/all_checks.json",
+      "/home/sgomber2/Desktop/Projects/AbsEvolve/paper_experiments_output//exp1_linear_tradeoff/nla-digbench/elina-zones/aff-symba/dijkstra.c/all_checks.json",
+      "/home/sgomber2/Desktop/Projects/AbsEvolve/paper_experiments_output//exp1_linear_tradeoff/nla-digbench/elina-zones/aff-symba/fermat1-ll.c/all_checks.json",
+      "/home/sgomber2/Desktop/Projects/AbsEvolve/paper_experiments_output//exp1_linear_tradeoff/nla-digbench/elina-zones/aff-symba/egcd3.c/all_checks.json",
+      "/home/sgomber2/Desktop/Projects/AbsEvolve/paper_experiments_output//exp1_linear_tradeoff/nla-digbench/elina-zones/aff-symba/dijkstra-u.c/all_checks.json",
+      "/home/sgomber2/Desktop/Projects/AbsEvolve/paper_experiments_output//exp1_linear_tradeoff/nla-digbench/elina-zones/aff-symba/egcd3-ll.c/all_checks.json",
+      "/home/sgomber2/Desktop/Projects/AbsEvolve/paper_experiments_output//exp1_linear_tradeoff/nla-digbench/elina-zones/aff-symba/cohencu-ll.c/all_checks.json",
+      "/home/sgomber2/Desktop/Projects/AbsEvolve/paper_experiments_output//exp1_linear_tradeoff/nla-digbench/elina-zones/aff-symba/egcd2.c/all_checks.json"
+    ]
+  }
+}

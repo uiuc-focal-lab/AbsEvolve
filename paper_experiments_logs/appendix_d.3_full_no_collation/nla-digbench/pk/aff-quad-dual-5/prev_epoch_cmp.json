@@ -1,0 +1,30 @@
+{
+  "containment_checks": {
+    "0": 195
+  },
+  "assert_checks": {
+    "error": 0,
+    "safe": 0,
+    "warning": 0,
+    "timed_out_benchs_1": {
+      "bench_names": [
+        "/home/sgomber2/Desktop/Projects/AbsEvolve/paper_experiments_output//exp2_full_tradeoff_no_collation/nla-digbench/pk/aff-quad-dual-4/ps5-ll.c/all_checks.json"
+      ]
+    },
+    "timed_out_benchs_2": {
+      "bench_names": [
+        "/home/sgomber2/Desktop/Projects/AbsEvolve/paper_experiments_output/exp2_full_tradeoff_no_collation/nla-digbench/pk/aff-quad-dual-5/ps5-ll.c/all_checks.json"
+      ]
+    }
+  },
+  "timed_out_benchs_1": {
+    "bench_names": [
+      "/home/sgomber2/Desktop/Projects/AbsEvolve/paper_experiments_output//exp2_full_tradeoff_no_collation/nla-digbench/pk/aff-quad-dual-4/ps5-ll.c/all_invs.json"
+    ]
+  },
+  "timed_out_benchs_2": {
+    "bench_names": [
+      "/home/sgomber2/Desktop/Projects/AbsEvolve/paper_experiments_output/exp2_full_tradeoff_no_collation/nla-digbench/pk/aff-quad-dual-5/ps5-ll.c/all_invs.json"
+    ]
+  }
+}

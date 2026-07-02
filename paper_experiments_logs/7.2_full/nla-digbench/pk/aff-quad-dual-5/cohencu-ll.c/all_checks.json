@@ -1,0 +1,8 @@
+{
+    "all_checks": {
+        "safe": 4,
+        "warning": 7,
+        "error": 0
+    },
+    "timed_out": false
+}

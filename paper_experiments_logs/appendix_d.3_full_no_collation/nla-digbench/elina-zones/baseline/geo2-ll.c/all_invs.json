@@ -1,0 +1,53 @@
+{
+    "all_invs": [
+        {
+            "str": "-call+conv <= 0;call-conv <= 0;-call1+c.0 <= -1;-call1+conv6 <= 0;-call1 <= -2;-c.0 <= -1;-mul+add <= 1;-mul+tmp <= 1;mul-add <= -1;-add+tmp <= 0;mul-tmp <= -1;add-tmp <= 0;call1-conv6 <= 0;c.0-conv6 <= -1;-conv6 <= -2",
+            "smt": "(assert (<= (+ (* (- 1.0) call) conv) 0.0))\n(assert (<= (+ call (* (- 1.0) conv)) 0.0))\n(assert (<= (+ (* (- 1.0) call1) c.0) (- 1.0)))\n(assert (<= (+ (* (- 1.0) call1) conv6) 0.0))\n(assert (>= call1 2.0))\n(assert (>= c.0 1.0))\n(assert (<= (+ (* (- 1.0) mul) add) 1.0))\n(assert (<= (+ (* (- 1.0) mul) tmp) 1.0))\n(assert (<= (+ mul (* (- 1.0) add)) (- 1.0)))\n(assert (<= (+ (* (- 1.0) add) tmp) 0.0))\n(assert (<= (+ mul (* (- 1.0) tmp)) (- 1.0)))\n(assert (<= (+ add (* (- 1.0) tmp)) 0.0))\n(assert (<= (+ call1 (* (- 1.0) conv6)) 0.0))\n(assert (<= (+ c.0 (* (- 1.0) conv6)) (- 1.0)))\n(assert (>= conv6 2.0))",
+            "dom": "elina-zones",
+            "vars": [
+                "tmp",
+                "call1",
+                "mul",
+                "call",
+                "conv6",
+                "conv",
+                "c.0",
+                "add"
+            ],
+            "len": 15
+        },
+        {
+            "str": "-c.0 <= -1",
+            "smt": "(assert (>= c.0 1.0))",
+            "dom": "elina-zones",
+            "vars": [
+                "c.0"
+            ],
+            "len": 1
+        },
+        {
+            "str": "-call1+conv6 <= 0;call1-conv6 <= 0;-call+conv <= 0;call-conv <= 0;-c.0 <= -1;-mul+add <= 1;-mul+tmp <= 1;mul-add <= -1;-add+tmp <= 0;mul-tmp <= -1;add-tmp <= 0",
+            "smt": "(assert (<= (+ (* (- 1.0) call1) conv6) 0.0))\n(assert (<= (+ call1 (* (- 1.0) conv6)) 0.0))\n(assert (<= (+ (* (- 1.0) call) conv) 0.0))\n(assert (<= (+ call (* (- 1.0) conv)) 0.0))\n(assert (>= c.0 1.0))\n(assert (<= (+ (* (- 1.0) mul) add) 1.0))\n(assert (<= (+ (* (- 1.0) mul) tmp) 1.0))\n(assert (<= (+ mul (* (- 1.0) add)) (- 1.0)))\n(assert (<= (+ (* (- 1.0) add) tmp) 0.0))\n(assert (<= (+ mul (* (- 1.0) tmp)) (- 1.0)))\n(assert (<= (+ add (* (- 1.0) tmp)) 0.0))",
+            "dom": "elina-zones",
+            "vars": [
+                "tmp",
+                "call1",
+                "mul",
+                "call",
+                "conv6",
+                "conv",
+                "c.0",
+                "add"
+            ],
+            "len": 11
+        },
+        {
+            "str": "T",
+            "smt": "(assert true)",
+            "dom": "elina-zones",
+            "vars": {},
+            "len": 0
+        }
+    ],
+    "timed_out": false
+}

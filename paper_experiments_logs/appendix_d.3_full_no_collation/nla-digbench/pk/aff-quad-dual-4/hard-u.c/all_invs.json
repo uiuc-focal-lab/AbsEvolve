@@ -1,0 +1,78 @@
+{
+    "all_invs": [
+        {
+            "str": "call-add = 0;d.0-mul = 0;r.0+mul13-add = 0;d.1-mul16 = 0;-p.0 <= -1",
+            "smt": "(assert (= (+ call (* (- 1.0) add)) 0.0))\n(assert (= (+ d.0 (* (- 1.0) mul)) 0.0))\n(assert (= (+ r.0 mul13 (* (- 1.0) add)) 0.0))\n(assert (= (+ d.1 (* (- 1.0) mul16)) 0.0))\n(assert (>= p.0 1.0))",
+            "dom": "pk",
+            "vars": [
+                "mul",
+                "r.0",
+                "d.1",
+                "mul16",
+                "p.0",
+                "mul13",
+                "call",
+                "d.0",
+                "add"
+            ],
+            "len": 5
+        },
+        {
+            "str": "d.0-mul = 0;-p.0 <= -1",
+            "smt": "(assert (= (+ d.0 (* (- 1.0) mul)) 0.0))\n(assert (>= p.0 1.0))",
+            "dom": "pk",
+            "vars": [
+                "mul",
+                "p.0",
+                "d.0"
+            ],
+            "len": 2
+        },
+        {
+            "str": "d.0-mul = 0;-p.0 <= -1",
+            "smt": "(assert (= (+ d.0 (* (- 1.0) mul)) 0.0))\n(assert (>= p.0 1.0))",
+            "dom": "pk",
+            "vars": [
+                "mul",
+                "p.0",
+                "d.0"
+            ],
+            "len": 2
+        },
+        {
+            "str": "-p.0 <= -1",
+            "smt": "(assert (>= p.0 1.0))",
+            "dom": "pk",
+            "vars": [
+                "p.0"
+            ],
+            "len": 1
+        },
+        {
+            "str": "call-add = 0;d.0-mul = 0;r.0+mul13-add = 0;d.1-mul16 = 0;-p.1 = -1;-p.0 <= -1",
+            "smt": "(assert (= (+ call (* (- 1.0) add)) 0.0))\n(assert (= (+ d.0 (* (- 1.0) mul)) 0.0))\n(assert (= (+ r.0 mul13 (* (- 1.0) add)) 0.0))\n(assert (= (+ d.1 (* (- 1.0) mul16)) 0.0))\n(assert (= p.1 1.0))\n(assert (>= p.0 1.0))",
+            "dom": "pk",
+            "vars": [
+                "mul",
+                "r.0",
+                "d.1",
+                "mul16",
+                "p.0",
+                "mul13",
+                "call",
+                "d.0",
+                "add",
+                "p.1"
+            ],
+            "len": 6
+        },
+        {
+            "str": "T",
+            "smt": "(assert true)",
+            "dom": "pk",
+            "vars": {},
+            "len": 0
+        }
+    ],
+    "timed_out": false
+}

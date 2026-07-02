@@ -1,0 +1,130 @@
+{
+    "all_invs": [
+        {
+            "str": "T",
+            "smt": "(assert true)",
+            "dom": "oct",
+            "vars": {},
+            "len": 0
+        },
+        {
+            "str": "-call <= -1;-call-call1 <= -2;-call1 <= -1;call-conv4 <= 0;-call-conv4 <= -2;-call1-conv4 <= -2;-conv4 <= -1;-call+conv4 <= 0;-call-conv5 <= -2;call1-conv5 <= 0;-call1-conv5 <= -2;-conv4-conv5 <= -2;-conv5 <= -1;-call1+conv5 <= 0;-call1+b.0 <= 0;-conv5+b.0 <= 0;b.0-c.0 <= 0;-call-k.0 <= -1;-call1-k.0 <= -1;-conv4-k.0 <= -1;-conv5-k.0 <= -1;-k.0 <= 0;-call-d.0 <= -2;-call1-d.0 <= -2;-conv4-d.0 <= -2;-conv5-d.0 <= -2;-k.0-d.0 <= -1;-d.0 <= -1;-c.0+v.0 <= 0;a.0-add <= 0;-a.0+add <= 0;b.0-add25 <= 0;-call1+add25 <= 0;-conv5+add25 <= 0;-b.0+add25 <= 0;-c.0+add25 <= 0;a.0-add29 <= 0;add-add29 <= 0;-a.0+add29 <= 0;-add+add29 <= 0;v.0-mul32 <= 0;-c.0+mul32 <= 0;-v.0+mul32 <= 0;-c.0+mul35 <= 0",
+            "smt": "(assert (>= call 1.0))\n(assert (<= (+ (* (- 1.0) call) (* (- 1.0) call1)) (- 2.0)))\n(assert (>= call1 1.0))\n(assert (<= (+ call (* (- 1.0) conv4)) 0.0))\n(assert (<= (+ (* (- 1.0) call) (* (- 1.0) conv4)) (- 2.0)))\n(assert (<= (+ (* (- 1.0) call1) (* (- 1.0) conv4)) (- 2.0)))\n(assert (>= conv4 1.0))\n(assert (<= (+ (* (- 1.0) call) conv4) 0.0))\n(assert (<= (+ (* (- 1.0) call) (* (- 1.0) conv5)) (- 2.0)))\n(assert (<= (+ call1 (* (- 1.0) conv5)) 0.0))\n(assert (<= (+ (* (- 1.0) call1) (* (- 1.0) conv5)) (- 2.0)))\n(assert (<= (+ (* (- 1.0) conv4) (* (- 1.0) conv5)) (- 2.0)))\n(assert (>= conv5 1.0))\n(assert (<= (+ (* (- 1.0) call1) conv5) 0.0))\n(assert (<= (+ (* (- 1.0) call1) b.0) 0.0))\n(assert (<= (+ (* (- 1.0) conv5) b.0) 0.0))\n(assert (<= (+ b.0 (* (- 1.0) c.0)) 0.0))\n(assert (<= (+ (* (- 1.0) call) (* (- 1.0) k.0)) (- 1.0)))\n(assert (<= (+ (* (- 1.0) call1) (* (- 1.0) k.0)) (- 1.0)))\n(assert (<= (+ (* (- 1.0) conv4) (* (- 1.0) k.0)) (- 1.0)))\n(assert (<= (+ (* (- 1.0) conv5) (* (- 1.0) k.0)) (- 1.0)))\n(assert (>= k.0 0.0))\n(assert (<= (+ (* (- 1.0) call) (* (- 1.0) d.0)) (- 2.0)))\n(assert (<= (+ (* (- 1.0) call1) (* (- 1.0) d.0)) (- 2.0)))\n(assert (<= (+ (* (- 1.0) conv4) (* (- 1.0) d.0)) (- 2.0)))\n(assert (<= (+ (* (- 1.0) conv5) (* (- 1.0) d.0)) (- 2.0)))\n(assert (<= (+ (* (- 1.0) k.0) (* (- 1.0) d.0)) (- 1.0)))\n(assert (>= d.0 1.0))\n(assert (<= (+ (* (- 1.0) c.0) v.0) 0.0))\n(assert (<= (+ a.0 (* (- 1.0) add)) 0.0))\n(assert (<= (+ (* (- 1.0) a.0) add) 0.0))\n(assert (<= (+ b.0 (* (- 1.0) add25)) 0.0))\n(assert (<= (+ (* (- 1.0) call1) add25) 0.0))\n(assert (<= (+ (* (- 1.0) conv5) add25) 0.0))\n(assert (<= (+ (* (- 1.0) b.0) add25) 0.0))\n(assert (<= (+ (* (- 1.0) c.0) add25) 0.0))\n(assert (<= (+ a.0 (* (- 1.0) add29)) 0.0))\n(assert (<= (+ add (* (- 1.0) add29)) 0.0))\n(assert (<= (+ (* (- 1.0) a.0) add29) 0.0))\n(assert (<= (+ (* (- 1.0) add) add29) 0.0))\n(assert (<= (+ v.0 (* (- 1.0) mul32)) 0.0))\n(assert (<= (+ (* (- 1.0) c.0) mul32) 0.0))\n(assert (<= (+ (* (- 1.0) v.0) mul32) 0.0))\n(assert (<= (+ (* (- 1.0) c.0) mul35) 0.0))",
+            "dom": "oct",
+            "vars": [
+                "b.0",
+                "d.0",
+                "c.0",
+                "v.0",
+                "add",
+                "add29",
+                "call",
+                "mul32",
+                "call1",
+                "mul35",
+                "add25",
+                "conv4",
+                "k.0",
+                "conv5",
+                "a.0"
+            ],
+            "len": 44
+        },
+        {
+            "str": "-call <= -1;-call-call1 <= -2;-call1 <= -1;call-conv4 <= 0;-call-conv4 <= -2;-call1-conv4 <= -2;-conv4 <= -1;-call+conv4 <= 0;-call-conv5 <= -2;call1-conv5 <= 0;-call1-conv5 <= -2;-conv4-conv5 <= -2;-conv5 <= -1;-call1+conv5 <= 0;-call-b.0 <= -1;-call1-b.0 <= -1;-conv4-b.0 <= -1;-conv5-b.0 <= -1;-b.0 <= 0;-call+b.0 <= -1;-call1+b.0 <= -1;-conv4+b.0 <= -1;-conv5+b.0 <= -1;b.0 <= 0",
+            "smt": "(assert (>= call 1.0))\n(assert (<= (+ (* (- 1.0) call) (* (- 1.0) call1)) (- 2.0)))\n(assert (>= call1 1.0))\n(assert (<= (+ call (* (- 1.0) conv4)) 0.0))\n(assert (<= (+ (* (- 1.0) call) (* (- 1.0) conv4)) (- 2.0)))\n(assert (<= (+ (* (- 1.0) call1) (* (- 1.0) conv4)) (- 2.0)))\n(assert (>= conv4 1.0))\n(assert (<= (+ (* (- 1.0) call) conv4) 0.0))\n(assert (<= (+ (* (- 1.0) call) (* (- 1.0) conv5)) (- 2.0)))\n(assert (<= (+ call1 (* (- 1.0) conv5)) 0.0))\n(assert (<= (+ (* (- 1.0) call1) (* (- 1.0) conv5)) (- 2.0)))\n(assert (<= (+ (* (- 1.0) conv4) (* (- 1.0) conv5)) (- 2.0)))\n(assert (>= conv5 1.0))\n(assert (<= (+ (* (- 1.0) call1) conv5) 0.0))\n(assert (<= (+ (* (- 1.0) call) (* (- 1.0) b.0)) (- 1.0)))\n(assert (<= (+ (* (- 1.0) call1) (* (- 1.0) b.0)) (- 1.0)))\n(assert (<= (+ (* (- 1.0) conv4) (* (- 1.0) b.0)) (- 1.0)))\n(assert (<= (+ (* (- 1.0) conv5) (* (- 1.0) b.0)) (- 1.0)))\n(assert (>= b.0 0.0))\n(assert (<= (+ (* (- 1.0) call) b.0) (- 1.0)))\n(assert (<= (+ (* (- 1.0) call1) b.0) (- 1.0)))\n(assert (<= (+ (* (- 1.0) conv4) b.0) (- 1.0)))\n(assert (<= (+ (* (- 1.0) conv5) b.0) (- 1.0)))\n(assert (<= b.0 0.0))",
+            "dom": "oct",
+            "vars": [
+                "b.0",
+                "call",
+                "call1",
+                "conv4",
+                "conv5"
+            ],
+            "len": 24
+        },
+        {
+            "str": "-call <= -1;-call-call1 <= -2;-call1 <= -1;call-conv4 <= 0;-call-conv4 <= -2;-call1-conv4 <= -2;-conv4 <= -1;-call+conv4 <= 0;-call-conv5 <= -2;call1-conv5 <= 0;-call1-conv5 <= -2;-conv4-conv5 <= -2;-conv5 <= -1;-call1+conv5 <= 0;-call1+b.0 <= 0;-conv5+b.0 <= 0;-call-k.0 <= -1;-call1-k.0 <= -1;-conv4-k.0 <= -1;-conv5-k.0 <= -1;-k.0 <= 0",
+            "smt": "(assert (>= call 1.0))\n(assert (<= (+ (* (- 1.0) call) (* (- 1.0) call1)) (- 2.0)))\n(assert (>= call1 1.0))\n(assert (<= (+ call (* (- 1.0) conv4)) 0.0))\n(assert (<= (+ (* (- 1.0) call) (* (- 1.0) conv4)) (- 2.0)))\n(assert (<= (+ (* (- 1.0) call1) (* (- 1.0) conv4)) (- 2.0)))\n(assert (>= conv4 1.0))\n(assert (<= (+ (* (- 1.0) call) conv4) 0.0))\n(assert (<= (+ (* (- 1.0) call) (* (- 1.0) conv5)) (- 2.0)))\n(assert (<= (+ call1 (* (- 1.0) conv5)) 0.0))\n(assert (<= (+ (* (- 1.0) call1) (* (- 1.0) conv5)) (- 2.0)))\n(assert (<= (+ (* (- 1.0) conv4) (* (- 1.0) conv5)) (- 2.0)))\n(assert (>= conv5 1.0))\n(assert (<= (+ (* (- 1.0) call1) conv5) 0.0))\n(assert (<= (+ (* (- 1.0) call1) b.0) 0.0))\n(assert (<= (+ (* (- 1.0) conv5) b.0) 0.0))\n(assert (<= (+ (* (- 1.0) call) (* (- 1.0) k.0)) (- 1.0)))\n(assert (<= (+ (* (- 1.0) call1) (* (- 1.0) k.0)) (- 1.0)))\n(assert (<= (+ (* (- 1.0) conv4) (* (- 1.0) k.0)) (- 1.0)))\n(assert (<= (+ (* (- 1.0) conv5) (* (- 1.0) k.0)) (- 1.0)))\n(assert (>= k.0 0.0))",
+            "dom": "oct",
+            "vars": [
+                "b.0",
+                "call",
+                "call1",
+                "conv4",
+                "k.0",
+                "conv5"
+            ],
+            "len": 21
+        },
+        {
+            "str": "-call <= -1;-call-call1 <= -2;-call1 <= -1;call-conv4 <= 0;-call-conv4 <= -2;-call1-conv4 <= -2;-conv4 <= -1;-call+conv4 <= 0;-call-conv5 <= -2;call1-conv5 <= 0;-call1-conv5 <= -2;-conv4-conv5 <= -2;-conv5 <= -1;-call1+conv5 <= 0;-call1+b.0 <= 0;-conv5+b.0 <= 0;b.0-c.0 <= 0;-call-k.0 <= -1;-call1-k.0 <= -1;-conv4-k.0 <= -1;-conv5-k.0 <= -1;-k.0 <= 0;-call-d.0 <= -2;-call1-d.0 <= -2;-conv4-d.0 <= -2;-conv5-d.0 <= -2;-k.0-d.0 <= -1;-d.0 <= -1;-c.0+v.0 <= 0",
+            "smt": "(assert (>= call 1.0))\n(assert (<= (+ (* (- 1.0) call) (* (- 1.0) call1)) (- 2.0)))\n(assert (>= call1 1.0))\n(assert (<= (+ call (* (- 1.0) conv4)) 0.0))\n(assert (<= (+ (* (- 1.0) call) (* (- 1.0) conv4)) (- 2.0)))\n(assert (<= (+ (* (- 1.0) call1) (* (- 1.0) conv4)) (- 2.0)))\n(assert (>= conv4 1.0))\n(assert (<= (+ (* (- 1.0) call) conv4) 0.0))\n(assert (<= (+ (* (- 1.0) call) (* (- 1.0) conv5)) (- 2.0)))\n(assert (<= (+ call1 (* (- 1.0) conv5)) 0.0))\n(assert (<= (+ (* (- 1.0) call1) (* (- 1.0) conv5)) (- 2.0)))\n(assert (<= (+ (* (- 1.0) conv4) (* (- 1.0) conv5)) (- 2.0)))\n(assert (>= conv5 1.0))\n(assert (<= (+ (* (- 1.0) call1) conv5) 0.0))\n(assert (<= (+ (* (- 1.0) call1) b.0) 0.0))\n(assert (<= (+ (* (- 1.0) conv5) b.0) 0.0))\n(assert (<= (+ b.0 (* (- 1.0) c.0)) 0.0))\n(assert (<= (+ (* (- 1.0) call) (* (- 1.0) k.0)) (- 1.0)))\n(assert (<= (+ (* (- 1.0) call1) (* (- 1.0) k.0)) (- 1.0)))\n(assert (<= (+ (* (- 1.0) conv4) (* (- 1.0) k.0)) (- 1.0)))\n(assert (<= (+ (* (- 1.0) conv5) (* (- 1.0) k.0)) (- 1.0)))\n(assert (>= k.0 0.0))\n(assert (<= (+ (* (- 1.0) call) (* (- 1.0) d.0)) (- 2.0)))\n(assert (<= (+ (* (- 1.0) call1) (* (- 1.0) d.0)) (- 2.0)))\n(assert (<= (+ (* (- 1.0) conv4) (* (- 1.0) d.0)) (- 2.0)))\n(assert (<= (+ (* (- 1.0) conv5) (* (- 1.0) d.0)) (- 2.0)))\n(assert (<= (+ (* (- 1.0) k.0) (* (- 1.0) d.0)) (- 1.0)))\n(assert (>= d.0 1.0))\n(assert (<= (+ (* (- 1.0) c.0) v.0) 0.0))",
+            "dom": "oct",
+            "vars": [
+                "b.0",
+                "d.0",
+                "c.0",
+                "v.0",
+                "call",
+                "call1",
+                "conv4",
+                "k.0",
+                "conv5"
+            ],
+            "len": 29
+        },
+        {
+            "str": "-call <= -1;-call-call1 <= -2;-call1 <= -1;call-conv4 <= 0;-call-conv4 <= -2;-call1-conv4 <= -2;-conv4 <= -1;-call+conv4 <= 0;-call-conv5 <= -2;call1-conv5 <= 0;-call1-conv5 <= -2;-conv4-conv5 <= -2;-conv5 <= -1;-call1+conv5 <= 0;-call1+b.0 <= 0;-conv5+b.0 <= 0",
+            "smt": "(assert (>= call 1.0))\n(assert (<= (+ (* (- 1.0) call) (* (- 1.0) call1)) (- 2.0)))\n(assert (>= call1 1.0))\n(assert (<= (+ call (* (- 1.0) conv4)) 0.0))\n(assert (<= (+ (* (- 1.0) call) (* (- 1.0) conv4)) (- 2.0)))\n(assert (<= (+ (* (- 1.0) call1) (* (- 1.0) conv4)) (- 2.0)))\n(assert (>= conv4 1.0))\n(assert (<= (+ (* (- 1.0) call) conv4) 0.0))\n(assert (<= (+ (* (- 1.0) call) (* (- 1.0) conv5)) (- 2.0)))\n(assert (<= (+ call1 (* (- 1.0) conv5)) 0.0))\n(assert (<= (+ (* (- 1.0) call1) (* (- 1.0) conv5)) (- 2.0)))\n(assert (<= (+ (* (- 1.0) conv4) (* (- 1.0) conv5)) (- 2.0)))\n(assert (>= conv5 1.0))\n(assert (<= (+ (* (- 1.0) call1) conv5) 0.0))\n(assert (<= (+ (* (- 1.0) call1) b.0) 0.0))\n(assert (<= (+ (* (- 1.0) conv5) b.0) 0.0))",
+            "dom": "oct",
+            "vars": [
+                "b.0",
+                "call",
+                "call1",
+                "conv4",
+                "conv5"
+            ],
+            "len": 16
+        },
+        {
+            "str": "-call <= -1;-call-call1 <= -2;-call1 <= -1;call-conv4 <= 0;-call-conv4 <= -2;-call1-conv4 <= -2;-conv4 <= -1;-call+conv4 <= 0;-call-conv5 <= -2;call1-conv5 <= 0;-call1-conv5 <= -2;-conv4-conv5 <= -2;-conv5 <= -1;-call1+conv5 <= 0;-call1+b.0 <= 0;-conv5+b.0 <= 0;b.0-c.0 <= 0;-call-k.0 <= -1;-call1-k.0 <= -1;-conv4-k.0 <= -1;-conv5-k.0 <= -1;-k.0 <= 0;-call-d.0 <= -2;-call1-d.0 <= -2;-conv4-d.0 <= -2;-conv5-d.0 <= -2;-k.0-d.0 <= -1;-d.0 <= -1;-c.0+v.0 <= 0;a.0-add <= 0;-a.0+add <= 0;b.0-add25 <= 0;-call1+add25 <= 0;-conv5+add25 <= 0;-b.0+add25 <= 0;-c.0+add25 <= 0;a.0-add29 <= 0;add-add29 <= 0;-a.0+add29 <= 0;-add+add29 <= 0;v.0-mul32 <= 0;-c.0+mul32 <= 0;-v.0+mul32 <= 0;b.0-mul35 <= -1;c.0-mul35 <= -1;v.0-mul35 <= -1;add25-mul35 <= -1;mul32-mul35 <= -1",
+            "smt": "(assert (>= call 1.0))\n(assert (<= (+ (* (- 1.0) call) (* (- 1.0) call1)) (- 2.0)))\n(assert (>= call1 1.0))\n(assert (<= (+ call (* (- 1.0) conv4)) 0.0))\n(assert (<= (+ (* (- 1.0) call) (* (- 1.0) conv4)) (- 2.0)))\n(assert (<= (+ (* (- 1.0) call1) (* (- 1.0) conv4)) (- 2.0)))\n(assert (>= conv4 1.0))\n(assert (<= (+ (* (- 1.0) call) conv4) 0.0))\n(assert (<= (+ (* (- 1.0) call) (* (- 1.0) conv5)) (- 2.0)))\n(assert (<= (+ call1 (* (- 1.0) conv5)) 0.0))\n(assert (<= (+ (* (- 1.0) call1) (* (- 1.0) conv5)) (- 2.0)))\n(assert (<= (+ (* (- 1.0) conv4) (* (- 1.0) conv5)) (- 2.0)))\n(assert (>= conv5 1.0))\n(assert (<= (+ (* (- 1.0) call1) conv5) 0.0))\n(assert (<= (+ (* (- 1.0) call1) b.0) 0.0))\n(assert (<= (+ (* (- 1.0) conv5) b.0) 0.0))\n(assert (<= (+ b.0 (* (- 1.0) c.0)) 0.0))\n(assert (<= (+ (* (- 1.0) call) (* (- 1.0) k.0)) (- 1.0)))\n(assert (<= (+ (* (- 1.0) call1) (* (- 1.0) k.0)) (- 1.0)))\n(assert (<= (+ (* (- 1.0) conv4) (* (- 1.0) k.0)) (- 1.0)))\n(assert (<= (+ (* (- 1.0) conv5) (* (- 1.0) k.0)) (- 1.0)))\n(assert (>= k.0 0.0))\n(assert (<= (+ (* (- 1.0) call) (* (- 1.0) d.0)) (- 2.0)))\n(assert (<= (+ (* (- 1.0) call1) (* (- 1.0) d.0)) (- 2.0)))\n(assert (<= (+ (* (- 1.0) conv4) (* (- 1.0) d.0)) (- 2.0)))\n(assert (<= (+ (* (- 1.0) conv5) (* (- 1.0) d.0)) (- 2.0)))\n(assert (<= (+ (* (- 1.0) k.0) (* (- 1.0) d.0)) (- 1.0)))\n(assert (>= d.0 1.0))\n(assert (<= (+ (* (- 1.0) c.0) v.0) 0.0))\n(assert (<= (+ a.0 (* (- 1.0) add)) 0.0))\n(assert (<= (+ (* (- 1.0) a.0) add) 0.0))\n(assert (<= (+ b.0 (* (- 1.0) add25)) 0.0))\n(assert (<= (+ (* (- 1.0) call1) add25) 0.0))\n(assert (<= (+ (* (- 1.0) conv5) add25) 0.0))\n(assert (<= (+ (* (- 1.0) b.0) add25) 0.0))\n(assert (<= (+ (* (- 1.0) c.0) add25) 0.0))\n(assert (<= (+ a.0 (* (- 1.0) add29)) 0.0))\n(assert (<= (+ add (* (- 1.0) add29)) 0.0))\n(assert (<= (+ (* (- 1.0) a.0) add29) 0.0))\n(assert (<= (+ (* (- 1.0) add) add29) 0.0))\n(assert (<= (+ v.0 (* (- 1.0) mul32)) 0.0))\n(assert (<= (+ (* (- 1.0) c.0) mul32) 0.0))\n(assert (<= (+ (* (- 1.0) v.0) mul32) 0.0))\n(assert (<= (+ b.0 (* (- 1.0) mul35)) (- 1.0)))\n(assert (<= (+ c.0 (* (- 1.0) mul35)) (- 1.0)))\n(assert (<= (+ v.0 (* (- 1.0) mul35)) (- 1.0)))\n(assert (<= (+ add25 (* (- 1.0) mul35)) (- 1.0)))\n(assert (<= (+ mul32 (* (- 1.0) mul35)) (- 1.0)))",
+            "dom": "oct",
+            "vars": [
+                "b.0",
+                "d.0",
+                "c.0",
+                "v.0",
+                "add",
+                "add29",
+                "call",
+                "mul32",
+                "call1",
+                "mul35",
+                "add25",
+                "conv4",
+                "k.0",
+                "conv5",
+                "a.0"
+            ],
+            "len": 48
+        },
+        {
+            "str": "-call <= -1;-call-call1 <= -2;-call1 <= -1;call-conv4 <= 0;-call-conv4 <= -2;-call1-conv4 <= -2;-conv4 <= -1;-call+conv4 <= 0;-call-conv5 <= -2;call1-conv5 <= 0;-call1-conv5 <= -2;-conv4-conv5 <= -2;-conv5 <= -1;-call1+conv5 <= 0;-call1+b.0 <= 0;-conv5+b.0 <= 0;-call1+c.0 <= -1;-conv5+c.0 <= -1;-b.0+c.0 <= -1;-call-k.0 <= -1;-call1-k.0 <= -1;-conv4-k.0 <= -1;-conv5-k.0 <= -1;-k.0 <= 0",
+            "smt": "(assert (>= call 1.0))\n(assert (<= (+ (* (- 1.0) call) (* (- 1.0) call1)) (- 2.0)))\n(assert (>= call1 1.0))\n(assert (<= (+ call (* (- 1.0) conv4)) 0.0))\n(assert (<= (+ (* (- 1.0) call) (* (- 1.0) conv4)) (- 2.0)))\n(assert (<= (+ (* (- 1.0) call1) (* (- 1.0) conv4)) (- 2.0)))\n(assert (>= conv4 1.0))\n(assert (<= (+ (* (- 1.0) call) conv4) 0.0))\n(assert (<= (+ (* (- 1.0) call) (* (- 1.0) conv5)) (- 2.0)))\n(assert (<= (+ call1 (* (- 1.0) conv5)) 0.0))\n(assert (<= (+ (* (- 1.0) call1) (* (- 1.0) conv5)) (- 2.0)))\n(assert (<= (+ (* (- 1.0) conv4) (* (- 1.0) conv5)) (- 2.0)))\n(assert (>= conv5 1.0))\n(assert (<= (+ (* (- 1.0) call1) conv5) 0.0))\n(assert (<= (+ (* (- 1.0) call1) b.0) 0.0))\n(assert (<= (+ (* (- 1.0) conv5) b.0) 0.0))\n(assert (<= (+ (* (- 1.0) call1) c.0) (- 1.0)))\n(assert (<= (+ (* (- 1.0) conv5) c.0) (- 1.0)))\n(assert (<= (+ (* (- 1.0) b.0) c.0) (- 1.0)))\n(assert (<= (+ (* (- 1.0) call) (* (- 1.0) k.0)) (- 1.0)))\n(assert (<= (+ (* (- 1.0) call1) (* (- 1.0) k.0)) (- 1.0)))\n(assert (<= (+ (* (- 1.0) conv4) (* (- 1.0) k.0)) (- 1.0)))\n(assert (<= (+ (* (- 1.0) conv5) (* (- 1.0) k.0)) (- 1.0)))\n(assert (>= k.0 0.0))",
+            "dom": "oct",
+            "vars": [
+                "b.0",
+                "c.0",
+                "call",
+                "call1",
+                "conv4",
+                "k.0",
+                "conv5"
+            ],
+            "len": 24
+        }
+    ],
+    "timed_out": false
+}

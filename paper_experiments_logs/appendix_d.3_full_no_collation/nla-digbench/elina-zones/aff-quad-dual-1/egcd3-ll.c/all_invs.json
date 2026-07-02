@@ -1,0 +1,130 @@
+{
+    "all_invs": [
+        {
+            "str": "T",
+            "smt": "(assert true)",
+            "dom": "elina-zones",
+            "vars": {},
+            "len": 0
+        },
+        {
+            "str": "-a.0+add <= 0;-a.0+add29 <= 0;a.0-add <= 0;-add+add29 <= 0;a.0-add29 <= 0;add-add29 <= 0;-d.0 <= -1;-k.0 <= 0;-call+conv4 <= 0;-call <= -1;call-conv4 <= 0;-conv4 <= -1;-call1+conv5 <= 0;-call1+b.0 <= 0;-call1+add25 <= 0;-call1 <= -1;call1-conv5 <= 0;-conv5+b.0 <= 0;-conv5+add25 <= 0;-conv5 <= -1;-b.0+add25 <= 0;b.0-c.0 <= 0;-c.0+v.0 <= 0;-c.0+add25 <= 0;-c.0+mul32 <= 0;-c.0+mul35 <= 0;-v.0+mul32 <= 0;b.0-add25 <= 0;v.0-mul32 <= 0",
+            "smt": "(assert (<= (+ (* (- 1.0) a.0) add) 0.0))\n(assert (<= (+ (* (- 1.0) a.0) add29) 0.0))\n(assert (<= (+ a.0 (* (- 1.0) add)) 0.0))\n(assert (<= (+ (* (- 1.0) add) add29) 0.0))\n(assert (<= (+ a.0 (* (- 1.0) add29)) 0.0))\n(assert (<= (+ add (* (- 1.0) add29)) 0.0))\n(assert (>= d.0 1.0))\n(assert (>= k.0 0.0))\n(assert (<= (+ (* (- 1.0) call) conv4) 0.0))\n(assert (>= call 1.0))\n(assert (<= (+ call (* (- 1.0) conv4)) 0.0))\n(assert (>= conv4 1.0))\n(assert (<= (+ (* (- 1.0) call1) conv5) 0.0))\n(assert (<= (+ (* (- 1.0) call1) b.0) 0.0))\n(assert (<= (+ (* (- 1.0) call1) add25) 0.0))\n(assert (>= call1 1.0))\n(assert (<= (+ call1 (* (- 1.0) conv5)) 0.0))\n(assert (<= (+ (* (- 1.0) conv5) b.0) 0.0))\n(assert (<= (+ (* (- 1.0) conv5) add25) 0.0))\n(assert (>= conv5 1.0))\n(assert (<= (+ (* (- 1.0) b.0) add25) 0.0))\n(assert (<= (+ b.0 (* (- 1.0) c.0)) 0.0))\n(assert (<= (+ (* (- 1.0) c.0) v.0) 0.0))\n(assert (<= (+ (* (- 1.0) c.0) add25) 0.0))\n(assert (<= (+ (* (- 1.0) c.0) mul32) 0.0))\n(assert (<= (+ (* (- 1.0) c.0) mul35) 0.0))\n(assert (<= (+ (* (- 1.0) v.0) mul32) 0.0))\n(assert (<= (+ b.0 (* (- 1.0) add25)) 0.0))\n(assert (<= (+ v.0 (* (- 1.0) mul32)) 0.0))",
+            "dom": "elina-zones",
+            "vars": [
+                "add25",
+                "call1",
+                "b.0",
+                "a.0",
+                "k.0",
+                "conv5",
+                "v.0",
+                "mul35",
+                "call",
+                "conv4",
+                "d.0",
+                "add",
+                "add29",
+                "c.0",
+                "mul32"
+            ],
+            "len": 29
+        },
+        {
+            "str": "-call+conv4 <= 0;-call+b.0 <= -1;-call <= -1;-call1+conv5 <= 0;-call1+b.0 <= -1;-call1 <= -1;call-conv4 <= 0;-conv4+b.0 <= -1;-conv4 <= -1;call1-conv5 <= 0;-conv5+b.0 <= -1;-conv5 <= -1;-b.0 <= 0;b.0 <= 0",
+            "smt": "(assert (<= (+ (* (- 1.0) call) conv4) 0.0))\n(assert (<= (+ (* (- 1.0) call) b.0) (- 1.0)))\n(assert (>= call 1.0))\n(assert (<= (+ (* (- 1.0) call1) conv5) 0.0))\n(assert (<= (+ (* (- 1.0) call1) b.0) (- 1.0)))\n(assert (>= call1 1.0))\n(assert (<= (+ call (* (- 1.0) conv4)) 0.0))\n(assert (<= (+ (* (- 1.0) conv4) b.0) (- 1.0)))\n(assert (>= conv4 1.0))\n(assert (<= (+ call1 (* (- 1.0) conv5)) 0.0))\n(assert (<= (+ (* (- 1.0) conv5) b.0) (- 1.0)))\n(assert (>= conv5 1.0))\n(assert (>= b.0 0.0))\n(assert (<= b.0 0.0))",
+            "dom": "elina-zones",
+            "vars": [
+                "call1",
+                "conv5",
+                "call",
+                "conv4",
+                "b.0"
+            ],
+            "len": 14
+        },
+        {
+            "str": "-call+conv4 <= 0;-call <= -1;-call1+conv5 <= 0;-call1+b.0 <= 0;-call1 <= -1;call-conv4 <= 0;-conv4 <= -1;call1-conv5 <= 0;-conv5+b.0 <= 0;-conv5 <= -1;-k.0 <= 0",
+            "smt": "(assert (<= (+ (* (- 1.0) call) conv4) 0.0))\n(assert (>= call 1.0))\n(assert (<= (+ (* (- 1.0) call1) conv5) 0.0))\n(assert (<= (+ (* (- 1.0) call1) b.0) 0.0))\n(assert (>= call1 1.0))\n(assert (<= (+ call (* (- 1.0) conv4)) 0.0))\n(assert (>= conv4 1.0))\n(assert (<= (+ call1 (* (- 1.0) conv5)) 0.0))\n(assert (<= (+ (* (- 1.0) conv5) b.0) 0.0))\n(assert (>= conv5 1.0))\n(assert (>= k.0 0.0))",
+            "dom": "elina-zones",
+            "vars": [
+                "call1",
+                "k.0",
+                "conv5",
+                "call",
+                "conv4",
+                "b.0"
+            ],
+            "len": 11
+        },
+        {
+            "str": "-call+conv4 <= 0;-call <= -1;-call1+conv5 <= 0;-call1+b.0 <= 0;-call1 <= -1;call-conv4 <= 0;-conv4 <= -1;call1-conv5 <= 0;-conv5+b.0 <= 0;-conv5 <= -1;b.0-c.0 <= 0;-c.0+v.0 <= 0;-k.0 <= 0;-d.0 <= -1",
+            "smt": "(assert (<= (+ (* (- 1.0) call) conv4) 0.0))\n(assert (>= call 1.0))\n(assert (<= (+ (* (- 1.0) call1) conv5) 0.0))\n(assert (<= (+ (* (- 1.0) call1) b.0) 0.0))\n(assert (>= call1 1.0))\n(assert (<= (+ call (* (- 1.0) conv4)) 0.0))\n(assert (>= conv4 1.0))\n(assert (<= (+ call1 (* (- 1.0) conv5)) 0.0))\n(assert (<= (+ (* (- 1.0) conv5) b.0) 0.0))\n(assert (>= conv5 1.0))\n(assert (<= (+ b.0 (* (- 1.0) c.0)) 0.0))\n(assert (<= (+ (* (- 1.0) c.0) v.0) 0.0))\n(assert (>= k.0 0.0))\n(assert (>= d.0 1.0))",
+            "dom": "elina-zones",
+            "vars": [
+                "call1",
+                "d.0",
+                "k.0",
+                "conv5",
+                "v.0",
+                "call",
+                "conv4",
+                "b.0",
+                "c.0"
+            ],
+            "len": 14
+        },
+        {
+            "str": "-call+conv4 <= 0;-call <= -1;-call1+conv5 <= 0;-call1+b.0 <= 0;-call1 <= -1;call-conv4 <= 0;-conv4 <= -1;call1-conv5 <= 0;-conv5+b.0 <= 0;-conv5 <= -1",
+            "smt": "(assert (<= (+ (* (- 1.0) call) conv4) 0.0))\n(assert (>= call 1.0))\n(assert (<= (+ (* (- 1.0) call1) conv5) 0.0))\n(assert (<= (+ (* (- 1.0) call1) b.0) 0.0))\n(assert (>= call1 1.0))\n(assert (<= (+ call (* (- 1.0) conv4)) 0.0))\n(assert (>= conv4 1.0))\n(assert (<= (+ call1 (* (- 1.0) conv5)) 0.0))\n(assert (<= (+ (* (- 1.0) conv5) b.0) 0.0))\n(assert (>= conv5 1.0))",
+            "dom": "elina-zones",
+            "vars": [
+                "call1",
+                "conv5",
+                "call",
+                "conv4",
+                "b.0"
+            ],
+            "len": 10
+        },
+        {
+            "str": "-a.0+add <= 0;-a.0+add29 <= 0;a.0-add <= 0;-add+add29 <= 0;a.0-add29 <= 0;add-add29 <= 0;-d.0 <= -1;-k.0 <= 0;-call+conv4 <= 0;-call <= -1;call-conv4 <= 0;-conv4 <= -1;-call1+conv5 <= 0;-call1+b.0 <= 0;-call1+add25 <= 0;-call1 <= -1;call1-conv5 <= 0;-conv5+b.0 <= 0;-conv5+add25 <= 0;-conv5 <= -1;-b.0+add25 <= 0;b.0-c.0 <= 0;-c.0+v.0 <= 0;-c.0+add25 <= 0;-c.0+mul32 <= 0;-v.0+mul32 <= 0;b.0-add25 <= 0;v.0-mul32 <= 0;b.0-mul35 <= -1;c.0-mul35 <= -1;v.0-mul35 <= -1;add25-mul35 <= -1;mul32-mul35 <= -1",
+            "smt": "(assert (<= (+ (* (- 1.0) a.0) add) 0.0))\n(assert (<= (+ (* (- 1.0) a.0) add29) 0.0))\n(assert (<= (+ a.0 (* (- 1.0) add)) 0.0))\n(assert (<= (+ (* (- 1.0) add) add29) 0.0))\n(assert (<= (+ a.0 (* (- 1.0) add29)) 0.0))\n(assert (<= (+ add (* (- 1.0) add29)) 0.0))\n(assert (>= d.0 1.0))\n(assert (>= k.0 0.0))\n(assert (<= (+ (* (- 1.0) call) conv4) 0.0))\n(assert (>= call 1.0))\n(assert (<= (+ call (* (- 1.0) conv4)) 0.0))\n(assert (>= conv4 1.0))\n(assert (<= (+ (* (- 1.0) call1) conv5) 0.0))\n(assert (<= (+ (* (- 1.0) call1) b.0) 0.0))\n(assert (<= (+ (* (- 1.0) call1) add25) 0.0))\n(assert (>= call1 1.0))\n(assert (<= (+ call1 (* (- 1.0) conv5)) 0.0))\n(assert (<= (+ (* (- 1.0) conv5) b.0) 0.0))\n(assert (<= (+ (* (- 1.0) conv5) add25) 0.0))\n(assert (>= conv5 1.0))\n(assert (<= (+ (* (- 1.0) b.0) add25) 0.0))\n(assert (<= (+ b.0 (* (- 1.0) c.0)) 0.0))\n(assert (<= (+ (* (- 1.0) c.0) v.0) 0.0))\n(assert (<= (+ (* (- 1.0) c.0) add25) 0.0))\n(assert (<= (+ (* (- 1.0) c.0) mul32) 0.0))\n(assert (<= (+ (* (- 1.0) v.0) mul32) 0.0))\n(assert (<= (+ b.0 (* (- 1.0) add25)) 0.0))\n(assert (<= (+ v.0 (* (- 1.0) mul32)) 0.0))\n(assert (<= (+ b.0 (* (- 1.0) mul35)) (- 1.0)))\n(assert (<= (+ c.0 (* (- 1.0) mul35)) (- 1.0)))\n(assert (<= (+ v.0 (* (- 1.0) mul35)) (- 1.0)))\n(assert (<= (+ add25 (* (- 1.0) mul35)) (- 1.0)))\n(assert (<= (+ mul32 (* (- 1.0) mul35)) (- 1.0)))",
+            "dom": "elina-zones",
+            "vars": [
+                "add25",
+                "call1",
+                "b.0",
+                "a.0",
+                "k.0",
+                "conv5",
+                "v.0",
+                "mul35",
+                "call",
+                "conv4",
+                "d.0",
+                "add",
+                "add29",
+                "c.0",
+                "mul32"
+            ],
+            "len": 33
+        },
+        {
+            "str": "-call+conv4 <= 0;-call <= -1;-call1+conv5 <= 0;-call1+b.0 <= 0;-call1+c.0 <= -1;-call1 <= -1;call-conv4 <= 0;-conv4 <= -1;call1-conv5 <= 0;-conv5+b.0 <= 0;-conv5+c.0 <= -1;-conv5 <= -1;-b.0+c.0 <= -1;-k.0 <= 0",
+            "smt": "(assert (<= (+ (* (- 1.0) call) conv4) 0.0))\n(assert (>= call 1.0))\n(assert (<= (+ (* (- 1.0) call1) conv5) 0.0))\n(assert (<= (+ (* (- 1.0) call1) b.0) 0.0))\n(assert (<= (+ (* (- 1.0) call1) c.0) (- 1.0)))\n(assert (>= call1 1.0))\n(assert (<= (+ call (* (- 1.0) conv4)) 0.0))\n(assert (>= conv4 1.0))\n(assert (<= (+ call1 (* (- 1.0) conv5)) 0.0))\n(assert (<= (+ (* (- 1.0) conv5) b.0) 0.0))\n(assert (<= (+ (* (- 1.0) conv5) c.0) (- 1.0)))\n(assert (>= conv5 1.0))\n(assert (<= (+ (* (- 1.0) b.0) c.0) (- 1.0)))\n(assert (>= k.0 0.0))",
+            "dom": "elina-zones",
+            "vars": [
+                "call1",
+                "k.0",
+                "conv5",
+                "call",
+                "conv4",
+                "b.0",
+                "c.0"
+            ],
+            "len": 14
+        }
+    ],
+    "timed_out": false
+}

@@ -1,0 +1,15 @@
+digraph "CFG for 'main' function" {
+	label="CFG for 'main' function";
+	Node0x5de84db25560 [shape=record,label="{entry:\l havoc(call) /* __VERIFIER_nondet_int(...)*/\l y.0 = 0\l x.0 = 0\l c.0 = 0\l}"];
+	Node0x5de84db25560 -> Node0x5de84db53fa0;
+	Node0x5de84db53fa0 [shape=record,label="{while.body:\l [[mul = y.0*-2; mul15 = mul+-6; ]]\l mul7.neg4 = y.0*mul15\l [[mul8.neg39 = mul7.neg4+-5; ]]\l mul12.neg8 = y.0*mul8.neg39\l mul13.neg7 = mul12.neg8*y.0\l mul14.neg6 = mul13.neg7*y.0\l [[sub1510 = mul14.neg6+y.0; ]]\l add = sub1510*y.0\l [[mul17.neg = x.0*-12; ]]\l cmp = (add-mul17.neg = 0)\l assert(cmp)   /* loc(file=data/sv-benchmarks-processed/nla-digbench/ps6.c line=15 col=9) id=1 */\l}"];
+	Node0x5de84db53fa0 -> Node0x5de84db59470;
+	Node0x5de84db53fa0 -> Node0x5de84db59ac0;
+	Node0x5de84db59ac0 [shape=record,label="{__@bb_6:\l assume(call-c.0 &le; 0)\l}"];
+	Node0x5de84db59ac0 -> Node0x5de84db53be0;
+	Node0x5de84db53be0 [shape=record,label="{while.end:\l assert(cmp)   /* loc(file=data/sv-benchmarks-processed/nla-digbench/ps6.c line=25 col=5) id=2 */\l mul51 = call*y.0\l mul52 = y.0*y.0\l cmp53 = (mul51-mul52 = 0)\l assert(cmp53)   /* loc(file=data/sv-benchmarks-processed/nla-digbench/ps6.c line=26 col=5) id=3 */\l @V_1 = 0\l}"];
+	Node0x5de84db59470 [shape=record,label="{__@bb_5:\l assume(-call+c.0 &le; -1)\l}"];
+	Node0x5de84db59470 -> Node0x5de84db54060;
+	Node0x5de84db54060 [shape=record,label="{if.end:\l [[add21 = c.0+1; add22 = y.0+1; ]]\l mul23 = add22*add22\l mul24 = mul23*add22\l mul25 = mul24*add22\l mul26 = mul25*add22\l [[add27 = mul26+x.0; ]]\l y.0 = add22\l x.0 = add27\l c.0 = add21\l}"];
+	Node0x5de84db54060 -> Node0x5de84db53fa0;
+}

@@ -1,0 +1,15 @@
+digraph "CFG for 'main' function" {
+	label="CFG for 'main' function";
+	Node0x641ca6072920 [shape=record,label="{entry:\l havoc(call) /* __VERIFIER_nondet_int(...)*/\l x.0 = 0\l n.0 = 0\l y.0 = 1\l z.0 = 6\l}"];
+	Node0x641ca6072920 -> Node0x641ca60a5000;
+	Node0x641ca60a5000 [shape=record,label="{while.body:\l [[mul = n.0*6; add = mul+6; ]]\l cmp = (z.0-add = 0)\l assert(cmp)   /* loc(file=data/sv-benchmarks-processed/nla-digbench/cohencu.c line=20 col=9) id=1 */\l [[mul1 = n.0*3; mul23 = mul1+3; add4 = mul23*n.0; add5 = add4+1; ]]\l cmp6 = (y.0-add5 = 0)\l assert(cmp6)   /* loc(file=data/sv-benchmarks-processed/nla-digbench/cohencu.c line=21 col=9) id=2 */\l [[mul8 = n.0*n.0; ]]\l [[mul9 = mul8*n.0; ]]\l cmp10 = (x.0-mul9 = 0)\l assert(cmp10)   /* loc(file=data/sv-benchmarks-processed/nla-digbench/cohencu.c line=22 col=9) id=3 */\l [[mul12 = y.0*z.0; mul13.neg = x.0*-18; sub = mul13.neg+mul12; mul14.neg = y.0*-12; sub15 = mul14.neg+sub; mul16 = z.0*2; add17 = sub15+mul16; ]]\l cmp19 = (add17 = 6)\l assert(cmp19)   /* loc(file=data/sv-benchmarks-processed/nla-digbench/cohencu.c line=23 col=2) id=4 */\l [[mul21 = z.0*z.0; sub23 = mul14.neg+mul21; mul24.neg = z.0*-6; sub25 = mul24.neg+sub23; ]]\l cmp27 = (sub25 = -12)\l assert(cmp27)   /* loc(file=data/sv-benchmarks-processed/nla-digbench/cohencu.c line=24 col=2) id=5 */\l}"];
+	Node0x641ca60a5000 -> Node0x641ca60af930;
+	Node0x641ca60a5000 -> Node0x641ca60affa0;
+	Node0x641ca60affa0 [shape=record,label="{__@bb_6:\l assume(-call+n.0 &le; 0)\l}"];
+	Node0x641ca60affa0 -> Node0x641ca60a50c0;
+	Node0x641ca60a50c0 [shape=record,label="{if.end:\l [[add31 = n.0+1; add32 = x.0+y.0; add33 = y.0+z.0; add34 = z.0+6; ]]\l x.0 = add32\l n.0 = add31\l y.0 = add33\l z.0 = add34\l}"];
+	Node0x641ca60a50c0 -> Node0x641ca60a5000;
+	Node0x641ca60af930 [shape=record,label="{__@bb_5:\l assume(call-n.0 &le; -1)\l}"];
+	Node0x641ca60af930 -> Node0x641ca60a4c40;
+	Node0x641ca60a4c40 [shape=record,label="{while.end:\l assert(cmp)   /* loc(file=data/sv-benchmarks-processed/nla-digbench/cohencu.c line=34 col=5) id=6 */\l [[mul39 = call*6; mul404 = mul39-z.0; sub425 = mul404+12; add44 = sub425*x.0; ]]\l cmp45 = (add44 = 0)\l assert(cmp45)   /* loc(file=data/sv-benchmarks-processed/nla-digbench/cohencu.c line=35 col=5) id=7 */\l [[mul476 = z.0+-6; sub49 = call*mul476; mul50.neg = y.0*-2; sub51 = mul50.neg+sub49; add53 = sub51+mul16; ]]\l cmp55 = (add53 = 10)\l assert(cmp55)   /* loc(file=data/sv-benchmarks-processed/nla-digbench/cohencu.c line=36 col=5) id=8 */\l [[mul57 = y.0*2; mul58 = mul57*y.0; mul59.neg = x.0*-3; mul60.neg = mul59.neg*z.0; sub61 = mul60.neg+mul58; sub63 = mul13.neg+sub61; mul64.neg = y.0*-10; sub65 = mul64.neg+sub63; mul66 = z.0*3; add67 = sub65+mul66; ]]\l cmp69 = (add67 = 10)\l assert(cmp69)   /* loc(file=data/sv-benchmarks-processed/nla-digbench/cohencu.c line=37 col=5) id=9 */\l assert(cmp27)   /* loc(file=data/sv-benchmarks-processed/nla-digbench/cohencu.c line=38 col=5) id=10 */\l assert(cmp19)   /* loc(file=data/sv-benchmarks-processed/nla-digbench/cohencu.c line=39 col=5) id=11 */\l @V_1 = 0\l}"];
+}

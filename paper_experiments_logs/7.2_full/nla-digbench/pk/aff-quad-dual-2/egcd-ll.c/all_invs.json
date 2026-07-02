@@ -1,0 +1,141 @@
+{
+    "all_invs": [
+        {
+            "str": "mul-mul6 = 1;-sub = -1;-call+conv4 = 0;-call1+conv5 = 0;b.0-add19 = 0;a.0-add = 0;mul10+mul12-add = 0;mul16+mul18-add19 = 0;add-add19 <= 0",
+            "smt": "(assert (= (+ mul (* (- 1.0) mul6)) 1.0))\n(assert (= sub 1.0))\n(assert (= (+ (* (- 1.0) call) conv4) 0.0))\n(assert (= (+ (* (- 1.0) call1) conv5) 0.0))\n(assert (= (+ b.0 (* (- 1.0) add19)) 0.0))\n(assert (= (+ a.0 (* (- 1.0) add)) 0.0))\n(assert (= (+ mul10 mul12 (* (- 1.0) add)) 0.0))\n(assert (= (+ mul16 mul18 (* (- 1.0) add19)) 0.0))\n(assert (<= (+ add (* (- 1.0) add19)) 0.0))",
+            "dom": "pk",
+            "vars": [
+                "mul6",
+                "mul18",
+                "add19",
+                "b.0",
+                "mul12",
+                "add",
+                "call",
+                "sub",
+                "call1",
+                "mul10",
+                "mul16",
+                "conv4",
+                "mul",
+                "conv5",
+                "a.0"
+            ],
+            "len": 9
+        },
+        {
+            "str": "mul-mul6 = 1;-sub = -1;-call+conv4 = 0;-call1+conv5 = 0;b.0-add19 = 0;a.0-add = 0;mul10+mul12-add = 0;mul16+mul18-add19 = 0;-add+add19 <= -1",
+            "smt": "(assert (= (+ mul (* (- 1.0) mul6)) 1.0))\n(assert (= sub 1.0))\n(assert (= (+ (* (- 1.0) call) conv4) 0.0))\n(assert (= (+ (* (- 1.0) call1) conv5) 0.0))\n(assert (= (+ b.0 (* (- 1.0) add19)) 0.0))\n(assert (= (+ a.0 (* (- 1.0) add)) 0.0))\n(assert (= (+ mul10 mul12 (* (- 1.0) add)) 0.0))\n(assert (= (+ mul16 mul18 (* (- 1.0) add19)) 0.0))\n(assert (<= (+ (* (- 1.0) add) add19) (- 1.0)))",
+            "dom": "pk",
+            "vars": [
+                "mul6",
+                "mul18",
+                "add19",
+                "b.0",
+                "mul12",
+                "add",
+                "call",
+                "sub",
+                "call1",
+                "mul10",
+                "mul16",
+                "conv4",
+                "mul",
+                "conv5",
+                "a.0"
+            ],
+            "len": 9
+        },
+        {
+            "str": "-call+conv4 = 0;-call1+conv5 = 0;b.0-add19 = 0;a.0-add = 0;mul10+mul12-add = 0;mul16+mul18-add19 = 0;mul-mul6 = 1;-sub = -1",
+            "smt": "(assert (= (+ (* (- 1.0) call) conv4) 0.0))\n(assert (= (+ (* (- 1.0) call1) conv5) 0.0))\n(assert (= (+ b.0 (* (- 1.0) add19)) 0.0))\n(assert (= (+ a.0 (* (- 1.0) add)) 0.0))\n(assert (= (+ mul10 mul12 (* (- 1.0) add)) 0.0))\n(assert (= (+ mul16 mul18 (* (- 1.0) add19)) 0.0))\n(assert (= (+ mul (* (- 1.0) mul6)) 1.0))\n(assert (= sub 1.0))",
+            "dom": "pk",
+            "vars": [
+                "mul6",
+                "add19",
+                "b.0",
+                "mul12",
+                "add",
+                "call",
+                "mul",
+                "call1",
+                "sub",
+                "mul10",
+                "mul16",
+                "conv4",
+                "mul18",
+                "conv5",
+                "a.0"
+            ],
+            "len": 8
+        },
+        {
+            "str": "-call1+conv5 = 0;-call+conv4 = 0",
+            "smt": "(assert (= (+ (* (- 1.0) call1) conv5) 0.0))\n(assert (= (+ (* (- 1.0) call) conv4) 0.0))",
+            "dom": "pk",
+            "vars": [
+                "call",
+                "call1",
+                "conv5",
+                "conv4"
+            ],
+            "len": 2
+        },
+        {
+            "str": "-call+conv4 = 0;-call1+conv5 = 0;-b.0+mul16+mul18 = 0;mul10+mul12-add = 0;a.0-add = 0;-b.0+add19 = 0;add-b.1-a.1 <= 0;b.0-b.1-a.1 <= 0;mul-mul6 = 1;-sub = -1",
+            "smt": "(assert (= (+ (* (- 1.0) call) conv4) 0.0))\n(assert (= (+ (* (- 1.0) call1) conv5) 0.0))\n(assert (= (+ (* (- 1.0) b.0) mul16 mul18) 0.0))\n(assert (= (+ mul10 mul12 (* (- 1.0) add)) 0.0))\n(assert (= (+ a.0 (* (- 1.0) add)) 0.0))\n(assert (= (+ (* (- 1.0) b.0) add19) 0.0))\n(assert (<= (+ add (* (- 1.0) b.1) (* (- 1.0) a.1)) 0.0))\n(assert (<= (+ b.0 (* (- 1.0) b.1) (* (- 1.0) a.1)) 0.0))\n(assert (= (+ mul (* (- 1.0) mul6)) 1.0))\n(assert (= sub 1.0))",
+            "dom": "pk",
+            "vars": [
+                "a.1",
+                "mul6",
+                "add19",
+                "b.0",
+                "mul12",
+                "add",
+                "call",
+                "mul",
+                "call1",
+                "sub",
+                "b.1",
+                "mul10",
+                "mul16",
+                "conv4",
+                "mul18",
+                "conv5",
+                "a.0"
+            ],
+            "len": 10
+        },
+        {
+            "str": "mul-mul6 = 1;-sub = -1;-call+conv4 = 0;-call1+conv5 = 0;b.0-add19 = 0;a.0-add19 = 0;mul10+mul12-add19 = 0;add-add19 = 0;mul16+mul18-add19 = 0",
+            "smt": "(assert (= (+ mul (* (- 1.0) mul6)) 1.0))\n(assert (= sub 1.0))\n(assert (= (+ (* (- 1.0) call) conv4) 0.0))\n(assert (= (+ (* (- 1.0) call1) conv5) 0.0))\n(assert (= (+ b.0 (* (- 1.0) add19)) 0.0))\n(assert (= (+ a.0 (* (- 1.0) add19)) 0.0))\n(assert (= (+ mul10 mul12 (* (- 1.0) add19)) 0.0))\n(assert (= (+ add (* (- 1.0) add19)) 0.0))\n(assert (= (+ mul16 mul18 (* (- 1.0) add19)) 0.0))",
+            "dom": "pk",
+            "vars": [
+                "mul6",
+                "mul18",
+                "add19",
+                "b.0",
+                "mul12",
+                "add",
+                "call",
+                "sub",
+                "call1",
+                "mul10",
+                "mul16",
+                "conv4",
+                "mul",
+                "conv5",
+                "a.0"
+            ],
+            "len": 9
+        },
+        {
+            "str": "T",
+            "smt": "(assert true)",
+            "dom": "pk",
+            "vars": {},
+            "len": 0
+        }
+    ],
+    "timed_out": false
+}

@@ -1,0 +1,201 @@
+{
+    "benchmarks": {
+        "freire2.c": {
+            "time": 0.7359590480016778,
+            "timed_out": false
+        },
+        "divbin.c": {
+            "time": 0.48506344299868215,
+            "timed_out": false
+        },
+        "sqrt1-ll.c": {
+            "time": 0.8142177920036484,
+            "timed_out": false
+        },
+        "egcd2-ll.c": {
+            "time": 3.5808574250021485,
+            "timed_out": false
+        },
+        "cohendiv-ll.c": {
+            "time": 1.0027507200008259,
+            "timed_out": false
+        },
+        "sqrt1.c": {
+            "time": 0.7274858939958504,
+            "timed_out": false
+        },
+        "prodbin-ll.c": {
+            "time": 0.5126643580029486,
+            "timed_out": false
+        },
+        "divbin2.c": {
+            "time": 0.4966416409933008,
+            "timed_out": false
+        },
+        "bresenham.c": {
+            "time": 0.6999494879955892,
+            "timed_out": false
+        },
+        "knuth.c": {
+            "time": 4.862482417000457,
+            "timed_out": false
+        },
+        "lcm1.c": {
+            "time": 0.9725525680006248,
+            "timed_out": false
+        },
+        "mannadiv.c": {
+            "time": 0.4864183550038142,
+            "timed_out": false
+        },
+        "freire1.c": {
+            "time": 0.390277294993517,
+            "timed_out": false
+        },
+        "cohendiv.c": {
+            "time": 0.8574571159920887,
+            "timed_out": false
+        },
+        "geo1-ll.c": {
+            "time": 0.593946849009255,
+            "timed_out": false
+        },
+        "hard-u.c": {
+            "time": 0.5328630400097463,
+            "timed_out": false
+        },
+        "ps5-ll.c": {
+            "time": 1.1145025629997254,
+            "timed_out": false
+        },
+        "egcd.c": {
+            "time": 0.9360787009956548,
+            "timed_out": false
+        },
+        "ps2.c": {
+            "time": 0.5629208130029728,
+            "timed_out": false
+        },
+        "cohencu.c": {
+            "time": 25.975129735995317,
+            "timed_out": false
+        },
+        "prod4br-ll.c": {
+            "time": 0.7404862449965439,
+            "timed_out": false
+        },
+        "geo3-ll2.c": {
+            "time": 0.577944375001709,
+            "timed_out": false
+        },
+        "geo1.c": {
+            "time": 0.47159068400622345,
+            "timed_out": false
+        },
+        "ps5.c": {
+            "time": 1.1338192970022791,
+            "timed_out": false
+        },
+        "geo3-ll.c": {
+            "time": 0.5358794949923176,
+            "timed_out": false
+        },
+        "geo2-ll.c": {
+            "time": 0.4672710499909008,
+            "timed_out": false
+        },
+        "ps6.c": {
+            "time": 6.5409471390035465,
+            "timed_out": false
+        },
+        "ps4-ll.c": {
+            "time": 1.0161711120040855,
+            "timed_out": false
+        },
+        "ps6-ll.c": {
+            "time": 9.137973927996354,
+            "timed_out": false
+        },
+        "geo3.c": {
+            "time": 0.5301446209977148,
+            "timed_out": false
+        },
+        "ps2-ll.c": {
+            "time": 0.5972916009938345,
+            "timed_out": false
+        },
+        "ps4.c": {
+            "time": 1.0166946420077,
+            "timed_out": false
+        },
+        "ps3-ll.c": {
+            "time": 0.8306505040037446,
+            "timed_out": false
+        },
+        "geo1-ll2.c": {
+            "time": 0.5543687540090176,
+            "timed_out": false
+        },
+        "egcd3.c": {
+            "time": 10.47039849999186,
+            "timed_out": false
+        },
+        "bresenham-ll.c": {
+            "time": 0.7642132349943276,
+            "timed_out": false
+        },
+        "prod4br.c": {
+            "time": 0.6981750030023977,
+            "timed_out": false
+        },
+        "dijkstra-u.c": {
+            "time": 9.094461735006073,
+            "timed_out": false
+        },
+        "hard2.c": {
+            "time": 0.677307426000596,
+            "timed_out": false
+        },
+        "egcd3-ll.c": {
+            "time": 11.346957170991926,
+            "timed_out": false
+        },
+        "cohencu-ll.c": {
+            "time": 27.11420347700722,
+            "timed_out": false
+        },
+        "egcd-ll.c": {
+            "time": 1.1470223330023,
+            "timed_out": false
+        },
+        "lcm2.c": {
+            "time": 0.5294829009943642,
+            "timed_out": false
+        },
+        "geo2.c": {
+            "time": 0.46727465599915013,
+            "timed_out": false
+        },
+        "ps3.c": {
+            "time": 0.7969517469978891,
+            "timed_out": false
+        },
+        "geo2-ll2.c": {
+            "time": 0.486636161009199,
+            "timed_out": false
+        },
+        "hard.c": {
+            "time": 0.6221021429948741,
+            "timed_out": false
+        },
+        "prodbin.c": {
+            "time": 0.4406411069908645,
+            "timed_out": false
+        },
+        "egcd2.c": {
+            "time": 5.195665668005473,
+            "timed_out": false
+        }
+    },
+    "total_time": 140.3429459719923
+}

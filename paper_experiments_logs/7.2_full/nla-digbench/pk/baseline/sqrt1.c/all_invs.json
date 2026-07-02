@@ -1,0 +1,64 @@
+{
+    "all_invs": [
+        {
+            "str": "4*a.0-mul8 = -2;4*s.0+mul7.neg = 0;2*t.0-mul8 = 0;2*mul-mul8 = -2;2*add-mul8 = 0;4*add1-mul8 = 2;-4*mul3-mul7.neg = 0;mul6+mul7.neg+mul8 = -1;sub+mul8 = -1;-add9 = 1;-4*call-mul7.neg <= 0",
+            "smt": "(assert (= (+ (* 4.0 a.0) (* (- 1.0) mul8)) (- 2.0)))\n(assert (= (+ (* 4.0 s.0) mul7.neg) 0.0))\n(assert (= (+ (* 2.0 t.0) (* (- 1.0) mul8)) 0.0))\n(assert (= (+ (* 2.0 mul) (* (- 1.0) mul8)) (- 2.0)))\n(assert (= (+ (* 2.0 add) (* (- 1.0) mul8)) 0.0))\n(assert (= (+ (* 4.0 add1) (* (- 1.0) mul8)) 2.0))\n(assert (= (+ (* (- 4.0) mul3) (* (- 1.0) mul7.neg)) 0.0))\n(assert (= (+ mul6 mul7.neg mul8) (- 1.0)))\n(assert (= (+ sub mul8) (- 1.0)))\n(assert (= add9 (- 1.0)))\n(assert (<= (+ (* (- 4.0) call) (* (- 1.0) mul7.neg)) 0.0))",
+            "dom": "pk",
+            "vars": [
+                "mul6",
+                "mul3",
+                "add",
+                "call",
+                "sub",
+                "a.0",
+                "add9",
+                "add1",
+                "mul8",
+                "mul7.neg",
+                "t.0",
+                "mul",
+                "s.0"
+            ],
+            "len": 11
+        },
+        {
+            "str": "2*a.0-t.0 = -1",
+            "smt": "(assert (= (+ (* 2.0 a.0) (* (- 1.0) t.0)) (- 1.0)))",
+            "dom": "pk",
+            "vars": [
+                "t.0",
+                "a.0"
+            ],
+            "len": 1
+        },
+        {
+            "str": "4*a.0-mul8 = -2;4*s.0+mul7.neg = 0;2*t.0-mul8 = 0;2*mul-mul8 = -2;2*add-mul8 = 0;4*add1-mul8 = 2;-4*mul3-mul7.neg = 0;mul6+mul7.neg+mul8 = -1;sub+mul8 = -1;-add9 = 1;4*call+mul7.neg <= -4",
+            "smt": "(assert (= (+ (* 4.0 a.0) (* (- 1.0) mul8)) (- 2.0)))\n(assert (= (+ (* 4.0 s.0) mul7.neg) 0.0))\n(assert (= (+ (* 2.0 t.0) (* (- 1.0) mul8)) 0.0))\n(assert (= (+ (* 2.0 mul) (* (- 1.0) mul8)) (- 2.0)))\n(assert (= (+ (* 2.0 add) (* (- 1.0) mul8)) 0.0))\n(assert (= (+ (* 4.0 add1) (* (- 1.0) mul8)) 2.0))\n(assert (= (+ (* (- 4.0) mul3) (* (- 1.0) mul7.neg)) 0.0))\n(assert (= (+ mul6 mul7.neg mul8) (- 1.0)))\n(assert (= (+ sub mul8) (- 1.0)))\n(assert (= add9 (- 1.0)))\n(assert (<= (+ (* 4.0 call) mul7.neg) (- 4.0)))",
+            "dom": "pk",
+            "vars": [
+                "mul6",
+                "mul3",
+                "add",
+                "call",
+                "sub",
+                "a.0",
+                "add9",
+                "add1",
+                "mul8",
+                "mul7.neg",
+                "t.0",
+                "mul",
+                "s.0"
+            ],
+            "len": 11
+        },
+        {
+            "str": "T",
+            "smt": "(assert true)",
+            "dom": "pk",
+            "vars": {},
+            "len": 0
+        }
+    ],
+    "timed_out": false
+}

@@ -1,0 +1,15 @@
+digraph "CFG for 'main' function" {
+	label="CFG for 'main' function";
+	Node0x63b17860e7b0 [shape=record,label="{entry:\l havoc(call) /* __VERIFIER_nondet_int(...)*/\l havoc(call1) /* __VERIFIER_nondet_int(...)*/\l havoc(call2) /* __VERIFIER_nondet_int(...)*/\l sext call1:32 to conv:64\l sext call:32 to conv4:64\l [[mul = conv*conv4; ]]\l x.0 = conv\l y.0 = 1\l c.0 = 1\l}"];
+	Node0x63b17860e7b0 -> Node0x63b17863cd30;
+	Node0x63b17863cd30 [shape=record,label="{while.body:\l [[mul6 = x.0*conv4; mul8 = mul*y.0; tmp = mul6+conv; tmp1 = x.0+mul8; ]]\l cmp = (tmp-tmp1 = 0)\l assert(cmp)   /* loc(file=data/sv-benchmarks-processed/nla-digbench/geo3-ll2.c line=23 col=9) id=1 */\l sext call2:32 to conv11:64\l}"];
+	Node0x63b17863cd30 -> Node0x63b178641b90;
+	Node0x63b17863cd30 -> Node0x63b178642200;
+	Node0x63b178642200 [shape=record,label="{__@bb_6:\l assume(-c.0+conv11 &le; 0)\l}"];
+	Node0x63b178642200 -> Node0x63b17863ca60;
+	Node0x63b17863ca60 [shape=record,label="{while.end:\l assert(cmp)   /* loc(file=data/sv-benchmarks-processed/nla-digbench/geo3-ll2.c line=32 col=5) id=2 */\l trunc x.0:64 to conv30:32\l}"];
+	Node0x63b178641b90 [shape=record,label="{__@bb_5:\l assume(c.0-conv11 &le; -1)\l}"];
+	Node0x63b178641b90 -> Node0x63b17863cdf0;
+	Node0x63b17863cdf0 [shape=record,label="{if.end:\l add14 = c.0+1\l [[mul20 = y.0*conv4; ]]\l x.0 = tmp\l y.0 = mul20\l c.0 = add14\l}"];
+	Node0x63b17863cdf0 -> Node0x63b17863cd30;
+}

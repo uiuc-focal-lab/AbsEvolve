@@ -1,0 +1,61 @@
+{
+    "all_invs": [
+        {
+            "str": "mul8.neg4-mul9.neg39 = 5;call-conv22 = 0;-y.0-mul15.neg6+sub1610 = 0;-12*x.0-mul18.neg = 0;mul-2*mul15.neg6+2*sub1610 = 0;-mul25+2*mul15.neg6-2*sub1610 = 6;add-mul18.neg = 0;c.0-conv22 <= -1",
+            "smt": "(assert (= (+ mul8.neg4 (* (- 1.0) mul9.neg39)) 5.0))\n(assert (= (+ call (* (- 1.0) conv22)) 0.0))\n(assert (= (+ (* (- 1.0) y.0) (* (- 1.0) mul15.neg6) sub1610) 0.0))\n(assert (= (+ (* (- 12.0) x.0) (* (- 1.0) mul18.neg)) 0.0))\n(assert (= (+ mul (* (- 2.0) mul15.neg6) (* 2.0 sub1610)) 0.0))\n(assert (= (+ (* (- 1.0) mul25) (* 2.0 mul15.neg6) (* (- 2.0) sub1610)) 6.0))\n(assert (= (+ add (* (- 1.0) mul18.neg)) 0.0))\n(assert (<= (+ c.0 (* (- 1.0) conv22)) (- 1.0)))",
+            "dom": "pk",
+            "vars": [
+                "mul15.neg6",
+                "conv22",
+                "c.0",
+                "add",
+                "sub1610",
+                "call",
+                "y.0",
+                "mul8.neg4",
+                "mul25",
+                "x.0",
+                "mul9.neg39",
+                "mul",
+                "mul18.neg"
+            ],
+            "len": 8
+        },
+        {
+            "str": "T",
+            "smt": "(assert true)",
+            "dom": "pk",
+            "vars": {},
+            "len": 0
+        },
+        {
+            "str": "mul8.neg4-mul9.neg39 = 5;call-conv22 = 0;-y.0-mul15.neg6+sub1610 = 0;-12*x.0-mul18.neg = 0;mul-2*mul15.neg6+2*sub1610 = 0;-mul25+2*mul15.neg6-2*sub1610 = 6;add-mul18.neg = 0;-c.0+conv22 <= 0",
+            "smt": "(assert (= (+ mul8.neg4 (* (- 1.0) mul9.neg39)) 5.0))\n(assert (= (+ call (* (- 1.0) conv22)) 0.0))\n(assert (= (+ (* (- 1.0) y.0) (* (- 1.0) mul15.neg6) sub1610) 0.0))\n(assert (= (+ (* (- 12.0) x.0) (* (- 1.0) mul18.neg)) 0.0))\n(assert (= (+ mul (* (- 2.0) mul15.neg6) (* 2.0 sub1610)) 0.0))\n(assert (= (+ (* (- 1.0) mul25) (* 2.0 mul15.neg6) (* (- 2.0) sub1610)) 6.0))\n(assert (= (+ add (* (- 1.0) mul18.neg)) 0.0))\n(assert (<= (+ (* (- 1.0) c.0) conv22) 0.0))",
+            "dom": "pk",
+            "vars": [
+                "mul15.neg6",
+                "conv22",
+                "c.0",
+                "add",
+                "sub1610",
+                "call",
+                "y.0",
+                "mul8.neg4",
+                "mul25",
+                "x.0",
+                "mul9.neg39",
+                "mul",
+                "mul18.neg"
+            ],
+            "len": 8
+        },
+        {
+            "str": "T",
+            "smt": "(assert true)",
+            "dom": "pk",
+            "vars": {},
+            "len": 0
+        }
+    ],
+    "timed_out": false
+}

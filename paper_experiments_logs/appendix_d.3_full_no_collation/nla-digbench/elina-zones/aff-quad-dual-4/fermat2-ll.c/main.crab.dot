@@ -1,0 +1,15 @@
+digraph "CFG for 'main' function" {
+	label="CFG for 'main' function";
+	Node0x62e9af789750 [shape=record,label="{entry:\l havoc(call) /* __VERIFIER_nondet_int(...)*/\l havoc(call1) /* __VERIFIER_nondet_int(...)*/\l sext call1:32 to conv:64\l [[sub = conv+-1; ]]\l [[mul = sub*sub; ]]\l sext call:32 to conv4:64\l cmp = (mul-conv4 &le; -1)\l assume(cmp)\l rem = call%2\l cmp6 = (rem = 1)\l assume(cmp6)\l [[mul9 = conv*2; ]]\l [[add = mul9+1; ]]\l [[mul12 = conv*conv; ]]\l [[sub14 = mul12-conv4; ]]\l u.0 = add\l v.0 = 1\l r.0 = sub14\l}"];
+	Node0x62e9af789750 -> Node0x62e9af7b9cc0;
+	Node0x62e9af7b9cc0 [shape=record,label="{while.body:\l [[add16 = r.0+conv4; ]]\l [[mul17 = add16*4; ]]\l [[mul18 = u.0*u.0; ]]\l [[mul19 = v.0*v.0; ]]\l [[sub20 = mul18-mul19; ]]\l [[mul21.neg = u.0*-2; ]]\l [[sub22 = mul21.neg+sub20; ]]\l [[mul23 = v.0*2; ]]\l [[add24 = sub22+mul23; ]]\l cmp25 = (mul17-add24 = 0)\l assert(cmp25)   /* loc(file=data/sv-benchmarks-processed/nla-digbench/fermat2-ll.c line=23 col=9) id=1 */\l}"];
+	Node0x62e9af7b9cc0 -> Node0x62e9af7c2f80;
+	Node0x62e9af7b9cc0 -> Node0x62e9af7c33f0;
+	Node0x62e9af7c33f0 [shape=record,label="{__@bb_6:\l assume(r.0 &ne; 0)\l}"];
+	Node0x62e9af7c33f0 -> Node0x62e9af7b9d80;
+	Node0x62e9af7b9d80 [shape=record,label="{if.end:\l [[add33 = v.0+2; ]]\l [[add35 = u.0+2; ]]\l u.1 = ite(-r.0 &le; -1,u.0,add35)\l v.1 = ite(-r.0 &le; -1,add33,v.0)\l @V_35 = 0\l [[tmp = @V_35-v.0; ]]\l r.1.p = ite(-r.0 &le; -1,tmp,u.0)\l [[r.1 = r.0+r.1.p; ]]\l u.0 = u.1\l v.0 = v.1\l r.0 = r.1\l}"];
+	Node0x62e9af7b9d80 -> Node0x62e9af7b9cc0;
+	Node0x62e9af7c2f80 [shape=record,label="{__@bb_5:\l assume(r.0 = 0)\l}"];
+	Node0x62e9af7c2f80 -> Node0x62e9af7b9900;
+	Node0x62e9af7b9900 [shape=record,label="{while.end:\l [[mul38 = conv4*4; ]]\l cmp46 = (-add24+mul38 = 0)\l assert(cmp46)   /* loc(file=data/sv-benchmarks-processed/nla-digbench/fermat2-ll.c line=36 col=5) id=2 */\l @V_1 = 0\l}"];
+}

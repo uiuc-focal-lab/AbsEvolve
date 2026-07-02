@@ -1,0 +1,15 @@
+digraph "CFG for 'main' function" {
+	label="CFG for 'main' function";
+	Node0x5a0e5c69c4c0 [shape=record,label="{entry:\l havoc(call) /* __VERIFIER_nondet_int(...)*/\l y.0 = 0\l x.0 = 0\l c.0 = 0\l}"];
+	Node0x5a0e5c69c4c0 -> Node0x5a0e5c6ca250;
+	Node0x5a0e5c6ca250 [shape=record,label="{while.body:\l [[mul = x.0*6; mul1.neg = y.0*-2; ]]\l mul2.neg = mul1.neg*y.0\l mul3.neg = mul2.neg*y.0\l [[sub = mul3.neg+mul; mul4.neg = y.0*-3; ]]\l mul5.neg = mul4.neg*y.0\l [[sub6 = mul5.neg+sub; ]]\l cmp = (-y.0+sub6 = 0)\l assert(cmp)   /* loc(file=data/sv-benchmarks-processed/nla-digbench/ps3.c line=15 col=9) id=1 */\l}"];
+	Node0x5a0e5c6ca250 -> Node0x5a0e5c6cec30;
+	Node0x5a0e5c6ca250 -> Node0x5a0e5c6cf280;
+	Node0x5a0e5c6cf280 [shape=record,label="{__@bb_6:\l assume(call-c.0 &le; 0)\l}"];
+	Node0x5a0e5c6cf280 -> Node0x5a0e5c6c9e90;
+	Node0x5a0e5c6c9e90 [shape=record,label="{while.end:\l assert(cmp)   /* loc(file=data/sv-benchmarks-processed/nla-digbench/ps3.c line=24 col=5) id=2 */\l @V_1 = 0\l}"];
+	Node0x5a0e5c6cec30 [shape=record,label="{__@bb_5:\l assume(-call+c.0 &le; -1)\l}"];
+	Node0x5a0e5c6cec30 -> Node0x5a0e5c6ca310;
+	Node0x5a0e5c6ca310 [shape=record,label="{if.end:\l [[add = c.0+1; add10 = y.0+1; ]]\l mul11 = add10*add10\l [[add12 = mul11+x.0; ]]\l y.0 = add10\l x.0 = add12\l c.0 = add\l}"];
+	Node0x5a0e5c6ca310 -> Node0x5a0e5c6ca250;
+}

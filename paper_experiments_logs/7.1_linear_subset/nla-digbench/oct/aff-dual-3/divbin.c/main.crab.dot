@@ -1,0 +1,24 @@
+digraph "CFG for 'main' function" {
+	label="CFG for 'main' function";
+	Node0x5f706189d6d0 [shape=record,label="{entry:\l havoc(call) /* __VERIFIER_nondet_uint(...)*/\l havoc(call1) /* __VERIFIER_nondet_uint(...)*/\l @V_5 = (-call1 &le; 0)\l @V_6 = (call1 &le; 2147483646)\l @V_7 = true\l cmp = ite(@V_5,@V_6,@V_7)\l assume(cmp)\l cmp2 = (call1 &ne; 0)\l assume(cmp2)\l b.0 = call1\l}"];
+	Node0x5f706189d6d0 -> Node0x5f70618ccc90;
+	Node0x5f70618ccc90 [shape=record,label="{while.body:\l}"];
+	Node0x5f70618ccc90 -> Node0x5f70618cf880;
+	Node0x5f70618ccc90 -> Node0x5f70618d22f0;
+	Node0x5f70618d22f0 [shape=record,label="{__@bb_8:\l @V_24 = (-call &le; 0)\l @V_27 = (-b.0 &le; 0)\l @V_28 = (-call+b.0 &le; 0)\l @V_29 = true\l @V_25 = ite(@V_27,@V_28,@V_29)\l @V_30 = (-call+b.0 &le; 0)\l @V_31 = false\l @V_26 = ite(@V_27,@V_31,@V_30)\l @V_23 = ite(@V_24,@V_25,@V_26)\l assume(@V_23)\l}"];
+	Node0x5f70618d22f0 -> Node0x5f70618ccd50;
+	Node0x5f70618ccd50 [shape=record,label="{if.end:\l [[mul = b.0*2; ]]\l b.0 = mul\l}"];
+	Node0x5f70618ccd50 -> Node0x5f70618ccc90;
+	Node0x5f70618cf880 [shape=record,label="{__@bb_7:\l @V_12 = (-call &le; 0)\l @V_15 = (-b.0 &le; 0)\l @V_16 = (call-b.0 &le; -1)\l @V_17 = false\l @V_13 = ite(@V_15,@V_16,@V_17)\l @V_18 = (call-b.0 &le; -1)\l @V_19 = true\l @V_14 = ite(@V_15,@V_19,@V_18)\l @V_11 = ite(@V_12,@V_13,@V_14)\l assume(@V_11)\l q.0 = 0\l r.0 = call\l b.1 = b.0\l}"];
+	Node0x5f70618cf880 -> Node0x5f70618cce10;
+	Node0x5f70618cce10 [shape=record,label="{while.body6:\l mul7 = q.0*b.1\l [[add = mul7+r.0; ]]\l cmp8 = (call-add = 0)\l assert(cmp8)   /* loc(file=data/sv-benchmarks/nla-digbench/divbin.c line=30 col=9) id=1 */\l}"];
+	Node0x5f70618cce10 -> Node0x5f70618d7a10;
+	Node0x5f70618cce10 -> Node0x5f70618d7fb0;
+	Node0x5f70618d7fb0 [shape=record,label="{__@bb_10:\l assume(-call1+b.1 &ne; 0)\l}"];
+	Node0x5f70618d7fb0 -> Node0x5f70618cd0c0;
+	Node0x5f70618cd0c0 [shape=record,label="{if.end13:\l [[mul14 = q.0*2; ]]\l div = b.1&gt;&gt;_l1\l @V_40 = (-r.0 &le; 0)\l @V_43 = (-div &le; 0)\l @V_44 = (r.0-div &le; -1)\l @V_45 = false\l @V_41 = ite(@V_43,@V_44,@V_45)\l @V_46 = (r.0-div &le; -1)\l @V_47 = true\l @V_42 = ite(@V_43,@V_47,@V_46)\l cmp15.not = ite(@V_40,@V_41,@V_42)\l not.cmp15.not = not(cmp15.not)\l zext not.cmp15.not:1 to add18:32\l [[q.1 = mul14+add18; ]]\l @V_53 = (-r.0 &le; 0)\l @V_56 = (-div &le; 0)\l @V_57 = (r.0-div &le; -1)\l @V_58 = false\l @V_54 = ite(@V_56,@V_57,@V_58)\l @V_59 = (r.0-div &le; -1)\l @V_60 = true\l @V_55 = ite(@V_56,@V_60,@V_59)\l @V_52 = ite(@V_53,@V_54,@V_55)\l zext @V_52:1 to @V_61:8\l sub = ite(-@V_61 &le; -1,0,div)\l [[r.1 = r.0-sub; ]]\l q.0 = q.1\l r.0 = r.1\l b.1 = div\l}"];
+	Node0x5f70618cd0c0 -> Node0x5f70618cce10;
+	Node0x5f70618d7a10 [shape=record,label="{__@bb_9:\l assume(-call1+b.1 = 0)\l}"];
+	Node0x5f70618d7a10 -> Node0x5f70618cc8d0;
+	Node0x5f70618cc8d0 [shape=record,label="{while.end20:\l mul21 = q.0*call1\l [[add22 = mul21+r.0; ]]\l cmp23 = (call-add22 = 0)\l assert(cmp23)   /* loc(file=data/sv-benchmarks/nla-digbench/divbin.c line=41 col=5) id=2 */\l @V_1 = 0\l}"];
+}

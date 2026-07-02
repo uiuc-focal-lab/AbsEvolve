@@ -1,0 +1,132 @@
+{
+    "all_invs": [
+        {
+            "str": "T",
+            "smt": "(assert true)",
+            "dom": "pk",
+            "vars": {},
+            "len": 0
+        },
+        {
+            "str": "-b.0 = 0;-call <= -1;-call-call1+a.0 <= 0",
+            "smt": "(assert (= b.0 0.0))\n(assert (>= call 1.0))\n(assert (<= (+ (* (- 1.0) call) (* (- 1.0) call1) a.0) 0.0))",
+            "dom": "pk",
+            "vars": [
+                "call",
+                "a.0",
+                "call1",
+                "b.0"
+            ],
+            "len": 3
+        },
+        {
+            "str": "-call <= -1;-call-call1+b.0+a.0 <= 0;-k.0 <= 0;-a.0+c.0 <= 0",
+            "smt": "(assert (>= call 1.0))\n(assert (<= (+ (* (- 1.0) call) (* (- 1.0) call1) b.0 a.0) 0.0))\n(assert (>= k.0 0.0))\n(assert (<= (+ (* (- 1.0) a.0) c.0) 0.0))",
+            "dom": "pk",
+            "vars": [
+                "call1",
+                "a.0",
+                "k.0",
+                "call",
+                "b.0",
+                "c.0"
+            ],
+            "len": 4
+        },
+        {
+            "str": "b.0-c.0 <= 0;-c.0+v.0 <= 0;-k.0 <= 0;-d.0 <= -1;-call <= -1;-a.0+c.0 <= 0;-call-call1+b.0+a.0 <= 0",
+            "smt": "(assert (<= (+ b.0 (* (- 1.0) c.0)) 0.0))\n(assert (<= (+ (* (- 1.0) c.0) v.0) 0.0))\n(assert (>= k.0 0.0))\n(assert (>= d.0 1.0))\n(assert (>= call 1.0))\n(assert (<= (+ (* (- 1.0) a.0) c.0) 0.0))\n(assert (<= (+ (* (- 1.0) call) (* (- 1.0) call1) b.0 a.0) 0.0))",
+            "dom": "pk",
+            "vars": [
+                "call1",
+                "b.0",
+                "a.0",
+                "k.0",
+                "v.0",
+                "call",
+                "d.0",
+                "c.0"
+            ],
+            "len": 7
+        },
+        {
+            "str": "b.0-add19 = 0;a.0-add23 = 0;c.0+mul22-add23 = 0;2*v.0-mul29 = 0;mul+mul14-add23 = 0;add-add23 = 0;mul17+mul18-add19 = 0;2*mul26-mul29 = 0;-k.0 <= 0;-call <= -1;add19+mul22-add23 <= 0;2*mul22-2*add23+mul29 <= 0;-call-call1+add19+add23 <= 0;-mul22 <= 0;-d.0 <= -1;mul22-add23+mul29 <= 0",
+            "smt": "(assert (= (+ b.0 (* (- 1.0) add19)) 0.0))\n(assert (= (+ a.0 (* (- 1.0) add23)) 0.0))\n(assert (= (+ c.0 mul22 (* (- 1.0) add23)) 0.0))\n(assert (= (+ (* 2.0 v.0) (* (- 1.0) mul29)) 0.0))\n(assert (= (+ mul mul14 (* (- 1.0) add23)) 0.0))\n(assert (= (+ add (* (- 1.0) add23)) 0.0))\n(assert (= (+ mul17 mul18 (* (- 1.0) add19)) 0.0))\n(assert (= (+ (* 2.0 mul26) (* (- 1.0) mul29)) 0.0))\n(assert (>= k.0 0.0))\n(assert (>= call 1.0))\n(assert (<= (+ add19 mul22 (* (- 1.0) add23)) 0.0))\n(assert (<= (+ (* 2.0 mul22) (* (- 2.0) add23) mul29) 0.0))\n(assert (<= (+ (* (- 1.0) call) (* (- 1.0) call1) add19 add23) 0.0))\n(assert (>= mul22 0.0))\n(assert (>= d.0 1.0))\n(assert (<= (+ mul22 (* (- 1.0) add23) mul29) 0.0))",
+            "dom": "pk",
+            "vars": [
+                "mul17",
+                "mul18",
+                "mul22",
+                "call1",
+                "mul",
+                "mul14",
+                "d.0",
+                "a.0",
+                "k.0",
+                "add23",
+                "v.0",
+                "mul26",
+                "add19",
+                "mul29",
+                "call",
+                "b.0",
+                "add",
+                "c.0"
+            ],
+            "len": 16
+        },
+        {
+            "str": "-call-call1+b.0+a.0 <= 0;-call <= -1",
+            "smt": "(assert (<= (+ (* (- 1.0) call) (* (- 1.0) call1) b.0 a.0) 0.0))\n(assert (>= call 1.0))",
+            "dom": "pk",
+            "vars": [
+                "call",
+                "a.0",
+                "call1",
+                "b.0"
+            ],
+            "len": 2
+        },
+        {
+            "str": "b.0-add19 = 0;a.0-add23 = 0;c.0+mul22-add23 = 0;2*v.0-mul29 = 0;mul+mul14-add23 = 0;add-add23 = 0;mul17+mul18-add19 = 0;2*mul26-mul29 = 0;-k.0 <= 0;-call <= -1;add19+mul22-add23 <= 0;2*mul22-2*add23+mul29 <= 0;-call-call1+add19+add23 <= 0;-mul22 <= 0;-d.0 <= -1;-mul22+add23-mul29 <= -1",
+            "smt": "(assert (= (+ b.0 (* (- 1.0) add19)) 0.0))\n(assert (= (+ a.0 (* (- 1.0) add23)) 0.0))\n(assert (= (+ c.0 mul22 (* (- 1.0) add23)) 0.0))\n(assert (= (+ (* 2.0 v.0) (* (- 1.0) mul29)) 0.0))\n(assert (= (+ mul mul14 (* (- 1.0) add23)) 0.0))\n(assert (= (+ add (* (- 1.0) add23)) 0.0))\n(assert (= (+ mul17 mul18 (* (- 1.0) add19)) 0.0))\n(assert (= (+ (* 2.0 mul26) (* (- 1.0) mul29)) 0.0))\n(assert (>= k.0 0.0))\n(assert (>= call 1.0))\n(assert (<= (+ add19 mul22 (* (- 1.0) add23)) 0.0))\n(assert (<= (+ (* 2.0 mul22) (* (- 2.0) add23) mul29) 0.0))\n(assert (<= (+ (* (- 1.0) call) (* (- 1.0) call1) add19 add23) 0.0))\n(assert (>= mul22 0.0))\n(assert (>= d.0 1.0))\n(assert (<= (+ (* (- 1.0) mul22) add23 (* (- 1.0) mul29)) (- 1.0)))",
+            "dom": "pk",
+            "vars": [
+                "mul17",
+                "mul18",
+                "mul22",
+                "call1",
+                "mul",
+                "mul14",
+                "d.0",
+                "a.0",
+                "k.0",
+                "add23",
+                "v.0",
+                "mul26",
+                "add19",
+                "mul29",
+                "call",
+                "b.0",
+                "add",
+                "c.0"
+            ],
+            "len": 16
+        },
+        {
+            "str": "-call <= -1;-call-call1+b.0+a.0 <= 0;-k.0 <= 0;-a.0+c.0 <= 0;-b.0+c.0 <= -1",
+            "smt": "(assert (>= call 1.0))\n(assert (<= (+ (* (- 1.0) call) (* (- 1.0) call1) b.0 a.0) 0.0))\n(assert (>= k.0 0.0))\n(assert (<= (+ (* (- 1.0) a.0) c.0) 0.0))\n(assert (<= (+ (* (- 1.0) b.0) c.0) (- 1.0)))",
+            "dom": "pk",
+            "vars": [
+                "call1",
+                "a.0",
+                "k.0",
+                "call",
+                "b.0",
+                "c.0"
+            ],
+            "len": 5
+        }
+    ],
+    "timed_out": false
+}

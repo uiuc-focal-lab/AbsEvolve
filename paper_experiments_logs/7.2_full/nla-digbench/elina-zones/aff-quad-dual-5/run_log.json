@@ -1,0 +1,229 @@
+{
+    "benchmarks": {
+        "freire2.c": {
+            "time": 0.7803095140109071,
+            "timed_out": false
+        },
+        "divbin.c": {
+            "time": 0.5308092310029315,
+            "timed_out": false
+        },
+        "sqrt1-ll.c": {
+            "time": 0.6676514140045038,
+            "timed_out": false
+        },
+        "cohendiv-ll.c": {
+            "time": 1.9922040050105425,
+            "timed_out": false
+        },
+        "sqrt1.c": {
+            "time": 0.6960967670059763,
+            "timed_out": false
+        },
+        "prodbin-ll.c": {
+            "time": 0.43839426400105,
+            "timed_out": false
+        },
+        "divbin2.c": {
+            "time": 0.5392613519966836,
+            "timed_out": false
+        },
+        "geo1-u.c": {
+            "time": 0.5376821449953131,
+            "timed_out": false
+        },
+        "bresenham.c": {
+            "time": 0.6603889899968636,
+            "timed_out": false
+        },
+        "geo1-u2.c": {
+            "time": 0.581094381000381,
+            "timed_out": false
+        },
+        "knuth.c": {
+            "time": 4.094390216000495,
+            "timed_out": false
+        },
+        "lcm1.c": {
+            "time": 0.6999335890087532,
+            "timed_out": false
+        },
+        "mannadiv.c": {
+            "time": 0.5959491190091939,
+            "timed_out": false
+        },
+        "freire1.c": {
+            "time": 0.4158926980072865,
+            "timed_out": false
+        },
+        "fermat1.c": {
+            "time": 3.771146547991433,
+            "timed_out": false
+        },
+        "cohendiv.c": {
+            "time": 1.6754937340019969,
+            "timed_out": false
+        },
+        "geo1-ll.c": {
+            "time": 0.7063386720117415,
+            "timed_out": false
+        },
+        "hard-u.c": {
+            "time": 0.5533086280002026,
+            "timed_out": false
+        },
+        "ps5-ll.c": {
+            "time": 1.4400619860014412,
+            "timed_out": false
+        },
+        "egcd.c": {
+            "time": 1.1325196149954573,
+            "timed_out": false
+        },
+        "ps2.c": {
+            "time": 0.5458879710057518,
+            "timed_out": false
+        },
+        "fermat2.c": {
+            "time": 0.9208214759994298,
+            "timed_out": false
+        },
+        "cohencu.c": {
+            "time": 2.1273048540003363,
+            "timed_out": false
+        },
+        "prod4br-ll.c": {
+            "time": 0.7364908070120728,
+            "timed_out": false
+        },
+        "geo3-ll2.c": {
+            "time": 0.5383120530114975,
+            "timed_out": false
+        },
+        "geo1.c": {
+            "time": 0.4667476160010556,
+            "timed_out": false
+        },
+        "fermat2-ll.c": {
+            "time": 1.0189606740024173,
+            "timed_out": false
+        },
+        "ps5.c": {
+            "time": 1.3064460810036398,
+            "timed_out": false
+        },
+        "dijkstra.c": {
+            "time": 8.331248875994701,
+            "timed_out": false
+        },
+        "geo3-ll.c": {
+            "time": 0.5367415619972162,
+            "timed_out": false
+        },
+        "geo2-ll.c": {
+            "time": 0.48173063700890634,
+            "timed_out": false
+        },
+        "ps6.c": {
+            "time": 1.5511977119948714,
+            "timed_out": false
+        },
+        "ps4-ll.c": {
+            "time": 1.146768617008929,
+            "timed_out": false
+        },
+        "ps6-ll.c": {
+            "time": 1.8366562039990677,
+            "timed_out": false
+        },
+        "geo3.c": {
+            "time": 0.5753202270036564,
+            "timed_out": false
+        },
+        "ps2-ll.c": {
+            "time": 0.5305332180013647,
+            "timed_out": false
+        },
+        "fermat1-ll.c": {
+            "time": 4.1431523700059625,
+            "timed_out": false
+        },
+        "ps4.c": {
+            "time": 1.1183042919976869,
+            "timed_out": false
+        },
+        "ps3-ll.c": {
+            "time": 0.7862668029994238,
+            "timed_out": false
+        },
+        "geo1-ll2.c": {
+            "time": 0.6505402440037578,
+            "timed_out": false
+        },
+        "egcd3.c": {
+            "time": 15.2494183089945,
+            "timed_out": false
+        },
+        "hard-ll.c": {
+            "time": 0.8693053689984371,
+            "timed_out": false
+        },
+        "bresenham-ll.c": {
+            "time": 0.8419598130049417,
+            "timed_out": false
+        },
+        "prod4br.c": {
+            "time": 0.7489506320088404,
+            "timed_out": false
+        },
+        "dijkstra-u.c": {
+            "time": 5.6313421270000985,
+            "timed_out": false
+        },
+        "hard2.c": {
+            "time": 0.5448304080064408,
+            "timed_out": false
+        },
+        "egcd3-ll.c": {
+            "time": 15.753841768007959,
+            "timed_out": false
+        },
+        "cohencu-ll.c": {
+            "time": 2.01863647700008,
+            "timed_out": false
+        },
+        "egcd-ll.c": {
+            "time": 1.3195581250116228,
+            "timed_out": false
+        },
+        "lcm2.c": {
+            "time": 0.5059574850007194,
+            "timed_out": false
+        },
+        "geo2.c": {
+            "time": 0.451274246999179,
+            "timed_out": false
+        },
+        "ps3.c": {
+            "time": 0.7445917179974495,
+            "timed_out": false
+        },
+        "geo2-ll2.c": {
+            "time": 0.47604566501255613,
+            "timed_out": false
+        },
+        "hard.c": {
+            "time": 0.7100259509959723,
+            "timed_out": false
+        },
+        "prodbin.c": {
+            "time": 0.45162902400677557,
+            "timed_out": false
+        },
+        "egcd2.c": {
+            "time": 4.49991696099937,
+            "timed_out": false
+        }
+    },
+    "total_time": 102.67564324114987
+}

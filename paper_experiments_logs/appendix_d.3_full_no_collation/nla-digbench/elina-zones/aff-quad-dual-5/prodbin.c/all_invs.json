@@ -1,0 +1,44 @@
+{
+    "all_invs": [
+        {
+            "str": "-add+mul4 <= 0;add-mul4 <= 0;-conv2 <= -1",
+            "smt": "(assert (<= (+ (* (- 1.0) add) mul4) 0.0))\n(assert (<= (+ add (* (- 1.0) mul4)) 0.0))\n(assert (>= conv2 1.0))",
+            "dom": "elina-zones",
+            "vars": [
+                "conv2",
+                "add",
+                "mul4"
+            ],
+            "len": 3
+        },
+        {
+            "str": "-conv2 <= -1",
+            "smt": "(assert (>= conv2 1.0))",
+            "dom": "elina-zones",
+            "vars": [
+                "conv2"
+            ],
+            "len": 1
+        },
+        {
+            "str": "-conv2+y.0 <= -1;-conv2 <= -1;-y.0 <= 0;y.0 <= 0;-add+mul4 <= 0;add-mul4 <= 0",
+            "smt": "(assert (<= (+ (* (- 1.0) conv2) y.0) (- 1.0)))\n(assert (>= conv2 1.0))\n(assert (>= y.0 0.0))\n(assert (<= y.0 0.0))\n(assert (<= (+ (* (- 1.0) add) mul4) 0.0))\n(assert (<= (+ add (* (- 1.0) mul4)) 0.0))",
+            "dom": "elina-zones",
+            "vars": [
+                "y.0",
+                "add",
+                "conv2",
+                "mul4"
+            ],
+            "len": 6
+        },
+        {
+            "str": "T",
+            "smt": "(assert true)",
+            "dom": "elina-zones",
+            "vars": {},
+            "len": 0
+        }
+    ],
+    "timed_out": false
+}

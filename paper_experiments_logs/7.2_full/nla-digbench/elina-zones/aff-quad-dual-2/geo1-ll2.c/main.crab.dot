@@ -1,0 +1,15 @@
+digraph "CFG for 'main' function" {
+	label="CFG for 'main' function";
+	Node0x5adfaf103670 [shape=record,label="{entry:\l havoc(call) /* __VERIFIER_nondet_int(...)*/\l havoc(call1) /* __VERIFIER_nondet_int(...)*/\l cmp = (-call &le; -1)\l assume(cmp)\l cmp2 = (-call1 &le; -1)\l assume(cmp2)\l sext call:32 to conv4:64\l x.0 = 1\l y.0 = conv4\l c.0 = 1\l}"];
+	Node0x5adfaf103670 -> Node0x5adfaf1325f0;
+	Node0x5adfaf1325f0 [shape=record,label="{while.body:\l [[mul = x.0*conv4; tmp = x.0+y.0; sub6 = mul-tmp; ]]\l cmp7 = (sub6 = -1)\l assert(cmp7)   /* loc(file=data/sv-benchmarks-processed/nla-digbench/geo1-ll2.c line=24 col=9) id=1 */\l sext call1:32 to conv9:64\l}"];
+	Node0x5adfaf1325f0 -> Node0x5adfaf132770;
+	Node0x5adfaf1325f0 -> Node0x5adfaf1373b0;
+	Node0x5adfaf1373b0 [shape=record,label="{__@bb_6:\l assume(-c.0+conv9 &le; 0)\l}"];
+	Node0x5adfaf1373b0 -> Node0x5adfaf132230;
+	Node0x5adfaf132230 [shape=record,label="{while.end:\l [[sub18 = call+-1; ]]\l sext sub18:32 to conv19:64\l [[mul20 = x.0*conv19; add21 = mul20+1; ]]\l cmp23 = (-y.0+add21 = 0)\l assert(cmp23)   /* loc(file=data/sv-benchmarks-processed/nla-digbench/geo1-ll2.c line=37 col=5) id=2 */\l @V_1 = 0\l}"];
+	Node0x5adfaf132770 [shape=record,label="{__@bb_5:\l assume(c.0-conv9 &le; -1)\l}"];
+	Node0x5adfaf132770 -> Node0x5adfaf1326b0;
+	Node0x5adfaf1326b0 [shape=record,label="{if.end:\l [[add12 = c.0+1; add15 = mul+1; mul17 = y.0*conv4; ]]\l x.0 = add15\l y.0 = mul17\l c.0 = add12\l}"];
+	Node0x5adfaf1326b0 -> Node0x5adfaf1325f0;
+}

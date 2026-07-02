@@ -1,0 +1,26 @@
+Running with  --crab-dom elina-zones --ojson inv.json --cpu 200 --crab-affine-precision-level affine-full
+Running on 10 benchmarks from all_benchmarks_subset.csv in /home/sgomber2/Desktop/Projects/PLDI26_Artifact/artifact_jmd/data/sv-benchmarks//nla-digbench
+freire2.c Time taken: 1.208412689029705  
+divbin.c Time taken: 0.5391631580316462  
+sqrt1-ll.c Time taken: 0.694405630976893  
+egcd2-ll.c Time taken: 11.568357824046165  
+cohendiv-ll.c Time taken: 1.8100072530107574  
+sqrt1.c Time taken: 0.75551326199295  
+prodbin-ll.c Time taken: 0.3661590909943916  
+divbin2.c Time taken: 0.6337722879727371  
+geo1-u.c Time taken: 0.4677242059735581  
+bresenham.c Time taken: 0.5833865440110676  
+Total time taken: 18.626901946039865
+Running with  --crab-dom elina-zones --ojson inv.json --cpu 200 --crab-affine-precision-level affine-full
+Running on 10 benchmarks from all_benchmarks_subset.csv in /home/sgomber2/Desktop/Projects/PLDI26_Artifact/artifact_jmd/data/sv-benchmarks//nla-digbench
+freire2.c Time taken: 0.9121663079499267  
+divbin.c Time taken: 0.4875819500195794  
+sqrt1-ll.c Time taken: 0.6730749460295774  
+egcd2-ll.c Time taken: 12.604489113950171  
+cohendiv-ll.c Time taken: 1.6252710839509965  
+sqrt1.c Time taken: 0.6794741250234656  
+prodbin-ll.c Time taken: 0.3487295349952765  
+divbin2.c Time taken: 0.542079529994633  
+geo1-u.c Time taken: 0.5174823350282386  
+bresenham.c Time taken: 0.6550672990162857  
+Total time taken: 19.045416225958146

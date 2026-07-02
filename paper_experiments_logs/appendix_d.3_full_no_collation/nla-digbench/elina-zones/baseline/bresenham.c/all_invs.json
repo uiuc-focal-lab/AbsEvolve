@@ -1,0 +1,48 @@
+{
+    "all_invs": [
+        {
+            "str": "-call+x.0 <= 0;-call <= 0;-x.0 <= 0;-y.0 <= 0;-tmp+tmp1 <= 0;tmp-tmp1 <= 0",
+            "smt": "(assert (<= (+ (* (- 1.0) call) x.0) 0.0))\n(assert (>= call 0.0))\n(assert (>= x.0 0.0))\n(assert (>= y.0 0.0))\n(assert (<= (+ (* (- 1.0) tmp) tmp1) 0.0))\n(assert (<= (+ tmp (* (- 1.0) tmp1)) 0.0))",
+            "dom": "elina-zones",
+            "vars": [
+                "tmp",
+                "x.0",
+                "tmp1",
+                "call",
+                "y.0"
+            ],
+            "len": 6
+        },
+        {
+            "str": "-x.0 <= 0;-y.0 <= 0",
+            "smt": "(assert (>= x.0 0.0))\n(assert (>= y.0 0.0))",
+            "dom": "elina-zones",
+            "vars": [
+                "x.0",
+                "y.0"
+            ],
+            "len": 2
+        },
+        {
+            "str": "call-x.0 <= -1;-x.0 <= 0;-y.0 <= 0;-tmp+tmp1 <= 0;tmp-tmp1 <= 0",
+            "smt": "(assert (<= (+ call (* (- 1.0) x.0)) (- 1.0)))\n(assert (>= x.0 0.0))\n(assert (>= y.0 0.0))\n(assert (<= (+ (* (- 1.0) tmp) tmp1) 0.0))\n(assert (<= (+ tmp (* (- 1.0) tmp1)) 0.0))",
+            "dom": "elina-zones",
+            "vars": [
+                "tmp",
+                "x.0",
+                "tmp1",
+                "call",
+                "y.0"
+            ],
+            "len": 5
+        },
+        {
+            "str": "T",
+            "smt": "(assert true)",
+            "dom": "elina-zones",
+            "vars": {},
+            "len": 0
+        }
+    ],
+    "timed_out": false
+}

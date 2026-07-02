@@ -1,0 +1,79 @@
+{
+    "all_invs": [
+        {
+            "str": "-q.0 <= -1;-add10+mul11 <= 0;add10-mul11 <= 0;-add33.neg+mul36.neg <= 0;add33.neg-mul36.neg <= 0;-add66+mul69.neg <= 0;add66-mul69.neg <= 0;-add89.neg+mul92.neg <= 0;add89.neg-mul92.neg <= 0;-sub98+add100 <= 0;sub98-add100 <= 0",
+            "smt": "(assert (>= q.0 1.0))\n(assert (<= (+ (* (- 1.0) add10) mul11) 0.0))\n(assert (<= (+ add10 (* (- 1.0) mul11)) 0.0))\n(assert (<= (+ (* (- 1.0) add33.neg) mul36.neg) 0.0))\n(assert (<= (+ add33.neg (* (- 1.0) mul36.neg)) 0.0))\n(assert (<= (+ (* (- 1.0) add66) mul69.neg) 0.0))\n(assert (<= (+ add66 (* (- 1.0) mul69.neg)) 0.0))\n(assert (<= (+ (* (- 1.0) add89.neg) mul92.neg) 0.0))\n(assert (<= (+ add89.neg (* (- 1.0) mul92.neg)) 0.0))\n(assert (<= (+ (* (- 1.0) sub98) add100) 0.0))\n(assert (<= (+ sub98 (* (- 1.0) add100)) 0.0))",
+            "dom": "elina-zones",
+            "vars": [
+                "add66",
+                "mul69.neg",
+                "add100",
+                "mul92.neg",
+                "q.0",
+                "mul11",
+                "sub98",
+                "add89.neg",
+                "mul36.neg",
+                "add33.neg",
+                "add10"
+            ],
+            "len": 11
+        },
+        {
+            "str": "-q.0 <= -1",
+            "smt": "(assert (>= q.0 1.0))",
+            "dom": "elina-zones",
+            "vars": [
+                "q.0"
+            ],
+            "len": 1
+        },
+        {
+            "str": "-call+q.0 <= 0;-call <= -1;-q.0 <= -1",
+            "smt": "(assert (<= (+ (* (- 1.0) call) q.0) 0.0))\n(assert (>= call 1.0))\n(assert (>= q.0 1.0))",
+            "dom": "elina-zones",
+            "vars": [
+                "call",
+                "q.0"
+            ],
+            "len": 3
+        },
+        {
+            "str": "-q.0 <= -1",
+            "smt": "(assert (>= q.0 1.0))",
+            "dom": "elina-zones",
+            "vars": [
+                "q.0"
+            ],
+            "len": 1
+        },
+        {
+            "str": "-q.0+q.1 <= 0;-q.0 <= -1;-q.1 <= -1;q.1 <= 1;-add10+mul11 <= 0;add10-mul11 <= 0;-add33.neg+mul36.neg <= 0;add33.neg-mul36.neg <= 0;-add66+mul69.neg <= 0;add66-mul69.neg <= 0;-add89.neg+mul92.neg <= 0;add89.neg-mul92.neg <= 0;-sub98+add100 <= 0;sub98-add100 <= 0",
+            "smt": "(assert (<= (+ (* (- 1.0) q.0) q.1) 0.0))\n(assert (>= q.0 1.0))\n(assert (>= q.1 1.0))\n(assert (<= q.1 1.0))\n(assert (<= (+ (* (- 1.0) add10) mul11) 0.0))\n(assert (<= (+ add10 (* (- 1.0) mul11)) 0.0))\n(assert (<= (+ (* (- 1.0) add33.neg) mul36.neg) 0.0))\n(assert (<= (+ add33.neg (* (- 1.0) mul36.neg)) 0.0))\n(assert (<= (+ (* (- 1.0) add66) mul69.neg) 0.0))\n(assert (<= (+ add66 (* (- 1.0) mul69.neg)) 0.0))\n(assert (<= (+ (* (- 1.0) add89.neg) mul92.neg) 0.0))\n(assert (<= (+ add89.neg (* (- 1.0) mul92.neg)) 0.0))\n(assert (<= (+ (* (- 1.0) sub98) add100) 0.0))\n(assert (<= (+ sub98 (* (- 1.0) add100)) 0.0))",
+            "dom": "elina-zones",
+            "vars": [
+                "add66",
+                "mul69.neg",
+                "add100",
+                "mul92.neg",
+                "q.1",
+                "q.0",
+                "mul11",
+                "sub98",
+                "add89.neg",
+                "mul36.neg",
+                "add33.neg",
+                "add10"
+            ],
+            "len": 14
+        },
+        {
+            "str": "T",
+            "smt": "(assert true)",
+            "dom": "elina-zones",
+            "vars": {},
+            "len": 0
+        }
+    ],
+    "timed_out": false
+}

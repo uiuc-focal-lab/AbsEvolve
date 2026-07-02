@@ -1,0 +1,24 @@
+digraph "CFG for 'main' function" {
+	label="CFG for 'main' function";
+	Node0x572326b3d7d0 [shape=record,label="{entry:\l havoc(call) /* __VERIFIER_nondet_int(...)*/\l havoc(call1) /* __VERIFIER_nondet_int(...)*/\l cmp = (-call1 &le; -1)\l assume(cmp)\l q.0 = 0\l r.0 = call\l a.0 = 0\l b.0 = 0\l}"];
+	Node0x572326b3d7d0 -> Node0x572326b6eb20;
+	Node0x572326b6eb20 [shape=record,label="{while.body:\l [[mul = call1*a.0; ]]\l cmp2 = (b.0-mul = 0)\l assert(cmp2)   /* loc(file=data/sv-benchmarks-processed/nla-digbench/cohendiv.c line=25 col=2) id=1 */\l [[mul4 = q.0*call1; add = mul4+r.0; ]]\l cmp5 = (call-add = 0)\l assert(cmp5)   /* loc(file=data/sv-benchmarks-processed/nla-digbench/cohendiv.c line=26 col=2) id=2 */\l}"];
+	Node0x572326b6eb20 -> Node0x572326b72ee0;
+	Node0x572326b6eb20 -> Node0x572326b73530;
+	Node0x572326b73530 [shape=record,label="{__@bb_8:\l assume(call1-r.0 &le; 0)\l a.1 = 1\l b.1 = call1\l}"];
+	Node0x572326b73530 -> Node0x572326b6ebe0;
+	Node0x572326b6ebe0 [shape=record,label="{while.body10:\l [[mul11 = call1*a.1; ]]\l cmp12 = (b.1-mul11 = 0)\l assert(cmp12)   /* loc(file=data/sv-benchmarks-processed/nla-digbench/cohendiv.c line=34 col=6) id=3 */\l assert(cmp5)   /* loc(file=data/sv-benchmarks-processed/nla-digbench/cohendiv.c line=35 col=6) id=4 */\l cmp18 = (-r.0 &le; 0)\l assert(cmp18)   /* loc(file=data/sv-benchmarks-processed/nla-digbench/cohendiv.c line=36 col=6) id=5 */\l [[mul20 = b.1*2; ]]\l}"];
+	Node0x572326b6ebe0 -> Node0x572326b76660;
+	Node0x572326b6ebe0 -> Node0x572326b76d80;
+	Node0x572326b76d80 [shape=record,label="{__@bb_10:\l assume(-r.0+mul20 &le; 0)\l}"];
+	Node0x572326b76d80 -> Node0x572326b6eca0;
+	Node0x572326b6eca0 [shape=record,label="{if.end24:\l [[mul25 = call1*2; mul26 = mul25*a.1; ]]\l cmp27 = (-r.0+mul26 &le; 0)\l assert(cmp27)   /* loc(file=data/sv-benchmarks-processed/nla-digbench/cohendiv.c line=41 col=6) id=6 */\l [[mul29 = a.1*2; ]]\l a.1 = mul29\l b.1 = mul20\l}"];
+	Node0x572326b6eca0 -> Node0x572326b6ebe0;
+	Node0x572326b76660 [shape=record,label="{__@bb_9:\l assume(r.0-mul20 &le; -1)\l}"];
+	Node0x572326b76660 -> Node0x572326b6ef50;
+	Node0x572326b6ef50 [shape=record,label="{while.end:\l [[sub = r.0-b.1; add31 = q.0+a.1; ]]\l q.0 = add31\l r.0 = sub\l a.0 = a.1\l b.0 = b.1\l}"];
+	Node0x572326b6ef50 -> Node0x572326b6eb20;
+	Node0x572326b72ee0 [shape=record,label="{__@bb_7:\l assume(-call1+r.0 &le; -1)\l}"];
+	Node0x572326b72ee0 -> Node0x572326b6e760;
+	Node0x572326b6e760 [shape=record,label="{while.end32:\l assert(cmp5)   /* loc(file=data/sv-benchmarks-processed/nla-digbench/cohendiv.c line=50 col=5) id=7 */\l @V_1 = 0\l}"];
+}

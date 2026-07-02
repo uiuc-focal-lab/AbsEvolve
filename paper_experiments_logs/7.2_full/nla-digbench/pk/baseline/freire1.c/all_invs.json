@@ -1,0 +1,43 @@
+{
+    "all_invs": [
+        {
+            "str": "-conv4 = 0;-mul <= 0;-r.0 <= 0",
+            "smt": "(assert (= conv4 0.0))\n(assert (>= mul 0.0))\n(assert (>= r.0 0.0))",
+            "dom": "pk",
+            "vars": [
+                "mul",
+                "r.0",
+                "conv4"
+            ],
+            "len": 3
+        },
+        {
+            "str": "-r.0 <= 0",
+            "smt": "(assert (>= r.0 0.0))",
+            "dom": "pk",
+            "vars": [
+                "r.0"
+            ],
+            "len": 1
+        },
+        {
+            "str": "-conv4 = 0;-mul <= 0;-r.0 <= 0",
+            "smt": "(assert (= conv4 0.0))\n(assert (>= mul 0.0))\n(assert (>= r.0 0.0))",
+            "dom": "pk",
+            "vars": [
+                "mul",
+                "r.0",
+                "conv4"
+            ],
+            "len": 3
+        },
+        {
+            "str": "T",
+            "smt": "(assert true)",
+            "dom": "pk",
+            "vars": {},
+            "len": 0
+        }
+    ],
+    "timed_out": false
+}

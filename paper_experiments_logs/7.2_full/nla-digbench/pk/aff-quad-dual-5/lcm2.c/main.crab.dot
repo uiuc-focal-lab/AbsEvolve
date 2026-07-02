@@ -1,0 +1,26 @@
+digraph "CFG for 'main' function" {
+	label="CFG for 'main' function";
+	Node0x60e5cf85d9f0 [shape=record,label="{entry:\l havoc(call) /* __VERIFIER_nondet_uint(...)*/\l havoc(call1) /* __VERIFIER_nondet_uint(...)*/\l cmp = (call &ne; 0)\l assume(cmp)\l cmp2 = (call1 &ne; 0)\l assume(cmp2)\l @V_7 = (-call &le; 0)\l @V_8 = (call &le; 65535)\l @V_9 = true\l cmp4 = ite(@V_7,@V_8,@V_9)\l assume(cmp4)\l @V_11 = (-call1 &le; 0)\l @V_12 = (call1 &le; 65535)\l @V_13 = true\l cmp6 = ite(@V_11,@V_12,@V_13)\l assume(cmp6)\l x.0 = call\l y.0 = call1\l u.0 = call1\l v.0 = call\l}"];
+	Node0x60e5cf85d9f0 -> Node0x60e5cf88eb10;
+	Node0x60e5cf88eb10 [shape=record,label="{while.body:\l [[mul = x.0*u.0; mul8 = y.0*v.0; add = mul+mul8; mul9 = call*2; mul10 = mul9*call1; ]]\l cmp11 = (add-mul10 = 0)\l assert(cmp11)   /* loc(file=data/sv-benchmarks-processed/nla-digbench/lcm2.c line=25 col=9) id=1 */\l}"];
+	Node0x60e5cf88eb10 -> Node0x60e5cf895f90;
+	Node0x60e5cf88eb10 -> Node0x60e5cf896550;
+	Node0x60e5cf896550 [shape=record,label="{__@bb_9:\l assume(x.0-y.0 &ne; 0)\l}"];
+	Node0x60e5cf896550 -> Node0x60e5cf88ebd0;
+	Node0x60e5cf88ebd0 [shape=record,label="{if.end:\l}"];
+	Node0x60e5cf88ebd0 -> Node0x60e5cf896bd0;
+	Node0x60e5cf88ebd0 -> Node0x60e5cf899650;
+	Node0x60e5cf899650 [shape=record,label="{__@bb_11:\l @V_36 = (-y.0 &le; 0)\l @V_39 = (-x.0 &le; 0)\l @V_40 = (x.0-y.0 &le; 0)\l @V_41 = true\l @V_37 = ite(@V_39,@V_40,@V_41)\l @V_42 = (x.0-y.0 &le; 0)\l @V_43 = false\l @V_38 = ite(@V_39,@V_43,@V_42)\l @V_35 = ite(@V_36,@V_37,@V_38)\l assume(@V_35)\l}"];
+	Node0x60e5cf899650 -> Node0x60e5cf88eef0;
+	Node0x60e5cf88eef0 [shape=record,label="{if.else:\l sub19 = y.0-x.0\l add20 = u.0+v.0\l x.1 = x.0\l y.1 = sub19\l u.1 = add20\l v.1 = v.0\l}"];
+	Node0x60e5cf88eef0 -> Node0x60e5cf88f020;
+	Node0x60e5cf88f020 [shape=record,label="{if.end21:\l x.0 = x.1\l y.0 = y.1\l u.0 = u.1\l v.0 = v.1\l}"];
+	Node0x60e5cf88f020 -> Node0x60e5cf88eb10;
+	Node0x60e5cf896bd0 [shape=record,label="{__@bb_10:\l @V_27 = (-y.0 &le; 0)\l @V_30 = (-x.0 &le; 0)\l @V_31 = (-x.0+y.0 &le; -1)\l @V_32 = false\l @V_28 = ite(@V_30,@V_31,@V_32)\l @V_33 = (-x.0+y.0 &le; -1)\l @V_34 = true\l @V_29 = ite(@V_30,@V_34,@V_33)\l @V_26 = ite(@V_27,@V_28,@V_29)\l assume(@V_26)\l}"];
+	Node0x60e5cf896bd0 -> Node0x60e5cf88ec90;
+	Node0x60e5cf88ec90 [shape=record,label="{if.then17:\l sub = x.0-y.0\l add18 = v.0+u.0\l x.1 = sub\l y.1 = y.0\l u.1 = u.0\l v.1 = add18\l}"];
+	Node0x60e5cf88ec90 -> Node0x60e5cf88f020;
+	Node0x60e5cf895f90 [shape=record,label="{__@bb_8:\l assume(x.0-y.0 = 0)\l}"];
+	Node0x60e5cf895f90 -> Node0x60e5cf88e750;
+	Node0x60e5cf88e750 [shape=record,label="{while.end:\l [[mul23 = x.0*v.0; add24 = mul+mul23; ]]\l cmp27 = (-mul10+add24 = 0)\l assert(cmp27)   /* loc(file=data/sv-benchmarks-processed/nla-digbench/lcm2.c line=39 col=5) id=2 */\l @V_1 = 0\l}"];
+}

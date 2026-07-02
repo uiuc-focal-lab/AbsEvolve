@@ -1,0 +1,75 @@
+{
+    "all_invs": [
+        {
+            "str": "-add+mul9 <= 0;-add+add18 <= 0;-add+add31 <= 0;add-mul9 <= 0;-mul9+add18 <= 0;-mul9+add31 <= 0;add-add18 <= 0;mul9-add18 <= 0;-add18+add31 <= 0;add-add31 <= 0;mul9-add31 <= 0;add18-add31 <= 0",
+            "smt": "(assert (<= (+ (* (- 1.0) add) mul9) 0.0))\n(assert (<= (+ (* (- 1.0) add) add18) 0.0))\n(assert (<= (+ (* (- 1.0) add) add31) 0.0))\n(assert (<= (+ add (* (- 1.0) mul9)) 0.0))\n(assert (<= (+ (* (- 1.0) mul9) add18) 0.0))\n(assert (<= (+ (* (- 1.0) mul9) add31) 0.0))\n(assert (<= (+ add (* (- 1.0) add18)) 0.0))\n(assert (<= (+ mul9 (* (- 1.0) add18)) 0.0))\n(assert (<= (+ (* (- 1.0) add18) add31) 0.0))\n(assert (<= (+ add (* (- 1.0) add31)) 0.0))\n(assert (<= (+ mul9 (* (- 1.0) add31)) 0.0))\n(assert (<= (+ add18 (* (- 1.0) add31)) 0.0))",
+            "dom": "elina-zones",
+            "vars": [
+                "add",
+                "mul9",
+                "add18",
+                "add31"
+            ],
+            "len": 12
+        },
+        {
+            "str": "-add+mul9 <= 0;-add+add18 <= 0;add-mul9 <= 0;-mul9+add18 <= 0;add-add18 <= 0;mul9-add18 <= 0",
+            "smt": "(assert (<= (+ (* (- 1.0) add) mul9) 0.0))\n(assert (<= (+ (* (- 1.0) add) add18) 0.0))\n(assert (<= (+ add (* (- 1.0) mul9)) 0.0))\n(assert (<= (+ (* (- 1.0) mul9) add18) 0.0))\n(assert (<= (+ add (* (- 1.0) add18)) 0.0))\n(assert (<= (+ mul9 (* (- 1.0) add18)) 0.0))",
+            "dom": "elina-zones",
+            "vars": [
+                "add",
+                "mul9",
+                "add18"
+            ],
+            "len": 6
+        },
+        {
+            "str": "-add+mul9 <= 0;add-mul9 <= 0",
+            "smt": "(assert (<= (+ (* (- 1.0) add) mul9) 0.0))\n(assert (<= (+ add (* (- 1.0) mul9)) 0.0))",
+            "dom": "elina-zones",
+            "vars": [
+                "add",
+                "mul9"
+            ],
+            "len": 2
+        },
+        {
+            "str": "T",
+            "smt": "(assert true)",
+            "dom": "elina-zones",
+            "vars": {},
+            "len": 0
+        },
+        {
+            "str": "-add+mul9 <= 0;-add+add18 <= 0;add-mul9 <= 0;-mul9+add18 <= 0;add-add18 <= 0;mul9-add18 <= 0",
+            "smt": "(assert (<= (+ (* (- 1.0) add) mul9) 0.0))\n(assert (<= (+ (* (- 1.0) add) add18) 0.0))\n(assert (<= (+ add (* (- 1.0) mul9)) 0.0))\n(assert (<= (+ (* (- 1.0) mul9) add18) 0.0))\n(assert (<= (+ add (* (- 1.0) add18)) 0.0))\n(assert (<= (+ mul9 (* (- 1.0) add18)) 0.0))",
+            "dom": "elina-zones",
+            "vars": [
+                "add",
+                "mul9",
+                "add18"
+            ],
+            "len": 6
+        },
+        {
+            "str": "-x.0+y.0 <= 0;x.0-y.0 <= 0;-add+mul9 <= 0;add-mul9 <= 0",
+            "smt": "(assert (<= (+ (* (- 1.0) x.0) y.0) 0.0))\n(assert (<= (+ x.0 (* (- 1.0) y.0)) 0.0))\n(assert (<= (+ (* (- 1.0) add) mul9) 0.0))\n(assert (<= (+ add (* (- 1.0) mul9)) 0.0))",
+            "dom": "elina-zones",
+            "vars": [
+                "x.0",
+                "mul9",
+                "y.0",
+                "add"
+            ],
+            "len": 4
+        },
+        {
+            "str": "T",
+            "smt": "(assert true)",
+            "dom": "elina-zones",
+            "vars": {},
+            "len": 0
+        }
+    ],
+    "timed_out": false
+}

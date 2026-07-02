@@ -1,0 +1,110 @@
+{
+    "all_invs": [
+        {
+            "str": "call-q.0 <= -1;-q.0 <= -1;-q.1 <= 1;-p.0 <= 3;-h.0 <= 4",
+            "smt": "(assert (<= (+ call (* (- 1.0) q.0)) (- 1.0)))\n(assert (>= q.0 1.0))\n(assert (>= q.1 (- 1.0)))\n(assert (>= p.0 (- 3.0)))\n(assert (>= h.0 (- 4.0)))",
+            "dom": "elina-zones",
+            "vars": [
+                "h.0",
+                "q.0",
+                "call",
+                "p.0",
+                "q.1"
+            ],
+            "len": 5
+        },
+        {
+            "str": "-call+q.0 <= 0;-call <= -1;-q.0 <= -1",
+            "smt": "(assert (<= (+ (* (- 1.0) call) q.0) 0.0))\n(assert (>= call 1.0))\n(assert (>= q.0 1.0))",
+            "dom": "elina-zones",
+            "vars": [
+                "call",
+                "q.0"
+            ],
+            "len": 3
+        },
+        {
+            "str": "call-q.0 <= -1;-q.0+mul30.neg <= 47;-q.0+mul63.neg <= 3;-q.0+mul86.neg <= 11;-q.0+mul12.neg <= 47;-q.0+mul38.neg <= 15;-q.0 <= -1;-q.1+mul30.neg <= 49;-q.1+mul63.neg <= 5;-q.1+mul86.neg <= 13;-q.1+mul12.neg <= 49;-q.1+mul38.neg <= 17;-q.1 <= 1;-p.0+mul30.neg <= 51;-p.0+mul63.neg <= 7;-p.0+mul86.neg <= 15;-p.0+mul12.neg <= 51;-p.0+mul38.neg <= 19;-p.0 <= 3;-h.0+mul30.neg <= 52;-h.0+mul63.neg <= 8;-h.0+mul86.neg <= 16;-h.0+mul12.neg <= 52;-h.0+mul38.neg <= 20;-h.0 <= 4;p.0-mul2 <= 3;-mul2+mul30.neg <= 54;-mul2+mul63.neg <= 10;-mul2+mul86.neg <= 18;-mul2+mul12.neg <= 54;-mul2+mul38.neg <= 22;-mul2 <= 6;q.1-add <= 6;p.0-add <= 4;r.0-add <= -1;mul2-add <= 1;-add+mul30.neg <= 55;-add+mul63.neg <= 11;-add+mul86.neg <= 19;-add+mul12.neg <= 55;-add+mul38.neg <= 23;-add <= 7;-add6+mul7 <= 0;add6-mul7 <= 0;p.0-mul22.neg.neg <= 9;-mul22.neg.neg+mul30.neg <= 60;-mul22.neg.neg+mul63.neg <= 16;-mul22.neg.neg+mul86.neg <= 24;mul12.neg-mul22.neg.neg <= 60;-mul22.neg.neg+mul38.neg <= 28;-mul22.neg.neg <= 12;-add29.neg+mul32.neg <= 0;mul30.neg <= 48;add29.neg-mul32.neg <= 0;-add62+mul65.neg <= 0;mul63.neg <= 4;add62-mul65.neg <= 0;-add85.neg+mul88.neg <= 0;mul86.neg <= 12;add85.neg-mul88.neg <= 0;-sub94+add96 <= 0;sub94-add96 <= 0;mul12.neg <= 48;mul38.neg <= 16;h.0-mul52 <= 12;mul30.neg-mul52 <= 64;-mul52+mul63.neg <= 20;-mul52+mul86.neg <= 28;mul12.neg-mul52 <= 64;mul38.neg-mul52 <= 32;-mul52 <= 16",
+            "smt": "(assert (<= (+ call (* (- 1.0) q.0)) (- 1.0)))\n(assert (<= (+ (* (- 1.0) q.0) mul30.neg) 47.0))\n(assert (<= (+ (* (- 1.0) q.0) mul63.neg) 3.0))\n(assert (<= (+ (* (- 1.0) q.0) mul86.neg) 11.0))\n(assert (<= (+ (* (- 1.0) q.0) mul12.neg) 47.0))\n(assert (<= (+ (* (- 1.0) q.0) mul38.neg) 15.0))\n(assert (>= q.0 1.0))\n(assert (<= (+ (* (- 1.0) q.1) mul30.neg) 49.0))\n(assert (<= (+ (* (- 1.0) q.1) mul63.neg) 5.0))\n(assert (<= (+ (* (- 1.0) q.1) mul86.neg) 13.0))\n(assert (<= (+ (* (- 1.0) q.1) mul12.neg) 49.0))\n(assert (<= (+ (* (- 1.0) q.1) mul38.neg) 17.0))\n(assert (>= q.1 (- 1.0)))\n(assert (<= (+ (* (- 1.0) p.0) mul30.neg) 51.0))\n(assert (<= (+ (* (- 1.0) p.0) mul63.neg) 7.0))\n(assert (<= (+ (* (- 1.0) p.0) mul86.neg) 15.0))\n(assert (<= (+ (* (- 1.0) p.0) mul12.neg) 51.0))\n(assert (<= (+ (* (- 1.0) p.0) mul38.neg) 19.0))\n(assert (>= p.0 (- 3.0)))\n(assert (<= (+ (* (- 1.0) h.0) mul30.neg) 52.0))\n(assert (<= (+ (* (- 1.0) h.0) mul63.neg) 8.0))\n(assert (<= (+ (* (- 1.0) h.0) mul86.neg) 16.0))\n(assert (<= (+ (* (- 1.0) h.0) mul12.neg) 52.0))\n(assert (<= (+ (* (- 1.0) h.0) mul38.neg) 20.0))\n(assert (>= h.0 (- 4.0)))\n(assert (<= (+ p.0 (* (- 1.0) mul2)) 3.0))\n(assert (<= (+ (* (- 1.0) mul2) mul30.neg) 54.0))\n(assert (<= (+ (* (- 1.0) mul2) mul63.neg) 10.0))\n(assert (<= (+ (* (- 1.0) mul2) mul86.neg) 18.0))\n(assert (<= (+ (* (- 1.0) mul2) mul12.neg) 54.0))\n(assert (<= (+ (* (- 1.0) mul2) mul38.neg) 22.0))\n(assert (>= mul2 (- 6.0)))\n(assert (<= (+ q.1 (* (- 1.0) add)) 6.0))\n(assert (<= (+ p.0 (* (- 1.0) add)) 4.0))\n(assert (<= (+ r.0 (* (- 1.0) add)) (- 1.0)))\n(assert (<= (+ mul2 (* (- 1.0) add)) 1.0))\n(assert (<= (+ (* (- 1.0) add) mul30.neg) 55.0))\n(assert (<= (+ (* (- 1.0) add) mul63.neg) 11.0))\n(assert (<= (+ (* (- 1.0) add) mul86.neg) 19.0))\n(assert (<= (+ (* (- 1.0) add) mul12.neg) 55.0))\n(assert (<= (+ (* (- 1.0) add) mul38.neg) 23.0))\n(assert (>= add (- 7.0)))\n(assert (<= (+ (* (- 1.0) add6) mul7) 0.0))\n(assert (<= (+ add6 (* (- 1.0) mul7)) 0.0))\n(assert (<= (+ p.0 (* (- 1.0) mul22.neg.neg)) 9.0))\n(assert (<= (+ (* (- 1.0) mul22.neg.neg) mul30.neg) 60.0))\n(assert (<= (+ (* (- 1.0) mul22.neg.neg) mul63.neg) 16.0))\n(assert (<= (+ (* (- 1.0) mul22.neg.neg) mul86.neg) 24.0))\n(assert (<= (+ mul12.neg (* (- 1.0) mul22.neg.neg)) 60.0))\n(assert (<= (+ (* (- 1.0) mul22.neg.neg) mul38.neg) 28.0))\n(assert (>= mul22.neg.neg (- 12.0)))\n(assert (<= (+ (* (- 1.0) add29.neg) mul32.neg) 0.0))\n(assert (<= mul30.neg 48.0))\n(assert (<= (+ add29.neg (* (- 1.0) mul32.neg)) 0.0))\n(assert (<= (+ (* (- 1.0) add62) mul65.neg) 0.0))\n(assert (<= mul63.neg 4.0))\n(assert (<= (+ add62 (* (- 1.0) mul65.neg)) 0.0))\n(assert (<= (+ (* (- 1.0) add85.neg) mul88.neg) 0.0))\n(assert (<= mul86.neg 12.0))\n(assert (<= (+ add85.neg (* (- 1.0) mul88.neg)) 0.0))\n(assert (<= (+ (* (- 1.0) sub94) add96) 0.0))\n(assert (<= (+ sub94 (* (- 1.0) add96)) 0.0))\n(assert (<= mul12.neg 48.0))\n(assert (<= mul38.neg 16.0))\n(assert (<= (+ h.0 (* (- 1.0) mul52)) 12.0))\n(assert (<= (+ mul30.neg (* (- 1.0) mul52)) 64.0))\n(assert (<= (+ (* (- 1.0) mul52) mul63.neg) 20.0))\n(assert (<= (+ (* (- 1.0) mul52) mul86.neg) 28.0))\n(assert (<= (+ mul12.neg (* (- 1.0) mul52)) 64.0))\n(assert (<= (+ mul38.neg (* (- 1.0) mul52)) 32.0))\n(assert (>= mul52 (- 16.0)))",
+            "dom": "elina-zones",
+            "vars": [
+                "mul7",
+                "mul65.neg",
+                "mul38.neg",
+                "mul22.neg.neg",
+                "mul32.neg",
+                "mul88.neg",
+                "add62",
+                "sub94",
+                "mul63.neg",
+                "mul52",
+                "mul30.neg",
+                "mul12.neg",
+                "p.0",
+                "mul2",
+                "add29.neg",
+                "r.0",
+                "h.0",
+                "add85.neg",
+                "call",
+                "add96",
+                "q.0",
+                "add",
+                "add6",
+                "mul86.neg",
+                "q.1"
+            ],
+            "len": 71
+        },
+        {
+            "str": "-q.0 <= -1",
+            "smt": "(assert (>= q.0 1.0))",
+            "dom": "elina-zones",
+            "vars": [
+                "q.0"
+            ],
+            "len": 1
+        },
+        {
+            "str": "call-q.0 <= -1;-q.0+q.1 <= 0;-q.0+mul30.neg <= 47;-q.0+mul63.neg <= 3;-q.0+mul86.neg <= 11;-q.0+mul12.neg <= 47;-q.0+mul38.neg <= 15;-q.0 <= -1;-q.1+mul30.neg <= 47;-q.1+mul63.neg <= 3;-q.1+mul86.neg <= 11;-q.1+mul12.neg <= 47;-q.1+mul38.neg <= 15;-q.1 <= -1;q.1 <= 1;q.1-p.0 <= 4;-p.0+mul30.neg <= 51;-p.0+mul63.neg <= 7;-p.0+mul86.neg <= 15;-p.0+mul12.neg <= 51;-p.0+mul38.neg <= 19;-p.0 <= 3;q.1-h.0 <= 5;-h.0+mul30.neg <= 52;-h.0+mul63.neg <= 8;-h.0+mul86.neg <= 16;-h.0+mul12.neg <= 52;-h.0+mul38.neg <= 20;-h.0 <= 4;q.1-mul2 <= 7;p.0-mul2 <= 3;-mul2+mul30.neg <= 54;-mul2+mul63.neg <= 10;-mul2+mul86.neg <= 18;-mul2+mul12.neg <= 54;-mul2+mul38.neg <= 22;-mul2 <= 6;q.1-add <= 6;p.0-add <= 4;r.0-add <= -1;mul2-add <= 1;-add+mul30.neg <= 53;-add+mul63.neg <= 9;-add+mul86.neg <= 17;-add+mul12.neg <= 53;-add+mul38.neg <= 21;-add <= 5;-add6+mul7 <= 0;add6-mul7 <= 0;q.1-mul22.neg.neg <= 13;p.0-mul22.neg.neg <= 9;-mul22.neg.neg+mul30.neg <= 60;-mul22.neg.neg+mul63.neg <= 16;-mul22.neg.neg+mul86.neg <= 24;mul12.neg-mul22.neg.neg <= 60;-mul22.neg.neg+mul38.neg <= 28;-mul22.neg.neg <= 12;-add29.neg+mul32.neg <= 0;mul30.neg <= 48;add29.neg-mul32.neg <= 0;-add62+mul65.neg <= 0;mul63.neg <= 4;add62-mul65.neg <= 0;-add85.neg+mul88.neg <= 0;mul86.neg <= 12;add85.neg-mul88.neg <= 0;-sub94+add96 <= 0;sub94-add96 <= 0;mul12.neg <= 48;mul38.neg <= 16;q.1-mul52 <= 17;h.0-mul52 <= 12;mul30.neg-mul52 <= 64;-mul52+mul63.neg <= 20;-mul52+mul86.neg <= 28;mul12.neg-mul52 <= 64;mul38.neg-mul52 <= 32;-mul52 <= 16",
+            "smt": "(assert (<= (+ call (* (- 1.0) q.0)) (- 1.0)))\n(assert (<= (+ (* (- 1.0) q.0) q.1) 0.0))\n(assert (<= (+ (* (- 1.0) q.0) mul30.neg) 47.0))\n(assert (<= (+ (* (- 1.0) q.0) mul63.neg) 3.0))\n(assert (<= (+ (* (- 1.0) q.0) mul86.neg) 11.0))\n(assert (<= (+ (* (- 1.0) q.0) mul12.neg) 47.0))\n(assert (<= (+ (* (- 1.0) q.0) mul38.neg) 15.0))\n(assert (>= q.0 1.0))\n(assert (<= (+ (* (- 1.0) q.1) mul30.neg) 47.0))\n(assert (<= (+ (* (- 1.0) q.1) mul63.neg) 3.0))\n(assert (<= (+ (* (- 1.0) q.1) mul86.neg) 11.0))\n(assert (<= (+ (* (- 1.0) q.1) mul12.neg) 47.0))\n(assert (<= (+ (* (- 1.0) q.1) mul38.neg) 15.0))\n(assert (>= q.1 1.0))\n(assert (<= q.1 1.0))\n(assert (<= (+ q.1 (* (- 1.0) p.0)) 4.0))\n(assert (<= (+ (* (- 1.0) p.0) mul30.neg) 51.0))\n(assert (<= (+ (* (- 1.0) p.0) mul63.neg) 7.0))\n(assert (<= (+ (* (- 1.0) p.0) mul86.neg) 15.0))\n(assert (<= (+ (* (- 1.0) p.0) mul12.neg) 51.0))\n(assert (<= (+ (* (- 1.0) p.0) mul38.neg) 19.0))\n(assert (>= p.0 (- 3.0)))\n(assert (<= (+ q.1 (* (- 1.0) h.0)) 5.0))\n(assert (<= (+ (* (- 1.0) h.0) mul30.neg) 52.0))\n(assert (<= (+ (* (- 1.0) h.0) mul63.neg) 8.0))\n(assert (<= (+ (* (- 1.0) h.0) mul86.neg) 16.0))\n(assert (<= (+ (* (- 1.0) h.0) mul12.neg) 52.0))\n(assert (<= (+ (* (- 1.0) h.0) mul38.neg) 20.0))\n(assert (>= h.0 (- 4.0)))\n(assert (<= (+ q.1 (* (- 1.0) mul2)) 7.0))\n(assert (<= (+ p.0 (* (- 1.0) mul2)) 3.0))\n(assert (<= (+ (* (- 1.0) mul2) mul30.neg) 54.0))\n(assert (<= (+ (* (- 1.0) mul2) mul63.neg) 10.0))\n(assert (<= (+ (* (- 1.0) mul2) mul86.neg) 18.0))\n(assert (<= (+ (* (- 1.0) mul2) mul12.neg) 54.0))\n(assert (<= (+ (* (- 1.0) mul2) mul38.neg) 22.0))\n(assert (>= mul2 (- 6.0)))\n(assert (<= (+ q.1 (* (- 1.0) add)) 6.0))\n(assert (<= (+ p.0 (* (- 1.0) add)) 4.0))\n(assert (<= (+ r.0 (* (- 1.0) add)) (- 1.0)))\n(assert (<= (+ mul2 (* (- 1.0) add)) 1.0))\n(assert (<= (+ (* (- 1.0) add) mul30.neg) 53.0))\n(assert (<= (+ (* (- 1.0) add) mul63.neg) 9.0))\n(assert (<= (+ (* (- 1.0) add) mul86.neg) 17.0))\n(assert (<= (+ (* (- 1.0) add) mul12.neg) 53.0))\n(assert (<= (+ (* (- 1.0) add) mul38.neg) 21.0))\n(assert (>= add (- 5.0)))\n(assert (<= (+ (* (- 1.0) add6) mul7) 0.0))\n(assert (<= (+ add6 (* (- 1.0) mul7)) 0.0))\n(assert (<= (+ q.1 (* (- 1.0) mul22.neg.neg)) 13.0))\n(assert (<= (+ p.0 (* (- 1.0) mul22.neg.neg)) 9.0))\n(assert (<= (+ (* (- 1.0) mul22.neg.neg) mul30.neg) 60.0))\n(assert (<= (+ (* (- 1.0) mul22.neg.neg) mul63.neg) 16.0))\n(assert (<= (+ (* (- 1.0) mul22.neg.neg) mul86.neg) 24.0))\n(assert (<= (+ mul12.neg (* (- 1.0) mul22.neg.neg)) 60.0))\n(assert (<= (+ (* (- 1.0) mul22.neg.neg) mul38.neg) 28.0))\n(assert (>= mul22.neg.neg (- 12.0)))\n(assert (<= (+ (* (- 1.0) add29.neg) mul32.neg) 0.0))\n(assert (<= mul30.neg 48.0))\n(assert (<= (+ add29.neg (* (- 1.0) mul32.neg)) 0.0))\n(assert (<= (+ (* (- 1.0) add62) mul65.neg) 0.0))\n(assert (<= mul63.neg 4.0))\n(assert (<= (+ add62 (* (- 1.0) mul65.neg)) 0.0))\n(assert (<= (+ (* (- 1.0) add85.neg) mul88.neg) 0.0))\n(assert (<= mul86.neg 12.0))\n(assert (<= (+ add85.neg (* (- 1.0) mul88.neg)) 0.0))\n(assert (<= (+ (* (- 1.0) sub94) add96) 0.0))\n(assert (<= (+ sub94 (* (- 1.0) add96)) 0.0))\n(assert (<= mul12.neg 48.0))\n(assert (<= mul38.neg 16.0))\n(assert (<= (+ q.1 (* (- 1.0) mul52)) 17.0))\n(assert (<= (+ h.0 (* (- 1.0) mul52)) 12.0))\n(assert (<= (+ mul30.neg (* (- 1.0) mul52)) 64.0))\n(assert (<= (+ (* (- 1.0) mul52) mul63.neg) 20.0))\n(assert (<= (+ (* (- 1.0) mul52) mul86.neg) 28.0))\n(assert (<= (+ mul12.neg (* (- 1.0) mul52)) 64.0))\n(assert (<= (+ mul38.neg (* (- 1.0) mul52)) 32.0))\n(assert (>= mul52 (- 16.0)))",
+            "dom": "elina-zones",
+            "vars": [
+                "mul7",
+                "mul65.neg",
+                "mul38.neg",
+                "mul22.neg.neg",
+                "mul32.neg",
+                "mul88.neg",
+                "add62",
+                "sub94",
+                "mul63.neg",
+                "mul52",
+                "mul30.neg",
+                "mul12.neg",
+                "p.0",
+                "mul2",
+                "add29.neg",
+                "r.0",
+                "h.0",
+                "add85.neg",
+                "call",
+                "add96",
+                "q.0",
+                "add",
+                "add6",
+                "mul86.neg",
+                "q.1"
+            ],
+            "len": 78
+        },
+        {
+            "str": "T",
+            "smt": "(assert true)",
+            "dom": "elina-zones",
+            "vars": {},
+            "len": 0
+        }
+    ],
+    "timed_out": false
+}

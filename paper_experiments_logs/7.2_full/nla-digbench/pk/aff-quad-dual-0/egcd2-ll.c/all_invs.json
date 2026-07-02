@@ -1,0 +1,99 @@
+{
+    "all_invs": [
+        {
+            "str": "b.0+add47 = 0;c.0+mul19-add26 = 0;-add+add26 = 0;a.0-add26 = 0;mul23+mul25-add26 = 0;mul30-tmp+tmp1+add47 = 0;mul32+tmp-tmp1 = 0;add33+add47 = 0;mul36+mul37-tmp1-add47 = 0;add38-tmp1-add47 = 0;mul42-tmp1-add47 = 0;sub46-add47 = 0;-k.0 <= 0;mul19-add26 <= 0;-mul19+add26+add47 <= -1;-k.0+mul19-add26 <= -1",
+            "smt": "(assert (= (+ b.0 add47) 0.0))\n(assert (= (+ c.0 mul19 (* (- 1.0) add26)) 0.0))\n(assert (= (+ (* (- 1.0) add) add26) 0.0))\n(assert (= (+ a.0 (* (- 1.0) add26)) 0.0))\n(assert (= (+ mul23 mul25 (* (- 1.0) add26)) 0.0))\n(assert (= (+ mul30 (* (- 1.0) tmp) tmp1 add47) 0.0))\n(assert (= (+ mul32 tmp (* (- 1.0) tmp1)) 0.0))\n(assert (= (+ add33 add47) 0.0))\n(assert (= (+ mul36 mul37 (* (- 1.0) tmp1) (* (- 1.0) add47)) 0.0))\n(assert (= (+ add38 (* (- 1.0) tmp1) (* (- 1.0) add47)) 0.0))\n(assert (= (+ mul42 (* (- 1.0) tmp1) (* (- 1.0) add47)) 0.0))\n(assert (= (+ sub46 (* (- 1.0) add47)) 0.0))\n(assert (>= k.0 0.0))\n(assert (<= (+ mul19 (* (- 1.0) add26)) 0.0))\n(assert (<= (+ (* (- 1.0) mul19) add26 add47) (- 1.0)))\n(assert (<= (+ (* (- 1.0) k.0) mul19 (* (- 1.0) add26)) (- 1.0)))",
+            "dom": "pk",
+            "vars": [
+                "mul30",
+                "mul32",
+                "mul37",
+                "mul23",
+                "add38",
+                "mul19",
+                "mul36",
+                "c.0",
+                "tmp1",
+                "k.0",
+                "tmp",
+                "sub46",
+                "b.0",
+                "add47",
+                "add",
+                "add26",
+                "add33",
+                "mul25",
+                "mul42",
+                "a.0"
+            ],
+            "len": 16
+        },
+        {
+            "str": "b.0+add47 = 0;c.0+mul19-add26 = 0;-add+add26 = 0;a.0-add26 = 0;mul23+mul25-add26 = 0;mul30-tmp+tmp1+add47 = 0;mul32+tmp-tmp1 = 0;add33+add47 = 0;mul36+mul37-tmp1-add47 = 0;add38-tmp1-add47 = 0;mul42-tmp1-add47 = 0;sub46-add47 = 0;-k.0 <= 0;mul19-add26-add47 <= 0;mul19-add26+3*add47 <= 0;-k.0+mul19-add26+4*add47 <= -5",
+            "smt": "(assert (= (+ b.0 add47) 0.0))\n(assert (= (+ c.0 mul19 (* (- 1.0) add26)) 0.0))\n(assert (= (+ (* (- 1.0) add) add26) 0.0))\n(assert (= (+ a.0 (* (- 1.0) add26)) 0.0))\n(assert (= (+ mul23 mul25 (* (- 1.0) add26)) 0.0))\n(assert (= (+ mul30 (* (- 1.0) tmp) tmp1 add47) 0.0))\n(assert (= (+ mul32 tmp (* (- 1.0) tmp1)) 0.0))\n(assert (= (+ add33 add47) 0.0))\n(assert (= (+ mul36 mul37 (* (- 1.0) tmp1) (* (- 1.0) add47)) 0.0))\n(assert (= (+ add38 (* (- 1.0) tmp1) (* (- 1.0) add47)) 0.0))\n(assert (= (+ mul42 (* (- 1.0) tmp1) (* (- 1.0) add47)) 0.0))\n(assert (= (+ sub46 (* (- 1.0) add47)) 0.0))\n(assert (>= k.0 0.0))\n(assert (<= (+ mul19 (* (- 1.0) add26) (* (- 1.0) add47)) 0.0))\n(assert (<= (+ mul19 (* (- 1.0) add26) (* 3.0 add47)) 0.0))\n(assert (<= (+ (* (- 1.0) k.0) mul19 (* (- 1.0) add26) (* 4.0 add47)) (- 5.0)))",
+            "dom": "pk",
+            "vars": [
+                "mul30",
+                "mul32",
+                "mul37",
+                "mul23",
+                "add38",
+                "mul19",
+                "mul36",
+                "c.0",
+                "tmp1",
+                "k.0",
+                "tmp",
+                "sub46",
+                "b.0",
+                "add47",
+                "add",
+                "add26",
+                "add33",
+                "mul25",
+                "mul42",
+                "a.0"
+            ],
+            "len": 16
+        },
+        {
+            "str": "-a.0 <= -1;-b.0 <= 0;b.0-a.0 <= 2147483645",
+            "smt": "(assert (>= a.0 1.0))\n(assert (>= b.0 0.0))\n(assert (<= (+ b.0 (* (- 1.0) a.0)) 2147483645.0))",
+            "dom": "pk",
+            "vars": [
+                "b.0",
+                "a.0"
+            ],
+            "len": 3
+        },
+        {
+            "str": "-4*b.0-c.0-k.0 <= -5;-c.0 <= 0;-3*b.0-c.0 <= 0;-k.0 <= 0;-c.0-k.0 <= -1",
+            "smt": "(assert (<= (+ (* (- 4.0) b.0) (* (- 1.0) c.0) (* (- 1.0) k.0)) (- 5.0)))\n(assert (>= c.0 0.0))\n(assert (<= (+ (* (- 3.0) b.0) (* (- 1.0) c.0)) 0.0))\n(assert (>= k.0 0.0))\n(assert (<= (+ (* (- 1.0) c.0) (* (- 1.0) k.0)) (- 1.0)))",
+            "dom": "pk",
+            "vars": [
+                "b.0",
+                "c.0",
+                "k.0"
+            ],
+            "len": 5
+        },
+        {
+            "str": "b.0 = 0;-a.0 <= -1",
+            "smt": "(assert (= b.0 0.0))\n(assert (>= a.0 1.0))",
+            "dom": "pk",
+            "vars": [
+                "b.0",
+                "a.0"
+            ],
+            "len": 2
+        },
+        {
+            "str": "T",
+            "smt": "(assert true)",
+            "dom": "pk",
+            "vars": {},
+            "len": 0
+        }
+    ],
+    "timed_out": false
+}

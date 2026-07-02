@@ -1,0 +1,62 @@
+{
+    "all_invs": [
+        {
+            "str": "call-conv10 = 0;2*y.0+mul4.neg = 0;4*x.0+mul6.neg-tmp1 = 0;-2*c.0-mul4.neg = 0;mul+mul6.neg-tmp1 = 0;2*mul2-mul4.neg-2*mul31 = 0;tmp-tmp1 = 0;-mul4.neg-2*conv10 <= -2",
+            "smt": "(assert (= (+ call (* (- 1.0) conv10)) 0.0))\n(assert (= (+ (* 2.0 y.0) mul4.neg) 0.0))\n(assert (= (+ (* 4.0 x.0) mul6.neg (* (- 1.0) tmp1)) 0.0))\n(assert (= (+ (* (- 2.0) c.0) (* (- 1.0) mul4.neg)) 0.0))\n(assert (= (+ mul mul6.neg (* (- 1.0) tmp1)) 0.0))\n(assert (= (+ (* 2.0 mul2) (* (- 1.0) mul4.neg) (* (- 2.0) mul31)) 0.0))\n(assert (= (+ tmp (* (- 1.0) tmp1)) 0.0))\n(assert (<= (+ (* (- 1.0) mul4.neg) (* (- 2.0) conv10)) (- 2.0)))",
+            "dom": "pk",
+            "vars": [
+                "c.0",
+                "mul4.neg",
+                "mul31",
+                "call",
+                "y.0",
+                "tmp",
+                "mul6.neg",
+                "tmp1",
+                "conv10",
+                "mul2",
+                "x.0",
+                "mul"
+            ],
+            "len": 8
+        },
+        {
+            "str": "y.0-c.0 = 0",
+            "smt": "(assert (= (+ y.0 (* (- 1.0) c.0)) 0.0))",
+            "dom": "pk",
+            "vars": [
+                "y.0",
+                "c.0"
+            ],
+            "len": 1
+        },
+        {
+            "str": "call-conv10 = 0;2*y.0+mul4.neg = 0;4*x.0+mul6.neg-tmp1 = 0;-2*c.0-mul4.neg = 0;mul+mul6.neg-tmp1 = 0;2*mul2-mul4.neg-2*mul31 = 0;tmp-tmp1 = 0;mul4.neg+2*conv10 <= 0",
+            "smt": "(assert (= (+ call (* (- 1.0) conv10)) 0.0))\n(assert (= (+ (* 2.0 y.0) mul4.neg) 0.0))\n(assert (= (+ (* 4.0 x.0) mul6.neg (* (- 1.0) tmp1)) 0.0))\n(assert (= (+ (* (- 2.0) c.0) (* (- 1.0) mul4.neg)) 0.0))\n(assert (= (+ mul mul6.neg (* (- 1.0) tmp1)) 0.0))\n(assert (= (+ (* 2.0 mul2) (* (- 1.0) mul4.neg) (* (- 2.0) mul31)) 0.0))\n(assert (= (+ tmp (* (- 1.0) tmp1)) 0.0))\n(assert (<= (+ mul4.neg (* 2.0 conv10)) 0.0))",
+            "dom": "pk",
+            "vars": [
+                "c.0",
+                "mul4.neg",
+                "mul31",
+                "call",
+                "y.0",
+                "tmp",
+                "mul6.neg",
+                "tmp1",
+                "conv10",
+                "mul2",
+                "x.0",
+                "mul"
+            ],
+            "len": 8
+        },
+        {
+            "str": "T",
+            "smt": "(assert true)",
+            "dom": "pk",
+            "vars": {},
+            "len": 0
+        }
+    ],
+    "timed_out": false
+}

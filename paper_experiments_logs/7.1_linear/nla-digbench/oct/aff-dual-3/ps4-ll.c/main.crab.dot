@@ -1,0 +1,15 @@
+digraph "CFG for 'main' function" {
+	label="CFG for 'main' function";
+	Node0x5876e82ce560 [shape=record,label="{entry:\l havoc(call) /* __VERIFIER_nondet_short(...)*/\l y.0 = 0\l x.0 = 0\l c.0 = 0\l}"];
+	Node0x5876e82ce560 -> Node0x5876e82fcff0;
+	Node0x5876e82fcff0 [shape=record,label="{while.body:\l [[mul = x.0*4; ]]\l mul1 = y.0*y.0\l mul2 = mul1*y.0\l [[mul4.neg = y.0*-2; ]]\l mul5.neg = mul4.neg*y.0\l mul6.neg = mul5.neg*y.0\l [[tmp = mul+mul6.neg; mul31 = mul2+y.0; ]]\l tmp1 = mul31*y.0\l cmp = (tmp-tmp1 = 0)\l assert(cmp)   /* loc(file=data/sv-benchmarks-processed/nla-digbench/ps4-ll.c line=16 col=9) id=1 */\l sext call:16 to conv10:64\l}"];
+	Node0x5876e82fcff0 -> Node0x5876e83022b0;
+	Node0x5876e82fcff0 -> Node0x5876e8302950;
+	Node0x5876e8302950 [shape=record,label="{__@bb_6:\l assume(-c.0+conv10 &le; 0)\l}"];
+	Node0x5876e8302950 -> Node0x5876e82fcc30;
+	Node0x5876e82fcc30 [shape=record,label="{while.end:\l [[mul192 = conv10-y.0; ]]\l sub20 = y.0*mul192\l cmp21 = (sub20 = 0)\l assert(cmp21)   /* loc(file=data/sv-benchmarks-processed/nla-digbench/ps4-ll.c line=25 col=5) id=2 */\l assert(cmp)   /* loc(file=data/sv-benchmarks-processed/nla-digbench/ps4-ll.c line=26 col=5) id=3 */\l @V_1 = 0\l}"];
+	Node0x5876e83022b0 [shape=record,label="{__@bb_5:\l assume(c.0-conv10 &le; -1)\l}"];
+	Node0x5876e83022b0 -> Node0x5876e82fd0b0;
+	Node0x5876e82fd0b0 [shape=record,label="{if.end:\l [[add = c.0+1; add13 = y.0+1; ]]\l mul14 = add13*add13\l mul15 = mul14*add13\l [[add16 = mul15+x.0; ]]\l y.0 = add13\l x.0 = add16\l c.0 = add\l}"];
+	Node0x5876e82fd0b0 -> Node0x5876e82fcff0;
+}

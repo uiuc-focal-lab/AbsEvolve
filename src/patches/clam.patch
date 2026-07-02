@@ -1,0 +1,504 @@
+diff --git a/.github/workflows/nightly-clam-docker.yaml b/.github/workflows/nightly-clam-docker.yaml
+deleted file mode 100644
+index 77ef7c94e175e7dbebfaefba5f4fbd8880bfa32a..0000000000000000000000000000000000000000
+--- a/.github/workflows/nightly-clam-docker.yaml
++++ /dev/null
+@@ -1,45 +0,0 @@
+-# Workflow to push clam image in dockerhub
+-
+-name: Nightly
+-
+-# Controls when the action will run.
+-on:
+-  # Triggers the workflow on push or pull request events but only for the dev14 branch
+-  schedule:
+-    - cron: 0 0 * * *  # run every day at UTC 00:00
+-  workflow_dispatch:
+-    branches: dev14
+-    inputs:
+-      Triggerer:
+-        description: 'Triggered by:'
+-        required: true
+-        default: ''
+-
+-
+-# A workflow run is made up of one or more jobs that can run sequentially or in parallel
+-jobs:
+-  # This workflow contains a single job called "test"
+-  test:
+-    # The type of runner that the job will run on
+-    runs-on: ubuntu-latest
+-
+-    # Steps represent a sequence of tasks that will be executed as part of the job
+-    steps:
+-      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+-      - name: Check out repo
+-        uses: actions/checkout@v2
+-        with:
+-          ref: dev14 
+-      - name: Build clam and run tests
+-        run: docker build -t seahorn/clam-llvm14:nightly -f docker/clam.Dockerfile .
+-      # Logging in using this mechanism prints the following warning
+-      # WARNING! Your password will be stored unencrypted in /home/runner/.docker/config.json.
+-      # There does not seem to be an easy way around it though using docker actions may mitigate
+-      # it.
+-      - name: Login to DockerHub Registry 
+-        if: ${{ github.event_name == 'schedule' }}  # only push if nightly run
+-        run: echo ${{ secrets.DOCKER_HUB_ACCESS_TOKEN }} | docker login -u ${{ secrets.DOCKER_HUB_USERNAME }} --password-stdin
+-      - name: Tag and push clam (nightly)
+-        if: ${{ github.event_name == 'schedule' }}  # only push if nightly run
+-        run: |
+-          docker push seahorn/clam-llvm14:nightly 
+diff --git a/.github/workflows/test-clam-dev14-docker.yaml b/.github/workflows/test-clam-dev14-docker.yaml
+deleted file mode 100644
+index 2b0970fed8dee566985dc5ea7a53679ed75356c7..0000000000000000000000000000000000000000
+--- a/.github/workflows/test-clam-dev14-docker.yaml
++++ /dev/null
+@@ -1,28 +0,0 @@
+-# Workflow to build and test clam after each push or pull request
+-
+-name: CI-dev14
+-
+-# Controls when the action will run. 
+-on:
+-  # Triggers the workflow on push or pull request events but only for the dev14 branch
+-  push:
+-    branches: dev14
+-  pull_request:
+-    branches: dev14
+-
+-# A workflow run is made up of one or more jobs that can run sequentially or in parallel
+-jobs:
+-  # This workflow contains a single job called "test"
+-  test:
+-    # The type of runner that the job will run on
+-    runs-on: ubuntu-latest
+-
+-    # Steps represent a sequence of tasks that will be executed as part of the job
+-    steps:
+-      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+-      - name: Check out repo
+-        uses: actions/checkout@v2
+-        with:
+-          ref: dev14
+-      - name: Build clam and run tests
+-        run: docker build -t seahorn/clam-llvm14:nightly -f docker/clam.Dockerfile .
+diff --git a/.github/workflows/test-clam-docker.yml b/.github/workflows/test-clam-docker.yml
+deleted file mode 100644
+index f6e2f9e9dc03b2eb24358895a1a407cfbf2c37b0..0000000000000000000000000000000000000000
+--- a/.github/workflows/test-clam-docker.yml
++++ /dev/null
+@@ -1,28 +0,0 @@
+-# Workflow to build and test clam after each push or pull request
+-
+-name: CI
+-
+-# Controls when the action will run. 
+-on:
+-  # Triggers the workflow on push or pull request events but only for the master branch
+-  push:
+-    branches: master
+-  pull_request:
+-    branches: master
+-
+-# A workflow run is made up of one or more jobs that can run sequentially or in parallel
+-jobs:
+-  # This workflow contains a single job called "test"
+-  test:
+-    # The type of runner that the job will run on
+-    runs-on: ubuntu-latest
+-
+-    # Steps represent a sequence of tasks that will be executed as part of the job
+-    steps:
+-      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+-      - name: Check out repo
+-        uses: actions/checkout@v2
+-        with:
+-          ref: master
+-      - name: Build clam and run tests
+-        run: docker build -t seahorn/clam-llvm14:nightly -f docker/clam.Dockerfile .
+diff --git a/.gitignore b/.gitignore
+index 4b2df43f31ec1a09e24aa0a519b1b8146b3e2aa2..efacf7837b935fc1a9ec048fed5f01f2370c18d4 100644
+--- a/.gitignore
++++ b/.gitignore
+@@ -1,3 +1,11 @@
+ /build/
+ /debug/
+ /ext/
++
++*/__pycache__
++*.vscode/
++
++# Folders and files made during the build process.
++llvm-seahorn/
++sea-dsa/
++tests/clam_config.py
+\ No newline at end of file
+diff --git a/include/clam/CfgBuilderParams.hh b/include/clam/CfgBuilderParams.hh
+index f8cb545f6df71d56233099ffe516aefbee3f3ac3..c1cde448dbad592c04e479ca82741f198fc36757 100644
+--- a/include/clam/CfgBuilderParams.hh
++++ b/include/clam/CfgBuilderParams.hh
+@@ -38,6 +38,12 @@ struct CrabBuilderParams {
+   // overflow checking. Thus, this transformation should be applied
+   // only if the operation is known to not overflow.
+   bool lower_arithmetic_with_overflow_intrinsics;
++  // Level of precision for affine instructions.
++  crab::cfg::AffinePrecisionLevel affine_prec_level;
++  // Level of precision for quadratic instructions.
++  crab::cfg::QuadPrecisionLevel quad_prec_level;
++  // Maximum number of instructions to be collated together (-1 means max collation possible).
++  int max_collate_count;
+   // Add make_ref for global values (e.g., global variables, functions etc)
+   bool allocate_global_values;
+   /// Add reasonable assumptions about pointers (e.g., allocas and
+@@ -71,6 +77,9 @@ struct CrabBuilderParams {
+         include_useless_havoc(true), enable_bignums(false),
+         lower_unsigned_icmp(false), avoid_boolean(true),
+ 	lower_arithmetic_with_overflow_intrinsics(false),
++    affine_prec_level(crab::cfg::AffinePrecisionLevel::DEFAULT),
++    quad_prec_level(crab::cfg::QuadPrecisionLevel::DEFAULT),
++    max_collate_count(-1),
+ 	allocate_global_values(true),
+         add_pointer_assumptions(true),
+ 	zero_initialize_stack_arrays(false),
+@@ -94,7 +103,18 @@ struct CrabBuilderParams {
+   bool allocateGlobals() const {
+     return trackMemory() && allocate_global_values;
+   }
+-  
++
++  // Method to check if statements should be collated into quad_affine blocks.
++  bool shouldCollateIntoQuadAffineBlocks() const {
++    return (affine_prec_level != crab::cfg::AffinePrecisionLevel::DEFAULT) ||
++           (quad_prec_level != crab::cfg::QuadPrecisionLevel::DEFAULT);
++  }
++
++  // Method to return the maximum number of instructions to be collated together.
++  int maxCollateCount() const {
++    return max_collate_count;
++  }
++
+   /* Set lower unsigned cmp into signed for Crab programs */
+   void lowerUnsignedICmpIntoSigned() {
+     if (!lower_unsigned_icmp) {
+diff --git a/include/clam/CrabDomain.hh b/include/clam/CrabDomain.hh
+index f1b197881779a4674cc910d736d37665eacbab6f..9d44a6be51f5074c88121b881d65df60b1192075 100644
+--- a/include/clam/CrabDomain.hh
++++ b/include/clam/CrabDomain.hh
+@@ -65,9 +65,10 @@ constexpr Type TERMS_DIS_INTERVALS(9, "term-dis-int",
+ constexpr Type TERMS_ZONES(10, "rtz", "terms+zones", true, false);
+ constexpr Type OCT(11, "oct", "octagons from Apron or Elina", true, false);
+ constexpr Type PK(12, "pk", "polyhedra from Apron or Elina", true, false);
+-constexpr Type PK_PPLITE(13, "pk-pplite", "polyhedra from PPLite", true, false);  
+-constexpr Type SIGN_CONSTANTS(14, "sign-const", "sign+constants", false, false);  
+-constexpr std::array<Type, 14> List = {INTERVALS,
++constexpr Type ELINA_ZONES(13, "elina-zones", "Zones from Elina", true, false);
++constexpr Type PK_PPLITE(14, "pk-pplite", "polyhedra from PPLite", true, false);  
++constexpr Type SIGN_CONSTANTS(15, "sign-const", "sign+constants", false, false);  
++constexpr std::array<Type, 15> List = {INTERVALS,
+                                        INTERVALS_CONGRUENCES,
+                                        WRAPPED_INTERVALS,
+                                        BOXES,
+@@ -79,6 +80,7 @@ constexpr std::array<Type, 14> List = {INTERVALS,
+                                        TERMS_ZONES,
+                                        OCT,
+                                        PK,
++                                       ELINA_ZONES,
+ 				       PK_PPLITE,
+ 				       SIGN_CONSTANTS};
+ } // end namespace CrabDomain
+diff --git a/lib/Clam/CMakeLists.txt b/lib/Clam/CMakeLists.txt
+index 864c7cc247ed9dc91ae2a1b9ef72f0697e589551..1a0b4affd2ce5875d6b6fefac8c376d64946e045 100644
+--- a/lib/Clam/CMakeLists.txt
++++ b/lib/Clam/CMakeLists.txt
+@@ -21,6 +21,7 @@ add_llvm_library(ClamAnalysis ${CLAM_LIBS_TYPE} DISABLE_LLVM_LINK_LLVM_DYLIB
+   crab/domains/dis_intervals.cc
+   crab/domains/oct.cc
+   crab/domains/pk.cc
++  crab/domains/elina_zones.cc
+   crab/domains/pk_pplite.cc  
+   crab/domains/ric.cc
+   crab/domains/sign_constant.cc
+diff --git a/lib/Clam/CfgBuilder.cc b/lib/Clam/CfgBuilder.cc
+index 223b045708995989800eaea57c8affb680f0f973..062cf9651962334a54163d80c80627b964ddebdc 100644
+--- a/lib/Clam/CfgBuilder.cc
++++ b/lib/Clam/CfgBuilder.cc
+@@ -81,6 +81,7 @@
+ #include <algorithm>
+ #include <boost/functional/hash_fwd.hpp> // for hash_combine
+ #include <unordered_map>
++#include <vector>
+ 
+ using namespace llvm;
+ using namespace crab;
+@@ -1213,8 +1214,9 @@ class CrabIntraBlockBuilder : public InstVisitor<CrabIntraBlockBuilder> {
+   void doCallInst(CallInst &CI);
+   void doCrabSpecialIntrinsic(CallInst &CI);
+   void doArithmeticWithOverflowIntrinsic(WithOverflowInst &I, var_t res);
+-  
+ public:
++  // Bring in all visit overloads from the base class
++  using llvm::InstVisitor<CrabIntraBlockBuilder>::visit;
+   CrabIntraBlockBuilder(crabLitFactory &lfac, tag_manager &as_man,
+       HeapAbstraction &mem, const DataLayout *dl,
+       const TargetLibraryInfo *tli, basic_block_t &bb, basic_block_t &entry_bb,
+@@ -4433,6 +4435,14 @@ void CfgBuilderImpl::buildCfg() {
+                            << "Finished CFG simplification\n";);
+   }
+ 
++  // Collate statements into quad-affine blocks if the user option is set
++  // to collate.
++  if (m_params.shouldCollateIntoQuadAffineBlocks()) {
++    m_cfg->collateStatementsIntoQuadAffineBlocks(m_params.affine_prec_level,
++                                                 m_params.quad_prec_level,
++                                                 m_params.maxCollateCount());
++  }
++
+   if (m_params.print_cfg) {
+     crab::outs() << *m_cfg << "\n";
+   }
+@@ -4811,6 +4821,25 @@ void CrabBuilderParams::write(raw_ostream &o) const {
+     << avoid_boolean << "\n";
+   o << "\tlower arithmetic with overflow intrinsics: "
+     << lower_arithmetic_with_overflow_intrinsics << "\n";
++  o << "\taffine precision level: ";
++    switch (affine_prec_level) {
++    case crab::cfg::AffinePrecisionLevel::DEFAULT:
++        o << "default handling\n";
++        break;
++    case crab::cfg::AffinePrecisionLevel::AFFINE_FULL:
++        o << "all affine assignment instructions\n";
++        break;
++    }
++    o << "\tquadratic precision level: ";
++    switch (quad_prec_level) {
++    case crab::cfg::QuadPrecisionLevel::DEFAULT:
++        o << "default handling\n";
++        break;
++    case crab::cfg::QuadPrecisionLevel::QUAD_FULL:
++        o << "all quadratic assignment instructions\n";
++        break;
++    }
++  o << "\tmax_collate_count: " << max_collate_count << "\n";
+   o << "\tallocate global values: " << allocate_global_values << "\n";
+   o << "\tadd pointer assumptions: " << addPointerAssumptions() << "\n";
+   o << "\tenable big numbers: " << enable_bignums << "\n";
+diff --git a/lib/Clam/Clam.cc b/lib/Clam/Clam.cc
+index 2208a354a97d54295539510c0ab5c0337de700e5..7a9a1dde72f0e7bb14d7aadcc84b38407d3c0837 100644
+--- a/lib/Clam/Clam.cc
++++ b/lib/Clam/Clam.cc
+@@ -61,6 +61,7 @@
+ #include <functional>
+ #include <memory>
+ #include <unordered_map>
++#include <iostream>
+ 
+ using namespace llvm;
+ using namespace clam;
+@@ -1338,6 +1339,9 @@ bool ClamPass::runOnModule(Module &M) {
+   }
+   builder_params.lower_arithmetic_with_overflow_intrinsics =
+     CrabLowerWithOverflowIntrinsics;
++  builder_params.affine_prec_level = CrabAffinePrecisionLevel;
++  builder_params.quad_prec_level = CrabQuadPrecisionLevel;
++  builder_params.max_collate_count = CrabMaxCollateCount;
+   builder_params.allocate_global_values = CrabAllocateGlobals;
+   builder_params.add_pointer_assumptions = CrabAddPtrAssumptions;
+   builder_params.add_null_checks = CrabNullChecks;
+@@ -1435,7 +1439,6 @@ bool ClamPass::runOnModule(Module &M) {
+   abs_dom_map_t abs_dom_assumptions /*no assumptions*/;    
+   m_ga->analyze(m_params, abs_dom_assumptions);
+ 
+-  
+ //   if (builder_params.dot_cfg) {
+ //     for (auto &F : M) {
+ //       if (m_cfg_builder_man->hasCfg(F)) {
+diff --git a/lib/Clam/ClamOptions.def b/lib/Clam/ClamOptions.def
+index 55f7d78e52faa1db81571960c7c3762add644c5f..4de51ae42981f1fac8a7b08458c85313aa4e6656 100644
+--- a/lib/Clam/ClamOptions.def
++++ b/lib/Clam/ClamOptions.def
+@@ -16,6 +16,9 @@ bool CrabEnableUniqueScalars;
+ bool CrabIncludeHavoc;
+ bool CrabLowerUnsignedICmp;
+ bool CrabLowerWithOverflowIntrinsics;
++crab::cfg::AffinePrecisionLevel CrabAffinePrecisionLevel;
++crab::cfg::QuadPrecisionLevel CrabQuadPrecisionLevel;
++int CrabMaxCollateCount;
+ bool CrabAllocateGlobals;
+ bool CrabEnableBignums;
+ bool CrabAddPtrAssumptions;
+@@ -126,6 +129,33 @@ XCrabLowerWithOverflowIntrinsics("crab-lower-with-overflow-intrinsics",
+      llvm::cl::init(false),
+      llvm::cl::cat(ClamOptCat));
+ 
++llvm::cl::opt<crab::cfg::AffinePrecisionLevel, true>
++XCrabAffinePrecisionLevel("crab-affine-precision-level",
++llvm::cl::desc("Precision level to which affine statements are handled"),
++llvm::cl::values
++    (clEnumValN(crab::cfg::AffinePrecisionLevel::DEFAULT, "default", "Default handling"),
++    clEnumValN(crab::cfg::AffinePrecisionLevel::AFFINE_FULL, "affine-full", "Precise handling of all affine instructions by collating them in quad_affine_block")),
++    llvm::cl::location(clam::CrabAffinePrecisionLevel),
++    llvm::cl::init(crab::cfg::AffinePrecisionLevel::DEFAULT),
++    llvm::cl::cat(ClamOptCat));
++
++llvm::cl::opt<crab::cfg::QuadPrecisionLevel, true>
++XCrabQuadPrecisionLevel("crab-quad-precision-level",
++llvm::cl::desc("Precision level to which quad statements are handled"),
++llvm::cl::values
++    (clEnumValN(crab::cfg::QuadPrecisionLevel::DEFAULT, "default", "Default handling"),
++    clEnumValN(crab::cfg::QuadPrecisionLevel::QUAD_FULL, "quad-full", "Precise handling of all quadratic instructions by collating them in quad_affine_block")),
++    llvm::cl::location(clam::CrabQuadPrecisionLevel),
++    llvm::cl::init(crab::cfg::QuadPrecisionLevel::DEFAULT),
++    llvm::cl::cat(ClamOptCat));
++
++llvm::cl::opt<int, true>
++XCrabMaxCollateCount("crab-max-collate-count", 
++   llvm::cl::desc("Maximum number of instructions to be collated together (-1 means maximal collation)"),
++   llvm::cl::location(clam::CrabMaxCollateCount),
++   llvm::cl::init(-1),
++   llvm::cl::cat(ClamOptCat));
++
+ llvm::cl::opt<bool, true>
+ XCrabAllocateGlobals("crab-allocate-globals",
+      llvm::cl::desc("Add CrabIR make_ref for global values"),
+@@ -277,6 +307,7 @@ XClamDomain("crab-dom",
+ 		   "Octagons domain with DBMs in Split Normal Form"),
+        clEnumValN(clam::CrabDomain::OCT, "oct", "Octagons domain from Apron or Elina"),
+        clEnumValN(clam::CrabDomain::PK, "pk", "Polyhedra domain from Apron or Elina"),
++       clEnumValN(clam::CrabDomain::ELINA_ZONES, "elina-zones", "Zones domain from Elina"),
+        clEnumValN(clam::CrabDomain::PK_PPLITE, "pk-pplite", "Polyhedra domain from PPLite"),       
+        clEnumValN(clam::CrabDomain::TERMS_ZONES, "rtz",
+ 		   "Reduced product of term-dis-int and zones"),
+diff --git a/lib/Clam/RegisterAnalysis.cc b/lib/Clam/RegisterAnalysis.cc
+index 6afce359bf4ab90f87e5f5e81cc2471c5d49913d..b99c8ed2e1725a2ac7151f3a45ebfc4753368534 100644
+--- a/lib/Clam/RegisterAnalysis.cc
++++ b/lib/Clam/RegisterAnalysis.cc
+@@ -18,6 +18,7 @@ void DomainRegistry::registerAllDomains() {
+   register_num_domain();
+   register_oct_domain();
+   register_pk_domain();
++  register_elina_zones_domain();
+   register_pk_pplite_domain();  
+   register_sign_constant_domain();  
+ }
+diff --git a/lib/Clam/crab/domains/crab_domains.hh b/lib/Clam/crab/domains/crab_domains.hh
+index a8ec37ac1a7cadef0c9094654b6cdcd3decadc5f..502d11bdd2186ba59a729ca45556eb4a97d6535a 100644
+--- a/lib/Clam/crab/domains/crab_domains.hh
++++ b/lib/Clam/crab/domains/crab_domains.hh
+@@ -5,6 +5,7 @@
+ #include "intervals.hh"
+ #include "oct.hh"
+ #include "pk.hh"
++#include "elina_zones.hh"
+ #include "pk_pplite.hh"
+ #include "ric.hh"
+ #include "split_dbm.hh"
+diff --git a/lib/Clam/crab/domains/elina_zones.cc b/lib/Clam/crab/domains/elina_zones.cc
+new file mode 100644
+index 0000000000000000000000000000000000000000..6476daef014b5d4715d29af5b3888d4b654c7162
+--- /dev/null
++++ b/lib/Clam/crab/domains/elina_zones.cc
+@@ -0,0 +1,20 @@
++#include <clam/config.h>
++#include <clam/CrabDomain.hh>
++#include <clam/RegisterAnalysis.hh>
++#include <crab/config.h>
++#include "elina_zones.hh"
++
++namespace clam {
++// Only register when both all-domains mode is on AND Elina is available.
++// In all other cases, unregister so queries for ELINA_ZONES fall back gracefully.
++#ifdef INCLUDE_ALL_DOMAINS
++#if defined(HAVE_ELINA)
++REGISTER_DOMAIN(clam::CrabDomain::ELINA_ZONES, elina_zones_domain)
++#else
++UNREGISTER_DOMAIN(elina_zones_domain)
++#endif
++#else
++UNREGISTER_DOMAIN(elina_zones_domain)
++#endif
++} // end namespace clam
++
+diff --git a/lib/Clam/crab/domains/elina_zones.hh b/lib/Clam/crab/domains/elina_zones.hh
+new file mode 100644
+index 0000000000000000000000000000000000000000..bf452f1e65cd0b2f9c199df99279f7971674dd4a
+--- /dev/null
++++ b/lib/Clam/crab/domains/elina_zones.hh
+@@ -0,0 +1,21 @@
++#pragma once
++
++// Zones domain backed by Elina's optimized zone library (opt_zones).
++// Unlike ZONES_SPLIT_DBM (which uses a split-DBM representation internal to
++// Crab), this domain delegates all operations to Elina and thus supports
++// the quad_affine_block precise-ops interface.
++// Requires HAVE_ELINA to be set at build time.
++
++#include <crab/domains/elina_domains.hpp>
++#include "crab_defs.hh"
++
++namespace clam {
++#ifdef HAVE_ELINA
++using BASE(elina_zones_domain_t) =
++  crab::domains::elina_domain<number_t, region_subdom_varname_t,
++			      crab::domains::elina_domain_id_t::ELINA_ZONES>;
++#endif
++// Full domain stack: region wrapper around array wrapper around bool+num wrapper
++// around the base Elina zones domain.
++using elina_zones_domain_t = RGN_FUN(ARRAY_FUN(BOOL_NUM(BASE(elina_zones_domain_t))));
++} // end namespace clam
+diff --git a/lib/Clam/crab/domains/register_domains.hh b/lib/Clam/crab/domains/register_domains.hh
+index 6052e2e272fbf6b9795401913141237feb5cedb4..06b673f16c5ceb6e69a6fdfffcb39f7a7a4c30d7 100644
+--- a/lib/Clam/crab/domains/register_domains.hh
++++ b/lib/Clam/crab/domains/register_domains.hh
+@@ -6,6 +6,7 @@ extern bool register_dis_interval_domain();
+ extern bool register_interval_domain();
+ extern bool register_oct_domain();  
+ extern bool register_pk_domain();
++extern bool register_elina_zones_domain();
+ extern bool register_pk_pplite_domain();      
+ extern bool register_ric_domain();
+ extern bool register_sign_constant_domain();
+diff --git a/py/clam.py b/py/clam.py
+index 84c3c8d68ee57a4062c09fc699c7f7b53c4f662f..73a3b807aec0db0cca924bb248aec843b38fe95d 100755
+--- a/py/clam.py
++++ b/py/clam.py
+@@ -317,12 +317,13 @@ def parseArgs(argv):
+                           "- soct: octagons domain using DBMs in Split Normal Form\n"
+                           "- oct: octagons domain from Apron or Elina\n"
+                           "- pk: polyhedra domain from Apron or Elina\n"
++                          "- elina-zones: zones domain from Elina\n"
+                           "- pk-pplite: polyhedra domain from PPLite\n"                   
+                           "- rtz: reduced product of term-dis-int with zones\n"
+                           "- w-int: wrapped intervals\n",
+                     choices=['int', 'sign-const', 'ric', 'term-int',
+                              'dis-int', 'term-dis-int', 'boxes',
+-                             'zones', 'soct', 'oct', 'pk', 'pk-pplite', 'rtz',
++                             'zones', 'soct', 'oct', 'pk', 'elina-zones', 'pk-pplite', 'rtz',
+                              'w-int'],
+                     dest='crab_dom', default='zones')
+     p.add_argument('--crab-dom-params', dest='crab_dom_params', default=None,
+@@ -391,6 +392,14 @@ def parseArgs(argv):
+                     help='Replace llvm.OP.with.overflow.* in CrabIR with OP assuming no overflow occurs.\n'
+                          'This option should be only used if the arithmetic operations are known to not overflow',
+                     dest='crab_lower_with_overflow_intrinsics')
++    p.add_argument('--crab-affine-precision-level',
++                   help='Default handling, collate non-unary affine instructions only, collate all affine instructions',
++                   choices=['default', 'affine-full'], dest='crab_affine_precision_level', default='default')
++    p.add_argument('--crab-quad-precision-level',
++                   help='Default handling, collate all quadratic instructions',
++                   choices=['default','quad-full'], dest='crab_quad_precision_level', default='default')
++    p.add_argument('--crab-max-collate-count', type=int, dest='crab_max_collate_count',
++                    help='Maximum number of instructions to be collated together (-1 means maximal collation)', default=-1)
+     p.add_argument('--crab-opt',
+                     help='Optimize LLVM bitcode using invariants',
+                     choices=['none',
+@@ -880,6 +889,9 @@ def clam(in_name, out_name, args, extra_opts, cpu = -1, mem = -1):
+         clam_args.append('--crab-lower-unsigned-icmp')
+     if args.crab_lower_with_overflow_intrinsics:
+         clam_args.append('--crab-lower-with-overflow-intrinsics')
++    clam_args.append('--crab-affine-precision-level={0}'.format(args.crab_affine_precision_level))
++    clam_args.append('--crab-quad-precision-level={0}'.format(args.crab_quad_precision_level))
++    clam_args.append('--crab-max-collate-count={0}'.format(args.crab_max_collate_count))
+     clam_args.append('--crab-dom={0}'.format(args.crab_dom))
+     clam_args.append('--crab-widening-delay={0}'.format(args.widening_delay))
+     clam_args.append('--crab-widening-jump-set={0}'.format(args.widening_jump_set))

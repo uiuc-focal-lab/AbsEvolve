@@ -1,0 +1,74 @@
+{
+    "all_invs": [
+        {
+            "str": "-p.0 <= -1;d.0-mul <= 0;-d.0+mul <= 0;call-add <= 0;-call+add <= 0;d.1-mul16 <= 0;-d.1+mul16 <= 0",
+            "smt": "(assert (>= p.0 1.0))\n(assert (<= (+ d.0 (* (- 1.0) mul)) 0.0))\n(assert (<= (+ (* (- 1.0) d.0) mul) 0.0))\n(assert (<= (+ call (* (- 1.0) add)) 0.0))\n(assert (<= (+ (* (- 1.0) call) add) 0.0))\n(assert (<= (+ d.1 (* (- 1.0) mul16)) 0.0))\n(assert (<= (+ (* (- 1.0) d.1) mul16) 0.0))",
+            "dom": "oct",
+            "vars": [
+                "d.0",
+                "add",
+                "call",
+                "d.1",
+                "mul16",
+                "p.0",
+                "mul"
+            ],
+            "len": 7
+        },
+        {
+            "str": "-p.0 <= -1;d.0-mul <= 0;-d.0+mul <= 0",
+            "smt": "(assert (>= p.0 1.0))\n(assert (<= (+ d.0 (* (- 1.0) mul)) 0.0))\n(assert (<= (+ (* (- 1.0) d.0) mul) 0.0))",
+            "dom": "oct",
+            "vars": [
+                "mul",
+                "d.0",
+                "p.0"
+            ],
+            "len": 3
+        },
+        {
+            "str": "-p.0 <= -1;d.0-mul <= 0;-d.0+mul <= 0",
+            "smt": "(assert (>= p.0 1.0))\n(assert (<= (+ d.0 (* (- 1.0) mul)) 0.0))\n(assert (<= (+ (* (- 1.0) d.0) mul) 0.0))",
+            "dom": "oct",
+            "vars": [
+                "mul",
+                "d.0",
+                "p.0"
+            ],
+            "len": 3
+        },
+        {
+            "str": "-p.0 <= -1",
+            "smt": "(assert (>= p.0 1.0))",
+            "dom": "oct",
+            "vars": [
+                "p.0"
+            ],
+            "len": 1
+        },
+        {
+            "str": "-p.0 <= -1;d.0-mul <= 0;-d.0+mul <= 0;-p.0-p.1 <= -2;-p.1 <= -1;-p.0+p.1 <= 0;p.1 <= 1;call-add <= 0;-call+add <= 0;d.1-mul16 <= 0;-d.1+mul16 <= 0",
+            "smt": "(assert (>= p.0 1.0))\n(assert (<= (+ d.0 (* (- 1.0) mul)) 0.0))\n(assert (<= (+ (* (- 1.0) d.0) mul) 0.0))\n(assert (<= (+ (* (- 1.0) p.0) (* (- 1.0) p.1)) (- 2.0)))\n(assert (>= p.1 1.0))\n(assert (<= (+ (* (- 1.0) p.0) p.1) 0.0))\n(assert (<= p.1 1.0))\n(assert (<= (+ call (* (- 1.0) add)) 0.0))\n(assert (<= (+ (* (- 1.0) call) add) 0.0))\n(assert (<= (+ d.1 (* (- 1.0) mul16)) 0.0))\n(assert (<= (+ (* (- 1.0) d.1) mul16) 0.0))",
+            "dom": "oct",
+            "vars": [
+                "d.0",
+                "add",
+                "call",
+                "d.1",
+                "mul16",
+                "p.0",
+                "mul",
+                "p.1"
+            ],
+            "len": 11
+        },
+        {
+            "str": "T",
+            "smt": "(assert true)",
+            "dom": "oct",
+            "vars": {},
+            "len": 0
+        }
+    ],
+    "timed_out": false
+}

@@ -1,0 +1,91 @@
+{
+    "all_invs": [
+        {
+            "str": "-2*call+mul9 = 0;mul+mul8-mul10 = 0;add-mul10 = 0",
+            "smt": "(assert (= (+ (* (- 2.0) call) mul9) 0.0))\n(assert (= (+ mul mul8 (* (- 1.0) mul10)) 0.0))\n(assert (= (+ add (* (- 1.0) mul10)) 0.0))",
+            "dom": "pk",
+            "vars": [
+                "add",
+                "call",
+                "mul9",
+                "mul10",
+                "mul8",
+                "mul"
+            ],
+            "len": 3
+        },
+        {
+            "str": "mul+mul8-mul10 = 0;add-mul10 = 0;2*call-mul9 = 0",
+            "smt": "(assert (= (+ mul mul8 (* (- 1.0) mul10)) 0.0))\n(assert (= (+ add (* (- 1.0) mul10)) 0.0))\n(assert (= (+ (* 2.0 call) (* (- 1.0) mul9)) 0.0))",
+            "dom": "pk",
+            "vars": [
+                "add",
+                "call",
+                "mul9",
+                "mul10",
+                "mul8",
+                "mul"
+            ],
+            "len": 3
+        },
+        {
+            "str": "mul+mul8-mul10 = 0;add-mul10 = 0;2*call-mul9 = 0",
+            "smt": "(assert (= (+ mul mul8 (* (- 1.0) mul10)) 0.0))\n(assert (= (+ add (* (- 1.0) mul10)) 0.0))\n(assert (= (+ (* 2.0 call) (* (- 1.0) mul9)) 0.0))",
+            "dom": "pk",
+            "vars": [
+                "add",
+                "call",
+                "mul9",
+                "mul10",
+                "mul8",
+                "mul"
+            ],
+            "len": 3
+        },
+        {
+            "str": "mul+mul8-mul10 = 0;add-mul10 = 0;2*call-mul9 = 0",
+            "smt": "(assert (= (+ mul mul8 (* (- 1.0) mul10)) 0.0))\n(assert (= (+ add (* (- 1.0) mul10)) 0.0))\n(assert (= (+ (* 2.0 call) (* (- 1.0) mul9)) 0.0))",
+            "dom": "pk",
+            "vars": [
+                "add",
+                "call",
+                "mul9",
+                "mul10",
+                "mul8",
+                "mul"
+            ],
+            "len": 3
+        },
+        {
+            "str": "T",
+            "smt": "(assert true)",
+            "dom": "pk",
+            "vars": {},
+            "len": 0
+        },
+        {
+            "str": "2*call-mul9 = 0;x.0-y.0 = 0;mul+mul8-mul10 = 0;add-mul10 = 0",
+            "smt": "(assert (= (+ (* 2.0 call) (* (- 1.0) mul9)) 0.0))\n(assert (= (+ x.0 (* (- 1.0) y.0)) 0.0))\n(assert (= (+ mul mul8 (* (- 1.0) mul10)) 0.0))\n(assert (= (+ add (* (- 1.0) mul10)) 0.0))",
+            "dom": "pk",
+            "vars": [
+                "add",
+                "call",
+                "mul9",
+                "y.0",
+                "mul10",
+                "mul8",
+                "x.0",
+                "mul"
+            ],
+            "len": 4
+        },
+        {
+            "str": "T",
+            "smt": "(assert true)",
+            "dom": "pk",
+            "vars": {},
+            "len": 0
+        }
+    ],
+    "timed_out": false
+}

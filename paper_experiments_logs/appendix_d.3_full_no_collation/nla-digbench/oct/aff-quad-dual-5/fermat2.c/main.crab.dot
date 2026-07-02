@@ -1,0 +1,15 @@
+digraph "CFG for 'main' function" {
+	label="CFG for 'main' function";
+	Node0x650926450700 [shape=record,label="{entry:\l havoc(conv) /*   %conv = fptosi double %call to i32, !dbg !16*/\l havoc(conv2) /*   %conv2 = fptosi double %call1 to i32, !dbg !19*/\l [[sub = conv2+-1; ]]\l [[mul = sub*sub; ]]\l cmp = (-conv+mul &le; -1)\l assume(cmp)\l rem = conv%2\l cmp5 = (rem = 1)\l assume(cmp5)\l [[mul7 = conv2*2; ]]\l [[add = mul7+1; ]]\l [[mul8 = conv2*conv2; ]]\l [[sub9 = mul8-conv; ]]\l u.0 = add\l v.0 = 1\l r.0 = sub9\l}"];
+	Node0x650926450700 -> Node0x650926480a70;
+	Node0x650926480a70 [shape=record,label="{while.body:\l [[add10 = r.0+conv; ]]\l [[mul11 = add10*4; ]]\l [[mul12 = u.0*u.0; ]]\l [[mul13 = v.0*v.0; ]]\l [[sub14 = mul12-mul13; ]]\l [[mul15.neg = u.0*-2; ]]\l [[sub16 = mul15.neg+sub14; ]]\l [[mul17 = v.0*2; ]]\l [[add18 = sub16+mul17; ]]\l cmp19 = (mul11-add18 = 0)\l assert(cmp19)   /* loc(file=data/sv-benchmarks-processed/nla-digbench/fermat2.c line=23 col=9) id=1 */\l}"];
+	Node0x650926480a70 -> Node0x6509264895b0;
+	Node0x650926480a70 -> Node0x650926489940;
+	Node0x650926489940 [shape=record,label="{__@bb_6:\l assume(r.0 &ne; 0)\l}"];
+	Node0x650926489940 -> Node0x650926480b30;
+	Node0x650926480b30 [shape=record,label="{if.end:\l [[add27 = v.0+2; ]]\l [[add29 = u.0+2; ]]\l u.1 = ite(-r.0 &le; -1,u.0,add29)\l v.1 = ite(-r.0 &le; -1,add27,v.0)\l @V_33 = 0\l [[tmp = @V_33-v.0; ]]\l r.1.p = ite(-r.0 &le; -1,tmp,u.0)\l [[r.1 = r.0+r.1.p; ]]\l u.0 = u.1\l v.0 = v.1\l r.0 = r.1\l}"];
+	Node0x650926480b30 -> Node0x650926480a70;
+	Node0x6509264895b0 [shape=record,label="{__@bb_5:\l assume(r.0 = 0)\l}"];
+	Node0x6509264895b0 -> Node0x6509264806b0;
+	Node0x6509264806b0 [shape=record,label="{while.end:\l [[mul31 = conv*4; ]]\l cmp39 = (-add18+mul31 = 0)\l assert(cmp39)   /* loc(file=data/sv-benchmarks-processed/nla-digbench/fermat2.c line=36 col=5) id=2 */\l @V_1 = 0\l}"];
+}

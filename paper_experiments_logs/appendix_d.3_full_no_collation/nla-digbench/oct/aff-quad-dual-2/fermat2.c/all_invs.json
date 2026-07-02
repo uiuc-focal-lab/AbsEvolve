@@ -1,0 +1,87 @@
+{
+    "all_invs": [
+        {
+            "str": "-conv <= -1;-conv-conv2 <= -1;-conv+conv2 <= 1;-conv-sub <= 0;conv2-sub <= 1;-conv+sub <= 0;-conv2+sub <= -1;-conv-mul <= -1;conv2-mul <= 2;-conv2-mul <= 0;sub-mul <= 1;-sub-mul <= 1;-mul <= 0;-conv+mul <= -1;-conv-rem <= -2;-mul-rem <= -1;-rem <= -1;-conv+rem <= 0;-mul+rem <= 1;rem <= 1;mul7-add <= -1;-mul7+add <= 1;-conv-mul8 <= -1;conv2-mul8 <= 1;-conv2-mul8 <= 1;sub-mul8 <= 0;-sub-mul8 <= 2;-mul-mul8 <= 0;rem-mul8 <= 1;-rem-mul8 <= -1;-mul8 <= 0;-conv-sub9 <= 0;-mul8+sub9 <= -1;mul7-u.0 <= -1;add-u.0 <= 0;-conv-v.0 <= -2;-mul-v.0 <= -1;rem-v.0 <= 0;-rem-v.0 <= -2;-mul8-v.0 <= -1;-v.0 <= -1;r.0-add10 <= -1;-conv-mul12 <= -1;-mul-mul12 <= 0;rem-mul12 <= 1;-rem-mul12 <= -1;mul7-mul12 <= 0;add-mul12 <= 1;-mul8-mul12 <= 0;u.0-mul12 <= 1;-u.0-mul12 <= 1;-v.0-mul12 <= -1;-mul12 <= 0;-conv-mul13 <= -2;-mul-mul13 <= -1;rem-mul13 <= 0;-rem-mul13 <= -2;-mul8-mul13 <= -1;v.0-mul13 <= 0;-v.0-mul13 <= -2;-mul12-mul13 <= -1;-mul13 <= -1;-mul13-sub14 <= 0;-mul12+sub14 <= -1;-mul11+sub16 <= -2;-conv-mul17 <= -3;-mul-mul17 <= -2;rem-mul17 <= -1;-rem-mul17 <= -3;-mul8-mul17 <= -2;v.0-mul17 <= -1;-v.0-mul17 <= -3;-mul12-mul17 <= -2;-mul13-mul17 <= -3;-mul17 <= -2;mul11-add18 <= 0;sub16-add18 <= -2;-mul11+add18 <= 0",
+            "smt": "(assert (>= conv 1.0))\n(assert (<= (+ (* (- 1.0) conv) (* (- 1.0) conv2)) (- 1.0)))\n(assert (<= (+ (* (- 1.0) conv) conv2) 1.0))\n(assert (<= (+ (* (- 1.0) conv) (* (- 1.0) sub)) 0.0))\n(assert (<= (+ conv2 (* (- 1.0) sub)) 1.0))\n(assert (<= (+ (* (- 1.0) conv) sub) 0.0))\n(assert (<= (+ (* (- 1.0) conv2) sub) (- 1.0)))\n(assert (<= (+ (* (- 1.0) conv) (* (- 1.0) mul)) (- 1.0)))\n(assert (<= (+ conv2 (* (- 1.0) mul)) 2.0))\n(assert (<= (+ (* (- 1.0) conv2) (* (- 1.0) mul)) 0.0))\n(assert (<= (+ sub (* (- 1.0) mul)) 1.0))\n(assert (<= (+ (* (- 1.0) sub) (* (- 1.0) mul)) 1.0))\n(assert (>= mul 0.0))\n(assert (<= (+ (* (- 1.0) conv) mul) (- 1.0)))\n(assert (<= (+ (* (- 1.0) conv) (* (- 1.0) rem)) (- 2.0)))\n(assert (<= (+ (* (- 1.0) mul) (* (- 1.0) rem)) (- 1.0)))\n(assert (>= rem 1.0))\n(assert (<= (+ (* (- 1.0) conv) rem) 0.0))\n(assert (<= (+ (* (- 1.0) mul) rem) 1.0))\n(assert (<= rem 1.0))\n(assert (<= (+ mul7 (* (- 1.0) add)) (- 1.0)))\n(assert (<= (+ (* (- 1.0) mul7) add) 1.0))\n(assert (<= (+ (* (- 1.0) conv) (* (- 1.0) mul8)) (- 1.0)))\n(assert (<= (+ conv2 (* (- 1.0) mul8)) 1.0))\n(assert (<= (+ (* (- 1.0) conv2) (* (- 1.0) mul8)) 1.0))\n(assert (<= (+ sub (* (- 1.0) mul8)) 0.0))\n(assert (<= (+ (* (- 1.0) sub) (* (- 1.0) mul8)) 2.0))\n(assert (<= (+ (* (- 1.0) mul) (* (- 1.0) mul8)) 0.0))\n(assert (<= (+ rem (* (- 1.0) mul8)) 1.0))\n(assert (<= (+ (* (- 1.0) rem) (* (- 1.0) mul8)) (- 1.0)))\n(assert (>= mul8 0.0))\n(assert (<= (+ (* (- 1.0) conv) (* (- 1.0) sub9)) 0.0))\n(assert (<= (+ (* (- 1.0) mul8) sub9) (- 1.0)))\n(assert (<= (+ mul7 (* (- 1.0) u.0)) (- 1.0)))\n(assert (<= (+ add (* (- 1.0) u.0)) 0.0))\n(assert (<= (+ (* (- 1.0) conv) (* (- 1.0) v.0)) (- 2.0)))\n(assert (<= (+ (* (- 1.0) mul) (* (- 1.0) v.0)) (- 1.0)))\n(assert (<= (+ rem (* (- 1.0) v.0)) 0.0))\n(assert (<= (+ (* (- 1.0) rem) (* (- 1.0) v.0)) (- 2.0)))\n(assert (<= (+ (* (- 1.0) mul8) (* (- 1.0) v.0)) (- 1.0)))\n(assert (>= v.0 1.0))\n(assert (<= (+ r.0 (* (- 1.0) add10)) (- 1.0)))\n(assert (<= (+ (* (- 1.0) conv) (* (- 1.0) mul12)) (- 1.0)))\n(assert (<= (+ (* (- 1.0) mul) (* (- 1.0) mul12)) 0.0))\n(assert (<= (+ rem (* (- 1.0) mul12)) 1.0))\n(assert (<= (+ (* (- 1.0) rem) (* (- 1.0) mul12)) (- 1.0)))\n(assert (<= (+ mul7 (* (- 1.0) mul12)) 0.0))\n(assert (<= (+ add (* (- 1.0) mul12)) 1.0))\n(assert (<= (+ (* (- 1.0) mul8) (* (- 1.0) mul12)) 0.0))\n(assert (<= (+ u.0 (* (- 1.0) mul12)) 1.0))\n(assert (<= (+ (* (- 1.0) u.0) (* (- 1.0) mul12)) 1.0))\n(assert (<= (+ (* (- 1.0) v.0) (* (- 1.0) mul12)) (- 1.0)))\n(assert (>= mul12 0.0))\n(assert (<= (+ (* (- 1.0) conv) (* (- 1.0) mul13)) (- 2.0)))\n(assert (<= (+ (* (- 1.0) mul) (* (- 1.0) mul13)) (- 1.0)))\n(assert (<= (+ rem (* (- 1.0) mul13)) 0.0))\n(assert (<= (+ (* (- 1.0) rem) (* (- 1.0) mul13)) (- 2.0)))\n(assert (<= (+ (* (- 1.0) mul8) (* (- 1.0) mul13)) (- 1.0)))\n(assert (<= (+ v.0 (* (- 1.0) mul13)) 0.0))\n(assert (<= (+ (* (- 1.0) v.0) (* (- 1.0) mul13)) (- 2.0)))\n(assert (<= (+ (* (- 1.0) mul12) (* (- 1.0) mul13)) (- 1.0)))\n(assert (>= mul13 1.0))\n(assert (<= (+ (* (- 1.0) mul13) (* (- 1.0) sub14)) 0.0))\n(assert (<= (+ (* (- 1.0) mul12) sub14) (- 1.0)))\n(assert (<= (+ (* (- 1.0) mul11) sub16) (- 2.0)))\n(assert (<= (+ (* (- 1.0) conv) (* (- 1.0) mul17)) (- 3.0)))\n(assert (<= (+ (* (- 1.0) mul) (* (- 1.0) mul17)) (- 2.0)))\n(assert (<= (+ rem (* (- 1.0) mul17)) (- 1.0)))\n(assert (<= (+ (* (- 1.0) rem) (* (- 1.0) mul17)) (- 3.0)))\n(assert (<= (+ (* (- 1.0) mul8) (* (- 1.0) mul17)) (- 2.0)))\n(assert (<= (+ v.0 (* (- 1.0) mul17)) (- 1.0)))\n(assert (<= (+ (* (- 1.0) v.0) (* (- 1.0) mul17)) (- 3.0)))\n(assert (<= (+ (* (- 1.0) mul12) (* (- 1.0) mul17)) (- 2.0)))\n(assert (<= (+ (* (- 1.0) mul13) (* (- 1.0) mul17)) (- 3.0)))\n(assert (>= mul17 2.0))\n(assert (<= (+ mul11 (* (- 1.0) add18)) 0.0))\n(assert (<= (+ sub16 (* (- 1.0) add18)) (- 2.0)))\n(assert (<= (+ (* (- 1.0) mul11) add18) 0.0))",
+            "dom": "oct",
+            "vars": [
+                "mul17",
+                "mul7",
+                "mul",
+                "add18",
+                "mul13",
+                "sub16",
+                "u.0",
+                "v.0",
+                "sub14",
+                "rem",
+                "sub",
+                "mul12",
+                "r.0",
+                "mul11",
+                "add",
+                "mul8",
+                "sub9",
+                "conv2",
+                "conv",
+                "add10"
+            ],
+            "len": 78
+        },
+        {
+            "str": "-conv <= -1;-conv-conv2 <= -1;-conv+conv2 <= 1;-conv-sub <= 0;conv2-sub <= 1;-conv+sub <= 0;-conv2+sub <= -1;-conv-mul <= -1;conv2-mul <= 2;-conv2-mul <= 0;sub-mul <= 1;-sub-mul <= 1;-mul <= 0;-conv+mul <= -1;-conv-rem <= -2;-mul-rem <= -1;-rem <= -1;-conv+rem <= 0;-mul+rem <= 1;rem <= 1;mul7-add <= -1;-mul7+add <= 1;-conv-mul8 <= -1;conv2-mul8 <= 1;-conv2-mul8 <= 1;sub-mul8 <= 0;-sub-mul8 <= 2;-mul-mul8 <= 0;rem-mul8 <= 1;-rem-mul8 <= -1;-mul8 <= 0;-conv-sub9 <= 0;-mul8+sub9 <= -1;mul7-u.0 <= -1;add-u.0 <= 0;-conv-v.0 <= -2;-mul-v.0 <= -1;rem-v.0 <= 0;-rem-v.0 <= -2;-mul8-v.0 <= -1;-v.0 <= -1",
+            "smt": "(assert (>= conv 1.0))\n(assert (<= (+ (* (- 1.0) conv) (* (- 1.0) conv2)) (- 1.0)))\n(assert (<= (+ (* (- 1.0) conv) conv2) 1.0))\n(assert (<= (+ (* (- 1.0) conv) (* (- 1.0) sub)) 0.0))\n(assert (<= (+ conv2 (* (- 1.0) sub)) 1.0))\n(assert (<= (+ (* (- 1.0) conv) sub) 0.0))\n(assert (<= (+ (* (- 1.0) conv2) sub) (- 1.0)))\n(assert (<= (+ (* (- 1.0) conv) (* (- 1.0) mul)) (- 1.0)))\n(assert (<= (+ conv2 (* (- 1.0) mul)) 2.0))\n(assert (<= (+ (* (- 1.0) conv2) (* (- 1.0) mul)) 0.0))\n(assert (<= (+ sub (* (- 1.0) mul)) 1.0))\n(assert (<= (+ (* (- 1.0) sub) (* (- 1.0) mul)) 1.0))\n(assert (>= mul 0.0))\n(assert (<= (+ (* (- 1.0) conv) mul) (- 1.0)))\n(assert (<= (+ (* (- 1.0) conv) (* (- 1.0) rem)) (- 2.0)))\n(assert (<= (+ (* (- 1.0) mul) (* (- 1.0) rem)) (- 1.0)))\n(assert (>= rem 1.0))\n(assert (<= (+ (* (- 1.0) conv) rem) 0.0))\n(assert (<= (+ (* (- 1.0) mul) rem) 1.0))\n(assert (<= rem 1.0))\n(assert (<= (+ mul7 (* (- 1.0) add)) (- 1.0)))\n(assert (<= (+ (* (- 1.0) mul7) add) 1.0))\n(assert (<= (+ (* (- 1.0) conv) (* (- 1.0) mul8)) (- 1.0)))\n(assert (<= (+ conv2 (* (- 1.0) mul8)) 1.0))\n(assert (<= (+ (* (- 1.0) conv2) (* (- 1.0) mul8)) 1.0))\n(assert (<= (+ sub (* (- 1.0) mul8)) 0.0))\n(assert (<= (+ (* (- 1.0) sub) (* (- 1.0) mul8)) 2.0))\n(assert (<= (+ (* (- 1.0) mul) (* (- 1.0) mul8)) 0.0))\n(assert (<= (+ rem (* (- 1.0) mul8)) 1.0))\n(assert (<= (+ (* (- 1.0) rem) (* (- 1.0) mul8)) (- 1.0)))\n(assert (>= mul8 0.0))\n(assert (<= (+ (* (- 1.0) conv) (* (- 1.0) sub9)) 0.0))\n(assert (<= (+ (* (- 1.0) mul8) sub9) (- 1.0)))\n(assert (<= (+ mul7 (* (- 1.0) u.0)) (- 1.0)))\n(assert (<= (+ add (* (- 1.0) u.0)) 0.0))\n(assert (<= (+ (* (- 1.0) conv) (* (- 1.0) v.0)) (- 2.0)))\n(assert (<= (+ (* (- 1.0) mul) (* (- 1.0) v.0)) (- 1.0)))\n(assert (<= (+ rem (* (- 1.0) v.0)) 0.0))\n(assert (<= (+ (* (- 1.0) rem) (* (- 1.0) v.0)) (- 2.0)))\n(assert (<= (+ (* (- 1.0) mul8) (* (- 1.0) v.0)) (- 1.0)))\n(assert (>= v.0 1.0))",
+            "dom": "oct",
+            "vars": [
+                "mul7",
+                "sub9",
+                "mul",
+                "mul8",
+                "v.0",
+                "conv2",
+                "add",
+                "conv",
+                "rem",
+                "sub",
+                "u.0"
+            ],
+            "len": 41
+        },
+        {
+            "str": "-conv <= -1;-conv-conv2 <= -1;-conv+conv2 <= 1;-conv-sub <= 0;conv2-sub <= 1;-conv+sub <= 0;-conv2+sub <= -1;-conv-mul <= -1;conv2-mul <= 2;-conv2-mul <= 0;sub-mul <= 1;-sub-mul <= 1;-mul <= 0;-conv+mul <= -1;-conv-rem <= -2;-mul-rem <= -1;-rem <= -1;-conv+rem <= 0;-mul+rem <= 1;rem <= 1;mul7-add <= -1;-mul7+add <= 1;-conv-mul8 <= -1;conv2-mul8 <= 1;-conv2-mul8 <= 1;sub-mul8 <= 0;-sub-mul8 <= 2;-mul-mul8 <= 0;rem-mul8 <= 1;-rem-mul8 <= -1;-mul8 <= 0;-conv-sub9 <= 0;-mul8+sub9 <= -1;mul7-u.0 <= -1;add-u.0 <= 0;-conv-v.0 <= -2;-mul-v.0 <= -1;rem-v.0 <= 0;-rem-v.0 <= -2;-mul8-v.0 <= -1;-v.0 <= -1;-conv-r.0 <= -1;-mul-r.0 <= 0;rem-r.0 <= 1;-rem-r.0 <= -1;-mul8-r.0 <= 0;-v.0-r.0 <= -1;-r.0 <= 0;-conv+r.0 <= -1;-mul+r.0 <= 0;rem+r.0 <= 1;-rem+r.0 <= -1;-mul8+r.0 <= 0;-v.0+r.0 <= -1;r.0 <= 0;-conv-add10 <= -2;-mul-add10 <= -1;rem-add10 <= 0;-rem-add10 <= -2;-mul8-add10 <= -1;-v.0-add10 <= -2;r.0-add10 <= -1;-r.0-add10 <= -1;-add10 <= -1;-conv-mul12 <= -1;-mul-mul12 <= 0;rem-mul12 <= 1;-rem-mul12 <= -1;mul7-mul12 <= 0;add-mul12 <= 1;-mul8-mul12 <= 0;u.0-mul12 <= 1;-u.0-mul12 <= 1;-v.0-mul12 <= -1;r.0-mul12 <= 0;-r.0-mul12 <= 0;-add10-mul12 <= -1;-mul12 <= 0;-conv-mul13 <= -2;-mul-mul13 <= -1;rem-mul13 <= 0;-rem-mul13 <= -2;-mul8-mul13 <= -1;v.0-mul13 <= 0;-v.0-mul13 <= -2;r.0-mul13 <= -1;-r.0-mul13 <= -1;-add10-mul13 <= -2;-mul12-mul13 <= -1;-mul13 <= -1;-mul13-sub14 <= 0;-mul12+sub14 <= -1;-mul11+sub16 <= -2;-conv-mul17 <= -3;-mul-mul17 <= -2;rem-mul17 <= -1;-rem-mul17 <= -3;-mul8-mul17 <= -2;v.0-mul17 <= -1;-v.0-mul17 <= -3;r.0-mul17 <= -2;-r.0-mul17 <= -2;-add10-mul17 <= -3;-mul12-mul17 <= -2;-mul13-mul17 <= -3;-mul17 <= -2;mul11-add18 <= 0;sub16-add18 <= -2;-mul11+add18 <= 0",
+            "smt": "(assert (>= conv 1.0))\n(assert (<= (+ (* (- 1.0) conv) (* (- 1.0) conv2)) (- 1.0)))\n(assert (<= (+ (* (- 1.0) conv) conv2) 1.0))\n(assert (<= (+ (* (- 1.0) conv) (* (- 1.0) sub)) 0.0))\n(assert (<= (+ conv2 (* (- 1.0) sub)) 1.0))\n(assert (<= (+ (* (- 1.0) conv) sub) 0.0))\n(assert (<= (+ (* (- 1.0) conv2) sub) (- 1.0)))\n(assert (<= (+ (* (- 1.0) conv) (* (- 1.0) mul)) (- 1.0)))\n(assert (<= (+ conv2 (* (- 1.0) mul)) 2.0))\n(assert (<= (+ (* (- 1.0) conv2) (* (- 1.0) mul)) 0.0))\n(assert (<= (+ sub (* (- 1.0) mul)) 1.0))\n(assert (<= (+ (* (- 1.0) sub) (* (- 1.0) mul)) 1.0))\n(assert (>= mul 0.0))\n(assert (<= (+ (* (- 1.0) conv) mul) (- 1.0)))\n(assert (<= (+ (* (- 1.0) conv) (* (- 1.0) rem)) (- 2.0)))\n(assert (<= (+ (* (- 1.0) mul) (* (- 1.0) rem)) (- 1.0)))\n(assert (>= rem 1.0))\n(assert (<= (+ (* (- 1.0) conv) rem) 0.0))\n(assert (<= (+ (* (- 1.0) mul) rem) 1.0))\n(assert (<= rem 1.0))\n(assert (<= (+ mul7 (* (- 1.0) add)) (- 1.0)))\n(assert (<= (+ (* (- 1.0) mul7) add) 1.0))\n(assert (<= (+ (* (- 1.0) conv) (* (- 1.0) mul8)) (- 1.0)))\n(assert (<= (+ conv2 (* (- 1.0) mul8)) 1.0))\n(assert (<= (+ (* (- 1.0) conv2) (* (- 1.0) mul8)) 1.0))\n(assert (<= (+ sub (* (- 1.0) mul8)) 0.0))\n(assert (<= (+ (* (- 1.0) sub) (* (- 1.0) mul8)) 2.0))\n(assert (<= (+ (* (- 1.0) mul) (* (- 1.0) mul8)) 0.0))\n(assert (<= (+ rem (* (- 1.0) mul8)) 1.0))\n(assert (<= (+ (* (- 1.0) rem) (* (- 1.0) mul8)) (- 1.0)))\n(assert (>= mul8 0.0))\n(assert (<= (+ (* (- 1.0) conv) (* (- 1.0) sub9)) 0.0))\n(assert (<= (+ (* (- 1.0) mul8) sub9) (- 1.0)))\n(assert (<= (+ mul7 (* (- 1.0) u.0)) (- 1.0)))\n(assert (<= (+ add (* (- 1.0) u.0)) 0.0))\n(assert (<= (+ (* (- 1.0) conv) (* (- 1.0) v.0)) (- 2.0)))\n(assert (<= (+ (* (- 1.0) mul) (* (- 1.0) v.0)) (- 1.0)))\n(assert (<= (+ rem (* (- 1.0) v.0)) 0.0))\n(assert (<= (+ (* (- 1.0) rem) (* (- 1.0) v.0)) (- 2.0)))\n(assert (<= (+ (* (- 1.0) mul8) (* (- 1.0) v.0)) (- 1.0)))\n(assert (>= v.0 1.0))\n(assert (<= (+ (* (- 1.0) conv) (* (- 1.0) r.0)) (- 1.0)))\n(assert (<= (+ (* (- 1.0) mul) (* (- 1.0) r.0)) 0.0))\n(assert (<= (+ rem (* (- 1.0) r.0)) 1.0))\n(assert (<= (+ (* (- 1.0) rem) (* (- 1.0) r.0)) (- 1.0)))\n(assert (<= (+ (* (- 1.0) mul8) (* (- 1.0) r.0)) 0.0))\n(assert (<= (+ (* (- 1.0) v.0) (* (- 1.0) r.0)) (- 1.0)))\n(assert (>= r.0 0.0))\n(assert (<= (+ (* (- 1.0) conv) r.0) (- 1.0)))\n(assert (<= (+ (* (- 1.0) mul) r.0) 0.0))\n(assert (<= (+ rem r.0) 1.0))\n(assert (<= (+ (* (- 1.0) rem) r.0) (- 1.0)))\n(assert (<= (+ (* (- 1.0) mul8) r.0) 0.0))\n(assert (<= (+ (* (- 1.0) v.0) r.0) (- 1.0)))\n(assert (<= r.0 0.0))\n(assert (<= (+ (* (- 1.0) conv) (* (- 1.0) add10)) (- 2.0)))\n(assert (<= (+ (* (- 1.0) mul) (* (- 1.0) add10)) (- 1.0)))\n(assert (<= (+ rem (* (- 1.0) add10)) 0.0))\n(assert (<= (+ (* (- 1.0) rem) (* (- 1.0) add10)) (- 2.0)))\n(assert (<= (+ (* (- 1.0) mul8) (* (- 1.0) add10)) (- 1.0)))\n(assert (<= (+ (* (- 1.0) v.0) (* (- 1.0) add10)) (- 2.0)))\n(assert (<= (+ r.0 (* (- 1.0) add10)) (- 1.0)))\n(assert (<= (+ (* (- 1.0) r.0) (* (- 1.0) add10)) (- 1.0)))\n(assert (>= add10 1.0))\n(assert (<= (+ (* (- 1.0) conv) (* (- 1.0) mul12)) (- 1.0)))\n(assert (<= (+ (* (- 1.0) mul) (* (- 1.0) mul12)) 0.0))\n(assert (<= (+ rem (* (- 1.0) mul12)) 1.0))\n(assert (<= (+ (* (- 1.0) rem) (* (- 1.0) mul12)) (- 1.0)))\n(assert (<= (+ mul7 (* (- 1.0) mul12)) 0.0))\n(assert (<= (+ add (* (- 1.0) mul12)) 1.0))\n(assert (<= (+ (* (- 1.0) mul8) (* (- 1.0) mul12)) 0.0))\n(assert (<= (+ u.0 (* (- 1.0) mul12)) 1.0))\n(assert (<= (+ (* (- 1.0) u.0) (* (- 1.0) mul12)) 1.0))\n(assert (<= (+ (* (- 1.0) v.0) (* (- 1.0) mul12)) (- 1.0)))\n(assert (<= (+ r.0 (* (- 1.0) mul12)) 0.0))\n(assert (<= (+ (* (- 1.0) r.0) (* (- 1.0) mul12)) 0.0))\n(assert (<= (+ (* (- 1.0) add10) (* (- 1.0) mul12)) (- 1.0)))\n(assert (>= mul12 0.0))\n(assert (<= (+ (* (- 1.0) conv) (* (- 1.0) mul13)) (- 2.0)))\n(assert (<= (+ (* (- 1.0) mul) (* (- 1.0) mul13)) (- 1.0)))\n(assert (<= (+ rem (* (- 1.0) mul13)) 0.0))\n(assert (<= (+ (* (- 1.0) rem) (* (- 1.0) mul13)) (- 2.0)))\n(assert (<= (+ (* (- 1.0) mul8) (* (- 1.0) mul13)) (- 1.0)))\n(assert (<= (+ v.0 (* (- 1.0) mul13)) 0.0))\n(assert (<= (+ (* (- 1.0) v.0) (* (- 1.0) mul13)) (- 2.0)))\n(assert (<= (+ r.0 (* (- 1.0) mul13)) (- 1.0)))\n(assert (<= (+ (* (- 1.0) r.0) (* (- 1.0) mul13)) (- 1.0)))\n(assert (<= (+ (* (- 1.0) add10) (* (- 1.0) mul13)) (- 2.0)))\n(assert (<= (+ (* (- 1.0) mul12) (* (- 1.0) mul13)) (- 1.0)))\n(assert (>= mul13 1.0))\n(assert (<= (+ (* (- 1.0) mul13) (* (- 1.0) sub14)) 0.0))\n(assert (<= (+ (* (- 1.0) mul12) sub14) (- 1.0)))\n(assert (<= (+ (* (- 1.0) mul11) sub16) (- 2.0)))\n(assert (<= (+ (* (- 1.0) conv) (* (- 1.0) mul17)) (- 3.0)))\n(assert (<= (+ (* (- 1.0) mul) (* (- 1.0) mul17)) (- 2.0)))\n(assert (<= (+ rem (* (- 1.0) mul17)) (- 1.0)))\n(assert (<= (+ (* (- 1.0) rem) (* (- 1.0) mul17)) (- 3.0)))\n(assert (<= (+ (* (- 1.0) mul8) (* (- 1.0) mul17)) (- 2.0)))\n(assert (<= (+ v.0 (* (- 1.0) mul17)) (- 1.0)))\n(assert (<= (+ (* (- 1.0) v.0) (* (- 1.0) mul17)) (- 3.0)))\n(assert (<= (+ r.0 (* (- 1.0) mul17)) (- 2.0)))\n(assert (<= (+ (* (- 1.0) r.0) (* (- 1.0) mul17)) (- 2.0)))\n(assert (<= (+ (* (- 1.0) add10) (* (- 1.0) mul17)) (- 3.0)))\n(assert (<= (+ (* (- 1.0) mul12) (* (- 1.0) mul17)) (- 2.0)))\n(assert (<= (+ (* (- 1.0) mul13) (* (- 1.0) mul17)) (- 3.0)))\n(assert (>= mul17 2.0))\n(assert (<= (+ mul11 (* (- 1.0) add18)) 0.0))\n(assert (<= (+ sub16 (* (- 1.0) add18)) (- 2.0)))\n(assert (<= (+ (* (- 1.0) mul11) add18) 0.0))",
+            "dom": "oct",
+            "vars": [
+                "mul17",
+                "mul7",
+                "mul",
+                "add18",
+                "mul13",
+                "sub16",
+                "u.0",
+                "v.0",
+                "sub14",
+                "rem",
+                "sub",
+                "mul12",
+                "r.0",
+                "mul11",
+                "add",
+                "mul8",
+                "sub9",
+                "conv2",
+                "conv",
+                "add10"
+            ],
+            "len": 109
+        },
+        {
+            "str": "T",
+            "smt": "(assert true)",
+            "dom": "oct",
+            "vars": {},
+            "len": 0
+        }
+    ],
+    "timed_out": false
+}

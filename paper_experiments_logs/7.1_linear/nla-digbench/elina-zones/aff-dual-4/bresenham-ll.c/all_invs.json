@@ -1,0 +1,58 @@
+{
+    "all_invs": [
+        {
+            "str": "-call1+conv <= 0;call1-conv <= 0;-call+conv2 <= 0;-call+y.0 <= 0;-call+x.0 <= 0;-call <= 0;call-conv2 <= 0;-conv2+y.0 <= 0;-conv2+x.0 <= 0;-conv2 <= 0;-y.0 <= 0;y.0-x.0 <= 0;-x.0 <= 0;-tmp+tmp1 <= 0;tmp-tmp1 <= 0",
+            "smt": "(assert (<= (+ (* (- 1.0) call1) conv) 0.0))\n(assert (<= (+ call1 (* (- 1.0) conv)) 0.0))\n(assert (<= (+ (* (- 1.0) call) conv2) 0.0))\n(assert (<= (+ (* (- 1.0) call) y.0) 0.0))\n(assert (<= (+ (* (- 1.0) call) x.0) 0.0))\n(assert (>= call 0.0))\n(assert (<= (+ call (* (- 1.0) conv2)) 0.0))\n(assert (<= (+ (* (- 1.0) conv2) y.0) 0.0))\n(assert (<= (+ (* (- 1.0) conv2) x.0) 0.0))\n(assert (>= conv2 0.0))\n(assert (>= y.0 0.0))\n(assert (<= (+ y.0 (* (- 1.0) x.0)) 0.0))\n(assert (>= x.0 0.0))\n(assert (<= (+ (* (- 1.0) tmp) tmp1) 0.0))\n(assert (<= (+ tmp (* (- 1.0) tmp1)) 0.0))",
+            "dom": "elina-zones",
+            "vars": [
+                "conv2",
+                "call",
+                "y.0",
+                "call1",
+                "x.0",
+                "tmp",
+                "tmp1",
+                "conv"
+            ],
+            "len": 15
+        },
+        {
+            "str": "-call+conv2 <= 0;call-conv2 <= 0;-y.0 <= 0;y.0-x.0 <= 0;-x.0 <= 0;-call1+conv <= 0;call1-conv <= 0",
+            "smt": "(assert (<= (+ (* (- 1.0) call) conv2) 0.0))\n(assert (<= (+ call (* (- 1.0) conv2)) 0.0))\n(assert (>= y.0 0.0))\n(assert (<= (+ y.0 (* (- 1.0) x.0)) 0.0))\n(assert (>= x.0 0.0))\n(assert (<= (+ (* (- 1.0) call1) conv) 0.0))\n(assert (<= (+ call1 (* (- 1.0) conv)) 0.0))",
+            "dom": "elina-zones",
+            "vars": [
+                "conv2",
+                "call",
+                "y.0",
+                "call1",
+                "x.0",
+                "conv"
+            ],
+            "len": 7
+        },
+        {
+            "str": "-call1+conv <= 0;call1-conv <= 0;-call+conv2 <= 0;call-conv2 <= 0;-y.0 <= 0;call-x.0 <= -1;conv2-x.0 <= -1;y.0-x.0 <= 0;-x.0 <= 0;-tmp+tmp1 <= 0;tmp-tmp1 <= 0",
+            "smt": "(assert (<= (+ (* (- 1.0) call1) conv) 0.0))\n(assert (<= (+ call1 (* (- 1.0) conv)) 0.0))\n(assert (<= (+ (* (- 1.0) call) conv2) 0.0))\n(assert (<= (+ call (* (- 1.0) conv2)) 0.0))\n(assert (>= y.0 0.0))\n(assert (<= (+ call (* (- 1.0) x.0)) (- 1.0)))\n(assert (<= (+ conv2 (* (- 1.0) x.0)) (- 1.0)))\n(assert (<= (+ y.0 (* (- 1.0) x.0)) 0.0))\n(assert (>= x.0 0.0))\n(assert (<= (+ (* (- 1.0) tmp) tmp1) 0.0))\n(assert (<= (+ tmp (* (- 1.0) tmp1)) 0.0))",
+            "dom": "elina-zones",
+            "vars": [
+                "conv2",
+                "call",
+                "y.0",
+                "call1",
+                "x.0",
+                "tmp",
+                "tmp1",
+                "conv"
+            ],
+            "len": 11
+        },
+        {
+            "str": "T",
+            "smt": "(assert true)",
+            "dom": "elina-zones",
+            "vars": {},
+            "len": 0
+        }
+    ],
+    "timed_out": false
+}

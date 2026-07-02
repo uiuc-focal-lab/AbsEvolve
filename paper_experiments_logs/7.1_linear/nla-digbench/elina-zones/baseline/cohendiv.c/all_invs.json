@@ -1,0 +1,102 @@
+{
+    "all_invs": [
+        {
+            "str": "-call+add <= 0;-call1 <= -1;-q.0+a.0 <= 0;-q.0 <= 0;call1-r.0 <= 0;-r.0+b.1 <= 0;-r.0+mul11 <= 0;-r.0 <= -1;-a.0 <= 0;-b.0+mul <= 0;-b.0 <= 0;b.0-mul <= 0;-mul <= 0;q.0-mul4 <= 0;a.0-mul4 <= 0;-mul4 <= 0;call-add <= 0;-a.1 <= -1;call1-b.1 <= 0;-b.1+mul11 <= 0;-b.1 <= -1;call1-mul11 <= 0;b.1-mul11 <= 0;-mul11 <= -1;call1-mul20 <= -1;r.0-mul20 <= -1;b.1-mul20 <= -1;mul11-mul20 <= -1;-mul20 <= -2",
+            "smt": "(assert (<= (+ (* (- 1.0) call) add) 0.0))\n(assert (>= call1 1.0))\n(assert (<= (+ (* (- 1.0) q.0) a.0) 0.0))\n(assert (>= q.0 0.0))\n(assert (<= (+ call1 (* (- 1.0) r.0)) 0.0))\n(assert (<= (+ (* (- 1.0) r.0) b.1) 0.0))\n(assert (<= (+ (* (- 1.0) r.0) mul11) 0.0))\n(assert (>= r.0 1.0))\n(assert (>= a.0 0.0))\n(assert (<= (+ (* (- 1.0) b.0) mul) 0.0))\n(assert (>= b.0 0.0))\n(assert (<= (+ b.0 (* (- 1.0) mul)) 0.0))\n(assert (>= mul 0.0))\n(assert (<= (+ q.0 (* (- 1.0) mul4)) 0.0))\n(assert (<= (+ a.0 (* (- 1.0) mul4)) 0.0))\n(assert (>= mul4 0.0))\n(assert (<= (+ call (* (- 1.0) add)) 0.0))\n(assert (>= a.1 1.0))\n(assert (<= (+ call1 (* (- 1.0) b.1)) 0.0))\n(assert (<= (+ (* (- 1.0) b.1) mul11) 0.0))\n(assert (>= b.1 1.0))\n(assert (<= (+ call1 (* (- 1.0) mul11)) 0.0))\n(assert (<= (+ b.1 (* (- 1.0) mul11)) 0.0))\n(assert (>= mul11 1.0))\n(assert (<= (+ call1 (* (- 1.0) mul20)) (- 1.0)))\n(assert (<= (+ r.0 (* (- 1.0) mul20)) (- 1.0)))\n(assert (<= (+ b.1 (* (- 1.0) mul20)) (- 1.0)))\n(assert (<= (+ mul11 (* (- 1.0) mul20)) (- 1.0)))\n(assert (>= mul20 2.0))",
+            "dom": "elina-zones",
+            "vars": [
+                "add",
+                "a.0",
+                "mul",
+                "mul4",
+                "call",
+                "mul20",
+                "call1",
+                "q.0",
+                "r.0",
+                "a.1",
+                "b.0",
+                "mul11",
+                "b.1"
+            ],
+            "len": 29
+        },
+        {
+            "str": "-call1 <= -1;-q.0+a.0 <= 0;-q.0 <= 0;-a.0 <= 0;-b.0 <= 0",
+            "smt": "(assert (>= call1 1.0))\n(assert (<= (+ (* (- 1.0) q.0) a.0) 0.0))\n(assert (>= q.0 0.0))\n(assert (>= a.0 0.0))\n(assert (>= b.0 0.0))",
+            "dom": "elina-zones",
+            "vars": [
+                "a.0",
+                "b.0",
+                "call1",
+                "q.0"
+            ],
+            "len": 5
+        },
+        {
+            "str": "-call+add <= 0;-call1 <= -1;-q.0+a.0 <= 0;-q.0 <= 0;call1-r.0 <= 0;-r.0+b.1 <= 0;-r.0 <= -1;-a.0 <= 0;-b.0+mul <= 0;-b.0 <= 0;b.0-mul <= 0;-mul <= 0;q.0-mul4 <= 0;a.0-mul4 <= 0;-mul4 <= 0;call-add <= 0;-a.1 <= -1;call1-b.1 <= 0;-b.1 <= -1",
+            "smt": "(assert (<= (+ (* (- 1.0) call) add) 0.0))\n(assert (>= call1 1.0))\n(assert (<= (+ (* (- 1.0) q.0) a.0) 0.0))\n(assert (>= q.0 0.0))\n(assert (<= (+ call1 (* (- 1.0) r.0)) 0.0))\n(assert (<= (+ (* (- 1.0) r.0) b.1) 0.0))\n(assert (>= r.0 1.0))\n(assert (>= a.0 0.0))\n(assert (<= (+ (* (- 1.0) b.0) mul) 0.0))\n(assert (>= b.0 0.0))\n(assert (<= (+ b.0 (* (- 1.0) mul)) 0.0))\n(assert (>= mul 0.0))\n(assert (<= (+ q.0 (* (- 1.0) mul4)) 0.0))\n(assert (<= (+ a.0 (* (- 1.0) mul4)) 0.0))\n(assert (>= mul4 0.0))\n(assert (<= (+ call (* (- 1.0) add)) 0.0))\n(assert (>= a.1 1.0))\n(assert (<= (+ call1 (* (- 1.0) b.1)) 0.0))\n(assert (>= b.1 1.0))",
+            "dom": "elina-zones",
+            "vars": [
+                "add",
+                "a.0",
+                "mul",
+                "mul4",
+                "call",
+                "call1",
+                "q.0",
+                "r.0",
+                "a.1",
+                "b.0",
+                "b.1"
+            ],
+            "len": 19
+        },
+        {
+            "str": "-call+add <= 0;-call1+r.0 <= -1;-call1 <= -1;-q.0+a.0 <= 0;-q.0 <= 0;-a.0 <= 0;-b.0+mul <= 0;-b.0 <= 0;b.0-mul <= 0;-mul <= 0;q.0-mul4 <= 0;a.0-mul4 <= 0;-mul4 <= 0;call-add <= 0",
+            "smt": "(assert (<= (+ (* (- 1.0) call) add) 0.0))\n(assert (<= (+ (* (- 1.0) call1) r.0) (- 1.0)))\n(assert (>= call1 1.0))\n(assert (<= (+ (* (- 1.0) q.0) a.0) 0.0))\n(assert (>= q.0 0.0))\n(assert (>= a.0 0.0))\n(assert (<= (+ (* (- 1.0) b.0) mul) 0.0))\n(assert (>= b.0 0.0))\n(assert (<= (+ b.0 (* (- 1.0) mul)) 0.0))\n(assert (>= mul 0.0))\n(assert (<= (+ q.0 (* (- 1.0) mul4)) 0.0))\n(assert (<= (+ a.0 (* (- 1.0) mul4)) 0.0))\n(assert (>= mul4 0.0))\n(assert (<= (+ call (* (- 1.0) add)) 0.0))",
+            "dom": "elina-zones",
+            "vars": [
+                "add",
+                "a.0",
+                "mul",
+                "mul4",
+                "call",
+                "call1",
+                "q.0",
+                "r.0",
+                "b.0"
+            ],
+            "len": 14
+        },
+        {
+            "str": "-call+add <= 0;-call1 <= -1;-q.0+a.0 <= 0;-q.0 <= 0;call1-r.0 <= -1;-r.0+b.1 <= -1;-r.0+mul11 <= -1;-r.0+mul20 <= 0;-r.0 <= -2;-a.0 <= 0;-b.0+mul <= 0;-b.0 <= 0;b.0-mul <= 0;-mul <= 0;q.0-mul4 <= 0;a.0-mul4 <= 0;-mul4 <= 0;call-add <= 0;-a.1 <= -1;call1-b.1 <= 0;-b.1+mul11 <= 0;-b.1 <= -1;call1-mul11 <= 0;b.1-mul11 <= 0;-mul11 <= -1;call1-mul20 <= -1;b.1-mul20 <= -1;mul11-mul20 <= -1;-mul20 <= -2",
+            "smt": "(assert (<= (+ (* (- 1.0) call) add) 0.0))\n(assert (>= call1 1.0))\n(assert (<= (+ (* (- 1.0) q.0) a.0) 0.0))\n(assert (>= q.0 0.0))\n(assert (<= (+ call1 (* (- 1.0) r.0)) (- 1.0)))\n(assert (<= (+ (* (- 1.0) r.0) b.1) (- 1.0)))\n(assert (<= (+ (* (- 1.0) r.0) mul11) (- 1.0)))\n(assert (<= (+ (* (- 1.0) r.0) mul20) 0.0))\n(assert (>= r.0 2.0))\n(assert (>= a.0 0.0))\n(assert (<= (+ (* (- 1.0) b.0) mul) 0.0))\n(assert (>= b.0 0.0))\n(assert (<= (+ b.0 (* (- 1.0) mul)) 0.0))\n(assert (>= mul 0.0))\n(assert (<= (+ q.0 (* (- 1.0) mul4)) 0.0))\n(assert (<= (+ a.0 (* (- 1.0) mul4)) 0.0))\n(assert (>= mul4 0.0))\n(assert (<= (+ call (* (- 1.0) add)) 0.0))\n(assert (>= a.1 1.0))\n(assert (<= (+ call1 (* (- 1.0) b.1)) 0.0))\n(assert (<= (+ (* (- 1.0) b.1) mul11) 0.0))\n(assert (>= b.1 1.0))\n(assert (<= (+ call1 (* (- 1.0) mul11)) 0.0))\n(assert (<= (+ b.1 (* (- 1.0) mul11)) 0.0))\n(assert (>= mul11 1.0))\n(assert (<= (+ call1 (* (- 1.0) mul20)) (- 1.0)))\n(assert (<= (+ b.1 (* (- 1.0) mul20)) (- 1.0)))\n(assert (<= (+ mul11 (* (- 1.0) mul20)) (- 1.0)))\n(assert (>= mul20 2.0))",
+            "dom": "elina-zones",
+            "vars": [
+                "add",
+                "a.0",
+                "mul",
+                "mul4",
+                "call",
+                "mul20",
+                "call1",
+                "q.0",
+                "r.0",
+                "a.1",
+                "b.0",
+                "mul11",
+                "b.1"
+            ],
+            "len": 29
+        },
+        {
+            "str": "T",
+            "smt": "(assert true)",
+            "dom": "elina-zones",
+            "vars": {},
+            "len": 0
+        }
+    ],
+    "timed_out": false
+}

@@ -1,0 +1,87 @@
+{
+    "all_invs": [
+        {
+            "str": "-36*n.0-mul24.neg = 36;12*y.0-mul21-mul24.neg = 12;6*z.0+mul24.neg = 0;6*mul+mul24.neg = -36;6*add+mul24.neg = 0;12*mul1+mul24.neg = -36;12*mul23+mul24.neg = 0;12*add4-mul21-mul24.neg = 0;-12*add5+mul21+mul24.neg = -12;-18*mul9-mul13.neg = 0;-18*x.0-mul13.neg = 0;3*mul12+3*mul13.neg-3*mul21-4*mul24.neg = 54;3*sub-3*mul21-4*mul24.neg = 54;mul14.neg+mul21+mul24.neg = -12;3*sub15-mul24.neg = 18;-3*mul16-mul24.neg = 0;-add17 = -6;sub23+mul24.neg = -12;-sub25 = 12;-6*mul21-11*mul24.neg <= 186;-6*mul21-mul24.neg <= 6;-6*mul21-13*mul24.neg <= 258;-6*mul21-23*mul24.neg <= 798;-mul21 <= 0;-6*mul21-25*mul24.neg <= 942;-6*mul21+mul24.neg <= 6;-6*mul21-35*mul24.neg <= 1842;-mul8 <= 0;-6*mul21-37*mul24.neg <= 2058;-6*mul21-49*mul24.neg <= 3606;-36*mul8+mul24.neg <= 0;-6*mul21-47*mul24.neg <= 3318;-36*mul8-mul24.neg <= 72;-mul21-6*mul24.neg <= 324;-mul21-4*mul24.neg <= 144;-mul21-8*mul24.neg <= 576;-mul21-2*mul24.neg <= 36;-36*call-mul24.neg <= 36",
+            "smt": "(assert (= (+ (* (- 36.0) n.0) (* (- 1.0) mul24.neg)) 36.0))\n(assert (= (+ (* 12.0 y.0) (* (- 1.0) mul21) (* (- 1.0) mul24.neg)) 12.0))\n(assert (= (+ (* 6.0 z.0) mul24.neg) 0.0))\n(assert (= (+ (* 6.0 mul) mul24.neg) (- 36.0)))\n(assert (= (+ (* 6.0 add) mul24.neg) 0.0))\n(assert (= (+ (* 12.0 mul1) mul24.neg) (- 36.0)))\n(assert (= (+ (* 12.0 mul23) mul24.neg) 0.0))\n(assert (= (+ (* 12.0 add4) (* (- 1.0) mul21) (* (- 1.0) mul24.neg)) 0.0))\n(assert (= (+ (* (- 12.0) add5) mul21 mul24.neg) (- 12.0)))\n(assert (= (+ (* (- 18.0) mul9) (* (- 1.0) mul13.neg)) 0.0))\n(assert (= (+ (* (- 18.0) x.0) (* (- 1.0) mul13.neg)) 0.0))\n(assert (= (+ (* 3.0 mul12) (* 3.0 mul13.neg) (* (- 3.0) mul21) (* (- 4.0) mul24.neg))\n   54.0))\n(assert (= (+ (* 3.0 sub) (* (- 3.0) mul21) (* (- 4.0) mul24.neg)) 54.0))\n(assert (= (+ mul14.neg mul21 mul24.neg) (- 12.0)))\n(assert (= (+ (* 3.0 sub15) (* (- 1.0) mul24.neg)) 18.0))\n(assert (= (+ (* (- 3.0) mul16) (* (- 1.0) mul24.neg)) 0.0))\n(assert (= add17 6.0))\n(assert (= (+ sub23 mul24.neg) (- 12.0)))\n(assert (= sub25 (- 12.0)))\n(assert (<= (+ (* (- 6.0) mul21) (* (- 11.0) mul24.neg)) 186.0))\n(assert (<= (+ (* (- 6.0) mul21) (* (- 1.0) mul24.neg)) 6.0))\n(assert (<= (+ (* (- 6.0) mul21) (* (- 13.0) mul24.neg)) 258.0))\n(assert (<= (+ (* (- 6.0) mul21) (* (- 23.0) mul24.neg)) 798.0))\n(assert (>= mul21 0.0))\n(assert (<= (+ (* (- 6.0) mul21) (* (- 25.0) mul24.neg)) 942.0))\n(assert (<= (+ (* (- 6.0) mul21) mul24.neg) 6.0))\n(assert (<= (+ (* (- 6.0) mul21) (* (- 35.0) mul24.neg)) 1842.0))\n(assert (>= mul8 0.0))\n(assert (<= (+ (* (- 6.0) mul21) (* (- 37.0) mul24.neg)) 2058.0))\n(assert (<= (+ (* (- 6.0) mul21) (* (- 49.0) mul24.neg)) 3606.0))\n(assert (<= (+ (* (- 36.0) mul8) mul24.neg) 0.0))\n(assert (<= (+ (* (- 6.0) mul21) (* (- 47.0) mul24.neg)) 3318.0))\n(assert (<= (+ (* (- 36.0) mul8) (* (- 1.0) mul24.neg)) 72.0))\n(assert (<= (+ (* (- 1.0) mul21) (* (- 6.0) mul24.neg)) 324.0))\n(assert (<= (+ (* (- 1.0) mul21) (* (- 4.0) mul24.neg)) 144.0))\n(assert (<= (+ (* (- 1.0) mul21) (* (- 8.0) mul24.neg)) 576.0))\n(assert (<= (+ (* (- 1.0) mul21) (* (- 2.0) mul24.neg)) 36.0))\n(assert (<= (+ (* (- 36.0) call) (* (- 1.0) mul24.neg)) 36.0))",
+            "dom": "pk",
+            "vars": [
+                "mul13.neg",
+                "mul",
+                "mul9",
+                "mul23",
+                "sub23",
+                "sub15",
+                "mul24.neg",
+                "y.0",
+                "sub25",
+                "sub",
+                "mul1",
+                "add4",
+                "mul12",
+                "x.0",
+                "mul16",
+                "mul21",
+                "mul14.neg",
+                "call",
+                "add17",
+                "add",
+                "mul8",
+                "z.0",
+                "n.0",
+                "add5"
+            ],
+            "len": 38
+        },
+        {
+            "str": "-6*n.0+z.0 = 6;30*n.0-12*y.0 <= -11;3*n.0-y.0 <= -1;42*n.0-12*y.0 <= -11;102*n.0-12*y.0 <= 19;9*n.0-y.0 <= 2;114*n.0-12*y.0 <= 31;174*n.0-12*y.0 <= 121;15*n.0-y.0 <= 11;186*n.0-12*y.0 <= 145;246*n.0-12*y.0 <= 295;21*n.0-y.0 <= 26;258*n.0-12*y.0 <= 331",
+            "smt": "(assert (= (+ (* (- 6.0) n.0) z.0) 6.0))\n(assert (<= (+ (* 30.0 n.0) (* (- 12.0) y.0)) (- 11.0)))\n(assert (<= (+ (* 3.0 n.0) (* (- 1.0) y.0)) (- 1.0)))\n(assert (<= (+ (* 42.0 n.0) (* (- 12.0) y.0)) (- 11.0)))\n(assert (<= (+ (* 102.0 n.0) (* (- 12.0) y.0)) 19.0))\n(assert (<= (+ (* 9.0 n.0) (* (- 1.0) y.0)) 2.0))\n(assert (<= (+ (* 114.0 n.0) (* (- 12.0) y.0)) 31.0))\n(assert (<= (+ (* 174.0 n.0) (* (- 12.0) y.0)) 121.0))\n(assert (<= (+ (* 15.0 n.0) (* (- 1.0) y.0)) 11.0))\n(assert (<= (+ (* 186.0 n.0) (* (- 12.0) y.0)) 145.0))\n(assert (<= (+ (* 246.0 n.0) (* (- 12.0) y.0)) 295.0))\n(assert (<= (+ (* 21.0 n.0) (* (- 1.0) y.0)) 26.0))\n(assert (<= (+ (* 258.0 n.0) (* (- 12.0) y.0)) 331.0))",
+            "dom": "pk",
+            "vars": [
+                "n.0",
+                "y.0",
+                "z.0"
+            ],
+            "len": 13
+        },
+        {
+            "str": "-36*n.0-mul24.neg = 36;12*y.0-mul21-mul24.neg = 12;6*z.0+mul24.neg = 0;6*mul+mul24.neg = -36;6*add+mul24.neg = 0;12*mul1+mul24.neg = -36;12*mul23+mul24.neg = 0;12*add4-mul21-mul24.neg = 0;-12*add5+mul21+mul24.neg = -12;-18*mul9-mul13.neg = 0;-18*x.0-mul13.neg = 0;3*mul12+3*mul13.neg-3*mul21-4*mul24.neg = 54;3*sub-3*mul21-4*mul24.neg = 54;mul14.neg+mul21+mul24.neg = -12;3*sub15-mul24.neg = 18;-3*mul16-mul24.neg = 0;-add17 = -6;sub23+mul24.neg = -12;-sub25 = 12;-6*mul21-11*mul24.neg <= 186;-6*mul21-mul24.neg <= 6;-6*mul21-13*mul24.neg <= 258;-6*mul21-23*mul24.neg <= 798;-mul21 <= 0;-6*mul21-25*mul24.neg <= 942;-6*mul21+mul24.neg <= 6;-6*mul21-35*mul24.neg <= 1842;-mul8 <= 0;-6*mul21-37*mul24.neg <= 2058;-6*mul21-49*mul24.neg <= 3606;-36*mul8+mul24.neg <= 0;-6*mul21-47*mul24.neg <= 3318;-36*mul8-mul24.neg <= 72;-mul21-6*mul24.neg <= 324;-mul21-4*mul24.neg <= 144;-mul21-8*mul24.neg <= 576;-mul21-2*mul24.neg <= 36;36*call+mul24.neg <= -72",
+            "smt": "(assert (= (+ (* (- 36.0) n.0) (* (- 1.0) mul24.neg)) 36.0))\n(assert (= (+ (* 12.0 y.0) (* (- 1.0) mul21) (* (- 1.0) mul24.neg)) 12.0))\n(assert (= (+ (* 6.0 z.0) mul24.neg) 0.0))\n(assert (= (+ (* 6.0 mul) mul24.neg) (- 36.0)))\n(assert (= (+ (* 6.0 add) mul24.neg) 0.0))\n(assert (= (+ (* 12.0 mul1) mul24.neg) (- 36.0)))\n(assert (= (+ (* 12.0 mul23) mul24.neg) 0.0))\n(assert (= (+ (* 12.0 add4) (* (- 1.0) mul21) (* (- 1.0) mul24.neg)) 0.0))\n(assert (= (+ (* (- 12.0) add5) mul21 mul24.neg) (- 12.0)))\n(assert (= (+ (* (- 18.0) mul9) (* (- 1.0) mul13.neg)) 0.0))\n(assert (= (+ (* (- 18.0) x.0) (* (- 1.0) mul13.neg)) 0.0))\n(assert (= (+ (* 3.0 mul12) (* 3.0 mul13.neg) (* (- 3.0) mul21) (* (- 4.0) mul24.neg))\n   54.0))\n(assert (= (+ (* 3.0 sub) (* (- 3.0) mul21) (* (- 4.0) mul24.neg)) 54.0))\n(assert (= (+ mul14.neg mul21 mul24.neg) (- 12.0)))\n(assert (= (+ (* 3.0 sub15) (* (- 1.0) mul24.neg)) 18.0))\n(assert (= (+ (* (- 3.0) mul16) (* (- 1.0) mul24.neg)) 0.0))\n(assert (= add17 6.0))\n(assert (= (+ sub23 mul24.neg) (- 12.0)))\n(assert (= sub25 (- 12.0)))\n(assert (<= (+ (* (- 6.0) mul21) (* (- 11.0) mul24.neg)) 186.0))\n(assert (<= (+ (* (- 6.0) mul21) (* (- 1.0) mul24.neg)) 6.0))\n(assert (<= (+ (* (- 6.0) mul21) (* (- 13.0) mul24.neg)) 258.0))\n(assert (<= (+ (* (- 6.0) mul21) (* (- 23.0) mul24.neg)) 798.0))\n(assert (>= mul21 0.0))\n(assert (<= (+ (* (- 6.0) mul21) (* (- 25.0) mul24.neg)) 942.0))\n(assert (<= (+ (* (- 6.0) mul21) mul24.neg) 6.0))\n(assert (<= (+ (* (- 6.0) mul21) (* (- 35.0) mul24.neg)) 1842.0))\n(assert (>= mul8 0.0))\n(assert (<= (+ (* (- 6.0) mul21) (* (- 37.0) mul24.neg)) 2058.0))\n(assert (<= (+ (* (- 6.0) mul21) (* (- 49.0) mul24.neg)) 3606.0))\n(assert (<= (+ (* (- 36.0) mul8) mul24.neg) 0.0))\n(assert (<= (+ (* (- 6.0) mul21) (* (- 47.0) mul24.neg)) 3318.0))\n(assert (<= (+ (* (- 36.0) mul8) (* (- 1.0) mul24.neg)) 72.0))\n(assert (<= (+ (* (- 1.0) mul21) (* (- 6.0) mul24.neg)) 324.0))\n(assert (<= (+ (* (- 1.0) mul21) (* (- 4.0) mul24.neg)) 144.0))\n(assert (<= (+ (* (- 1.0) mul21) (* (- 8.0) mul24.neg)) 576.0))\n(assert (<= (+ (* (- 1.0) mul21) (* (- 2.0) mul24.neg)) 36.0))\n(assert (<= (+ (* 36.0 call) mul24.neg) (- 72.0)))",
+            "dom": "pk",
+            "vars": [
+                "mul13.neg",
+                "mul",
+                "mul9",
+                "mul23",
+                "sub23",
+                "sub15",
+                "mul24.neg",
+                "y.0",
+                "sub25",
+                "sub",
+                "mul1",
+                "add4",
+                "mul12",
+                "x.0",
+                "mul16",
+                "mul21",
+                "mul14.neg",
+                "call",
+                "add17",
+                "add",
+                "mul8",
+                "z.0",
+                "n.0",
+                "add5"
+            ],
+            "len": 38
+        },
+        {
+            "str": "T",
+            "smt": "(assert true)",
+            "dom": "pk",
+            "vars": {},
+            "len": 0
+        }
+    ],
+    "timed_out": false
+}

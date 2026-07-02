@@ -1,0 +1,54 @@
+{
+    "all_invs": [
+        {
+            "str": "-call+y3.0 <= 0;-call+mul <= 0;-call+add <= 0;-call+add4 <= 0;-call <= -1;-y1.0 <= 0;-y2.0 <= 0;-y3.0 <= -1;mul-add <= 0;call-add4 <= 0;y3.0-add4 <= 0;mul-add4 <= 0;add-add4 <= 0;-add4 <= -1",
+            "smt": "(assert (<= (+ (* (- 1.0) call) y3.0) 0.0))\n(assert (<= (+ (* (- 1.0) call) mul) 0.0))\n(assert (<= (+ (* (- 1.0) call) add) 0.0))\n(assert (<= (+ (* (- 1.0) call) add4) 0.0))\n(assert (>= call 1.0))\n(assert (>= y1.0 0.0))\n(assert (>= y2.0 0.0))\n(assert (>= y3.0 1.0))\n(assert (<= (+ mul (* (- 1.0) add)) 0.0))\n(assert (<= (+ call (* (- 1.0) add4)) 0.0))\n(assert (<= (+ y3.0 (* (- 1.0) add4)) 0.0))\n(assert (<= (+ mul (* (- 1.0) add4)) 0.0))\n(assert (<= (+ add (* (- 1.0) add4)) 0.0))\n(assert (>= add4 1.0))",
+            "dom": "elina-zones",
+            "vars": [
+                "y2.0",
+                "y3.0",
+                "y1.0",
+                "add",
+                "call",
+                "add4",
+                "mul"
+            ],
+            "len": 14
+        },
+        {
+            "str": "-call+y3.0 <= 0;-call <= 0;-y1.0 <= 0;-y2.0 <= 0;-y3.0 <= 0",
+            "smt": "(assert (<= (+ (* (- 1.0) call) y3.0) 0.0))\n(assert (>= call 0.0))\n(assert (>= y1.0 0.0))\n(assert (>= y2.0 0.0))\n(assert (>= y3.0 0.0))",
+            "dom": "elina-zones",
+            "vars": [
+                "y2.0",
+                "call",
+                "y3.0",
+                "y1.0"
+            ],
+            "len": 5
+        },
+        {
+            "str": "-call+y3.0 <= 0;-call+mul <= 0;-call+add <= 0;-call+add4 <= 0;-call <= 0;-y1.0+y3.0 <= 0;-y1.0 <= 0;-y2.0+y3.0 <= 0;-y2.0 <= 0;-y3.0 <= 0;y3.0 <= 0;mul-add <= 0;call-add4 <= 0;y3.0-add4 <= 0;mul-add4 <= 0;add-add4 <= 0;-add4 <= 0",
+            "smt": "(assert (<= (+ (* (- 1.0) call) y3.0) 0.0))\n(assert (<= (+ (* (- 1.0) call) mul) 0.0))\n(assert (<= (+ (* (- 1.0) call) add) 0.0))\n(assert (<= (+ (* (- 1.0) call) add4) 0.0))\n(assert (>= call 0.0))\n(assert (<= (+ (* (- 1.0) y1.0) y3.0) 0.0))\n(assert (>= y1.0 0.0))\n(assert (<= (+ (* (- 1.0) y2.0) y3.0) 0.0))\n(assert (>= y2.0 0.0))\n(assert (>= y3.0 0.0))\n(assert (<= y3.0 0.0))\n(assert (<= (+ mul (* (- 1.0) add)) 0.0))\n(assert (<= (+ call (* (- 1.0) add4)) 0.0))\n(assert (<= (+ y3.0 (* (- 1.0) add4)) 0.0))\n(assert (<= (+ mul (* (- 1.0) add4)) 0.0))\n(assert (<= (+ add (* (- 1.0) add4)) 0.0))\n(assert (>= add4 0.0))",
+            "dom": "elina-zones",
+            "vars": [
+                "y2.0",
+                "y3.0",
+                "y1.0",
+                "add",
+                "call",
+                "add4",
+                "mul"
+            ],
+            "len": 17
+        },
+        {
+            "str": "T",
+            "smt": "(assert true)",
+            "dom": "elina-zones",
+            "vars": {},
+            "len": 0
+        }
+    ],
+    "timed_out": false
+}

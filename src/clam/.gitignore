@@ -1,0 +1,11 @@
+/build/
+/debug/
+/ext/
+
+*/__pycache__
+*.vscode/
+
+# Folders and files made during the build process.
+llvm-seahorn/
+sea-dsa/
+tests/clam_config.py

@@ -1,0 +1,7 @@
+{
+  "all_checks": {
+    "safe": 50,
+    "warning": 135,
+    "error": 0
+  }
+}

@@ -1,0 +1,15 @@
+digraph "CFG for 'main' function" {
+	label="CFG for 'main' function";
+	Node0x5ce496f4a590 [shape=record,label="{entry:\l havoc(call) /* __VERIFIER_nondet_int(...)*/\l havoc(call1) /* __VERIFIER_nondet_int(...)*/\l cmp = (-call &le; 0)\l assume(cmp)\l cmp2 = (call1 &ne; 0)\l assume(cmp2)\l y1.0 = 0\l y2.0 = 0\l y3.0 = call\l}"];
+	Node0x5ce496f4a590 -> Node0x5ce496f78d30;
+	Node0x5ce496f78d30 [shape=record,label="{while.body:\l mul = y1.0*call1\l [[add = mul+y2.0; add4 = add+y3.0; ]]\l cmp5 = (-call+add4 = 0)\l assert(cmp5)   /* loc(file=data/sv-benchmarks-processed/nla-digbench/mannadiv.c line=25 col=9) id=1 */\l}"];
+	Node0x5ce496f78d30 -> Node0x5ce496f7ceb0;
+	Node0x5ce496f78d30 -> Node0x5ce496f7d210;
+	Node0x5ce496f7d210 [shape=record,label="{__@bb_6:\l assume(y3.0 &ne; 0)\l}"];
+	Node0x5ce496f7d210 -> Node0x5ce496f78df0;
+	Node0x5ce496f78df0 [shape=record,label="{if.end:\l [[add9 = y2.0+1; ]]\l cmp10 = (-call1+add9 = 0)\l zext cmp10:1 to add13:32\l [[y1.1 = y1.0+add13; ]]\l y2.1 = ite(-call1+add9 = 0,0,add9)\l [[y3.1 = y3.0+-1; ]]\l y1.0 = y1.1\l y2.0 = y2.1\l y3.0 = y3.1\l}"];
+	Node0x5ce496f78df0 -> Node0x5ce496f78d30;
+	Node0x5ce496f7ceb0 [shape=record,label="{__@bb_5:\l assume(y3.0 = 0)\l}"];
+	Node0x5ce496f7ceb0 -> Node0x5ce496f78970;
+	Node0x5ce496f78970 [shape=record,label="{while.end:\l cmp19 = (-call+add = 0)\l assert(cmp19)   /* loc(file=data/sv-benchmarks-processed/nla-digbench/mannadiv.c line=38 col=5) id=2 */\l @V_1 = 0\l}"];
+}

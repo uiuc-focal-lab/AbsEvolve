@@ -1,0 +1,13 @@
+Running with  --crab-dom oct --ojson inv.json --cpu 200 --crab-affine-precision-level affine-full --crab-dom-params 'elina.linear_solver_config=name->dual,num_epochs->5,'
+Running on 10 benchmarks from all_benchmarks_subset.csv in /home/sgomber2/Desktop/Projects/PLDI26_Artifact/artifact_jmd/data/sv-benchmarks//nla-digbench
+freire2.c Time taken: 0.836303883024957  
+divbin.c Time taken: 0.492842291995883  
+sqrt1-ll.c Time taken: 0.6115017050434834  
+egcd2-ll.c Time taken: 21.497926573018542  
+cohendiv-ll.c Time taken: 1.646712265984621  
+sqrt1.c Time taken: 0.7742877619685605  
+prodbin-ll.c Time taken: 0.4476931079952046  
+divbin2.c Time taken: 0.5023054589885287  
+geo1-u.c Time taken: 0.520015465022996  
+bresenham.c Time taken: 0.6425233840183355  
+Total time taken: 27.97211189706111

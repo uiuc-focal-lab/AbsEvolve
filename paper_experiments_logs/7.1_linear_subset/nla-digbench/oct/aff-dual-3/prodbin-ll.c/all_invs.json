@@ -1,0 +1,53 @@
+{
+    "all_invs": [
+        {
+            "str": "-call1 <= -1;call-conv2 <= 0;-call+conv2 <= 0;call1-conv3 <= 0;-call1-conv3 <= -2;-conv3 <= -1;-call1+conv3 <= 0;add-mul6 <= 0;-add+mul6 <= 0",
+            "smt": "(assert (>= call1 1.0))\n(assert (<= (+ call (* (- 1.0) conv2)) 0.0))\n(assert (<= (+ (* (- 1.0) call) conv2) 0.0))\n(assert (<= (+ call1 (* (- 1.0) conv3)) 0.0))\n(assert (<= (+ (* (- 1.0) call1) (* (- 1.0) conv3)) (- 2.0)))\n(assert (>= conv3 1.0))\n(assert (<= (+ (* (- 1.0) call1) conv3) 0.0))\n(assert (<= (+ add (* (- 1.0) mul6)) 0.0))\n(assert (<= (+ (* (- 1.0) add) mul6) 0.0))",
+            "dom": "oct",
+            "vars": [
+                "conv2",
+                "mul6",
+                "add",
+                "conv3",
+                "call1",
+                "call"
+            ],
+            "len": 9
+        },
+        {
+            "str": "-call1 <= -1;call-conv2 <= 0;-call+conv2 <= 0;call1-conv3 <= 0;-call1-conv3 <= -2;-conv3 <= -1;-call1+conv3 <= 0",
+            "smt": "(assert (>= call1 1.0))\n(assert (<= (+ call (* (- 1.0) conv2)) 0.0))\n(assert (<= (+ (* (- 1.0) call) conv2) 0.0))\n(assert (<= (+ call1 (* (- 1.0) conv3)) 0.0))\n(assert (<= (+ (* (- 1.0) call1) (* (- 1.0) conv3)) (- 2.0)))\n(assert (>= conv3 1.0))\n(assert (<= (+ (* (- 1.0) call1) conv3) 0.0))",
+            "dom": "oct",
+            "vars": [
+                "call",
+                "conv3",
+                "conv2",
+                "call1"
+            ],
+            "len": 7
+        },
+        {
+            "str": "-call1 <= -1;call-conv2 <= 0;-call+conv2 <= 0;call1-conv3 <= 0;-call1-conv3 <= -2;-conv3 <= -1;-call1+conv3 <= 0;-call1-y.0 <= -1;-conv3-y.0 <= -1;-y.0 <= 0;-call1+y.0 <= -1;-conv3+y.0 <= -1;y.0 <= 0;add-mul6 <= 0;-add+mul6 <= 0",
+            "smt": "(assert (>= call1 1.0))\n(assert (<= (+ call (* (- 1.0) conv2)) 0.0))\n(assert (<= (+ (* (- 1.0) call) conv2) 0.0))\n(assert (<= (+ call1 (* (- 1.0) conv3)) 0.0))\n(assert (<= (+ (* (- 1.0) call1) (* (- 1.0) conv3)) (- 2.0)))\n(assert (>= conv3 1.0))\n(assert (<= (+ (* (- 1.0) call1) conv3) 0.0))\n(assert (<= (+ (* (- 1.0) call1) (* (- 1.0) y.0)) (- 1.0)))\n(assert (<= (+ (* (- 1.0) conv3) (* (- 1.0) y.0)) (- 1.0)))\n(assert (>= y.0 0.0))\n(assert (<= (+ (* (- 1.0) call1) y.0) (- 1.0)))\n(assert (<= (+ (* (- 1.0) conv3) y.0) (- 1.0)))\n(assert (<= y.0 0.0))\n(assert (<= (+ add (* (- 1.0) mul6)) 0.0))\n(assert (<= (+ (* (- 1.0) add) mul6) 0.0))",
+            "dom": "oct",
+            "vars": [
+                "conv2",
+                "y.0",
+                "mul6",
+                "add",
+                "conv3",
+                "call1",
+                "call"
+            ],
+            "len": 15
+        },
+        {
+            "str": "T",
+            "smt": "(assert true)",
+            "dom": "oct",
+            "vars": {},
+            "len": 0
+        }
+    ],
+    "timed_out": false
+}

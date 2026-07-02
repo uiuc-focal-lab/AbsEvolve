@@ -1,0 +1,112 @@
+{
+    "all_invs": [
+        {
+            "str": "-call+conv2 <= 0;-call+add <= 0;-call1+conv3 <= 0;-call1 <= -1;call-conv2 <= 0;-conv2+add <= 0;-q.0+a.0 <= 0;-q.0 <= 0;call1-r.0 <= 0;-r.0+conv3 <= 0;-r.0+a.1 <= 0;-r.0+b.1 <= 0;-r.0+mul18 <= 0;-r.0 <= -1;-a.0 <= 0;a.0-b.0 <= 0;-b.0+mul <= 0;-b.0 <= 0;call1-conv3 <= 0;-conv3 <= -1;a.0-mul <= 0;b.0-mul <= 0;-mul <= 0;q.0-mul8 <= 0;a.0-mul8 <= 0;-mul8 <= 0;call-add <= 0;conv2-add <= 0;-a.1 <= -1;call1-b.1 <= 0;conv3-b.1 <= 0;a.1-b.1 <= 0;-b.1+mul18 <= 0;-b.1 <= -1;call1-mul18 <= 0;conv3-mul18 <= 0;a.1-mul18 <= 0;b.1-mul18 <= 0;-mul18 <= -1;call1-mul29 <= -1;r.0-mul29 <= -1;conv3-mul29 <= -1;a.1-mul29 <= -1;b.1-mul29 <= -1;mul18-mul29 <= -1;-mul29 <= -2",
+            "smt": "(assert (<= (+ (* (- 1.0) call) conv2) 0.0))\n(assert (<= (+ (* (- 1.0) call) add) 0.0))\n(assert (<= (+ (* (- 1.0) call1) conv3) 0.0))\n(assert (>= call1 1.0))\n(assert (<= (+ call (* (- 1.0) conv2)) 0.0))\n(assert (<= (+ (* (- 1.0) conv2) add) 0.0))\n(assert (<= (+ (* (- 1.0) q.0) a.0) 0.0))\n(assert (>= q.0 0.0))\n(assert (<= (+ call1 (* (- 1.0) r.0)) 0.0))\n(assert (<= (+ (* (- 1.0) r.0) conv3) 0.0))\n(assert (<= (+ (* (- 1.0) r.0) a.1) 0.0))\n(assert (<= (+ (* (- 1.0) r.0) b.1) 0.0))\n(assert (<= (+ (* (- 1.0) r.0) mul18) 0.0))\n(assert (>= r.0 1.0))\n(assert (>= a.0 0.0))\n(assert (<= (+ a.0 (* (- 1.0) b.0)) 0.0))\n(assert (<= (+ (* (- 1.0) b.0) mul) 0.0))\n(assert (>= b.0 0.0))\n(assert (<= (+ call1 (* (- 1.0) conv3)) 0.0))\n(assert (>= conv3 1.0))\n(assert (<= (+ a.0 (* (- 1.0) mul)) 0.0))\n(assert (<= (+ b.0 (* (- 1.0) mul)) 0.0))\n(assert (>= mul 0.0))\n(assert (<= (+ q.0 (* (- 1.0) mul8)) 0.0))\n(assert (<= (+ a.0 (* (- 1.0) mul8)) 0.0))\n(assert (>= mul8 0.0))\n(assert (<= (+ call (* (- 1.0) add)) 0.0))\n(assert (<= (+ conv2 (* (- 1.0) add)) 0.0))\n(assert (>= a.1 1.0))\n(assert (<= (+ call1 (* (- 1.0) b.1)) 0.0))\n(assert (<= (+ conv3 (* (- 1.0) b.1)) 0.0))\n(assert (<= (+ a.1 (* (- 1.0) b.1)) 0.0))\n(assert (<= (+ (* (- 1.0) b.1) mul18) 0.0))\n(assert (>= b.1 1.0))\n(assert (<= (+ call1 (* (- 1.0) mul18)) 0.0))\n(assert (<= (+ conv3 (* (- 1.0) mul18)) 0.0))\n(assert (<= (+ a.1 (* (- 1.0) mul18)) 0.0))\n(assert (<= (+ b.1 (* (- 1.0) mul18)) 0.0))\n(assert (>= mul18 1.0))\n(assert (<= (+ call1 (* (- 1.0) mul29)) (- 1.0)))\n(assert (<= (+ r.0 (* (- 1.0) mul29)) (- 1.0)))\n(assert (<= (+ conv3 (* (- 1.0) mul29)) (- 1.0)))\n(assert (<= (+ a.1 (* (- 1.0) mul29)) (- 1.0)))\n(assert (<= (+ b.1 (* (- 1.0) mul29)) (- 1.0)))\n(assert (<= (+ mul18 (* (- 1.0) mul29)) (- 1.0)))\n(assert (>= mul29 2.0))",
+            "dom": "elina-zones",
+            "vars": [
+                "conv2",
+                "add",
+                "a.0",
+                "mul",
+                "call",
+                "mul18",
+                "call1",
+                "q.0",
+                "r.0",
+                "conv3",
+                "mul29",
+                "mul8",
+                "a.1",
+                "b.0",
+                "b.1"
+            ],
+            "len": 46
+        },
+        {
+            "str": "-call+conv2 <= 0;-call+add <= 0;-call1+conv3 <= 0;-call1 <= -1;call-conv2 <= 0;-conv2+add <= 0;-q.0+a.0 <= 0;-q.0 <= 0;call1-r.0 <= -1;-r.0+conv3 <= -1;-r.0+a.1 <= -1;-r.0+b.1 <= -1;-r.0+mul18 <= -1;-r.0+mul29 <= 0;-r.0 <= -2;-a.0 <= 0;a.0-b.0 <= 0;-b.0+mul <= 0;-b.0 <= 0;call1-conv3 <= 0;-conv3 <= -1;a.0-mul <= 0;b.0-mul <= 0;-mul <= 0;q.0-mul8 <= 0;a.0-mul8 <= 0;-mul8 <= 0;call-add <= 0;conv2-add <= 0;-a.1 <= -1;call1-b.1 <= 0;conv3-b.1 <= 0;a.1-b.1 <= 0;-b.1+mul18 <= 0;-b.1 <= -1;call1-mul18 <= 0;conv3-mul18 <= 0;a.1-mul18 <= 0;b.1-mul18 <= 0;-mul18 <= -1;call1-mul29 <= -1;conv3-mul29 <= -1;a.1-mul29 <= -1;b.1-mul29 <= -1;mul18-mul29 <= -1;-mul29 <= -2",
+            "smt": "(assert (<= (+ (* (- 1.0) call) conv2) 0.0))\n(assert (<= (+ (* (- 1.0) call) add) 0.0))\n(assert (<= (+ (* (- 1.0) call1) conv3) 0.0))\n(assert (>= call1 1.0))\n(assert (<= (+ call (* (- 1.0) conv2)) 0.0))\n(assert (<= (+ (* (- 1.0) conv2) add) 0.0))\n(assert (<= (+ (* (- 1.0) q.0) a.0) 0.0))\n(assert (>= q.0 0.0))\n(assert (<= (+ call1 (* (- 1.0) r.0)) (- 1.0)))\n(assert (<= (+ (* (- 1.0) r.0) conv3) (- 1.0)))\n(assert (<= (+ (* (- 1.0) r.0) a.1) (- 1.0)))\n(assert (<= (+ (* (- 1.0) r.0) b.1) (- 1.0)))\n(assert (<= (+ (* (- 1.0) r.0) mul18) (- 1.0)))\n(assert (<= (+ (* (- 1.0) r.0) mul29) 0.0))\n(assert (>= r.0 2.0))\n(assert (>= a.0 0.0))\n(assert (<= (+ a.0 (* (- 1.0) b.0)) 0.0))\n(assert (<= (+ (* (- 1.0) b.0) mul) 0.0))\n(assert (>= b.0 0.0))\n(assert (<= (+ call1 (* (- 1.0) conv3)) 0.0))\n(assert (>= conv3 1.0))\n(assert (<= (+ a.0 (* (- 1.0) mul)) 0.0))\n(assert (<= (+ b.0 (* (- 1.0) mul)) 0.0))\n(assert (>= mul 0.0))\n(assert (<= (+ q.0 (* (- 1.0) mul8)) 0.0))\n(assert (<= (+ a.0 (* (- 1.0) mul8)) 0.0))\n(assert (>= mul8 0.0))\n(assert (<= (+ call (* (- 1.0) add)) 0.0))\n(assert (<= (+ conv2 (* (- 1.0) add)) 0.0))\n(assert (>= a.1 1.0))\n(assert (<= (+ call1 (* (- 1.0) b.1)) 0.0))\n(assert (<= (+ conv3 (* (- 1.0) b.1)) 0.0))\n(assert (<= (+ a.1 (* (- 1.0) b.1)) 0.0))\n(assert (<= (+ (* (- 1.0) b.1) mul18) 0.0))\n(assert (>= b.1 1.0))\n(assert (<= (+ call1 (* (- 1.0) mul18)) 0.0))\n(assert (<= (+ conv3 (* (- 1.0) mul18)) 0.0))\n(assert (<= (+ a.1 (* (- 1.0) mul18)) 0.0))\n(assert (<= (+ b.1 (* (- 1.0) mul18)) 0.0))\n(assert (>= mul18 1.0))\n(assert (<= (+ call1 (* (- 1.0) mul29)) (- 1.0)))\n(assert (<= (+ conv3 (* (- 1.0) mul29)) (- 1.0)))\n(assert (<= (+ a.1 (* (- 1.0) mul29)) (- 1.0)))\n(assert (<= (+ b.1 (* (- 1.0) mul29)) (- 1.0)))\n(assert (<= (+ mul18 (* (- 1.0) mul29)) (- 1.0)))\n(assert (>= mul29 2.0))",
+            "dom": "elina-zones",
+            "vars": [
+                "conv2",
+                "add",
+                "a.0",
+                "mul",
+                "call",
+                "mul18",
+                "call1",
+                "q.0",
+                "r.0",
+                "conv3",
+                "mul29",
+                "mul8",
+                "a.1",
+                "b.0",
+                "b.1"
+            ],
+            "len": 46
+        },
+        {
+            "str": "-call+conv2 <= 0;-call1 <= -1;call-conv2 <= 0;-q.0+a.0 <= 0;-q.0 <= 0;-a.0 <= 0;a.0-b.0 <= 0;-b.0 <= 0",
+            "smt": "(assert (<= (+ (* (- 1.0) call) conv2) 0.0))\n(assert (>= call1 1.0))\n(assert (<= (+ call (* (- 1.0) conv2)) 0.0))\n(assert (<= (+ (* (- 1.0) q.0) a.0) 0.0))\n(assert (>= q.0 0.0))\n(assert (>= a.0 0.0))\n(assert (<= (+ a.0 (* (- 1.0) b.0)) 0.0))\n(assert (>= b.0 0.0))",
+            "dom": "elina-zones",
+            "vars": [
+                "conv2",
+                "a.0",
+                "call",
+                "call1",
+                "q.0",
+                "b.0"
+            ],
+            "len": 8
+        },
+        {
+            "str": "-call+conv2 <= 0;-call+add <= 0;-call1+r.0 <= -1;-call1+conv3 <= 0;-call1 <= -1;call-conv2 <= 0;-conv2+add <= 0;-q.0+a.0 <= 0;-q.0 <= 0;-a.0 <= 0;a.0-b.0 <= 0;-b.0+mul <= 0;-b.0 <= 0;call1-conv3 <= 0;r.0-conv3 <= -1;-conv3 <= -1;a.0-mul <= 0;b.0-mul <= 0;-mul <= 0;q.0-mul8 <= 0;a.0-mul8 <= 0;-mul8 <= 0;call-add <= 0;conv2-add <= 0",
+            "smt": "(assert (<= (+ (* (- 1.0) call) conv2) 0.0))\n(assert (<= (+ (* (- 1.0) call) add) 0.0))\n(assert (<= (+ (* (- 1.0) call1) r.0) (- 1.0)))\n(assert (<= (+ (* (- 1.0) call1) conv3) 0.0))\n(assert (>= call1 1.0))\n(assert (<= (+ call (* (- 1.0) conv2)) 0.0))\n(assert (<= (+ (* (- 1.0) conv2) add) 0.0))\n(assert (<= (+ (* (- 1.0) q.0) a.0) 0.0))\n(assert (>= q.0 0.0))\n(assert (>= a.0 0.0))\n(assert (<= (+ a.0 (* (- 1.0) b.0)) 0.0))\n(assert (<= (+ (* (- 1.0) b.0) mul) 0.0))\n(assert (>= b.0 0.0))\n(assert (<= (+ call1 (* (- 1.0) conv3)) 0.0))\n(assert (<= (+ r.0 (* (- 1.0) conv3)) (- 1.0)))\n(assert (>= conv3 1.0))\n(assert (<= (+ a.0 (* (- 1.0) mul)) 0.0))\n(assert (<= (+ b.0 (* (- 1.0) mul)) 0.0))\n(assert (>= mul 0.0))\n(assert (<= (+ q.0 (* (- 1.0) mul8)) 0.0))\n(assert (<= (+ a.0 (* (- 1.0) mul8)) 0.0))\n(assert (>= mul8 0.0))\n(assert (<= (+ call (* (- 1.0) add)) 0.0))\n(assert (<= (+ conv2 (* (- 1.0) add)) 0.0))",
+            "dom": "elina-zones",
+            "vars": [
+                "conv2",
+                "add",
+                "a.0",
+                "mul",
+                "call",
+                "call1",
+                "q.0",
+                "r.0",
+                "conv3",
+                "mul8",
+                "b.0"
+            ],
+            "len": 24
+        },
+        {
+            "str": "-call+conv2 <= 0;-call+add <= 0;-call1+conv3 <= 0;-call1 <= -1;call-conv2 <= 0;-conv2+add <= 0;-q.0+a.0 <= 0;-q.0 <= 0;call1-r.0 <= 0;-r.0+conv3 <= 0;-r.0+b.1 <= 0;-r.0 <= -1;-a.0 <= 0;a.0-b.0 <= 0;-b.0+mul <= 0;-b.0 <= 0;call1-conv3 <= 0;-conv3 <= -1;a.0-mul <= 0;b.0-mul <= 0;-mul <= 0;q.0-mul8 <= 0;a.0-mul8 <= 0;-mul8 <= 0;call-add <= 0;conv2-add <= 0;-a.1 <= -1;call1-b.1 <= 0;conv3-b.1 <= 0;-b.1 <= -1",
+            "smt": "(assert (<= (+ (* (- 1.0) call) conv2) 0.0))\n(assert (<= (+ (* (- 1.0) call) add) 0.0))\n(assert (<= (+ (* (- 1.0) call1) conv3) 0.0))\n(assert (>= call1 1.0))\n(assert (<= (+ call (* (- 1.0) conv2)) 0.0))\n(assert (<= (+ (* (- 1.0) conv2) add) 0.0))\n(assert (<= (+ (* (- 1.0) q.0) a.0) 0.0))\n(assert (>= q.0 0.0))\n(assert (<= (+ call1 (* (- 1.0) r.0)) 0.0))\n(assert (<= (+ (* (- 1.0) r.0) conv3) 0.0))\n(assert (<= (+ (* (- 1.0) r.0) b.1) 0.0))\n(assert (>= r.0 1.0))\n(assert (>= a.0 0.0))\n(assert (<= (+ a.0 (* (- 1.0) b.0)) 0.0))\n(assert (<= (+ (* (- 1.0) b.0) mul) 0.0))\n(assert (>= b.0 0.0))\n(assert (<= (+ call1 (* (- 1.0) conv3)) 0.0))\n(assert (>= conv3 1.0))\n(assert (<= (+ a.0 (* (- 1.0) mul)) 0.0))\n(assert (<= (+ b.0 (* (- 1.0) mul)) 0.0))\n(assert (>= mul 0.0))\n(assert (<= (+ q.0 (* (- 1.0) mul8)) 0.0))\n(assert (<= (+ a.0 (* (- 1.0) mul8)) 0.0))\n(assert (>= mul8 0.0))\n(assert (<= (+ call (* (- 1.0) add)) 0.0))\n(assert (<= (+ conv2 (* (- 1.0) add)) 0.0))\n(assert (>= a.1 1.0))\n(assert (<= (+ call1 (* (- 1.0) b.1)) 0.0))\n(assert (<= (+ conv3 (* (- 1.0) b.1)) 0.0))\n(assert (>= b.1 1.0))",
+            "dom": "elina-zones",
+            "vars": [
+                "conv2",
+                "add",
+                "a.0",
+                "mul",
+                "call",
+                "call1",
+                "q.0",
+                "r.0",
+                "conv3",
+                "mul8",
+                "a.1",
+                "b.0",
+                "b.1"
+            ],
+            "len": 30
+        },
+        {
+            "str": "T",
+            "smt": "(assert true)",
+            "dom": "elina-zones",
+            "vars": {},
+            "len": 0
+        }
+    ],
+    "timed_out": false
+}

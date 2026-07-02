@@ -1,0 +1,71 @@
+{
+    "all_invs": [
+        {
+            "str": "-add+mul10 <= 0;add-mul10 <= 0",
+            "smt": "(assert (<= (+ (* (- 1.0) add) mul10) 0.0))\n(assert (<= (+ add (* (- 1.0) mul10)) 0.0))",
+            "dom": "elina-zones",
+            "vars": [
+                "add",
+                "mul10"
+            ],
+            "len": 2
+        },
+        {
+            "str": "-add+mul10 <= 0;add-mul10 <= 0",
+            "smt": "(assert (<= (+ (* (- 1.0) add) mul10) 0.0))\n(assert (<= (+ add (* (- 1.0) mul10)) 0.0))",
+            "dom": "elina-zones",
+            "vars": [
+                "add",
+                "mul10"
+            ],
+            "len": 2
+        },
+        {
+            "str": "-add+mul10 <= 0;add-mul10 <= 0",
+            "smt": "(assert (<= (+ (* (- 1.0) add) mul10) 0.0))\n(assert (<= (+ add (* (- 1.0) mul10)) 0.0))",
+            "dom": "elina-zones",
+            "vars": [
+                "add",
+                "mul10"
+            ],
+            "len": 2
+        },
+        {
+            "str": "-add+mul10 <= 0;add-mul10 <= 0",
+            "smt": "(assert (<= (+ (* (- 1.0) add) mul10) 0.0))\n(assert (<= (+ add (* (- 1.0) mul10)) 0.0))",
+            "dom": "elina-zones",
+            "vars": [
+                "add",
+                "mul10"
+            ],
+            "len": 2
+        },
+        {
+            "str": "T",
+            "smt": "(assert true)",
+            "dom": "elina-zones",
+            "vars": {},
+            "len": 0
+        },
+        {
+            "str": "-x.0+y.0 <= 0;x.0-y.0 <= 0;-add+mul10 <= 0;add-mul10 <= 0",
+            "smt": "(assert (<= (+ (* (- 1.0) x.0) y.0) 0.0))\n(assert (<= (+ x.0 (* (- 1.0) y.0)) 0.0))\n(assert (<= (+ (* (- 1.0) add) mul10) 0.0))\n(assert (<= (+ add (* (- 1.0) mul10)) 0.0))",
+            "dom": "elina-zones",
+            "vars": [
+                "y.0",
+                "add",
+                "x.0",
+                "mul10"
+            ],
+            "len": 4
+        },
+        {
+            "str": "T",
+            "smt": "(assert true)",
+            "dom": "elina-zones",
+            "vars": {},
+            "len": 0
+        }
+    ],
+    "timed_out": false
+}

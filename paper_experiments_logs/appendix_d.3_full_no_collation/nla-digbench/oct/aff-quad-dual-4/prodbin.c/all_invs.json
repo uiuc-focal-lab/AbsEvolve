@@ -1,0 +1,44 @@
+{
+    "all_invs": [
+        {
+            "str": "-conv2 <= -1;add-mul4 <= 0;-add+mul4 <= 0",
+            "smt": "(assert (>= conv2 1.0))\n(assert (<= (+ add (* (- 1.0) mul4)) 0.0))\n(assert (<= (+ (* (- 1.0) add) mul4) 0.0))",
+            "dom": "oct",
+            "vars": [
+                "add",
+                "conv2",
+                "mul4"
+            ],
+            "len": 3
+        },
+        {
+            "str": "-conv2 <= -1",
+            "smt": "(assert (>= conv2 1.0))",
+            "dom": "oct",
+            "vars": [
+                "conv2"
+            ],
+            "len": 1
+        },
+        {
+            "str": "-conv2 <= -1;-conv2-y.0 <= -1;-y.0 <= 0;-conv2+y.0 <= -1;y.0 <= 0;add-mul4 <= 0;-add+mul4 <= 0",
+            "smt": "(assert (>= conv2 1.0))\n(assert (<= (+ (* (- 1.0) conv2) (* (- 1.0) y.0)) (- 1.0)))\n(assert (>= y.0 0.0))\n(assert (<= (+ (* (- 1.0) conv2) y.0) (- 1.0)))\n(assert (<= y.0 0.0))\n(assert (<= (+ add (* (- 1.0) mul4)) 0.0))\n(assert (<= (+ (* (- 1.0) add) mul4) 0.0))",
+            "dom": "oct",
+            "vars": [
+                "y.0",
+                "add",
+                "conv2",
+                "mul4"
+            ],
+            "len": 7
+        },
+        {
+            "str": "T",
+            "smt": "(assert true)",
+            "dom": "oct",
+            "vars": {},
+            "len": 0
+        }
+    ],
+    "timed_out": false
+}

@@ -1,0 +1,59 @@
+{
+    "all_invs": [
+        {
+            "str": "-call+conv4 <= 0;-call1+conv <= 0;-call2+c.0 <= -1;-call2+conv11 <= 0;-call2 <= -2;call1-conv <= 0;call-conv4 <= 0;-c.0 <= -1;-tmp+tmp1 <= 0;tmp-tmp1 <= 0;call2-conv11 <= 0;c.0-conv11 <= -1;-conv11 <= -2",
+            "smt": "(assert (<= (+ (* (- 1.0) call) conv4) 0.0))\n(assert (<= (+ (* (- 1.0) call1) conv) 0.0))\n(assert (<= (+ (* (- 1.0) call2) c.0) (- 1.0)))\n(assert (<= (+ (* (- 1.0) call2) conv11) 0.0))\n(assert (>= call2 2.0))\n(assert (<= (+ call1 (* (- 1.0) conv)) 0.0))\n(assert (<= (+ call (* (- 1.0) conv4)) 0.0))\n(assert (>= c.0 1.0))\n(assert (<= (+ (* (- 1.0) tmp) tmp1) 0.0))\n(assert (<= (+ tmp (* (- 1.0) tmp1)) 0.0))\n(assert (<= (+ call2 (* (- 1.0) conv11)) 0.0))\n(assert (<= (+ c.0 (* (- 1.0) conv11)) (- 1.0)))\n(assert (>= conv11 2.0))",
+            "dom": "elina-zones",
+            "vars": [
+                "conv4",
+                "call2",
+                "call",
+                "conv11",
+                "call1",
+                "tmp",
+                "tmp1",
+                "conv",
+                "c.0"
+            ],
+            "len": 13
+        },
+        {
+            "str": "-call+conv4 <= 0;-call1+conv <= 0;call1-conv <= 0;call-conv4 <= 0;-c.0 <= -1",
+            "smt": "(assert (<= (+ (* (- 1.0) call) conv4) 0.0))\n(assert (<= (+ (* (- 1.0) call1) conv) 0.0))\n(assert (<= (+ call1 (* (- 1.0) conv)) 0.0))\n(assert (<= (+ call (* (- 1.0) conv4)) 0.0))\n(assert (>= c.0 1.0))",
+            "dom": "elina-zones",
+            "vars": [
+                "conv4",
+                "call",
+                "call1",
+                "conv",
+                "c.0"
+            ],
+            "len": 5
+        },
+        {
+            "str": "-call2+conv11 <= 0;call2-conv11 <= 0;-call+conv4 <= 0;-call1+conv <= 0;call1-conv <= 0;call-conv4 <= 0;-c.0 <= -1;-tmp+tmp1 <= 0;tmp-tmp1 <= 0",
+            "smt": "(assert (<= (+ (* (- 1.0) call2) conv11) 0.0))\n(assert (<= (+ call2 (* (- 1.0) conv11)) 0.0))\n(assert (<= (+ (* (- 1.0) call) conv4) 0.0))\n(assert (<= (+ (* (- 1.0) call1) conv) 0.0))\n(assert (<= (+ call1 (* (- 1.0) conv)) 0.0))\n(assert (<= (+ call (* (- 1.0) conv4)) 0.0))\n(assert (>= c.0 1.0))\n(assert (<= (+ (* (- 1.0) tmp) tmp1) 0.0))\n(assert (<= (+ tmp (* (- 1.0) tmp1)) 0.0))",
+            "dom": "elina-zones",
+            "vars": [
+                "conv4",
+                "call2",
+                "call",
+                "conv11",
+                "call1",
+                "tmp",
+                "tmp1",
+                "conv",
+                "c.0"
+            ],
+            "len": 9
+        },
+        {
+            "str": "T",
+            "smt": "(assert true)",
+            "dom": "elina-zones",
+            "vars": {},
+            "len": 0
+        }
+    ],
+    "timed_out": false
+}

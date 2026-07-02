@@ -1,0 +1,15 @@
+digraph "CFG for 'main' function" {
+	label="CFG for 'main' function";
+	Node0x619caf544500 [shape=record,label="{entry:\l havoc(call) /* __VERIFIER_nondet_int(...)*/\l havoc(call1) /* __VERIFIER_nondet_int(...)*/\l x.0 = 1\l y.0 = call\l c.0 = 1\l}"];
+	Node0x619caf544500 -> Node0x619caf572280;
+	Node0x619caf572280 [shape=record,label="{while.body:\l mul = x.0*call\l [[tmp = x.0+y.0; sub2 = mul-tmp; ]]\l cmp = (sub2 = -1)\l assert(cmp)   /* loc(file=data/sv-benchmarks-processed/nla-digbench/geo1.c line=22 col=9) id=1 */\l}"];
+	Node0x619caf572280 -> Node0x619caf572400;
+	Node0x619caf572280 -> Node0x619caf575c60;
+	Node0x619caf575c60 [shape=record,label="{__@bb_6:\l assume(call1-c.0 &le; 0)\l}"];
+	Node0x619caf575c60 -> Node0x619caf571ec0;
+	Node0x619caf571ec0 [shape=record,label="{while.end:\l [[sub9 = call+-1; ]]\l mul10 = x.0*sub9\l [[add11 = mul10+1; ]]\l cmp13 = (-y.0+add11 = 0)\l assert(cmp13)   /* loc(file=data/sv-benchmarks-processed/nla-digbench/geo1.c line=35 col=5) id=2 */\l @V_1 = 0\l}"];
+	Node0x619caf572400 [shape=record,label="{__@bb_5:\l assume(-call1+c.0 &le; -1)\l}"];
+	Node0x619caf572400 -> Node0x619caf572340;
+	Node0x619caf572340 [shape=record,label="{if.end:\l [[add5 = c.0+1; add7 = mul+1; ]]\l mul8 = y.0*call\l x.0 = add7\l y.0 = mul8\l c.0 = add5\l}"];
+	Node0x619caf572340 -> Node0x619caf572280;
+}

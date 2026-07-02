@@ -1,0 +1,78 @@
+{
+    "all_invs": [
+        {
+            "str": "-mul11+sub16 <= -2;-mul11+add18 <= 0;mul11-add18 <= 0;sub16-add18 <= -2;-rem <= -1;rem <= 1;-mul7+add <= 1;mul7-add <= -1;mul7-u.0 <= -1;add-u.0 <= 0;rem-v.0 <= 0;-v.0 <= -1;-mul12+sub14 <= -1;rem-mul13 <= 0;v.0-mul13 <= 0;-mul13 <= -1;rem-mul17 <= -1;v.0-mul17 <= -1;-mul17 <= -2;-conv2+sub <= -1;conv2-sub <= 1;-conv+mul <= -1",
+            "smt": "(assert (<= (+ (* (- 1.0) mul11) sub16) (- 2.0)))\n(assert (<= (+ (* (- 1.0) mul11) add18) 0.0))\n(assert (<= (+ mul11 (* (- 1.0) add18)) 0.0))\n(assert (<= (+ sub16 (* (- 1.0) add18)) (- 2.0)))\n(assert (>= rem 1.0))\n(assert (<= rem 1.0))\n(assert (<= (+ (* (- 1.0) mul7) add) 1.0))\n(assert (<= (+ mul7 (* (- 1.0) add)) (- 1.0)))\n(assert (<= (+ mul7 (* (- 1.0) u.0)) (- 1.0)))\n(assert (<= (+ add (* (- 1.0) u.0)) 0.0))\n(assert (<= (+ rem (* (- 1.0) v.0)) 0.0))\n(assert (>= v.0 1.0))\n(assert (<= (+ (* (- 1.0) mul12) sub14) (- 1.0)))\n(assert (<= (+ rem (* (- 1.0) mul13)) 0.0))\n(assert (<= (+ v.0 (* (- 1.0) mul13)) 0.0))\n(assert (>= mul13 1.0))\n(assert (<= (+ rem (* (- 1.0) mul17)) (- 1.0)))\n(assert (<= (+ v.0 (* (- 1.0) mul17)) (- 1.0)))\n(assert (>= mul17 2.0))\n(assert (<= (+ (* (- 1.0) conv2) sub) (- 1.0)))\n(assert (<= (+ conv2 (* (- 1.0) sub)) 1.0))\n(assert (<= (+ (* (- 1.0) conv) mul) (- 1.0)))",
+            "dom": "elina-zones",
+            "vars": [
+                "u.0",
+                "mul",
+                "mul11",
+                "sub14",
+                "v.0",
+                "add18",
+                "conv2",
+                "sub",
+                "conv",
+                "sub16",
+                "mul17",
+                "rem",
+                "mul12",
+                "mul7",
+                "mul13",
+                "add"
+            ],
+            "len": 22
+        },
+        {
+            "str": "-rem <= -1;rem <= 1;-mul7+add <= 1;mul7-add <= -1;mul7-u.0 <= -1;add-u.0 <= 0;rem-v.0 <= 0;-v.0 <= -1;-conv2+sub <= -1;conv2-sub <= 1;-conv+mul <= -1",
+            "smt": "(assert (>= rem 1.0))\n(assert (<= rem 1.0))\n(assert (<= (+ (* (- 1.0) mul7) add) 1.0))\n(assert (<= (+ mul7 (* (- 1.0) add)) (- 1.0)))\n(assert (<= (+ mul7 (* (- 1.0) u.0)) (- 1.0)))\n(assert (<= (+ add (* (- 1.0) u.0)) 0.0))\n(assert (<= (+ rem (* (- 1.0) v.0)) 0.0))\n(assert (>= v.0 1.0))\n(assert (<= (+ (* (- 1.0) conv2) sub) (- 1.0)))\n(assert (<= (+ conv2 (* (- 1.0) sub)) 1.0))\n(assert (<= (+ (* (- 1.0) conv) mul) (- 1.0)))",
+            "dom": "elina-zones",
+            "vars": [
+                "u.0",
+                "mul",
+                "v.0",
+                "conv2",
+                "sub",
+                "conv",
+                "rem",
+                "mul7",
+                "add"
+            ],
+            "len": 11
+        },
+        {
+            "str": "-conv+mul <= -1;-conv2+sub <= -1;conv2-sub <= 1;-rem <= -1;rem <= 1;-mul7+add <= 1;mul7-add <= -1;mul7-u.0 <= -1;add-u.0 <= 0;rem-v.0 <= 0;-v.0 <= -1;-mul12+sub14 <= -1;rem-mul13 <= 0;v.0-mul13 <= 0;-mul13 <= -1;rem-mul17 <= -1;v.0-mul17 <= -1;-mul17 <= -2;-mul11+sub16 <= -2;-mul11+add18 <= 0;mul11-add18 <= 0;sub16-add18 <= -2;-r.0 <= 0;r.0 <= 0",
+            "smt": "(assert (<= (+ (* (- 1.0) conv) mul) (- 1.0)))\n(assert (<= (+ (* (- 1.0) conv2) sub) (- 1.0)))\n(assert (<= (+ conv2 (* (- 1.0) sub)) 1.0))\n(assert (>= rem 1.0))\n(assert (<= rem 1.0))\n(assert (<= (+ (* (- 1.0) mul7) add) 1.0))\n(assert (<= (+ mul7 (* (- 1.0) add)) (- 1.0)))\n(assert (<= (+ mul7 (* (- 1.0) u.0)) (- 1.0)))\n(assert (<= (+ add (* (- 1.0) u.0)) 0.0))\n(assert (<= (+ rem (* (- 1.0) v.0)) 0.0))\n(assert (>= v.0 1.0))\n(assert (<= (+ (* (- 1.0) mul12) sub14) (- 1.0)))\n(assert (<= (+ rem (* (- 1.0) mul13)) 0.0))\n(assert (<= (+ v.0 (* (- 1.0) mul13)) 0.0))\n(assert (>= mul13 1.0))\n(assert (<= (+ rem (* (- 1.0) mul17)) (- 1.0)))\n(assert (<= (+ v.0 (* (- 1.0) mul17)) (- 1.0)))\n(assert (>= mul17 2.0))\n(assert (<= (+ (* (- 1.0) mul11) sub16) (- 2.0)))\n(assert (<= (+ (* (- 1.0) mul11) add18) 0.0))\n(assert (<= (+ mul11 (* (- 1.0) add18)) 0.0))\n(assert (<= (+ sub16 (* (- 1.0) add18)) (- 2.0)))\n(assert (>= r.0 0.0))\n(assert (<= r.0 0.0))",
+            "dom": "elina-zones",
+            "vars": [
+                "r.0",
+                "u.0",
+                "mul",
+                "sub14",
+                "mul11",
+                "conv",
+                "conv2",
+                "sub",
+                "v.0",
+                "add18",
+                "mul17",
+                "sub16",
+                "rem",
+                "mul12",
+                "mul7",
+                "mul13",
+                "add"
+            ],
+            "len": 24
+        },
+        {
+            "str": "T",
+            "smt": "(assert true)",
+            "dom": "elina-zones",
+            "vars": {},
+            "len": 0
+        }
+    ],
+    "timed_out": false
+}

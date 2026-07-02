@@ -1,0 +1,64 @@
+{
+    "all_invs": [
+        {
+            "str": "2*y.0+mul4.neg = 0;4*x.0+mul6.neg-tmp1 = 0;-2*c.0-mul4.neg = 0;mul+mul6.neg-tmp1 = 0;2*mul2-mul4.neg-2*mul31 = 0;tmp-tmp1 = 0;-mul1 <= 0;mul4.neg+2*mul5.neg <= 2;-2*mul1-mul4.neg <= 2;mul5.neg <= 0;-2*mul1+mul4.neg <= 2;-mul4.neg+2*mul5.neg <= 2;-2*call-mul4.neg <= -2",
+            "smt": "(assert (= (+ (* 2.0 y.0) mul4.neg) 0.0))\n(assert (= (+ (* 4.0 x.0) mul6.neg (* (- 1.0) tmp1)) 0.0))\n(assert (= (+ (* (- 2.0) c.0) (* (- 1.0) mul4.neg)) 0.0))\n(assert (= (+ mul mul6.neg (* (- 1.0) tmp1)) 0.0))\n(assert (= (+ (* 2.0 mul2) (* (- 1.0) mul4.neg) (* (- 2.0) mul31)) 0.0))\n(assert (= (+ tmp (* (- 1.0) tmp1)) 0.0))\n(assert (>= mul1 0.0))\n(assert (<= (+ mul4.neg (* 2.0 mul5.neg)) 2.0))\n(assert (<= (+ (* (- 2.0) mul1) (* (- 1.0) mul4.neg)) 2.0))\n(assert (<= mul5.neg 0.0))\n(assert (<= (+ (* (- 2.0) mul1) mul4.neg) 2.0))\n(assert (<= (+ (* (- 1.0) mul4.neg) (* 2.0 mul5.neg)) 2.0))\n(assert (<= (+ (* (- 2.0) call) (* (- 1.0) mul4.neg)) (- 2.0)))",
+            "dom": "pk",
+            "vars": [
+                "c.0",
+                "mul4.neg",
+                "mul31",
+                "call",
+                "mul5.neg",
+                "y.0",
+                "tmp",
+                "mul6.neg",
+                "mul1",
+                "tmp1",
+                "mul2",
+                "x.0",
+                "mul"
+            ],
+            "len": 13
+        },
+        {
+            "str": "y.0-c.0 = 0",
+            "smt": "(assert (= (+ y.0 (* (- 1.0) c.0)) 0.0))",
+            "dom": "pk",
+            "vars": [
+                "y.0",
+                "c.0"
+            ],
+            "len": 1
+        },
+        {
+            "str": "2*y.0+mul4.neg = 0;4*x.0+mul6.neg-tmp1 = 0;-2*c.0-mul4.neg = 0;mul+mul6.neg-tmp1 = 0;2*mul2-mul4.neg-2*mul31 = 0;tmp-tmp1 = 0;-mul1 <= 0;mul4.neg+2*mul5.neg <= 2;-2*mul1-mul4.neg <= 2;mul5.neg <= 0;-2*mul1+mul4.neg <= 2;-mul4.neg+2*mul5.neg <= 2;2*call+mul4.neg <= 0",
+            "smt": "(assert (= (+ (* 2.0 y.0) mul4.neg) 0.0))\n(assert (= (+ (* 4.0 x.0) mul6.neg (* (- 1.0) tmp1)) 0.0))\n(assert (= (+ (* (- 2.0) c.0) (* (- 1.0) mul4.neg)) 0.0))\n(assert (= (+ mul mul6.neg (* (- 1.0) tmp1)) 0.0))\n(assert (= (+ (* 2.0 mul2) (* (- 1.0) mul4.neg) (* (- 2.0) mul31)) 0.0))\n(assert (= (+ tmp (* (- 1.0) tmp1)) 0.0))\n(assert (>= mul1 0.0))\n(assert (<= (+ mul4.neg (* 2.0 mul5.neg)) 2.0))\n(assert (<= (+ (* (- 2.0) mul1) (* (- 1.0) mul4.neg)) 2.0))\n(assert (<= mul5.neg 0.0))\n(assert (<= (+ (* (- 2.0) mul1) mul4.neg) 2.0))\n(assert (<= (+ (* (- 1.0) mul4.neg) (* 2.0 mul5.neg)) 2.0))\n(assert (<= (+ (* 2.0 call) mul4.neg) 0.0))",
+            "dom": "pk",
+            "vars": [
+                "c.0",
+                "mul4.neg",
+                "mul31",
+                "call",
+                "mul5.neg",
+                "y.0",
+                "tmp",
+                "mul6.neg",
+                "mul1",
+                "tmp1",
+                "mul2",
+                "x.0",
+                "mul"
+            ],
+            "len": 13
+        },
+        {
+            "str": "T",
+            "smt": "(assert true)",
+            "dom": "pk",
+            "vars": {},
+            "len": 0
+        }
+    ],
+    "timed_out": false
+}

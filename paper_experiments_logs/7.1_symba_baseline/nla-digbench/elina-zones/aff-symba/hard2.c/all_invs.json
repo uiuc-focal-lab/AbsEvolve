@@ -1,0 +1,74 @@
+{
+    "all_invs": [
+        {
+            "str": "call-d.0 <= -1;-d.0+p.0 <= 0;-d.0 <= -1;call-p.0 <= -1;d.0-p.0 <= 0;-p.0 <= -1;-d.1 <= 1;-p.1 <= 1",
+            "smt": "(assert (<= (+ call (* (- 1.0) d.0)) (- 1.0)))\n(assert (<= (+ (* (- 1.0) d.0) p.0) 0.0))\n(assert (>= d.0 1.0))\n(assert (<= (+ call (* (- 1.0) p.0)) (- 1.0)))\n(assert (<= (+ d.0 (* (- 1.0) p.0)) 0.0))\n(assert (>= p.0 1.0))\n(assert (>= d.1 (- 1.0)))\n(assert (>= p.1 (- 1.0)))",
+            "dom": "elina-zones",
+            "vars": [
+                "p.1",
+                "call",
+                "p.0",
+                "d.1",
+                "d.0"
+            ],
+            "len": 8
+        },
+        {
+            "str": "-call+add <= 0;call-d.0 <= -1;-d.0+p.0 <= 0;-d.0+add <= -1;-d.0 <= -1;call-p.0 <= -1;d.0-p.0 <= 0;-p.0+add <= -1;-p.0 <= -1;-d.1+p.1 <= 0;-d.1 <= 1;d.1-p.1 <= 0;-p.1 <= 1;call-add <= 0",
+            "smt": "(assert (<= (+ (* (- 1.0) call) add) 0.0))\n(assert (<= (+ call (* (- 1.0) d.0)) (- 1.0)))\n(assert (<= (+ (* (- 1.0) d.0) p.0) 0.0))\n(assert (<= (+ (* (- 1.0) d.0) add) (- 1.0)))\n(assert (>= d.0 1.0))\n(assert (<= (+ call (* (- 1.0) p.0)) (- 1.0)))\n(assert (<= (+ d.0 (* (- 1.0) p.0)) 0.0))\n(assert (<= (+ (* (- 1.0) p.0) add) (- 1.0)))\n(assert (>= p.0 1.0))\n(assert (<= (+ (* (- 1.0) d.1) p.1) 0.0))\n(assert (>= d.1 (- 1.0)))\n(assert (<= (+ d.1 (* (- 1.0) p.1)) 0.0))\n(assert (>= p.1 (- 1.0)))\n(assert (<= (+ call (* (- 1.0) add)) 0.0))",
+            "dom": "elina-zones",
+            "vars": [
+                "p.1",
+                "call",
+                "p.0",
+                "d.1",
+                "add",
+                "d.0"
+            ],
+            "len": 14
+        },
+        {
+            "str": "-call+d.0 <= 0;-call+p.0 <= 0;-call <= -1;-d.0+p.0 <= 0;-d.0 <= -1;d.0-p.0 <= 0;-p.0 <= -1",
+            "smt": "(assert (<= (+ (* (- 1.0) call) d.0) 0.0))\n(assert (<= (+ (* (- 1.0) call) p.0) 0.0))\n(assert (>= call 1.0))\n(assert (<= (+ (* (- 1.0) d.0) p.0) 0.0))\n(assert (>= d.0 1.0))\n(assert (<= (+ d.0 (* (- 1.0) p.0)) 0.0))\n(assert (>= p.0 1.0))",
+            "dom": "elina-zones",
+            "vars": [
+                "call",
+                "p.0",
+                "d.0"
+            ],
+            "len": 7
+        },
+        {
+            "str": "-d.0+p.0 <= 0;-d.0 <= -1;d.0-p.0 <= 0;-p.0 <= -1",
+            "smt": "(assert (<= (+ (* (- 1.0) d.0) p.0) 0.0))\n(assert (>= d.0 1.0))\n(assert (<= (+ d.0 (* (- 1.0) p.0)) 0.0))\n(assert (>= p.0 1.0))",
+            "dom": "elina-zones",
+            "vars": [
+                "p.0",
+                "d.0"
+            ],
+            "len": 4
+        },
+        {
+            "str": "-call+add <= 0;call-d.0 <= -1;-d.0+p.0 <= 0;-d.0+d.1 <= 0;-d.0+p.1 <= 0;-d.0+add <= -1;-d.0 <= -1;call-p.0 <= -1;d.0-p.0 <= 0;-p.0+d.1 <= 0;-p.0+p.1 <= 0;-p.0+add <= -1;-p.0 <= -1;-d.1+p.1 <= 0;-d.1 <= -1;d.1 <= 1;d.1-p.1 <= 0;-p.1 <= -1;p.1 <= 1;call-add <= 0",
+            "smt": "(assert (<= (+ (* (- 1.0) call) add) 0.0))\n(assert (<= (+ call (* (- 1.0) d.0)) (- 1.0)))\n(assert (<= (+ (* (- 1.0) d.0) p.0) 0.0))\n(assert (<= (+ (* (- 1.0) d.0) d.1) 0.0))\n(assert (<= (+ (* (- 1.0) d.0) p.1) 0.0))\n(assert (<= (+ (* (- 1.0) d.0) add) (- 1.0)))\n(assert (>= d.0 1.0))\n(assert (<= (+ call (* (- 1.0) p.0)) (- 1.0)))\n(assert (<= (+ d.0 (* (- 1.0) p.0)) 0.0))\n(assert (<= (+ (* (- 1.0) p.0) d.1) 0.0))\n(assert (<= (+ (* (- 1.0) p.0) p.1) 0.0))\n(assert (<= (+ (* (- 1.0) p.0) add) (- 1.0)))\n(assert (>= p.0 1.0))\n(assert (<= (+ (* (- 1.0) d.1) p.1) 0.0))\n(assert (>= d.1 1.0))\n(assert (<= d.1 1.0))\n(assert (<= (+ d.1 (* (- 1.0) p.1)) 0.0))\n(assert (>= p.1 1.0))\n(assert (<= p.1 1.0))\n(assert (<= (+ call (* (- 1.0) add)) 0.0))",
+            "dom": "elina-zones",
+            "vars": [
+                "p.1",
+                "call",
+                "p.0",
+                "d.1",
+                "add",
+                "d.0"
+            ],
+            "len": 20
+        },
+        {
+            "str": "T",
+            "smt": "(assert true)",
+            "dom": "elina-zones",
+            "vars": {},
+            "len": 0
+        }
+    ],
+    "timed_out": false
+}

@@ -1,0 +1,15 @@
+digraph "CFG for 'main' function" {
+	label="CFG for 'main' function";
+	Node0x5899cccf7230 [shape=record,label="{entry:\l r.0 = 0\l}"];
+	Node0x5899cccf7230 -> Node0x5899ccd25380;
+	Node0x5899ccd25380 [shape=record,label="{while.body:\l mul = r.0*r.0\l havoc(conv4) /*   %conv4 = fptosi double %tmp to i32, !dbg !31*/\l cmp = (conv4 = 0)\l assert(cmp)   /* loc(file=data/sv-benchmarks-processed/nla-digbench/freire1.c line=21 col=9) id=1 */\l havoc(cmp7) /*   %cmp7 = fcmp ogt double %x.0, %conv1, !dbg !34*/\l}"];
+	Node0x5899ccd25380 -> Node0x5899ccd25500;
+	Node0x5899ccd25380 -> Node0x5899ccd27c70;
+	Node0x5899ccd27c70 [shape=record,label="{__@bb_6:\l}"];
+	Node0x5899ccd27c70 -> Node0x5899ccd24fc0;
+	Node0x5899ccd24fc0 [shape=record,label="{while.end:\l assert(cmp)   /* loc(file=data/sv-benchmarks-processed/nla-digbench/freire1.c line=29 col=5) id=2 */\l @V_1 = 0\l}"];
+	Node0x5899ccd25500 [shape=record,label="{__@bb_5:\l}"];
+	Node0x5899ccd25500 -> Node0x5899ccd25440;
+	Node0x5899ccd25440 [shape=record,label="{if.end:\l add = r.0+1\l r.0 = add\l}"];
+	Node0x5899ccd25440 -> Node0x5899ccd25380;
+}

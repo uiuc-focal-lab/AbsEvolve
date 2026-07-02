@@ -1,0 +1,93 @@
+{
+    "all_invs": [
+        {
+            "str": "-mul-mul8+add31 = 0;add-add31 = 0;-mul9+add31 = 0;mul16+mul17-add31 = 0;-add18+add31 = 0;mul29+mul30-add31 = 0",
+            "smt": "(assert (= (+ (* (- 1.0) mul) (* (- 1.0) mul8) add31) 0.0))\n(assert (= (+ add (* (- 1.0) add31)) 0.0))\n(assert (= (+ (* (- 1.0) mul9) add31) 0.0))\n(assert (= (+ mul16 mul17 (* (- 1.0) add31)) 0.0))\n(assert (= (+ (* (- 1.0) add18) add31) 0.0))\n(assert (= (+ mul29 mul30 (* (- 1.0) add31)) 0.0))",
+            "dom": "pk",
+            "vars": [
+                "mul30",
+                "add",
+                "mul29",
+                "add18",
+                "mul9",
+                "mul16",
+                "mul17",
+                "add31",
+                "mul8",
+                "mul"
+            ],
+            "len": 6
+        },
+        {
+            "str": "-mul-mul8+mul9 = 0;-mul-mul8+add18 = 0;-mul-mul8+mul16+mul17 = 0;-mul-mul8+add = 0",
+            "smt": "(assert (= (+ (* (- 1.0) mul) (* (- 1.0) mul8) mul9) 0.0))\n(assert (= (+ (* (- 1.0) mul) (* (- 1.0) mul8) add18) 0.0))\n(assert (= (+ (* (- 1.0) mul) (* (- 1.0) mul8) mul16 mul17) 0.0))\n(assert (= (+ (* (- 1.0) mul) (* (- 1.0) mul8) add) 0.0))",
+            "dom": "pk",
+            "vars": [
+                "add",
+                "add18",
+                "mul9",
+                "mul16",
+                "mul17",
+                "mul8",
+                "mul"
+            ],
+            "len": 4
+        },
+        {
+            "str": "-mul-mul8+mul9 = 0;-mul-mul8+add = 0",
+            "smt": "(assert (= (+ (* (- 1.0) mul) (* (- 1.0) mul8) mul9) 0.0))\n(assert (= (+ (* (- 1.0) mul) (* (- 1.0) mul8) add) 0.0))",
+            "dom": "pk",
+            "vars": [
+                "add",
+                "mul9",
+                "mul",
+                "mul8"
+            ],
+            "len": 2
+        },
+        {
+            "str": "T",
+            "smt": "(assert true)",
+            "dom": "pk",
+            "vars": {},
+            "len": 0
+        },
+        {
+            "str": "-mul-mul8+add18 = 0;add-add18 = 0;-mul9+add18 = 0;mul16+mul17-add18 = 0",
+            "smt": "(assert (= (+ (* (- 1.0) mul) (* (- 1.0) mul8) add18) 0.0))\n(assert (= (+ add (* (- 1.0) add18)) 0.0))\n(assert (= (+ (* (- 1.0) mul9) add18) 0.0))\n(assert (= (+ mul16 mul17 (* (- 1.0) add18)) 0.0))",
+            "dom": "pk",
+            "vars": [
+                "add",
+                "add18",
+                "mul9",
+                "mul16",
+                "mul17",
+                "mul8",
+                "mul"
+            ],
+            "len": 4
+        },
+        {
+            "str": "x.0-y.0 = 0;mul+mul8-mul9 = 0;add-mul9 = 0",
+            "smt": "(assert (= (+ x.0 (* (- 1.0) y.0)) 0.0))\n(assert (= (+ mul mul8 (* (- 1.0) mul9)) 0.0))\n(assert (= (+ add (* (- 1.0) mul9)) 0.0))",
+            "dom": "pk",
+            "vars": [
+                "add",
+                "mul9",
+                "y.0",
+                "mul8",
+                "x.0",
+                "mul"
+            ],
+            "len": 3
+        },
+        {
+            "str": "T",
+            "smt": "(assert true)",
+            "dom": "pk",
+            "vars": {},
+            "len": 0
+        }
+    ],
+    "timed_out": false
+}

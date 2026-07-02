@@ -1,0 +1,60 @@
+{
+    "all_invs": [
+        {
+            "str": "call-conv4 = 0;call1-conv9 = 0;x.0+y.0-tmp = 0;mul-tmp = -1;-sub6 = 1;c.0-conv9 <= -1;-c.0 <= -1",
+            "smt": "(assert (= (+ call (* (- 1.0) conv4)) 0.0))\n(assert (= (+ call1 (* (- 1.0) conv9)) 0.0))\n(assert (= (+ x.0 y.0 (* (- 1.0) tmp)) 0.0))\n(assert (= (+ mul (* (- 1.0) tmp)) (- 1.0)))\n(assert (= sub6 (- 1.0)))\n(assert (<= (+ c.0 (* (- 1.0) conv9)) (- 1.0)))\n(assert (>= c.0 1.0))",
+            "dom": "pk",
+            "vars": [
+                "tmp",
+                "call1",
+                "mul",
+                "x.0",
+                "conv9",
+                "call",
+                "conv4",
+                "sub6",
+                "y.0",
+                "c.0"
+            ],
+            "len": 7
+        },
+        {
+            "str": "call-conv4 = 0;-call1+c.0 <= 0;-c.0 <= -1",
+            "smt": "(assert (= (+ call (* (- 1.0) conv4)) 0.0))\n(assert (<= (+ (* (- 1.0) call1) c.0) 0.0))\n(assert (>= c.0 1.0))",
+            "dom": "pk",
+            "vars": [
+                "call",
+                "conv4",
+                "c.0",
+                "call1"
+            ],
+            "len": 3
+        },
+        {
+            "str": "call-conv4 = 0;call1-conv9 = 0;x.0+y.0-tmp = 0;-c.0+conv9 = 0;mul-tmp = -1;-sub6 = 1;-conv9 <= -1",
+            "smt": "(assert (= (+ call (* (- 1.0) conv4)) 0.0))\n(assert (= (+ call1 (* (- 1.0) conv9)) 0.0))\n(assert (= (+ x.0 y.0 (* (- 1.0) tmp)) 0.0))\n(assert (= (+ (* (- 1.0) c.0) conv9) 0.0))\n(assert (= (+ mul (* (- 1.0) tmp)) (- 1.0)))\n(assert (= sub6 (- 1.0)))\n(assert (>= conv9 1.0))",
+            "dom": "pk",
+            "vars": [
+                "tmp",
+                "call1",
+                "mul",
+                "x.0",
+                "conv9",
+                "call",
+                "conv4",
+                "sub6",
+                "y.0",
+                "c.0"
+            ],
+            "len": 7
+        },
+        {
+            "str": "T",
+            "smt": "(assert true)",
+            "dom": "pk",
+            "vars": {},
+            "len": 0
+        }
+    ],
+    "timed_out": false
+}

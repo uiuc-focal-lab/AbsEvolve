@@ -1,0 +1,54 @@
+{
+    "all_invs": [
+        {
+            "str": "-call+add4 = 0;y2.0+mul-add = 0;y3.0+add-add4 = 0;-y1.0 <= 0;-mul <= 0;add-add4 <= -1;mul-add <= 0;y1.0-add <= 0",
+            "smt": "(assert (= (+ (* (- 1.0) call) add4) 0.0))\n(assert (= (+ y2.0 mul (* (- 1.0) add)) 0.0))\n(assert (= (+ y3.0 add (* (- 1.0) add4)) 0.0))\n(assert (>= y1.0 0.0))\n(assert (>= mul 0.0))\n(assert (<= (+ add (* (- 1.0) add4)) (- 1.0)))\n(assert (<= (+ mul (* (- 1.0) add)) 0.0))\n(assert (<= (+ y1.0 (* (- 1.0) add)) 0.0))",
+            "dom": "pk",
+            "vars": [
+                "add4",
+                "mul",
+                "y1.0",
+                "call",
+                "add",
+                "y3.0",
+                "y2.0"
+            ],
+            "len": 8
+        },
+        {
+            "str": "-y3.0 <= 0;-y2.0 <= 0;-call+y1.0+y3.0 <= 0;-y1.0 <= 0;-call+y2.0+y3.0 <= 0",
+            "smt": "(assert (>= y3.0 0.0))\n(assert (>= y2.0 0.0))\n(assert (<= (+ (* (- 1.0) call) y1.0 y3.0) 0.0))\n(assert (>= y1.0 0.0))\n(assert (<= (+ (* (- 1.0) call) y2.0 y3.0) 0.0))",
+            "dom": "pk",
+            "vars": [
+                "call",
+                "y3.0",
+                "y2.0",
+                "y1.0"
+            ],
+            "len": 5
+        },
+        {
+            "str": "-call+add4 = 0;y2.0+mul-add4 = 0;y3.0 = 0;-add+add4 = 0;-mul <= 0;-y1.0 <= 0;mul-add4 <= 0;y1.0-add4 <= 0",
+            "smt": "(assert (= (+ (* (- 1.0) call) add4) 0.0))\n(assert (= (+ y2.0 mul (* (- 1.0) add4)) 0.0))\n(assert (= y3.0 0.0))\n(assert (= (+ (* (- 1.0) add) add4) 0.0))\n(assert (>= mul 0.0))\n(assert (>= y1.0 0.0))\n(assert (<= (+ mul (* (- 1.0) add4)) 0.0))\n(assert (<= (+ y1.0 (* (- 1.0) add4)) 0.0))",
+            "dom": "pk",
+            "vars": [
+                "add4",
+                "mul",
+                "y1.0",
+                "call",
+                "add",
+                "y3.0",
+                "y2.0"
+            ],
+            "len": 8
+        },
+        {
+            "str": "T",
+            "smt": "(assert true)",
+            "dom": "pk",
+            "vars": {},
+            "len": 0
+        }
+    ],
+    "timed_out": false
+}
