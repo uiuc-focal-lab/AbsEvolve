@@ -2,7 +2,7 @@
 
 ![Overview of the Approach](overview_figure.png)
 
-This is the artifact for our paper: "Evolving Abstract Transformers for Gradient-Guided, Adaptable Abstract Interpretation".
+This is the repository for our PLDI'26 paper: [*Evolving Abstract Transformers for Gradient-Guided, Adaptable Abstract Interpretation*](https://dl.acm.org/doi/10.1145/3808346). Our framework, AbsEvolve, is the first *sound-by-construction* framework for abstract interpretation that is *adaptable* along the precision–efficiency trade-off, combining formal soundness guarantees with the efficiency of gradient-guided optimization.
 
 ## Index
 - [Installation Instructions](#installation-instructions)
@@ -48,6 +48,8 @@ This is the artifact for our paper: "Evolving Abstract Transformers for Gradient
     This helps you see and inspect logs and plots immediately from the host filesystem.
 
 ### Building from source
+
+If you want to build the tool from source, you can follow the steps below. Note that this is not necessary if you are using the provided Docker image, as it already contains the built tool.
 
 1. The first step is to install the dependencies. Use the following command to install the 
 python dependencies listed in [requirements.txt](requirements.txt):
@@ -128,8 +130,8 @@ python dependencies listed in [requirements.txt](requirements.txt):
 
     The diffs for these modifications are provided in [src/patches](src/patches) for clear readability and easier contribution.
 3. Build and setup automation is under [scripts/](scripts/) (notably [scripts/install_deps.sh](scripts/install_deps.sh) and [scripts/build.sh](scripts/build.sh)) to install dependencies, configure paths, and build the analysis stack. This is already done in the provided Docker image and runs as part of the image build, but can be used separately if building from source.
-4. Experiment orchestration is in [experiments/](experiments/). In particular, [experiments/run_experiments.py](experiments/run_experiments.py) runs the paper experiments, while [results_checker.py](results_checker.py), [results_parser.py](results_parser.py), and [plot.py](plot.py) are used for result validation and plotting.
-5. Generated outputs are organized in [logs/](logs/) and [plots/](plots/); [paper_experiments_logs/](paper_experiments_logs/) and [paper_experiments_plots/](paper_experiments_plots/) store reference outputs generated while running the paper experiments.
+4. Experiment orchestration is in [experiments/](experiments/). In particular, [experiments/run_experiments.py](experiments/run_experiments.py) runs the paper experiments, while [results_checker.py](experiments/results_checker.py), [results_parser.py](experiments/results_parser.py), and [plot.py](experiments/plot.py) are used for result validation and plotting.
+5. Generated outputs are organized in `logs` and `plots`; [paper_experiments_logs/](paper_experiments_logs/) and [paper_experiments_plots/](paper_experiments_plots/) store reference outputs generated while running the paper experiments.
 
 ### Understanding the Code and Modifications
 
@@ -146,36 +148,37 @@ The following instructions assume you are running the provided Docker image or h
     ```
     python experiments/run_experiments.py --exp_name 7.1-Linear
     ```
-    - **Log of this run:** In file `logs/7.1_linear.log`
-    - **Detailed logs**: In folder `logs/7.1_linear/`
-    - **Generated plots:** In folder `plots/7.1_linear/`
-    - **Expected Time:** 30-45 minutes (can vary based on machine and load)
-    - **Reference logs for this run:** In folder `paper_experiments_logs/7.1_linear/`
-    - **Reference plots for this run:** In folder `paper_experiments_plots/7.1_linear/`
+    - Log of this run: In file `logs/7.1_linear.log`
+    - Detailed logs: In folder `logs/7.1_linear/`
+    - Generated plots: In folder `plots/7.1_linear/`
+    - Expected Time: 30-45 minutes (can vary based on machine and load)
+    - Reference logs for this run: In folder [paper_experiments_logs/7.1_linear/](paper_experiments_logs/7.1_linear/)
+    - Reference plots for this run: In folder [paper_experiments_plots/7.1_linear/](paper_experiments_plots/7.1_linear/)
 
 2. Section 7.2, Figure 7: To run the experiments for Section 7.2 and generate the logs for Figure 7 (full tradeoff with linear and quadratic), use the following command inside the Docker container:
 
     ```
     python experiments/run_experiments.py --exp_name 7.2-Full
     ```
-    - **Log of this run:** In file `logs/7.2_full.log`
-    - **Detailed logs**: In folder `logs/7.2_full/`
-    - **Generated plots:** In folder `plots/7.2_full/`
-    - **Expected Time:** 40-60 minutes (can vary based on machine and load)
-    - **Reference logs for this run:** In folder `paper_experiments_logs/7.2_full/`
-    - **Reference plots for this run:** In folder `paper_experiments_plots/7.2_full/`
+    - Log of this run: In file `logs/7.2_full.log`
+    - Detailed logs: In folder `logs/7.2_full/`
+    - Generated plots: In folder `plots/7.2_full/`
+    - Expected Time: 40-60 minutes (can vary based on machine and load)
+    - Reference logs for this run: In folder [paper_experiments_logs/7.2_full/](paper_experiments_logs/7.2_full/)
+    - Reference plots for this run: In folder [paper_experiments_plots/7.2_full/](paper_experiments_plots/7.2_full/)
 
 3. Section 7.1, Figure 6: To run the experiments for Section 7.1 and generate the logs for Figure 6 (comparision of gurobi based transformer and our transformer), use the following command inside the Docker container:
 
     ```
     python experiments/run_experiments.py --exp_name 7.1-Solver-Comp
     ```
-    - **Log of this run:** In file `logs/7.1_solver_comp.log`
-    - **Detailed logs**: In folder `logs/7.1_solver_comp/`
-    - **Generated plots:** In folder `plots/7.1_solver_comp/`
-    - **Expected Time:** 45-60 minutes (can vary based on machine and load)
-    - **Reference logs for this run:** In folder `paper_experiments_logs/7.1_solver_comp/`
-    - **Reference plots for this run:** In folder `paper_experiments_plots/7.1_solver_comp/`
+    - Log of this run: In file `logs/7.1_solver_comp.log`
+    - Detailed logs: In folder `logs/7.1_solver_comp/`
+    - Generated plots: In folder `plots/7.1_solver_comp/`
+    - Expected Time: 45-60 minutes (can vary based on machine and load)
+    - Reference logs for this run: Too large to store in the repo, but is present in the artifact
+    on [Zenodo](https://zenodo.org/records/19586617) inside `AbsEvolve_Artifact_Code` at `paper_experiments_logs/7.1_solver_comp/`.
+    - Reference plots for this run: In folder [paper_experiments_plots/7.1_solver_comp/](paper_experiments_plots/7.1_solver_comp/)
 
 4. [Optional] Appendix-D.3-No-Collation Experiments: This is optional as it is not part of the main experiments and was done to evaluate the impact of collation. To run the experiments for the no-collation setting, use the following command inside the Docker container:
 
@@ -183,26 +186,26 @@ The following instructions assume you are running the provided Docker image or h
     python experiments/run_experiments.py --exp_name Appendix-D.3-No-Collation
     ```
 
-    - **Log of this run:** In file `logs/appendix_d.3_full_no_collation.log`
-    - **Detailed logs**: In folder `logs/appendix_d.3_full_no_collation/`
-    - **Generated plots:** In folder `plots/appendix_d.3_full_no_collation/`
-    - **Expected Time:** 60-75 minutes (can vary based on machine and load)
-    - **Reference logs for this run:** In folder `paper_experiments_logs/appendix_d.3_full_no_collation/`
-    - **Reference plots for this run:** In folder `paper_experiments_plots/appendix_d.3_full_no_collation/`
+    - Log of this run: In file `logs/appendix_d.3_full_no_collation.log`
+    - Detailed logs: In folder `logs/appendix_d.3_full_no_collation/`
+    - Generated plots: In folder `plots/appendix_d.3_full_no_collation/`
+    - Expected Time: 60-75 minutes (can vary based on machine and load)
+    - Reference logs for this run: In folder [paper_experiments_logs/appendix_d.3_full_no_collation/](paper_experiments_logs/appendix_d.3_full_no_collation/)
+    - Reference plots for this run: In folder [paper_experiments_plots/appendix_d.3_full_no_collation/](paper_experiments_plots/appendix_d.3_full_no_collation/)
 
 5. [Optional] Section 7.1, Symba Baseline (lines 819-822): This is optional as it is not part of the main experiments and was done to evaluate the performance of the Symba baseline. To run the experiments for the Symba baseline, use the following command inside the Docker container:
 
     ```
     python experiments/run_experiments.py --exp_name 7.1-Symba-Baseline
     ```
-    - **Log of this run:** In file `logs/7.1_symba_baseline.log`
-    - **Detailed logs**: In folder `logs/7.1_symba_baseline/`
-    - **Expected Time:** 2 hrs to 2hrs 30 mins (can vary based on machine and load. Also, the Symba solver is significantly slower than the lp solver based transformer, which is why this run takes much longer)
-    - **Reference logs for this run:** In folder `paper_experiments_logs/7.1_symba_baseline/`
+    - Log of this run: In file `logs/7.1_symba_baseline.log`
+    - Detailed logs: In folder `logs/7.1_symba_baseline/`
+    - Expected Time: 2 hrs to 2hrs 30 mins (can vary based on machine and load. Also, the Symba solver is significantly slower than the lp solver based transformer, which is why this run takes much longer)
+    - Reference logs for this run: In folder [paper_experiments_logs/7.1_symba_baseline/](paper_experiments_logs/7.1_symba_baseline/)
 
 These experiments together support all the claims made in the paper!
 
-Validating and Inspecting Results: As described above, the logs and plots generated while running the experiments are available in `paper_experiments_logs/` and `paper_experiments_plots/` respectively. You can use these reference logs and plots to validate your runs and ensure that you are getting consistent results. You can also inspect these logs to understand the detailed outputs of the experiments. The logs can be recreated using commands above. You can also recreate the plots using the paper logs by running:
+*Validating and Inspecting Results:* As described above, the logs and plots generated while running the experiments are available in [paper_experiments_logs/](paper_experiments_logs/) and [paper_experiments_plots/](paper_experiments_plots/) respectively. You can use these reference logs and plots to validate your runs and ensure that you are getting consistent results. You can also inspect these logs to understand the detailed outputs of the experiments. The logs can be recreated using commands above. You can also recreate the plots using the paper logs by running:
 
 ```
 python experiments/plot.py --logs_folder paper_experiments_logs --plots_folder paper_plots
@@ -210,7 +213,7 @@ python experiments/plot.py --logs_folder paper_experiments_logs --plots_folder p
 
 ## Analyzing New Benchmarks
 
-To add new benchmarks, you can create a new folder under `data/` (e.g., `data/new_benchmarks/`) and add your benchmark `.c` files there. You also need to create an `all_benchmarks.csv` file in that folder which lists the names of the `.c` files to run. The format of the `all_benchmarks.csv` file should be as follows:
+To add new benchmarks, you can create a new folder under [`data/`](data/) (e.g., `data/new_benchmarks/`) and add your benchmark `.c` files there. You also need to create an `all_benchmarks.csv` file in that folder which lists the names of the `.c` files to run. The format of the `all_benchmarks.csv` file should be as follows:
 
 ```benchmark_file
 Filename
@@ -220,7 +223,7 @@ benchmark3.c
 ...
 ```
 
-To run analysis on these new benchmarks, use `BenchmarkRunner` with a `BenchmarkRunConfig` as demonstrated:
+The [scripts/run_experiments.py](scripts/run_experiments.py) script can be used to read how to use [experiments/benchmark_runner.py](experiments/benchmark_runner.py) and use the `BenchmarkRunner` class to run the analysis on these new benchmarks. The `BenchmarkRunConfig` class is used to configure the analysis settings for the new benchmarks. An example of how to use the `BenchmarkRunner` and `BenchmarkRunConfig` classes to run the analysis on new benchmarks is provided below:
 
 ```python
 from benchmark_runner import BenchmarkRunner, BenchmarkRunConfig
@@ -239,7 +242,7 @@ config = BenchmarkRunConfig(abs_dom=abstract_domain)
 bl_output_folder = f"{output_base_folder}/baseline"
 runner.run_using_config(config, dataset_folder, bl_output_folder, logger)
 
-# LP-solver transformer (aff-gb)
+# LP-solver transformer (default solver when affine precision level is set to "affine-full")
 config.aff_prec_level = "affine-full"
 gb_output_folder = f"{output_base_folder}/aff-gb"
 runner.run_using_config(
@@ -249,17 +252,28 @@ runner.run_using_config(
     logger,
     bl_outp_folder=bl_output_folder,
 )
-```
 
-More details on the fields of `BenchmarkRunConfig` and how to use `BenchmarkRunner` can be found 
-in `benchmark_runner.py`.
+# Dual-solver transformer (lin_solver_config determines the solver used for the linear operators)
+config.lin_solver_config = {
+    "name": "dual",
+    "num_epochs" : "5"
+}
+dual_output_folder = f"{output_base_folder}/aff-dual"
+runner.run_using_config(
+    config,
+    dataset_folder,
+    dual_output_folder,
+    logger,
+    bl_outp_folder=bl_output_folder,
+)
+```
 
 ## Cite this work
 
 If you use our code or the results from our work, please cite our paper:
 
 ```bibtex
-@article{10.1145/3808346,
+@article{gomber2026evolving,
         author = {Gomber, Shaurya and Banerjee, Debangshu and Singh, Gagandeep},
         title = {Evolving Abstract Transformers for Gradient-Guided, Adaptable Abstract Interpretation},
         year = {2026},
