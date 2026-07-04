@@ -139,6 +139,12 @@ As the tool is implemented by modifying three existing and well-established repo
 1. The [scripts/generate_patches.py](scripts/generate_patches.py) script to generate these diffs from the modified codebases of clam, crab, and elina. You can use this script to generate the diffs yourself if you want to see how they are generated.
 2. The [scripts/apply_patches.py](scripts/apply_patches.py) script to apply these diffs to the original codebases of clam, crab, and elina. You can use this script to apply the diffs to the original codebases and recreate the modified codebases of clam, crab, and elina that are used in the tool. This can be useful if you want to understand the changes in the context of the original codebases, or if you want to make further modifications to the codebases and see how they affect the tool.
 
+After making changes to the code in [src/clam](src/clam), [src/crab](src/crab), or [src/elina](src/elina), you don't need to rebuild the tool from scratch. Instead, you can use the incremental mode of [scripts/build.sh](scripts/build.sh) to only rebuild the parts that changed:
+```
+bash scripts/build.sh incremental
+```
+This requires that you have already built the tool from scratch at least once (see [Building from source](#building-from-source)).
+
 ## Recreating Paper Experiments
 
 The following instructions assume you are running the provided Docker image or have set up the environment as described in the installation instructions and have tested the basic functionality as described in the basic testing section above. Also, the `run_experiments.py` script takes parameter `--logs_folder` to specify the folder where the logs for the experiments will be stored, and `--plots_folder` to specify the folder where the plots for the experiments will be stored. By default, these are set to `logs` and `plots` respectively, but can be changed. We assume that you are using the default values for these parameters, and the logs and plots will be generated in `logs/` and `plots/` folders respectively.
